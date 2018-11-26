@@ -54,6 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\LoaiTS_BLL.cs" />
+    <Compile Include="BLL\NguoiQL_BLL.cs" />
+    <Compile Include="BLL\NhaCC_BLL.cs" />
+    <Compile Include="BLL\NhapXuat_BLL.cs" />
+    <Compile Include="BLL\NuocSX_BLL.cs" />
+    <Compile Include="BLL\Phong_BLL.cs" />
+    <Compile Include="BLL\TaiSan_BLL.cs" />
     <Compile Include="DTO\LoaiTS.cs" />
     <Compile Include="DTO\NguoiQL.cs" />
     <Compile Include="DTO\NhaCC.cs" />
@@ -67,19 +74,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811260858136_v1.cs" />
-    <Compile Include="Migrations\201811260858136_v1.Designer.cs">
-      <DependentUpon>201811260858136_v1.cs</DependentUpon>
+    <Compile Include="Migrations\201811261025219_v1.cs" />
+    <Compile Include="Migrations\201811261025219_v1.Designer.cs">
+      <DependentUpon>201811261025219_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLCSVC.cs" />
+    <Compile Include="DAL\QLCSVC.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811260858136_v1.resx">
-      <DependentUpon>201811260858136_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811261025219_v1.resx">
+      <DependentUpon>201811261025219_v1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,4 +1,4 @@
-namespace TH_NET_Cuoi_Ky
+namespace TH_NET_Cuoi_Ky.DAL
 {
     using System;
     using System.Data.Entity;

@@ -13,7 +13,7 @@ namespace TH_NET_Cuoi_Ky.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201811260858136_v1"; }
+            get { return "201811261025219_v1"; }
         }
         
         string IMigrationMetadata.Source

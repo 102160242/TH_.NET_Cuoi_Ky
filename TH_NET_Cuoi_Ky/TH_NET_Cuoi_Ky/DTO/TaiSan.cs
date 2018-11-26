@@ -13,13 +13,20 @@ namespace TH_NET_Cuoi_Ky.DTO
     {
         [Key]
         public int MaTS { get; set; }
+        [Required]
         public string TenTS { get; set; }
         [StringLength(50)]
+        [Required]
         public string TSKT { get; set; }
         [StringLength(50)]
+        [Required]
         public string DVTinh { get; set; }
+        [Required]
+        [Column(TypeName = "Date")]
         public DateTime NamSX { get; set; }
+        [Required]
         public int MaNuocSX { get; set; }
+        [Required]
         public int MaLoaiTS { get; set; }
         public string GhiChu { get; set; }
         [ForeignKey("MaNuocSX")]

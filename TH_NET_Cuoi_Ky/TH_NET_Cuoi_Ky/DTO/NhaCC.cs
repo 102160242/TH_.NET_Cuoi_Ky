@@ -14,7 +14,9 @@ namespace TH_NET_Cuoi_Ky.DTO
         [Key]
         public int MaNhaCC { get; set; }
         [StringLength(50)]
+        [Required]
         public string TenNhaCC { get; set; }
+        [Required]
         public string DiaChi { get; set; }
         public ICollection<NhapXuat> NhapXuat { get; set; }
     }

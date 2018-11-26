@@ -12,7 +12,7 @@ namespace TH_NET_Cuoi_Ky.Migrations
                 c => new
                     {
                         MaLoaiTS = c.Int(nullable: false, identity: true),
-                        TenLoaiTS = c.String(maxLength: 50),
+                        TenLoaiTS = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.MaLoaiTS);
             
@@ -21,10 +21,10 @@ namespace TH_NET_Cuoi_Ky.Migrations
                 c => new
                     {
                         MaTS = c.Int(nullable: false, identity: true),
-                        TenTS = c.String(),
-                        TSKT = c.String(maxLength: 50),
-                        DVTinh = c.String(maxLength: 50),
-                        NamSX = c.DateTime(nullable: false),
+                        TenTS = c.String(nullable: false),
+                        TSKT = c.String(nullable: false, maxLength: 50),
+                        DVTinh = c.String(nullable: false, maxLength: 50),
+                        NamSX = c.DateTime(nullable: false, storeType: "date"),
                         MaNuocSX = c.Int(nullable: false),
                         MaLoaiTS = c.Int(nullable: false),
                         GhiChu = c.String(),
@@ -43,13 +43,13 @@ namespace TH_NET_Cuoi_Ky.Migrations
                         MaTS = c.Int(nullable: false),
                         MaNhaCC = c.Int(nullable: false),
                         MaPhong = c.Int(nullable: false),
-                        NgayNhap = c.DateTime(nullable: false),
-                        SLNhap = c.Int(nullable: false),
-                        NgayXuat = c.DateTime(nullable: false),
-                        SLxuat = c.Int(nullable: false),
+                        NgayNhap = c.DateTime(),
+                        SLNhap = c.Int(),
+                        NgayXuat = c.DateTime(),
+                        SLXuat = c.Int(),
                         NguyenGia = c.Double(nullable: false),
                         NamSD = c.Int(nullable: false),
-                        TinhTrang = c.String(maxLength: 50),
+                        TinhTrang = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.SoPhieu)
                 .ForeignKey("dbo.NhaCC", t => t.MaNhaCC, cascadeDelete: true)
@@ -64,8 +64,8 @@ namespace TH_NET_Cuoi_Ky.Migrations
                 c => new
                     {
                         MaNhaCC = c.Int(nullable: false, identity: true),
-                        TenNhaCC = c.String(maxLength: 50),
-                        DiaChi = c.String(),
+                        TenNhaCC = c.String(nullable: false, maxLength: 50),
+                        DiaChi = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.MaNhaCC);
             
@@ -74,7 +74,7 @@ namespace TH_NET_Cuoi_Ky.Migrations
                 c => new
                     {
                         MaPhong = c.Int(nullable: false, identity: true),
-                        TenPhong = c.String(maxLength: 50),
+                        TenPhong = c.String(nullable: false, maxLength: 50),
                         MaNguoiQL = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.MaPhong)
@@ -86,7 +86,7 @@ namespace TH_NET_Cuoi_Ky.Migrations
                 c => new
                     {
                         MaNguoiQL = c.Int(nullable: false, identity: true),
-                        TenNguoiQL = c.String(maxLength: 50),
+                        TenNguoiQL = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.MaNguoiQL);
             
@@ -95,7 +95,7 @@ namespace TH_NET_Cuoi_Ky.Migrations
                 c => new
                     {
                         MaNuocSX = c.Int(nullable: false, identity: true),
-                        TenNuocSX = c.String(maxLength: 50),
+                        TenNuocSX = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.MaNuocSX);
             

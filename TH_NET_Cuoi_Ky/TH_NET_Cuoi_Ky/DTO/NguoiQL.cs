@@ -14,6 +14,7 @@ namespace TH_NET_Cuoi_Ky.DTO
         [Key]
         public int MaNguoiQL { get; set; }
         [StringLength(50)]
+        [Required]
         public string TenNguoiQL { get; set; }
     }
 }

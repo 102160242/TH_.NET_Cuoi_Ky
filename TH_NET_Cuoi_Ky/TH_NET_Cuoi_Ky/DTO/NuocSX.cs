@@ -14,6 +14,7 @@ namespace TH_NET_Cuoi_Ky.DTO
         [Key]
         public int MaNuocSX { get; set; }
         [StringLength(50)]
+        [Required]
         public string TenNuocSX { get; set; }
         public ICollection<TaiSan> TaiSan { get; set; }
     }

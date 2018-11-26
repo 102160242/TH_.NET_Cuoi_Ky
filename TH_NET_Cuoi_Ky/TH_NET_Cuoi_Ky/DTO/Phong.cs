@@ -14,7 +14,9 @@ namespace TH_NET_Cuoi_Ky.DTO
         [Key]
         public int MaPhong { get; set; }
         [StringLength(50)]
+        [Required]
         public string TenPhong { get; set; }
+        [Required]
         public int MaNguoiQL { get; set; }
         [ForeignKey("MaNguoiQL")]
         public virtual NguoiQL NguoiQL { get; set; }
