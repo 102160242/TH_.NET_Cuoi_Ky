@@ -17,7 +17,11 @@ namespace TH_NET_Cuoi_Ky.BLL
         public List<String> loadCBB_BLL()
         {
             List<String> l = new List<string>();
-            // Code
+            var data = db.NuocSXs.Select(p => new { p.TenNuocSX }).Distinct();
+            foreach(var i in data)
+            {
+                l.Add(i.TenNuocSX);
+            }
             return l;
         }
     }

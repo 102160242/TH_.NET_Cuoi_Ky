@@ -17,7 +17,11 @@ namespace TH_NET_Cuoi_Ky.BLL
         public List<String> loadCBB_BLL()
         {
             List<String> l = new List<string>();
-            // Test change on Desktop 1:56
+            var data = db.LoaiTSs.Select(p => new { p.TenLoaiTS }).Distinct();
+            foreach(var i in data)
+            {
+                l.Add(i.TenLoaiTS);
+            }
             return l;
         }
     }

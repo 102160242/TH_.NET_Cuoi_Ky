@@ -26,6 +26,10 @@ namespace TH_NET_Cuoi_Ky
             NCC_BLL = new NhaCC_BLL();
             NSX_BLL = new NuocSX_BLL();
             LTS_BLL = new LoaiTS_BLL();
+            loadCBBLoaiTS();
+            loadCBBNhaCC();
+            loadCBBNuocSX();
+            loadCBBPhong();
         }
 
         private void butShow_Click(object sender, EventArgs e)
@@ -65,6 +69,10 @@ namespace TH_NET_Cuoi_Ky
                 if (cbbNuocSX1.FindStringExact(i) < 0)
                 {
                     cbbNuocSX1.Items.Add(i);
+                }
+                if (CbbNuocSX.FindStringExact(i) < 0)
+                {
+                    CbbNuocSX.Items.Add(i);
                 }
             }
         }

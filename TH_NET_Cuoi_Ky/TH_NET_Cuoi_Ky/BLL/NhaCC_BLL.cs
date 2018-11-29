@@ -17,7 +17,11 @@ namespace TH_NET_Cuoi_Ky.BLL
         public List<string> loadCBB_BLL()
         {
             List<string> l = new List<string>();
-            // Sua tren Desk
+            var data = db.NhaCCs.Select(p => new { p.TenNhaCC }).Distinct();
+            foreach(var i in data)
+            {
+                l.Add(i.TenNhaCC);
+            }
             return l;
         }
     }
