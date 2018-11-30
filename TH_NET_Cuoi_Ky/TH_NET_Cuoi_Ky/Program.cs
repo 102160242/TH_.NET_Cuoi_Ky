@@ -16,7 +16,7 @@ namespace TH_NET_Cuoi_Ky
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new GUI.MainForm());
         }
     }
 }

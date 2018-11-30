@@ -13,6 +13,8 @@ namespace TH_NET_Cuoi_Ky
 {
     public partial class Form1 : Form
     {
+        public delegate void dd();
+        public dd ShowForm;
         TaiSan_BLL TS_BLL;
         Phong_BLL P_BLL;
         NhaCC_BLL NCC_BLL;
@@ -34,9 +36,17 @@ namespace TH_NET_Cuoi_Ky
 
         private void butShow_Click(object sender, EventArgs e)
         {
+            ShowTS();
+        }
+        private void ShowTS()
+        {
             dgv.DataSource = TS_BLL.ShowTS_BLL();
         }
-
+        private void Reload()
+        {
+            ShowTS(); // Load lai du lieu cho DataGridView
+            this.Visible = true; // Hien thi lai form
+        }
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
@@ -89,6 +99,19 @@ namespace TH_NET_Cuoi_Ky
                     cbbLoaiTS.Items.Add(i);
                 }
             }
+        }
+
+        private void butAdd_Click(object sender, EventArgs e)
+        {
+            AddFormTS f = new AddFormTS();
+            f.ReloadData += Reload;
+            f.Show();
+            this.Visible = false; // Tam an form
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ShowForm();
         }
     }
 }

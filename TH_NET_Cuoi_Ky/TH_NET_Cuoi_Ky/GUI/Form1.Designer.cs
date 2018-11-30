@@ -44,9 +44,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbbLoaiTS = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.CbbNuocSX = new System.Windows.Forms.ComboBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.butShow = new System.Windows.Forms.Button();
             this.txtTskt = new System.Windows.Forms.TextBox();
             this.txtDvTinh = new System.Windows.Forms.TextBox();
             this.txtTenTS = new System.Windows.Forms.TextBox();
@@ -58,12 +60,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.butShow = new System.Windows.Forms.Button();
             this.butAdd = new System.Windows.Forms.Button();
             this.butUpdate = new System.Windows.Forms.Button();
             this.butSort = new System.Windows.Forms.Button();
             this.cbbSort = new System.Windows.Forms.ComboBox();
-            this.cbbLoaiTS = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -203,10 +203,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 30);
+            this.tabControl1.Location = new System.Drawing.Point(3, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1015, 183);
+            this.tabControl1.Size = new System.Drawing.Size(1015, 190);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
@@ -232,10 +232,18 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1007, 157);
+            this.tabPage1.Size = new System.Drawing.Size(1007, 164);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hiển thị và cập nhật";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cbbLoaiTS
+            // 
+            this.cbbLoaiTS.FormattingEnabled = true;
+            this.cbbLoaiTS.Location = new System.Drawing.Point(836, 20);
+            this.cbbLoaiTS.Name = "cbbLoaiTS";
+            this.cbbLoaiTS.Size = new System.Drawing.Size(122, 24);
+            this.cbbLoaiTS.TabIndex = 22;
             // 
             // dateTimePicker1
             // 
@@ -260,6 +268,16 @@
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(122, 22);
             this.txtGhiChu.TabIndex = 19;
+            // 
+            // butShow
+            // 
+            this.butShow.Location = new System.Drawing.Point(836, 99);
+            this.butShow.Name = "butShow";
+            this.butShow.Size = new System.Drawing.Size(75, 23);
+            this.butShow.TabIndex = 9;
+            this.butShow.Text = "Hiển thị";
+            this.butShow.UseVisualStyleBackColor = true;
+            this.butShow.Click += new System.EventHandler(this.butShow_Click);
             // 
             // txtTskt
             // 
@@ -356,7 +374,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1007, 157);
+            this.tabPage2.Size = new System.Drawing.Size(1007, 164);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tìm kiếm";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -364,21 +382,11 @@
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(7, 219);
+            this.dgv.Location = new System.Drawing.Point(7, 193);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(1007, 306);
+            this.dgv.Size = new System.Drawing.Size(1007, 332);
             this.dgv.TabIndex = 8;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
-            // 
-            // butShow
-            // 
-            this.butShow.Location = new System.Drawing.Point(836, 99);
-            this.butShow.Name = "butShow";
-            this.butShow.Size = new System.Drawing.Size(75, 23);
-            this.butShow.TabIndex = 9;
-            this.butShow.Text = "Hiển thị";
-            this.butShow.UseVisualStyleBackColor = true;
-            this.butShow.Click += new System.EventHandler(this.butShow_Click);
             // 
             // butAdd
             // 
@@ -388,6 +396,7 @@
             this.butAdd.TabIndex = 10;
             this.butAdd.Text = "Thêm";
             this.butAdd.UseVisualStyleBackColor = true;
+            this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
             // butUpdate
             // 
@@ -415,14 +424,6 @@
             this.cbbSort.Size = new System.Drawing.Size(125, 21);
             this.cbbSort.TabIndex = 22;
             // 
-            // cbbLoaiTS
-            // 
-            this.cbbLoaiTS.FormattingEnabled = true;
-            this.cbbLoaiTS.Location = new System.Drawing.Point(836, 20);
-            this.cbbLoaiTS.Name = "cbbLoaiTS";
-            this.cbbLoaiTS.Size = new System.Drawing.Size(122, 24);
-            this.cbbLoaiTS.TabIndex = 22;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,6 +439,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Quản lý cơ sở vật chất khoa CNTT";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
