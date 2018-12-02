@@ -36,6 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "NuocSXForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NuocSXForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuocSXForm_FormClosing);
             this.ResumeLayout(false);

@@ -23,15 +23,12 @@ namespace TH_NET_Cuoi_Ky
         public Form1()
         {
             InitializeComponent();
-            TS_BLL = new TaiSan_BLL();
-            P_BLL = new Phong_BLL();
-            NCC_BLL = new NhaCC_BLL();
-            NSX_BLL = new NuocSX_BLL();
-            LTS_BLL = new LoaiTS_BLL();
-            loadCBBLoaiTS();
-            loadCBBNhaCC();
-            loadCBBNuocSX();
-            loadCBBPhong();
+            this.TS_BLL = new TaiSan_BLL();
+            this.P_BLL = new Phong_BLL();
+            this.NCC_BLL = new NhaCC_BLL();
+            this.NSX_BLL = new NuocSX_BLL();
+            this.LTS_BLL = new LoaiTS_BLL();
+            this.loadAllCBB();
         }
 
         private void butShow_Click(object sender, EventArgs e)
@@ -45,13 +42,30 @@ namespace TH_NET_Cuoi_Ky
         private void Reload()
         {
             ShowTS(); // Load lai du lieu cho DataGridView
+            this.loadAllCBB();
             this.Visible = true; // Hien thi lai form
         }
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
+            List<DTO.TaiSan> l = TS_BLL.getTSById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString()));
+            txtMaTS.Text = l[0].MaTS.ToString();
+            txtTenTS.Text = l[0].TenTS;
+            txtDvTinh.Text = l[0].DVTinh;
+            txtTskt.Text = l[0].TSKT;
+            txtGhiChu.Text = l[0].GhiChu;          
+            cbbNuocSX.SelectedItem = l[0].NuocSX.TenNuocSX;
+            cbbLoaiTS.SelectedItem = l[0].LoaiTS.TenLoaiTS;
+            dateTimePicker1.Value = l[0].NamSX;
+            
         }
         // CBB
+        private void loadAllCBB()
+        {
+            this.loadCBBPhong();
+            this.loadCBBNhaCC();
+            this.loadCBBNuocSX();
+            this.loadCBBLoaiTS();
+        }
         private void loadCBBPhong()
         {
             foreach (string i in P_BLL.loadCBB_BLL())
@@ -80,9 +94,9 @@ namespace TH_NET_Cuoi_Ky
                 {
                     cbbNuocSX1.Items.Add(i);
                 }
-                if (CbbNuocSX.FindStringExact(i) < 0)
+                if (cbbNuocSX.FindStringExact(i) < 0)
                 {
-                    CbbNuocSX.Items.Add(i);
+                    cbbNuocSX.Items.Add(i);
                 }
             }
         }

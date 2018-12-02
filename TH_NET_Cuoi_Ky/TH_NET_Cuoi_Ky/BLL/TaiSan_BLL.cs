@@ -44,5 +44,12 @@ namespace TH_NET_Cuoi_Ky.BLL
                        };
             return data.ToList();
         }
+        public List<DTO.TaiSan> getTSById(int id)
+        {
+            var data = from p in db.TaiSans
+                       where p.MaTS == id
+                       select p;
+            return data.ToList<DTO.TaiSan>();
+        }
     }
 }

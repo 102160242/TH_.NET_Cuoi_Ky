@@ -36,6 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(719, 285);
             this.Name = "LoaiTSForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoaiTSForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoaiTSForm_FormClosing);
             this.ResumeLayout(false);

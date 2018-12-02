@@ -212,6 +212,7 @@
             this.Controls.Add(this.label8);
             this.MaximizeBox = false;
             this.Name = "AddFormTS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddForm";
             this.ResumeLayout(false);
             this.PerformLayout();

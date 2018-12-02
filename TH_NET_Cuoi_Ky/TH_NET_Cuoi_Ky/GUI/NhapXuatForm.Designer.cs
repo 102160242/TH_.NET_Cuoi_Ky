@@ -36,6 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "NhapXuatForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhapXuatForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhapXuatForm_FormClosing);
             this.ResumeLayout(false);

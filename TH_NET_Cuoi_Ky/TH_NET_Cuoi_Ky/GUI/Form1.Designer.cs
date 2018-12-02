@@ -46,7 +46,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cbbLoaiTS = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.CbbNuocSX = new System.Windows.Forms.ComboBox();
+            this.cbbNuocSX = new System.Windows.Forms.ComboBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.butShow = new System.Windows.Forms.Button();
             this.txtTskt = new System.Windows.Forms.TextBox();
@@ -213,7 +213,7 @@
             // 
             this.tabPage1.Controls.Add(this.cbbLoaiTS);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
-            this.tabPage1.Controls.Add(this.CbbNuocSX);
+            this.tabPage1.Controls.Add(this.cbbNuocSX);
             this.tabPage1.Controls.Add(this.txtGhiChu);
             this.tabPage1.Controls.Add(this.butShow);
             this.tabPage1.Controls.Add(this.txtTskt);
@@ -251,16 +251,17 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(500, 94);
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(122, 22);
             this.dateTimePicker1.TabIndex = 21;
             // 
-            // CbbNuocSX
+            // cbbNuocSX
             // 
-            this.CbbNuocSX.FormattingEnabled = true;
-            this.CbbNuocSX.Location = new System.Drawing.Point(500, 59);
-            this.CbbNuocSX.Name = "CbbNuocSX";
-            this.CbbNuocSX.Size = new System.Drawing.Size(122, 24);
-            this.CbbNuocSX.TabIndex = 20;
+            this.cbbNuocSX.FormattingEnabled = true;
+            this.cbbNuocSX.Location = new System.Drawing.Point(500, 59);
+            this.cbbNuocSX.Name = "cbbNuocSX";
+            this.cbbNuocSX.Size = new System.Drawing.Size(122, 24);
+            this.cbbNuocSX.TabIndex = 20;
             // 
             // txtGhiChu
             // 
@@ -384,6 +385,7 @@
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(7, 193);
             this.dgv.Name = "dgv";
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(1007, 332);
             this.dgv.TabIndex = 8;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
@@ -438,6 +440,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý cơ sở vật chất khoa CNTT";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
@@ -476,7 +479,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox CbbNuocSX;
+        private System.Windows.Forms.ComboBox cbbNuocSX;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.TextBox txtTskt;
         private System.Windows.Forms.TextBox txtDvTinh;

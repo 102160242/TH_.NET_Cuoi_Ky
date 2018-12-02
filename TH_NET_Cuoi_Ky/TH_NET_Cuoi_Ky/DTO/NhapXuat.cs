@@ -26,7 +26,7 @@ namespace TH_NET_Cuoi_Ky.DTO
         [Required]
         public double NguyenGia { get; set; }
         [Required]
-        public int NamSD { get; set; }
+        public Nullable<int> NamSD { get; set; }
         [StringLength(50)]
         [Required]
         public string TinhTrang { get; set; }

@@ -36,6 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 191);
             this.Name = "NguoiQLForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NguoiQLForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NguoiQLForm_FormClosing);
             this.ResumeLayout(false);

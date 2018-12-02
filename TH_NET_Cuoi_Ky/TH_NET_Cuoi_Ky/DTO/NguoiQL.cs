@@ -16,5 +16,8 @@ namespace TH_NET_Cuoi_Ky.DTO
         [StringLength(50)]
         [Required]
         public string TenNguoiQL { get; set; }
+        [StringLength(11)]
+        [Required]
+        public string SoDT { get; set; }
     }
 }
