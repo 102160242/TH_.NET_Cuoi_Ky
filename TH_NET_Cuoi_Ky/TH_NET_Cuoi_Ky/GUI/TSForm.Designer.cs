@@ -64,6 +64,7 @@
             this.butUpdate = new System.Windows.Forms.Button();
             this.butSort = new System.Windows.Forms.Button();
             this.cbbSort = new System.Windows.Forms.ComboBox();
+            this.btnDel = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -85,7 +86,7 @@
             this.txtTuKhoa.Location = new System.Drawing.Point(671, 35);
             this.txtTuKhoa.Name = "txtTuKhoa";
             this.txtTuKhoa.Size = new System.Drawing.Size(122, 20);
-            this.txtTuKhoa.TabIndex = 7;
+            this.txtTuKhoa.TabIndex = 5;
             // 
             // btnShow1
             // 
@@ -93,7 +94,7 @@
             this.btnShow1.Location = new System.Drawing.Point(671, 82);
             this.btnShow1.Name = "btnShow1";
             this.btnShow1.Size = new System.Drawing.Size(75, 23);
-            this.btnShow1.TabIndex = 2;
+            this.btnShow1.TabIndex = 6;
             this.btnShow1.Text = "Tìm kiếm";
             this.btnShow1.UseVisualStyleBackColor = true;
             // 
@@ -103,7 +104,7 @@
             this.cbbLoaiTS1.Location = new System.Drawing.Point(420, 81);
             this.cbbLoaiTS1.Name = "cbbLoaiTS1";
             this.cbbLoaiTS1.Size = new System.Drawing.Size(122, 21);
-            this.cbbLoaiTS1.TabIndex = 5;
+            this.cbbLoaiTS1.TabIndex = 4;
             // 
             // cbbNuocSX1
             // 
@@ -111,7 +112,7 @@
             this.cbbNuocSX1.Location = new System.Drawing.Point(420, 35);
             this.cbbNuocSX1.Name = "cbbNuocSX1";
             this.cbbNuocSX1.Size = new System.Drawing.Size(122, 21);
-            this.cbbNuocSX1.TabIndex = 5;
+            this.cbbNuocSX1.TabIndex = 3;
             // 
             // cbbNhaCC1
             // 
@@ -119,7 +120,7 @@
             this.cbbNhaCC1.Location = new System.Drawing.Point(122, 81);
             this.cbbNhaCC1.Name = "cbbNhaCC1";
             this.cbbNhaCC1.Size = new System.Drawing.Size(121, 21);
-            this.cbbNhaCC1.TabIndex = 5;
+            this.cbbNhaCC1.TabIndex = 2;
             // 
             // cbbPhong1
             // 
@@ -127,7 +128,7 @@
             this.cbbPhong1.Location = new System.Drawing.Point(122, 35);
             this.cbbPhong1.Name = "cbbPhong1";
             this.cbbPhong1.Size = new System.Drawing.Size(122, 21);
-            this.cbbPhong1.TabIndex = 5;
+            this.cbbPhong1.TabIndex = 1;
             // 
             // label4
             // 
@@ -207,7 +208,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1015, 190);
-            this.tabControl1.TabIndex = 8;
+            this.tabControl1.TabIndex = 16;
             // 
             // tabPage1
             // 
@@ -243,7 +244,7 @@
             this.cbbLoaiTS.Location = new System.Drawing.Point(836, 20);
             this.cbbLoaiTS.Name = "cbbLoaiTS";
             this.cbbLoaiTS.Size = new System.Drawing.Size(122, 24);
-            this.cbbLoaiTS.TabIndex = 22;
+            this.cbbLoaiTS.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
@@ -253,7 +254,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(122, 22);
-            this.dateTimePicker1.TabIndex = 21;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // cbbNuocSX
             // 
@@ -261,14 +262,14 @@
             this.cbbNuocSX.Location = new System.Drawing.Point(500, 59);
             this.cbbNuocSX.Name = "cbbNuocSX";
             this.cbbNuocSX.Size = new System.Drawing.Size(122, 24);
-            this.cbbNuocSX.TabIndex = 20;
+            this.cbbNuocSX.TabIndex = 5;
             // 
             // txtGhiChu
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(836, 59);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(122, 22);
-            this.txtGhiChu.TabIndex = 19;
+            this.txtGhiChu.TabIndex = 8;
             // 
             // butShow
             // 
@@ -285,21 +286,21 @@
             this.txtTskt.Location = new System.Drawing.Point(500, 23);
             this.txtTskt.Name = "txtTskt";
             this.txtTskt.Size = new System.Drawing.Size(122, 22);
-            this.txtTskt.TabIndex = 17;
+            this.txtTskt.TabIndex = 4;
             // 
             // txtDvTinh
             // 
             this.txtDvTinh.Location = new System.Drawing.Point(123, 96);
             this.txtDvTinh.Name = "txtDvTinh";
             this.txtDvTinh.Size = new System.Drawing.Size(122, 22);
-            this.txtDvTinh.TabIndex = 16;
+            this.txtDvTinh.TabIndex = 3;
             // 
             // txtTenTS
             // 
             this.txtTenTS.Location = new System.Drawing.Point(123, 59);
             this.txtTenTS.Name = "txtTenTS";
             this.txtTenTS.Size = new System.Drawing.Size(122, 22);
-            this.txtTenTS.TabIndex = 15;
+            this.txtTenTS.TabIndex = 2;
             // 
             // txtMaTS
             // 
@@ -307,7 +308,7 @@
             this.txtMaTS.Name = "txtMaTS";
             this.txtMaTS.ReadOnly = true;
             this.txtMaTS.Size = new System.Drawing.Size(122, 22);
-            this.txtMaTS.TabIndex = 14;
+            this.txtMaTS.TabIndex = 1;
             // 
             // label13
             // 
@@ -387,7 +388,7 @@
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(1007, 332);
-            this.dgv.TabIndex = 8;
+            this.dgv.TabIndex = 10;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             // 
             // butAdd
@@ -395,43 +396,54 @@
             this.butAdd.Location = new System.Drawing.Point(206, 542);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(75, 23);
-            this.butAdd.TabIndex = 10;
+            this.butAdd.TabIndex = 11;
             this.butAdd.Text = "Thêm";
             this.butAdd.UseVisualStyleBackColor = true;
             this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
             // butUpdate
             // 
-            this.butUpdate.Location = new System.Drawing.Point(355, 544);
+            this.butUpdate.Location = new System.Drawing.Point(366, 542);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(75, 23);
-            this.butUpdate.TabIndex = 11;
+            this.butUpdate.TabIndex = 12;
             this.butUpdate.Text = "Cập nhật";
             this.butUpdate.UseVisualStyleBackColor = true;
             this.butUpdate.Click += new System.EventHandler(this.butUpdate_Click);
             // 
             // butSort
             // 
-            this.butSort.Location = new System.Drawing.Point(516, 542);
+            this.butSort.Location = new System.Drawing.Point(780, 542);
             this.butSort.Name = "butSort";
             this.butSort.Size = new System.Drawing.Size(75, 23);
-            this.butSort.TabIndex = 12;
+            this.butSort.TabIndex = 13;
             this.butSort.Text = "Sắp xếp";
             this.butSort.UseVisualStyleBackColor = true;
             // 
             // cbbSort
             // 
             this.cbbSort.FormattingEnabled = true;
-            this.cbbSort.Location = new System.Drawing.Point(644, 544);
+            this.cbbSort.Location = new System.Drawing.Point(885, 541);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.Size = new System.Drawing.Size(125, 21);
-            this.cbbSort.TabIndex = 22;
+            this.cbbSort.TabIndex = 14;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(529, 542);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 17;
+            this.btnDel.Text = "Xóa";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 579);
+            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.cbbSort);
             this.Controls.Add(this.butSort);
             this.Controls.Add(this.butUpdate);
@@ -491,6 +503,7 @@
         private System.Windows.Forms.Button butSort;
         private System.Windows.Forms.ComboBox cbbSort;
         private System.Windows.Forms.ComboBox cbbLoaiTS;
+        private System.Windows.Forms.Button btnDel;
     }
 }
 

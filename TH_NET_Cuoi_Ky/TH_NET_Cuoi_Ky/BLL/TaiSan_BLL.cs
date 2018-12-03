@@ -80,5 +80,49 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return true;
         }
+        public Boolean addTS(DTO.TaiSan TS)
+        {
+            try
+            {
+                db.TaiSans.Add(TS);
+                db.SaveChanges();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
+                return false;
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+                return false;
+            }
+            return true;
+        }
+        public Boolean deleteTS(List<int> l)
+        {
+            try
+            {
+                foreach(int maTS in l)
+                {
+                    //DTO.TaiSan t = new DTO.TaiSan { MaTS = maTS };
+                    //db.TaiSans.Attach(t);
+                    //db.TaiSans.Remove(t);
+                    db.TaiSans.Remove(db.TaiSans.Single(p => p.MaTS == maTS));
+                }
+                db.SaveChanges();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
+                return false;
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+                return false;
+            }
+            return true;
+        }
     }
 }

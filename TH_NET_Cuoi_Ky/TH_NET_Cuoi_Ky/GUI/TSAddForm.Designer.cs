@@ -40,7 +40,7 @@
             this.txtTskt = new System.Windows.Forms.TextBox();
             this.cbbLoaiTS = new System.Windows.Forms.ComboBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.CbbNuocSX = new System.Windows.Forms.ComboBox();
+            this.cbbNuocSX = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.butAdd = new System.Windows.Forms.Button();
             this.butCancel = new System.Windows.Forms.Button();
@@ -121,21 +121,21 @@
             this.txtTenTS.Location = new System.Drawing.Point(112, 23);
             this.txtTenTS.Name = "txtTenTS";
             this.txtTenTS.Size = new System.Drawing.Size(122, 20);
-            this.txtTenTS.TabIndex = 33;
+            this.txtTenTS.TabIndex = 1;
             // 
             // txtDvTinh
             // 
             this.txtDvTinh.Location = new System.Drawing.Point(112, 60);
             this.txtDvTinh.Name = "txtDvTinh";
             this.txtDvTinh.Size = new System.Drawing.Size(122, 20);
-            this.txtDvTinh.TabIndex = 34;
+            this.txtDvTinh.TabIndex = 2;
             // 
             // txtTskt
             // 
             this.txtTskt.Location = new System.Drawing.Point(416, 22);
             this.txtTskt.Name = "txtTskt";
             this.txtTskt.Size = new System.Drawing.Size(122, 20);
-            this.txtTskt.TabIndex = 35;
+            this.txtTskt.TabIndex = 3;
             // 
             // cbbLoaiTS
             // 
@@ -143,22 +143,22 @@
             this.cbbLoaiTS.Location = new System.Drawing.Point(706, 21);
             this.cbbLoaiTS.Name = "cbbLoaiTS";
             this.cbbLoaiTS.Size = new System.Drawing.Size(122, 21);
-            this.cbbLoaiTS.TabIndex = 39;
+            this.cbbLoaiTS.TabIndex = 6;
             // 
             // txtGhiChu
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(706, 60);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(122, 20);
-            this.txtGhiChu.TabIndex = 36;
+            this.txtGhiChu.TabIndex = 7;
             // 
-            // CbbNuocSX
+            // cbbNuocSX
             // 
-            this.CbbNuocSX.FormattingEnabled = true;
-            this.CbbNuocSX.Location = new System.Drawing.Point(416, 58);
-            this.CbbNuocSX.Name = "CbbNuocSX";
-            this.CbbNuocSX.Size = new System.Drawing.Size(122, 21);
-            this.CbbNuocSX.TabIndex = 37;
+            this.cbbNuocSX.FormattingEnabled = true;
+            this.cbbNuocSX.Location = new System.Drawing.Point(416, 58);
+            this.cbbNuocSX.Name = "cbbNuocSX";
+            this.cbbNuocSX.Size = new System.Drawing.Size(122, 21);
+            this.cbbNuocSX.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
@@ -166,15 +166,16 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(416, 93);
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(122, 20);
-            this.dateTimePicker1.TabIndex = 38;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // butAdd
             // 
             this.butAdd.Location = new System.Drawing.Point(317, 150);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(75, 23);
-            this.butAdd.TabIndex = 27;
+            this.butAdd.TabIndex = 8;
             this.butAdd.Text = "OK";
             this.butAdd.UseVisualStyleBackColor = true;
             this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
@@ -184,7 +185,7 @@
             this.butCancel.Location = new System.Drawing.Point(494, 150);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(75, 23);
-            this.butCancel.TabIndex = 40;
+            this.butCancel.TabIndex = 9;
             this.butCancel.Text = "Cancel";
             this.butCancel.UseVisualStyleBackColor = true;
             this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
@@ -197,7 +198,7 @@
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.cbbLoaiTS);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.CbbNuocSX);
+            this.Controls.Add(this.cbbNuocSX);
             this.Controls.Add(this.txtGhiChu);
             this.Controls.Add(this.butAdd);
             this.Controls.Add(this.txtTskt);
@@ -213,7 +214,8 @@
             this.MaximizeBox = false;
             this.Name = "AddFormTS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddForm";
+            this.Text = "Thêm Tài Sản mới";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddFormTS_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +235,7 @@
         private System.Windows.Forms.TextBox txtTskt;
         private System.Windows.Forms.ComboBox cbbLoaiTS;
         private System.Windows.Forms.TextBox txtGhiChu;
-        private System.Windows.Forms.ComboBox CbbNuocSX;
+        private System.Windows.Forms.ComboBox cbbNuocSX;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button butAdd;
         private System.Windows.Forms.Button butCancel;

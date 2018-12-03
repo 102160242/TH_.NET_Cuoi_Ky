@@ -47,6 +47,7 @@ namespace TH_NET_Cuoi_Ky
         }
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            tabControl1.SelectedIndex = 0; // Chuyen ve tab Hien thi & Cap nhat neu dang o tab khac
             List<DTO.TaiSan> l = TS_BLL.getTSById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString()));
             txtMaTS.Text = l[0].MaTS.ToString();
             txtTenTS.Text = l[0].TenTS;
@@ -156,16 +157,42 @@ namespace TH_NET_Cuoi_Ky
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại!");
+                        MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
                     }
                 }
             }
             ShowTS(); // Refresh lai du lieu tren DataGridView
         }
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
+                                     "Xác nhận xóa dữ liệu!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                // Add MaTS cua cac hang duoc chon vao list
+                List<int> l = new List<int>();
+                foreach(DataGridViewRow r in dgv.SelectedRows)
+                {
+                    l.Add(Convert.ToInt32(r.Cells["MaTS"].Value.ToString()));
+                }
+                Boolean result = TS_BLL.deleteTS(l);
+                if (result)
+                {
+                    MessageBox.Show("Xóa thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
+                }
+                ShowTS(); // Refresh lai du lieu tren DataGridView
+            }
 
+        }
         private void TSForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ShowForm();
         }
+
     }
 }
