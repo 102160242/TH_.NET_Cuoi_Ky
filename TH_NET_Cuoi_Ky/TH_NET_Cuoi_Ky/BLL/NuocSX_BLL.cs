@@ -24,5 +24,22 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return l;
         }
+        public int getIDByName(string TenNuocSX)
+        {
+            try
+            {
+                return db.NuocSXs.Where(p => p.TenNuocSX == TenNuocSX).Select(p => p.MaNuocSX).Single();
+            }
+            //catch()
+            catch(System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message);              
+            }
+            catch(Exception e)
+            {
+                Console.Write(e.Message);
+            }
+            return -1;
+        }
     }
 }

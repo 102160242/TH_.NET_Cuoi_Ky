@@ -25,7 +25,6 @@ namespace TH_NET_Cuoi_Ky.DTO
         public Nullable<int> SLXuat { get; set; }
         [Required]
         public double NguyenGia { get; set; }
-        [Required]
         public Nullable<int> NamSD { get; set; }
         [StringLength(50)]
         [Required]

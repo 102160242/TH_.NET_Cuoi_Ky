@@ -126,7 +126,47 @@ namespace TH_NET_Cuoi_Ky
             this.Visible = false; // Tam an form
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void butUpdate_Click(object sender, EventArgs e)
+        {
+            if(txtMaTS.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn Tài sản cần sửa!");
+            }
+            else
+            {
+                int maNuocSX = NSX_BLL.getIDByName(cbbNuocSX.SelectedItem.ToString());
+                int maLoaiTS = LTS_BLL.getIDByName(cbbLoaiTS.SelectedItem.ToString());
+                if(maNuocSX == -1 || maLoaiTS == -1)
+                {
+                    MessageBox.Show("Không tồn tại Nước Sản Xuất hoặc Loại Tài Sản đã chọn!");
+                }
+                else
+                {
+                    Boolean result = TS_BLL.updateTS(new DTO.TaiSan
+                    {
+                        MaTS = Convert.ToInt32(txtMaTS.Text),
+                        TenTS = txtTenTS.Text,
+                        DVTinh = txtDvTinh.Text,
+                        TSKT = txtTskt.Text,
+                        MaNuocSX = maNuocSX,
+                        NamSX = dateTimePicker1.Value,
+                        MaLoaiTS = maLoaiTS,
+                        GhiChu = txtGhiChu.Text,
+                    });
+                    if(result)
+                    {
+                        MessageBox.Show("Cập nhật thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại!");
+                    }
+                }
+            }
+            ShowTS(); // Refresh lai du lieu tren DataGridView
+        }
+
+        private void TSForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ShowForm();
         }
