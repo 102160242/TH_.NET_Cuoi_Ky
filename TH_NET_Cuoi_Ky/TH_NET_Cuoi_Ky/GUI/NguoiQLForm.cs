@@ -26,6 +26,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void NguoiQLForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ShowForm();
+            Dispose();
         }
 
         private void NguoiQLForm_Load(object sender, EventArgs e)
@@ -35,6 +36,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
+            ShowForm();
             Dispose();
         }
 
