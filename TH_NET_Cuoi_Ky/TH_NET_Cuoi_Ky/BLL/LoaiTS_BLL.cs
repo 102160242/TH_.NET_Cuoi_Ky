@@ -24,5 +24,22 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return l;
         }
+
+        public int getIDByName(string TenLoaiTS)
+        {
+            try
+            {
+                return db.LoaiTSs.Where(p => p.TenLoaiTS == TenLoaiTS).Select(p => p.MaLoaiTS).Single();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+            }
+            return -1;
+        }
     }
 }

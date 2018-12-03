@@ -51,5 +51,34 @@ namespace TH_NET_Cuoi_Ky.BLL
                        select p;
             return data.ToList<DTO.TaiSan>();
         }
+        public Boolean updateTS(DTO.TaiSan TS)
+        {
+            try
+            {
+                var data = db.TaiSans.SingleOrDefault(p => p.MaTS == TS.MaTS);
+
+                // Cap nhat du lieu moi
+                data.TenTS = TS.TenTS;
+                data.DVTinh = TS.DVTinh;
+                data.TSKT = TS.TSKT;
+                data.MaNuocSX = TS.MaNuocSX;
+                data.NamSX = TS.NamSX;
+                data.MaLoaiTS = TS.MaLoaiTS;
+                data.GhiChu = TS.GhiChu;
+
+                db.SaveChanges(); // Cap nhat thay doi vao DB
+            }
+            catch(System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
+                return false;
+            }
+            catch(Exception e)
+            {
+                Console.Write(e.Message);
+                return false;
+            }
+            return true;
+        }
     }
 }

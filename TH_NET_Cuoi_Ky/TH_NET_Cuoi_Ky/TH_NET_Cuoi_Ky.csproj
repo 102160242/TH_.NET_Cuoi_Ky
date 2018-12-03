@@ -74,11 +74,11 @@
     <Compile Include="DTO\NuocSX.cs" />
     <Compile Include="DTO\Phong.cs" />
     <Compile Include="DTO\TaiSan.cs" />
-    <Compile Include="GUI\Form1.cs">
+    <Compile Include="GUI\TSForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\TSForm.Designer.cs">
+      <DependentUpon>TSForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\LoaiTSForm.cs">
       <SubType>Form</SubType>
@@ -134,6 +134,10 @@
     <Compile Include="Migrations\201812020423348_v3.Designer.cs">
       <DependentUpon>201812020423348_v3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812020503527_v4.cs" />
+    <Compile Include="Migrations\201812020503527_v4.Designer.cs">
+      <DependentUpon>201812020503527_v4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,8 +145,8 @@
     <EmbeddedResource Include="GUI\AddFormTS.resx">
       <DependentUpon>AddFormTS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\TSForm.resx">
+      <DependentUpon>TSForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoaiTSForm.resx">
       <DependentUpon>LoaiTSForm.cs</DependentUpon>
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812020423348_v3.resx">
       <DependentUpon>201812020423348_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812020503527_v4.resx">
+      <DependentUpon>201812020503527_v4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -408,6 +408,7 @@
             this.butUpdate.TabIndex = 11;
             this.butUpdate.Text = "Cập nhật";
             this.butUpdate.UseVisualStyleBackColor = true;
+            this.butUpdate.Click += new System.EventHandler(this.butUpdate_Click);
             // 
             // butSort
             // 
@@ -442,7 +443,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý cơ sở vật chất khoa CNTT";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TSForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
