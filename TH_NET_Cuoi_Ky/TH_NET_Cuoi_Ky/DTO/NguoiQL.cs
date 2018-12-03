@@ -19,5 +19,7 @@ namespace TH_NET_Cuoi_Ky.DTO
         [StringLength(11)]
         [Required]
         public string SoDT { get; set; }
+        public DateTime NgaySinh { get; set; }
+        public bool GioiTinh { get; set; }
     }
 }

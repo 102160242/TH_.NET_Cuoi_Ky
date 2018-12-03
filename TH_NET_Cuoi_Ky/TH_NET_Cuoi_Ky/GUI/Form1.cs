@@ -16,6 +16,8 @@ namespace TH_NET_Cuoi_Ky
         public delegate void dd();
         public dd ShowForm;
         TaiSan_BLL TS_BLL;
+
+
         Phong_BLL P_BLL;
         NhaCC_BLL NCC_BLL;
         NuocSX_BLL NSX_BLL;
@@ -52,6 +54,7 @@ namespace TH_NET_Cuoi_Ky
             txtTenTS.Text = l[0].TenTS;
             txtDvTinh.Text = l[0].DVTinh;
             txtTskt.Text = l[0].TSKT;
+
             txtGhiChu.Text = l[0].GhiChu;          
             cbbNuocSX.SelectedItem = l[0].NuocSX.TenNuocSX;
             cbbLoaiTS.SelectedItem = l[0].LoaiTS.TenLoaiTS;
@@ -127,5 +130,6 @@ namespace TH_NET_Cuoi_Ky
         {
             ShowForm();
         }
+        
     }
 }

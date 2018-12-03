@@ -34,5 +34,10 @@ namespace TH_NET_Cuoi_Ky
             ReloadData();
             Dispose();
         }
+
+        private void AddFormTS_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

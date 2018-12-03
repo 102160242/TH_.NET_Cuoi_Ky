@@ -214,6 +214,7 @@
             this.Name = "AddFormTS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddForm";
+            this.Load += new System.EventHandler(this.AddFormTS_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

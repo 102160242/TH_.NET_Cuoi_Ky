@@ -69,7 +69,7 @@
             // 
             // btnPhong
             // 
-            this.btnPhong.Location = new System.Drawing.Point(506, 39);
+            this.btnPhong.Location = new System.Drawing.Point(482, 39);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.Size = new System.Drawing.Size(75, 23);
             this.btnPhong.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             // btnNuocSX
             // 
-            this.btnNuocSX.Location = new System.Drawing.Point(318, 110);
+            this.btnNuocSX.Location = new System.Drawing.Point(318, 99);
             this.btnNuocSX.Name = "btnNuocSX";
             this.btnNuocSX.Size = new System.Drawing.Size(94, 23);
             this.btnNuocSX.TabIndex = 6;
