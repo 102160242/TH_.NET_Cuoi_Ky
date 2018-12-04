@@ -174,29 +174,35 @@ namespace TH_NET_Cuoi_Ky
         }
         private void btnDel_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
-                                     "Xác nhận xóa dữ liệu!",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
+            if(dgv.SelectedRows.Count == 0)
             {
-                // Add MaTS cua cac hang duoc chon vao list
-                List<int> l = new List<int>();
-                foreach(DataGridViewRow r in dgv.SelectedRows)
-                {
-                    l.Add(Convert.ToInt32(r.Cells["MaTS"].Value.ToString()));
-                }
-                Boolean result = TS_BLL.deleteTS(l);
-                if (result)
-                {
-                    MessageBox.Show("Xóa thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                }
-                ShowTS(); // Refresh lai du lieu tren DataGridView
+                MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
             }
-
+            else
+            {
+                var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
+                         "Xác nhận xóa dữ liệu!",
+                         MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Add MaTS cua cac hang duoc chon vao list
+                    List<int> l = new List<int>();
+                    foreach (DataGridViewRow r in dgv.SelectedRows)
+                    {
+                        l.Add(Convert.ToInt32(r.Cells["MaTS"].Value.ToString()));
+                    }
+                    Boolean result = TS_BLL.deleteTS(l);
+                    if (result)
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
+                    }
+                    ShowTS(); // Refresh lai du lieu tren DataGridView
+                }
+            }
         }
         private void TSForm_FormClosing(object sender, FormClosingEventArgs e)
         {
