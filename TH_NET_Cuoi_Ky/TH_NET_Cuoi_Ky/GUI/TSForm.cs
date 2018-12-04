@@ -196,5 +196,10 @@ namespace TH_NET_Cuoi_Ky
         {
             ShowForm();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

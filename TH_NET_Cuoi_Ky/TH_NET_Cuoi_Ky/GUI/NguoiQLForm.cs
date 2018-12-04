@@ -60,5 +60,81 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             ShowNguoiQL();
         }
+        private void Reaload()
+        {
+            ShowNguoiQL();
+            this.Visible = true;
+        }
+        private void but_Add_Click(object sender, EventArgs e)
+        {
+            NguoiQLAddForrm f = new NguoiQLAddForrm();
+            f.ReloadNguoiQL += Reaload;
+            f.Show();
+            this.Visible = false;
+        }
+
+        private void NguoiQLForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ShowForm();
+        }
+
+        private void but_Update_Click(object sender, EventArgs e)
+        {
+            if (txt_MaQL.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn Tài sản cần sửa!");
+            }
+            else
+            {
+                    Boolean result = Nguoi_BLL.updateNguoiQL (new DTO.NguoiQL
+                    {
+                        MaNguoiQL = Convert.ToInt32(txt_MaQL.Text),
+                        TenNguoiQL = txt_TenQL.Text,
+                        NgaySinh = dateTimePicker1.Value,
+                        SoDT = txt_SDT.Text,
+                        GioiTinh = rb_Male.Checked,
+                    });
+                    if (result)
+                    {
+                        MessageBox.Show("Cập nhật thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
+                    }
+                }
+            ShowNguoiQL();
+            }
+
+        private void but_Delete_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) người quản lý đã chọn?",
+                                     "Xác nhận xóa dữ liệu!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                // Add MaTS cua cac hang duoc chon vao list
+                List<int> l = new List<int>();
+                foreach (DataGridViewRow r in dataGridView1.SelectedRows)
+                {
+                    l.Add(Convert.ToInt32(r.Cells["MaNguoiQL"].Value.ToString()));
+                }
+                Boolean result = Nguoi_BLL.deleteNguoiQL(l);
+                if (result)
+                {
+                    MessageBox.Show("Xóa thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
+                }
+                ShowNguoiQL(); // Refresh lai du lieu tren DataGridView
+            }
+        }
+
+        private void but_Search_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = Nguoi_BLL.ShowNguoiQL_BLL(txt_Search.Text);
+        }
     }
-}
+    }
