@@ -23,17 +23,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             this.Nguoi_BLL = new NguoiQL_BLL();
         }
 
-        private void NguoiQLForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ShowForm();
-            Dispose();
-        }
-
-        private void NguoiQLForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void but_Cancel_Click(object sender, EventArgs e)
         {
             ShowForm();
@@ -77,6 +66,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void NguoiQLForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             ShowForm();
+            Dispose();
         }
 
         private void but_Update_Click(object sender, EventArgs e)
