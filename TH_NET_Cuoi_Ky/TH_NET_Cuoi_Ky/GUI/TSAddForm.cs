@@ -44,16 +44,18 @@ namespace TH_NET_Cuoi_Ky
             }
             else
             {
-                Boolean result = TS_BLL.addTS(new DTO.TaiSan
+                List<DTO.TaiSan> l = new List<DTO.TaiSan>();
+                l.Add(new DTO.TaiSan
                 {
                     TenTS = txtTenTS.Text,
                     DVTinh = txtDvTinh.Text,
                     TSKT = txtTskt.Text,
                     MaNuocSX = maNuocSX,
-                    NamSX = dateTimePicker1.Value,
+                    NamSX = dateTimePicker1.Value.Year,
                     MaLoaiTS = maLoaiTS,
                     GhiChu = txtGhiChu.Text
                 });
+                Boolean result = TS_BLL.addTS(l);
 
                 if(result)
                 {

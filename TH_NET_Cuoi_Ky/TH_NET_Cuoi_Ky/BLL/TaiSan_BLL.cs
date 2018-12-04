@@ -45,7 +45,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                            p.TSKT,
                            p.DVTinh,
                            SLHienCo = T.SLHienCo == null ? 0 : T.SLHienCo,
-                           NamSX = p.NamSX.Year,
+                           p.NamSX,
                            p.NuocSX.TenNuocSX,
                            p.LoaiTS.TenLoaiTS,
                            p.GhiChu,
@@ -61,7 +61,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                            p.TenTS,
                            p.TSKT,
                            p.DVTinh,
-                           NamSX = p.NamSX.Year,
+                           p.NamSX,
                            p.NuocSX.TenNuocSX,
                            p.LoaiTS.TenLoaiTS,
                            p.GhiChu,
@@ -135,11 +135,14 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return true;
         }
-        public Boolean addTS(DTO.TaiSan TS)
+        public Boolean addTS(List<DTO.TaiSan> l)
         {
             try
             {
-                db.TaiSans.Add(TS);
+                foreach(DTO.TaiSan i in l)
+                {
+                    db.TaiSans.Add(i);
+                }
                 db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)

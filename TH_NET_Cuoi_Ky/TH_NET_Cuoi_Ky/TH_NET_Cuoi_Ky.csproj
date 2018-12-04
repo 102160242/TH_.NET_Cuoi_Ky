@@ -66,6 +66,12 @@
     <Compile Include="GUI\NhaCCAddForm.Designer.cs">
       <DependentUpon>NhaCCAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NuocSXAddform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NuocSXAddform.Designer.cs">
+      <DependentUpon>NuocSXAddform.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TSAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,9 +166,6 @@
     <Compile Include="DAL\QLCSVC.cs" />
     <EmbeddedResource Include="GUI\NguoiQLAddForrm.resx">
       <DependentUpon>NguoiQLAddForrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\NhaCCAddForm.resx">
-      <DependentUpon>NhaCCAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TSAddForm.resx">
       <DependentUpon>TSAddForm.cs</DependentUpon>
