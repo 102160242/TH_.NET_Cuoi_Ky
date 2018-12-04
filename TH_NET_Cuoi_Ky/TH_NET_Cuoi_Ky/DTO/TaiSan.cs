@@ -22,8 +22,7 @@ namespace TH_NET_Cuoi_Ky.DTO
         [Required]
         public string DVTinh { get; set; }
         [Required]
-        [Column(TypeName = "Date")]
-        public DateTime NamSX { get; set; }
+        public int NamSX { get; set; }
         [Required]
         public int MaNuocSX { get; set; }
         [Required]

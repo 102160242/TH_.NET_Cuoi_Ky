@@ -34,8 +34,8 @@ namespace TH_NET_Cuoi_Ky
             // Load tat ca cac ComboBox
             this.loadAllCBB();
             // Them 2 lua chon SX vao ComboBox sap xep
-            cbbSort.Items.Add("Sắp xếp A-Z");
-            cbbSort.Items.Add("Sắp xếp Z-A");
+            //cbbSort.Items.Add("Sắp xếp A-Z");
+            //cbbSort.Items.Add("Sắp xếp Z-A");
         }
 
         private void butShow_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace TH_NET_Cuoi_Ky
             txtGhiChu.Text = l[0].GhiChu;          
             cbbNuocSX.SelectedItem = l[0].NuocSX.TenNuocSX;
             cbbLoaiTS.SelectedItem = l[0].LoaiTS.TenLoaiTS;
-            dateTimePicker1.Value = l[0].NamSX;
+            dateTimePicker1.Value = new DateTime(l[0].NamSX, 1, 1);
             
         }
         // CBB
@@ -156,7 +156,7 @@ namespace TH_NET_Cuoi_Ky
                         DVTinh = txtDvTinh.Text,
                         TSKT = txtTskt.Text,
                         MaNuocSX = maNuocSX,
-                        NamSX = dateTimePicker1.Value,
+                        NamSX = dateTimePicker1.Value.Year,
                         MaLoaiTS = maLoaiTS,
                         GhiChu = txtGhiChu.Text,
                     });
@@ -201,27 +201,6 @@ namespace TH_NET_Cuoi_Ky
         private void TSForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ShowForm();
-        }
-        private void butSort_Click(object sender, EventArgs e)
-        {
-            if (cbbSort.SelectedIndex == -1)
-            {
-                MessageBox.Show("Vui lòng chọn lựa chọn sắp xếp!");
-            }
-            else
-            {
-                List<DTO.TaiSan> l = new List<DTO.TaiSan>();
-                foreach(DataGridViewRow i in dgv.Rows)
-                {
-
-                    l.Add(new DTO.TaiSan {
-
-                    });
-                }
-                if(cbbSort.SelectedItem.ToString() == "Sắp xếp A-Z")
-                {
-                }
-            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
