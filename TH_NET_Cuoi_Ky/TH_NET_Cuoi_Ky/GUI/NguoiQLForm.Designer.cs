@@ -272,7 +272,6 @@
             this.Text = "NguoiQLForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NguoiQLForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NguoiQLForm_FormClosed);
-            this.Load += new System.EventHandler(this.NguoiQLForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

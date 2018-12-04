@@ -60,6 +60,12 @@
     <Compile Include="GUI\NguoiQLAddForrm.Designer.cs">
       <DependentUpon>NguoiQLAddForrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\PhongAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PhongAddForm.Designer.cs">
+      <DependentUpon>PhongAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TSAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     <Compile Include="DAL\QLCSVC.cs" />
     <EmbeddedResource Include="GUI\NguoiQLAddForrm.resx">
       <DependentUpon>NguoiQLAddForrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhongAddForm.resx">
+      <DependentUpon>PhongAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TSAddForm.resx">
       <DependentUpon>TSAddForm.cs</DependentUpon>
