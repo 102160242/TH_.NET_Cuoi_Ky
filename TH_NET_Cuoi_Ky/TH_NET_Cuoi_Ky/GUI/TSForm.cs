@@ -202,7 +202,6 @@ namespace TH_NET_Cuoi_Ky
         {
             ShowForm();
         }
-
         private void butSort_Click(object sender, EventArgs e)
         {
             if (cbbSort.SelectedIndex == -1)
