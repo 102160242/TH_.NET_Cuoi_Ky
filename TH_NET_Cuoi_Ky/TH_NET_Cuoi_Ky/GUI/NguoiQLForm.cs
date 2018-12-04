@@ -42,7 +42,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<DTO.NguoiQL> list = Nguoi_BLL.GetNguoiQLById(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["MaNguoiQL"].Value.ToString()));
+            List<DTO.NguoiQL> list = Nguoi_BLL.GetNguoiQLById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNguoiQL"].Value.ToString()));
             txt_MaQL.Text = list[0].MaNguoiQL.ToString();
             txt_TenQL.Text = list[0].TenNguoiQL;
             dateTimePicker1.Value = list[0].NgaySinh;
@@ -53,7 +53,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void  ShowNguoiQL()
         {
-            dataGridView1.DataSource = Nguoi_BLL.ShowNguoiQL_BLL();
+            dgv.DataSource = Nguoi_BLL.ShowNguoiQL_BLL();
 
         }
         private void but_Show_Click(object sender, EventArgs e)
@@ -72,6 +72,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             f.Show();
             this.Visible = false;
         }
+
 
         private void NguoiQLForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -115,7 +116,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 // Add MaTS cua cac hang duoc chon vao list
                 List<int> l = new List<int>();
-                foreach (DataGridViewRow r in dataGridView1.SelectedRows)
+                foreach (DataGridViewRow r in dgv.SelectedRows)
                 {
                     l.Add(Convert.ToInt32(r.Cells["MaNguoiQL"].Value.ToString()));
                 }
@@ -134,7 +135,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Search_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Nguoi_BLL.ShowNguoiQL_BLL(txt_Search.Text);
+            dgv.DataSource = Nguoi_BLL.ShowNguoiQL_BLL(txt_Search.Text);
         }
     }
     }

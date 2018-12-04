@@ -241,5 +241,10 @@ namespace TH_NET_Cuoi_Ky
             else data["TuKhoa"] = "";
             dgv.DataSource = TS_BLL.SearchTS(data);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

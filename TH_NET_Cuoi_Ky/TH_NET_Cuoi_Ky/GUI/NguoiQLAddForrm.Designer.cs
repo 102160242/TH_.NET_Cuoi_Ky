@@ -179,6 +179,7 @@
             this.Name = "NguoiQLAddForrm";
             this.Text = "NguoiQLAddForrm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NguoiQLAddForrm_FormClosed);
+            this.Load += new System.EventHandler(this.NguoiQLAddForrm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

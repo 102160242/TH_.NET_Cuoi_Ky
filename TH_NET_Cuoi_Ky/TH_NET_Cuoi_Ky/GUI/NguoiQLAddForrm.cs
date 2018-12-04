@@ -20,8 +20,8 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             InitializeComponent();
             Nguoi_BLL = new NguoiQL_BLL();
-        }
 
+        }
         private void but_OK_Click(object sender, EventArgs e)
         {
             Boolean result = Nguoi_BLL.addNguoiQL(new DTO.NguoiQL
@@ -54,6 +54,11 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             ReloadNguoiQL();
             Dispose();
+        }
+
+        private void NguoiQLAddForrm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

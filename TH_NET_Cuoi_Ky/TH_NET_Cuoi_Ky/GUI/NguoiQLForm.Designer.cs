@@ -41,7 +41,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.rb_Male = new System.Windows.Forms.RadioButton();
             this.rb_Female = new System.Windows.Forms.RadioButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.but_Search = new System.Windows.Forms.Button();
             this.but_Update = new System.Windows.Forms.Button();
             this.txt_Search = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@
             this.cbb_Sort = new System.Windows.Forms.ComboBox();
             this.but_Sort = new System.Windows.Forms.Button();
             this.but_Delete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -168,14 +168,14 @@
             this.rb_Female.Text = "Nữ";
             this.rb_Female.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgv
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 133);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(710, 217);
-            this.dataGridView1.TabIndex = 13;
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(4, 133);
+            this.dgv.Name = "dgv";
+            this.dgv.Size = new System.Drawing.Size(710, 217);
+            this.dgv.TabIndex = 13;
+            this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // but_Search
             // 
@@ -253,7 +253,7 @@
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.but_Update);
             this.Controls.Add(this.but_Search);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.rb_Female);
             this.Controls.Add(this.rb_Male);
             this.Controls.Add(this.dateTimePicker1);
@@ -273,7 +273,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NguoiQLForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NguoiQLForm_FormClosed);
             this.Load += new System.EventHandler(this.NguoiQLForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,7 +294,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.RadioButton rb_Male;
         private System.Windows.Forms.RadioButton rb_Female;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button but_Search;
         private System.Windows.Forms.Button but_Update;
         private System.Windows.Forms.TextBox txt_Search;
