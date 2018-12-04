@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,14 +17,21 @@ namespace TH_NET_Cuoi_Ky.BLL
         }
         public dynamic ShowTS_BLL()
         {
-            //var data = db.TaiSans.Select(p => new { p.MaTS, p.TenTS, p.Tskt, p.DvTinh, p.NamSx, p.NuocSX.TenNuocSX, p.LoaiT.TenLoaiTS, p.GhiChu});
-            //IEnumerable<TaiSan> data = from p in db.TaiSans
-            //                           select new TaiSan { p.MaTS};
+            // Lay danh sach nhap TS
+            var nhap = from p in db.NhapXuats
+                       group p by p.MaTS into g
+                       select new { MaTS = g.Key, SL = g.Sum(p => p.SLNhap) == null ? 0 : g.Sum(p => p.SLNhap) };
+            // Lay danh sach xuat TS
+            var xuat = from p in db.NhapXuats
+                       group p by p.MaTS into g
+                       select new { MaTS = g.Key, SL = g.Sum(p => p.SLXuat) == null ? 0 : g.Sum(p => p.SLXuat) };
+
             var data = from p in db.TaiSans
-                       join T in
+                       join T in 
                        (
-                            from p1 in (from nhap in db.NhapXuats group nhap by nhap.MaTS into g select new { MaTS = g.Key, SL = g.Sum(nhap => nhap.SLNhap) == null ? 0 : g.Sum(nhap => nhap.SLNhap) })
-                            join p2 in (from xuat in db.NhapXuats group xuat by xuat.MaTS into g select new { MaTS = g.Key, SL = g.Sum(xuat => xuat.SLXuat) == null ? 0 : g.Sum(xuat => xuat.SLXuat) })
+                            // Join danh sach nhap va xuat de tinh so luong hien co
+                            from p1 in nhap
+                            join p2 in xuat
                             on p1.MaTS equals p2.MaTS
                             select new { p1.MaTS, SLHienCo = (p1.SL - p2.SL) }
                        )
@@ -42,6 +50,53 @@ namespace TH_NET_Cuoi_Ky.BLL
                            p.LoaiTS.TenLoaiTS,
                            p.GhiChu,
                        };
+            return data.ToList();
+        }
+        public dynamic SearchTS(Dictionary<String, String> s)
+        {
+            var data = from p in db.TaiSans                  
+                       select new
+                       {
+                           p.MaTS,
+                           p.TenTS,
+                           p.TSKT,
+                           p.DVTinh,
+                           NamSX = p.NamSX.Year,
+                           p.NuocSX.TenNuocSX,
+                           p.LoaiTS.TenLoaiTS,
+                           p.GhiChu,
+                       };
+
+            // Kiem tra filter Nuoc San Xuat
+            if (s.ContainsKey("NuocSX") && s["NuocSX"] != "")
+            {
+                string t;
+                s.TryGetValue("NuocSX", out t);
+
+                data = from p in data
+                        where p.TenNuocSX.Contains(t)
+                        select p;
+            }
+            // Kiem tra filter Loai Tai San
+            if (s.ContainsKey("LoaiTS") && s["LoaiTS"] != "")
+            {
+                string t;
+                s.TryGetValue("LoaiTS", out t);
+
+                data = from p in data
+                        where p.TenLoaiTS.Contains(t)
+                        select p;
+            }
+            // Kiem tra tu khoa tim kiem
+            if (s.ContainsKey("TuKhoa") && s["TuKhoa"] != "")
+            {
+                string tuKhoa;
+                s.TryGetValue("TuKhoa", out tuKhoa);
+                data = from p in data
+                        where p.TenTS.Contains(tuKhoa)
+                        select p;
+            }
+            
             return data.ToList();
         }
         public List<DTO.TaiSan> getTSById(int id)

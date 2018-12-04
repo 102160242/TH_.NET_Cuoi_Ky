@@ -30,15 +30,11 @@
         {
             this.label6 = new System.Windows.Forms.Label();
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
-            this.btnShow1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.cbbLoaiTS1 = new System.Windows.Forms.ComboBox();
             this.cbbNuocSX1 = new System.Windows.Forms.ComboBox();
-            this.cbbNhaCC1 = new System.Windows.Forms.ComboBox();
-            this.cbbPhong1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -88,15 +84,16 @@
             this.txtTuKhoa.Size = new System.Drawing.Size(122, 20);
             this.txtTuKhoa.TabIndex = 5;
             // 
-            // btnShow1
+            // btnSearch
             // 
-            this.btnShow1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow1.Location = new System.Drawing.Point(671, 82);
-            this.btnShow1.Name = "btnShow1";
-            this.btnShow1.Size = new System.Drawing.Size(75, 23);
-            this.btnShow1.TabIndex = 6;
-            this.btnShow1.Text = "Tìm kiếm";
-            this.btnShow1.UseVisualStyleBackColor = true;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(671, 82);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cbbLoaiTS1
             // 
@@ -113,22 +110,6 @@
             this.cbbNuocSX1.Name = "cbbNuocSX1";
             this.cbbNuocSX1.Size = new System.Drawing.Size(122, 21);
             this.cbbNuocSX1.TabIndex = 3;
-            // 
-            // cbbNhaCC1
-            // 
-            this.cbbNhaCC1.FormattingEnabled = true;
-            this.cbbNhaCC1.Location = new System.Drawing.Point(122, 81);
-            this.cbbNhaCC1.Name = "cbbNhaCC1";
-            this.cbbNhaCC1.Size = new System.Drawing.Size(121, 21);
-            this.cbbNhaCC1.TabIndex = 2;
-            // 
-            // cbbPhong1
-            // 
-            this.cbbPhong1.FormattingEnabled = true;
-            this.cbbPhong1.Location = new System.Drawing.Point(122, 35);
-            this.cbbPhong1.Name = "cbbPhong1";
-            this.cbbPhong1.Size = new System.Drawing.Size(122, 21);
-            this.cbbPhong1.TabIndex = 1;
             // 
             // label4
             // 
@@ -149,26 +130,6 @@
             this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nước sản xuất";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nhà cung cấp";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Phòng";
             // 
             // label5
             // 
@@ -362,14 +323,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.btnShow1);
+            this.tabPage2.Controls.Add(this.btnSearch);
             this.tabPage2.Controls.Add(this.txtTuKhoa);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.cbbPhong1);
-            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.cbbLoaiTS1);
-            this.tabPage2.Controls.Add(this.cbbNhaCC1);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.cbbNuocSX1);
             this.tabPage2.Controls.Add(this.label3);
@@ -419,6 +376,7 @@
             this.butSort.TabIndex = 13;
             this.butSort.Text = "Sắp xếp";
             this.butSort.UseVisualStyleBackColor = true;
+            this.butSort.Click += new System.EventHandler(this.butSort_Click);
             // 
             // cbbSort
             // 
@@ -469,15 +427,11 @@
         #endregion
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTuKhoa;
-        private System.Windows.Forms.Button btnShow1;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cbbLoaiTS1;
         private System.Windows.Forms.ComboBox cbbNuocSX1;
-        private System.Windows.Forms.ComboBox cbbNhaCC1;
-        private System.Windows.Forms.ComboBox cbbPhong1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

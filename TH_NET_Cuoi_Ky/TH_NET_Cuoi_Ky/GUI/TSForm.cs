@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +31,11 @@ namespace TH_NET_Cuoi_Ky
             this.NCC_BLL = new NhaCC_BLL();
             this.NSX_BLL = new NuocSX_BLL();
             this.LTS_BLL = new LoaiTS_BLL();
+            // Load tat ca cac ComboBox
             this.loadAllCBB();
+            // Them 2 lua chon SX vao ComboBox sap xep
+            cbbSort.Items.Add("Sắp xếp A-Z");
+            cbbSort.Items.Add("Sắp xếp Z-A");
         }
 
         private void butShow_Click(object sender, EventArgs e)
@@ -39,6 +44,7 @@ namespace TH_NET_Cuoi_Ky
         }
         private void ShowTS()
         {
+            // Hien thi tat ca, khong kem filter hoac dieu kien tim kiem
             dgv.DataSource = TS_BLL.ShowTS_BLL();
         }
         private void Reload()
@@ -65,31 +71,31 @@ namespace TH_NET_Cuoi_Ky
         // CBB
         private void loadAllCBB()
         {
-            this.loadCBBPhong();
-            this.loadCBBNhaCC();
+            //this.loadCBBPhong();
+            //this.loadCBBNhaCC();
             this.loadCBBNuocSX();
             this.loadCBBLoaiTS();
         }
-        private void loadCBBPhong()
-        {
-            foreach (string i in P_BLL.loadCBB_BLL())
-            {
-                if (cbbPhong1.FindStringExact(i) < 0)
-                {
-                    cbbPhong1.Items.Add(i);
-                }
-            }
-        }
-        private void loadCBBNhaCC()
-        {
-            foreach (string i in NCC_BLL.loadCBB_BLL())
-            {
-                if (cbbNhaCC1.FindStringExact(i) < 0)
-                {
-                    cbbNhaCC1.Items.Add(i);
-                }
-            }
-        }
+        //private void loadCBBPhong()
+        //{
+        //    foreach (string i in P_BLL.loadCBB_BLL())
+        //    {
+        //        if (cbbPhong.FindStringExact(i) < 0)
+        //        {
+        //            cbbPhong.Items.Add(i);
+        //        }
+        //    }
+        //}
+        //private void loadCBBNhaCC()
+        //{
+        //    foreach (string i in NCC_BLL.loadCBB_BLL())
+        //    {
+        //        if (cbbNhaCC1.FindStringExact(i) < 0)
+        //        {
+        //            cbbNhaCC1.Items.Add(i);
+        //        }
+        //    }
+        //}
         private void loadCBBNuocSX()
         {
             foreach (string i in NSX_BLL.loadCBB_BLL())
@@ -195,6 +201,46 @@ namespace TH_NET_Cuoi_Ky
         private void TSForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ShowForm();
+        }
+
+        private void butSort_Click(object sender, EventArgs e)
+        {
+            if (cbbSort.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn lựa chọn sắp xếp!");
+            }
+            else
+            {
+                List<DTO.TaiSan> l = new List<DTO.TaiSan>();
+                foreach(DataGridViewRow i in dgv.Rows)
+                {
+
+                    l.Add(new DTO.TaiSan {
+
+                    });
+                }
+                if(cbbSort.SelectedItem.ToString() == "Sắp xếp A-Z")
+                {
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Dictionary<String, String> data = new Dictionary<String, String>();
+
+            // Tao List filter va tu khoa
+            //if (cbbPhong1.SelectedItem != null) data["Phong"] = cbbPhong1.SelectedItem.ToString();
+            //else data["Phong"] = "";
+            //if (cbbNhaCC1.SelectedItem != null) data["NhaCC"] = cbbNhaCC1.SelectedItem.ToString();
+            //else data["NhaCC"] = "";
+            if (cbbNuocSX1.SelectedItem != null) data["NuocSX"] = cbbNuocSX1.SelectedItem.ToString();
+            else data["NuocSX"] = "";
+            if (cbbLoaiTS1.SelectedItem != null) data["LoaiTS"] = cbbLoaiTS1.SelectedItem.ToString();
+            else data["LoaiTS"] = "";
+            if (txtTuKhoa.Text != "") data["TuKhoa"] = txtTuKhoa.Text;
+            else data["TuKhoa"] = "";
+            dgv.DataSource = TS_BLL.SearchTS(data);
         }
     }
 }
