@@ -22,7 +22,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             InitializeComponent();
             this.Nguoi_BLL = new NguoiQL_BLL();
         }
-
         private void but_Cancel_Click(object sender, EventArgs e)
         {
             ShowForm();
@@ -49,7 +48,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             ShowNguoiQL();
         }
-        private void Reaload()
+        private void Reload()
         {
             ShowNguoiQL();
             this.Visible = true;
@@ -57,7 +56,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void but_Add_Click(object sender, EventArgs e)
         {
             NguoiQLAddForrm f = new NguoiQLAddForrm();
-            f.ReloadNguoiQL += Reaload;
+            f.ReloadNguoiQL += Reload;
             f.Show();
             this.Visible = false;
         }

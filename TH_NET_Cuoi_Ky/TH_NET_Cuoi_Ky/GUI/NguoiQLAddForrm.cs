@@ -26,7 +26,6 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             Boolean result = Nguoi_BLL.addNguoiQL(new DTO.NguoiQL
             {
-                MaNguoiQL = Convert.ToInt32(txt_MaQL.Text),
                 TenNguoiQL = txt_TenQL.Text,
                 NgaySinh = dateTimePicker1.Value,
                 SoDT = txt_SDT.Text,
