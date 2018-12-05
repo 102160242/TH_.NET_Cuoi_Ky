@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuocSXForm));
             this.but_Delete = new System.Windows.Forms.Button();
             this.but_Cancel = new System.Windows.Forms.Button();
             this.txt_Search = new System.Windows.Forms.TextBox();
@@ -50,21 +51,27 @@
             // 
             // but_Delete
             // 
-            this.but_Delete.Location = new System.Drawing.Point(293, 380);
+            this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
+            this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Delete.Location = new System.Drawing.Point(305, 380);
             this.but_Delete.Name = "but_Delete";
-            this.but_Delete.Size = new System.Drawing.Size(75, 23);
+            this.but_Delete.Size = new System.Drawing.Size(58, 23);
             this.but_Delete.TabIndex = 43;
             this.but_Delete.Text = "Xóa";
+            this.but_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Delete.UseVisualStyleBackColor = true;
             this.but_Delete.Click += new System.EventHandler(this.but_Delete_Click);
             // 
             // but_Cancel
             // 
-            this.but_Cancel.Location = new System.Drawing.Point(391, 380);
+            this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
+            this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Cancel.Location = new System.Drawing.Point(383, 380);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.but_Cancel.Size = new System.Drawing.Size(59, 23);
             this.but_Cancel.TabIndex = 40;
             this.but_Cancel.Text = "Thoát";
+            this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Cancel.UseVisualStyleBackColor = true;
             // 
             // txt_Search
@@ -76,21 +83,27 @@
             // 
             // but_Update
             // 
-            this.but_Update.Location = new System.Drawing.Point(201, 380);
+            this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
+            this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Update.Location = new System.Drawing.Point(212, 380);
             this.but_Update.Name = "but_Update";
             this.but_Update.Size = new System.Drawing.Size(75, 23);
             this.but_Update.TabIndex = 38;
             this.but_Update.Text = "Cập nhật";
+            this.but_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Update.UseVisualStyleBackColor = true;
             this.but_Update.Click += new System.EventHandler(this.but_Update_Click);
             // 
             // but_Search
             // 
+            this.but_Search.Image = ((System.Drawing.Image)(resources.GetObject("but_Search.Image")));
+            this.but_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Search.Location = new System.Drawing.Point(69, 71);
             this.but_Search.Name = "but_Search";
             this.but_Search.Size = new System.Drawing.Size(75, 23);
             this.but_Search.TabIndex = 37;
             this.but_Search.Text = "Tìm kiếm";
+            this.but_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Search.UseVisualStyleBackColor = true;
             this.but_Search.Click += new System.EventHandler(this.but_Search_Click);
             // 
@@ -122,11 +135,14 @@
             // 
             // but_Add
             // 
-            this.but_Add.Location = new System.Drawing.Point(107, 380);
+            this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
+            this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Add.Location = new System.Drawing.Point(123, 380);
             this.but_Add.Name = "but_Add";
-            this.but_Add.Size = new System.Drawing.Size(75, 23);
+            this.but_Add.Size = new System.Drawing.Size(67, 23);
             this.but_Add.TabIndex = 29;
             this.but_Add.Text = "Thêm";
+            this.but_Add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Add.UseVisualStyleBackColor = true;
             this.but_Add.Click += new System.EventHandler(this.but_Add_Click);
             // 
@@ -141,11 +157,14 @@
             // 
             // but_Show
             // 
-            this.but_Show.Location = new System.Drawing.Point(13, 380);
+            this.but_Show.Image = ((System.Drawing.Image)(resources.GetObject("but_Show.Image")));
+            this.but_Show.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Show.Location = new System.Drawing.Point(32, 380);
             this.but_Show.Name = "but_Show";
             this.but_Show.Size = new System.Drawing.Size(75, 23);
             this.but_Show.TabIndex = 24;
             this.but_Show.Text = "Hiển thị";
+            this.but_Show.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Show.UseVisualStyleBackColor = true;
             this.but_Show.Click += new System.EventHandler(this.but_Show_Click);
             // 
@@ -160,6 +179,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtMaNSX);
@@ -173,6 +193,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.but_Search);
             this.groupBox2.Controls.Add(this.txt_Search);
@@ -196,6 +217,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(478, 415);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

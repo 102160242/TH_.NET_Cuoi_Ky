@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhongForm));
             this.but_Delete = new System.Windows.Forms.Button();
             this.but_Cancel = new System.Windows.Forms.Button();
             this.txt_Search = new System.Windows.Forms.TextBox();
@@ -47,21 +48,27 @@
             // 
             // but_Delete
             // 
-            this.but_Delete.Location = new System.Drawing.Point(291, 305);
+            this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
+            this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Delete.Location = new System.Drawing.Point(311, 305);
             this.but_Delete.Name = "but_Delete";
-            this.but_Delete.Size = new System.Drawing.Size(75, 23);
+            this.but_Delete.Size = new System.Drawing.Size(58, 23);
             this.but_Delete.TabIndex = 43;
             this.but_Delete.Text = "Xóa";
+            this.but_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Delete.UseVisualStyleBackColor = true;
             this.but_Delete.Click += new System.EventHandler(this.but_Delete_Click);
             // 
             // but_Cancel
             // 
-            this.but_Cancel.Location = new System.Drawing.Point(381, 305);
+            this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
+            this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Cancel.Location = new System.Drawing.Point(387, 305);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.but_Cancel.Size = new System.Drawing.Size(60, 23);
             this.but_Cancel.TabIndex = 40;
             this.but_Cancel.Text = "Thoát";
+            this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Cancel.UseVisualStyleBackColor = true;
             // 
             // txt_Search
@@ -73,21 +80,27 @@
             // 
             // but_Update
             // 
-            this.but_Update.Location = new System.Drawing.Point(199, 305);
+            this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
+            this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Update.Location = new System.Drawing.Point(216, 305);
             this.but_Update.Name = "but_Update";
             this.but_Update.Size = new System.Drawing.Size(75, 23);
             this.but_Update.TabIndex = 38;
             this.but_Update.Text = "Cập nhật";
+            this.but_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Update.UseVisualStyleBackColor = true;
             this.but_Update.Click += new System.EventHandler(this.but_Update_Click);
             // 
             // but_Search
             // 
+            this.but_Search.Image = ((System.Drawing.Image)(resources.GetObject("but_Search.Image")));
+            this.but_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Search.Location = new System.Drawing.Point(258, 68);
             this.but_Search.Name = "but_Search";
             this.but_Search.Size = new System.Drawing.Size(78, 23);
             this.but_Search.TabIndex = 37;
             this.but_Search.Text = "Tìm kiếm";
+            this.but_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Search.UseVisualStyleBackColor = true;
             this.but_Search.Click += new System.EventHandler(this.but_Search_Click);
             // 
@@ -119,17 +132,21 @@
             // 
             // but_Add
             // 
-            this.but_Add.Location = new System.Drawing.Point(105, 305);
+            this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
+            this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Add.Location = new System.Drawing.Point(129, 305);
             this.but_Add.Name = "but_Add";
-            this.but_Add.Size = new System.Drawing.Size(75, 23);
+            this.but_Add.Size = new System.Drawing.Size(65, 23);
             this.but_Add.TabIndex = 29;
             this.but_Add.Text = "Thêm";
+            this.but_Add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Add.UseVisualStyleBackColor = true;
             this.but_Add.Click += new System.EventHandler(this.but_Add_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(17, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
@@ -138,17 +155,21 @@
             // 
             // BntShowPhong
             // 
-            this.BntShowPhong.Location = new System.Drawing.Point(11, 305);
+            this.BntShowPhong.Image = ((System.Drawing.Image)(resources.GetObject("BntShowPhong.Image")));
+            this.BntShowPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BntShowPhong.Location = new System.Drawing.Point(35, 305);
             this.BntShowPhong.Name = "BntShowPhong";
             this.BntShowPhong.Size = new System.Drawing.Size(75, 23);
             this.BntShowPhong.TabIndex = 24;
             this.BntShowPhong.Text = "Hiển thị";
+            this.BntShowPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BntShowPhong.UseVisualStyleBackColor = true;
             this.BntShowPhong.Click += new System.EventHandler(this.BntShowPhong_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(17, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
@@ -158,6 +179,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(255, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
@@ -176,6 +198,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(477, 333);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);

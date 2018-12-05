@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhongAddForm));
             this.but_Cancel = new System.Windows.Forms.Button();
             this.but_OK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,27 +39,34 @@
             // 
             // but_Cancel
             // 
-            this.but_Cancel.Location = new System.Drawing.Point(221, 92);
+            this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
+            this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Cancel.Location = new System.Drawing.Point(187, 92);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.but_Cancel.Size = new System.Drawing.Size(67, 23);
             this.but_Cancel.TabIndex = 36;
             this.but_Cancel.Text = "Cancel";
+            this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Cancel.UseVisualStyleBackColor = true;
             this.but_Cancel.Click += new System.EventHandler(this.but_Cancel_Click);
             // 
             // but_OK
             // 
-            this.but_OK.Location = new System.Drawing.Point(15, 92);
+            this.but_OK.Image = ((System.Drawing.Image)(resources.GetObject("but_OK.Image")));
+            this.but_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_OK.Location = new System.Drawing.Point(92, 92);
             this.but_OK.Name = "but_OK";
-            this.but_OK.Size = new System.Drawing.Size(75, 23);
+            this.but_OK.Size = new System.Drawing.Size(56, 23);
             this.but_OK.TabIndex = 35;
             this.but_OK.Text = "OK";
+            this.but_OK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_OK.UseVisualStyleBackColor = true;
             this.but_OK.Click += new System.EventHandler(this.but_OK_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(12, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
@@ -75,6 +83,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(12, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
@@ -93,6 +102,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(323, 124);
             this.Controls.Add(this.cbbNguoiQL);
             this.Controls.Add(this.txtTenPhong);
@@ -100,6 +111,7 @@
             this.Controls.Add(this.but_Cancel);
             this.Controls.Add(this.but_OK);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.Name = "PhongAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

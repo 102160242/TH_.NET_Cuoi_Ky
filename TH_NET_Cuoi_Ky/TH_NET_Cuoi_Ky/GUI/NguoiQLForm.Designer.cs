@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NguoiQLForm));
             this.label1 = new System.Windows.Forms.Label();
             this.but_Show = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(23, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
@@ -61,17 +63,21 @@
             // 
             // but_Show
             // 
-            this.but_Show.Location = new System.Drawing.Point(134, 400);
+            this.but_Show.Image = ((System.Drawing.Image)(resources.GetObject("but_Show.Image")));
+            this.but_Show.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Show.Location = new System.Drawing.Point(134, 397);
             this.but_Show.Name = "but_Show";
-            this.but_Show.Size = new System.Drawing.Size(75, 23);
+            this.but_Show.Size = new System.Drawing.Size(75, 26);
             this.but_Show.TabIndex = 1;
             this.but_Show.Text = "Hiển thị";
+            this.but_Show.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Show.UseVisualStyleBackColor = true;
             this.but_Show.Click += new System.EventHandler(this.but_Show_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(23, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
@@ -81,6 +87,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(23, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
@@ -90,6 +97,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(406, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
@@ -99,6 +107,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(406, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
@@ -107,11 +116,14 @@
             // 
             // but_Add
             // 
-            this.but_Add.Location = new System.Drawing.Point(228, 400);
+            this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
+            this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Add.Location = new System.Drawing.Point(228, 397);
             this.but_Add.Name = "but_Add";
-            this.but_Add.Size = new System.Drawing.Size(75, 23);
+            this.but_Add.Size = new System.Drawing.Size(75, 26);
             this.but_Add.TabIndex = 6;
             this.but_Add.Text = "Thêm";
+            this.but_Add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Add.UseVisualStyleBackColor = true;
             this.but_Add.Click += new System.EventHandler(this.but_Add_Click);
             // 
@@ -149,24 +161,26 @@
             // rb_Male
             // 
             this.rb_Male.AutoSize = true;
+            this.rb_Male.BackColor = System.Drawing.Color.Transparent;
             this.rb_Male.Location = new System.Drawing.Point(504, 60);
             this.rb_Male.Name = "rb_Male";
             this.rb_Male.Size = new System.Drawing.Size(47, 17);
             this.rb_Male.TabIndex = 11;
             this.rb_Male.TabStop = true;
             this.rb_Male.Text = "Nam";
-            this.rb_Male.UseVisualStyleBackColor = true;
+            this.rb_Male.UseVisualStyleBackColor = false;
             // 
             // rb_Female
             // 
             this.rb_Female.AutoSize = true;
+            this.rb_Female.BackColor = System.Drawing.Color.Transparent;
             this.rb_Female.Location = new System.Drawing.Point(591, 60);
             this.rb_Female.Name = "rb_Female";
             this.rb_Female.Size = new System.Drawing.Size(39, 17);
             this.rb_Female.TabIndex = 12;
             this.rb_Female.TabStop = true;
             this.rb_Female.Text = "Nữ";
-            this.rb_Female.UseVisualStyleBackColor = true;
+            this.rb_Female.UseVisualStyleBackColor = false;
             // 
             // dgv
             // 
@@ -180,55 +194,69 @@
             // 
             // but_Search
             // 
-            this.but_Search.Location = new System.Drawing.Point(414, 105);
+            this.but_Search.Image = ((System.Drawing.Image)(resources.GetObject("but_Search.Image")));
+            this.but_Search.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.but_Search.Location = new System.Drawing.Point(414, 98);
             this.but_Search.Name = "but_Search";
-            this.but_Search.Size = new System.Drawing.Size(75, 23);
+            this.but_Search.Size = new System.Drawing.Size(70, 29);
             this.but_Search.TabIndex = 14;
             this.but_Search.Text = "Tìm kiếm";
+            this.but_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Search.UseVisualStyleBackColor = true;
             this.but_Search.Click += new System.EventHandler(this.but_Search_Click);
             // 
             // but_Update
             // 
-            this.but_Update.Location = new System.Drawing.Point(322, 400);
+            this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
+            this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Update.Location = new System.Drawing.Point(322, 397);
             this.but_Update.Name = "but_Update";
-            this.but_Update.Size = new System.Drawing.Size(75, 23);
+            this.but_Update.Size = new System.Drawing.Size(75, 26);
             this.but_Update.TabIndex = 15;
             this.but_Update.Text = "Cập nhật";
+            this.but_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Update.UseVisualStyleBackColor = true;
             this.but_Update.Click += new System.EventHandler(this.but_Update_Click);
             // 
             // txt_Search
             // 
-            this.txt_Search.Location = new System.Drawing.Point(514, 107);
+            this.txt_Search.Location = new System.Drawing.Point(490, 103);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(200, 20);
             this.txt_Search.TabIndex = 17;
             // 
             // but_Cancel
             // 
-            this.but_Cancel.Location = new System.Drawing.Point(504, 400);
+            this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
+            this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Cancel.Location = new System.Drawing.Point(504, 398);
             this.but_Cancel.Name = "but_Cancel";
             this.but_Cancel.Size = new System.Drawing.Size(75, 23);
             this.but_Cancel.TabIndex = 19;
             this.but_Cancel.Text = "Thoát";
+            this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Cancel.UseVisualStyleBackColor = true;
             this.but_Cancel.Click += new System.EventHandler(this.but_Cancel_Click);
             // 
             // but_Delete
             // 
-            this.but_Delete.Location = new System.Drawing.Point(414, 400);
+            this.but_Delete.BackColor = System.Drawing.Color.Gainsboro;
+            this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
+            this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Delete.Location = new System.Drawing.Point(414, 398);
             this.but_Delete.Name = "but_Delete";
             this.but_Delete.Size = new System.Drawing.Size(75, 23);
             this.but_Delete.TabIndex = 22;
             this.but_Delete.Text = "Xóa";
-            this.but_Delete.UseVisualStyleBackColor = true;
+            this.but_Delete.UseVisualStyleBackColor = false;
             this.but_Delete.Click += new System.EventHandler(this.but_Delete_Click);
             // 
             // NguoiQLForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(717, 432);
             this.Controls.Add(this.but_Delete);
             this.Controls.Add(this.but_Cancel);
@@ -249,6 +277,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.but_Show);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.MaximizeBox = false;
             this.Name = "NguoiQLForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

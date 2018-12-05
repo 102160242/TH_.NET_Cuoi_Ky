@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiTSAddForm));
             this.txtTenLoaiTS = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.butOK = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(26, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
@@ -52,21 +54,27 @@
             // 
             // butOK
             // 
+            this.butOK.Image = ((System.Drawing.Image)(resources.GetObject("butOK.Image")));
+            this.butOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butOK.Location = new System.Drawing.Point(69, 55);
             this.butOK.Name = "butOK";
-            this.butOK.Size = new System.Drawing.Size(75, 23);
+            this.butOK.Size = new System.Drawing.Size(54, 23);
             this.butOK.TabIndex = 6;
             this.butOK.Text = "OK";
+            this.butOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butOK.UseVisualStyleBackColor = true;
             this.butOK.Click += new System.EventHandler(this.butOK_Click);
             // 
             // butCancel
             // 
+            this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
+            this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butCancel.Location = new System.Drawing.Point(179, 55);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(75, 23);
             this.butCancel.TabIndex = 7;
             this.butCancel.Text = "Cancel";
+            this.butCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butCancel.UseVisualStyleBackColor = true;
             this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
@@ -74,6 +82,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(331, 90);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.butOK);

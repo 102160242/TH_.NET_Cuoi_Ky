@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label6 = new System.Windows.Forms.Label();
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -168,7 +169,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1015, 190);
+            this.tabControl1.Size = new System.Drawing.Size(1015, 167);
             this.tabControl1.TabIndex = 16;
             // 
             // tabPage1
@@ -194,7 +195,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1007, 164);
+            this.tabPage1.Size = new System.Drawing.Size(1007, 141);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hiển thị và cập nhật";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -323,6 +324,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.btnSearch);
             this.tabPage2.Controls.Add(this.txtTuKhoa);
@@ -330,7 +332,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1007, 164);
+            this.tabPage2.Size = new System.Drawing.Size(1007, 141);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tìm kiếm";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -341,7 +343,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbbNuocSX1);
             this.groupBox1.Controls.Add(this.cbbLoaiTS1);
-            this.groupBox1.Location = new System.Drawing.Point(142, 20);
+            this.groupBox1.Location = new System.Drawing.Point(142, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(334, 120);
             this.groupBox1.TabIndex = 9;
@@ -352,7 +354,7 @@
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(7, 193);
+            this.dgv.Location = new System.Drawing.Point(11, 170);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(1007, 332);
@@ -361,31 +363,40 @@
             // 
             // butAdd
             // 
-            this.butAdd.Location = new System.Drawing.Point(278, 544);
+            this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
+            this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butAdd.Location = new System.Drawing.Point(278, 512);
             this.butAdd.Name = "butAdd";
-            this.butAdd.Size = new System.Drawing.Size(75, 23);
+            this.butAdd.Size = new System.Drawing.Size(64, 23);
             this.butAdd.TabIndex = 11;
             this.butAdd.Text = "Thêm";
+            this.butAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butAdd.UseVisualStyleBackColor = true;
             this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
             // butUpdate
             // 
-            this.butUpdate.Location = new System.Drawing.Point(439, 544);
+            this.butUpdate.Image = ((System.Drawing.Image)(resources.GetObject("butUpdate.Image")));
+            this.butUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butUpdate.Location = new System.Drawing.Point(439, 512);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(75, 23);
             this.butUpdate.TabIndex = 12;
             this.butUpdate.Text = "Cập nhật";
+            this.butUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butUpdate.UseVisualStyleBackColor = true;
             this.butUpdate.Click += new System.EventHandler(this.butUpdate_Click);
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(597, 544);
+            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDel.Location = new System.Drawing.Point(597, 512);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.Size = new System.Drawing.Size(59, 23);
             this.btnDel.TabIndex = 17;
             this.btnDel.Text = "Xóa";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
@@ -393,7 +404,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 579);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1022, 539);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.butUpdate);
             this.Controls.Add(this.butAdd);

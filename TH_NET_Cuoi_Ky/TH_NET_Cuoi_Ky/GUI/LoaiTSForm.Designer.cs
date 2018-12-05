@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiTSForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTenLoaiTS = new System.Windows.Forms.TextBox();
             this.txtMaLoaiTS = new System.Windows.Forms.TextBox();
@@ -50,6 +51,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtTenLoaiTS);
             this.groupBox1.Controls.Add(this.txtMaLoaiTS);
             this.groupBox1.Controls.Add(this.label2);
@@ -96,6 +98,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.butSearch);
             this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Controls.Add(this.label3);
@@ -108,11 +111,14 @@
             // 
             // butSearch
             // 
+            this.butSearch.Image = ((System.Drawing.Image)(resources.GetObject("butSearch.Image")));
+            this.butSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butSearch.Location = new System.Drawing.Point(104, 59);
             this.butSearch.Name = "butSearch";
             this.butSearch.Size = new System.Drawing.Size(75, 23);
             this.butSearch.TabIndex = 4;
             this.butSearch.Text = "Tìm kiếm";
+            this.butSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butSearch.UseVisualStyleBackColor = true;
             this.butSearch.Click += new System.EventHandler(this.butSearch_Click);
             // 
@@ -145,51 +151,66 @@
             // 
             // butShow
             // 
-            this.butShow.Location = new System.Drawing.Point(50, 308);
+            this.butShow.Image = ((System.Drawing.Image)(resources.GetObject("butShow.Image")));
+            this.butShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butShow.Location = new System.Drawing.Point(75, 308);
             this.butShow.Name = "butShow";
             this.butShow.Size = new System.Drawing.Size(83, 23);
             this.butShow.TabIndex = 3;
             this.butShow.Text = "Hiển thị";
+            this.butShow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butShow.UseVisualStyleBackColor = true;
             this.butShow.Click += new System.EventHandler(this.butShow_Click);
             // 
             // butAdd
             // 
-            this.butAdd.Location = new System.Drawing.Point(154, 308);
+            this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
+            this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butAdd.Location = new System.Drawing.Point(179, 308);
             this.butAdd.Name = "butAdd";
-            this.butAdd.Size = new System.Drawing.Size(83, 23);
+            this.butAdd.Size = new System.Drawing.Size(67, 23);
             this.butAdd.TabIndex = 5;
             this.butAdd.Text = "Thêm";
+            this.butAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butAdd.UseVisualStyleBackColor = true;
             this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
             // butUpdate
             // 
-            this.butUpdate.Location = new System.Drawing.Point(258, 308);
+            this.butUpdate.Image = ((System.Drawing.Image)(resources.GetObject("butUpdate.Image")));
+            this.butUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butUpdate.Location = new System.Drawing.Point(266, 308);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(83, 23);
             this.butUpdate.TabIndex = 6;
             this.butUpdate.Text = "Cập nhật";
+            this.butUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butUpdate.UseVisualStyleBackColor = true;
             this.butUpdate.Click += new System.EventHandler(this.butUpdate_Click);
             // 
             // butDelete
             // 
-            this.butDelete.Location = new System.Drawing.Point(374, 308);
+            this.butDelete.Image = ((System.Drawing.Image)(resources.GetObject("butDelete.Image")));
+            this.butDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butDelete.Location = new System.Drawing.Point(370, 308);
             this.butDelete.Name = "butDelete";
-            this.butDelete.Size = new System.Drawing.Size(83, 23);
+            this.butDelete.Size = new System.Drawing.Size(56, 23);
             this.butDelete.TabIndex = 7;
             this.butDelete.Text = "Xóa";
+            this.butDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butDelete.UseVisualStyleBackColor = true;
             this.butDelete.Click += new System.EventHandler(this.butDelete_Click);
             // 
             // butCancel
             // 
-            this.butCancel.Location = new System.Drawing.Point(474, 306);
+            this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
+            this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butCancel.Location = new System.Drawing.Point(445, 308);
             this.butCancel.Name = "butCancel";
-            this.butCancel.Size = new System.Drawing.Size(83, 23);
+            this.butCancel.Size = new System.Drawing.Size(58, 23);
             this.butCancel.TabIndex = 8;
             this.butCancel.Text = "Thoát";
+            this.butCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butCancel.UseVisualStyleBackColor = true;
             this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
@@ -197,6 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(589, 343);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.butAdd);
