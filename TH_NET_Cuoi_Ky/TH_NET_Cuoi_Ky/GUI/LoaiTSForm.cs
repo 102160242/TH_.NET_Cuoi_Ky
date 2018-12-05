@@ -114,7 +114,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void LoaiTSForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Reload();
+            ShowForm();
             Dispose();
         }
     }
