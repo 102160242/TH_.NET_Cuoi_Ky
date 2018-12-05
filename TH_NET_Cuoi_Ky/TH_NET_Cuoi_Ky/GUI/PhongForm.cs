@@ -39,7 +39,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void ShowPhong()
         {
-            dataGridView1.DataSource = Phong_BLL.ShowPhong_BLL();
+            dgv.DataSource = Phong_BLL.ShowPhong_BLL();
         }
 
         private void BntShowPhong_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (confirmResult == DialogResult.Yes)
             {
                 List<int> l = new List<int>();
-                foreach (DataGridViewRow r in dataGridView1.SelectedRows)
+                foreach (DataGridViewRow r in dgv.SelectedRows)
                 {
                     l.Add(Convert.ToInt32(r.Cells["MaPhong"].Value.ToString()));
                 }
@@ -115,10 +115,15 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<DTO.Phong> l = Phong_BLL.getPhongById(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["MaPhong"].Value.ToString()));
+            List<DTO.Phong> l = Phong_BLL.getPhongById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaPhong"].Value.ToString()));
             txt_MaPhong.Text = l[0].MaPhong.ToString();
             txt_TenPhong.Text = l[0].TenPhong;
             comboBox1.SelectedItem = l[0].NguoiQL.TenNguoiQL;
+        }
+
+        private void but_Search_Click(object sender, EventArgs e)
+        {
+            dgv.DataSource = Phong_BLL.ShowPhong_BLL(txt_Search.Text);
         }
     }
 }

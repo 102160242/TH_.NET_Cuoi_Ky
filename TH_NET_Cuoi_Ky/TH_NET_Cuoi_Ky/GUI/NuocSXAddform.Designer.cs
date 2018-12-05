@@ -79,6 +79,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtTenNSX);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "NuocSXAddform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Nước mới";

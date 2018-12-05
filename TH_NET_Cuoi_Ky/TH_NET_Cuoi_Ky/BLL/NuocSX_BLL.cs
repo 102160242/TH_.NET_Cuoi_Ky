@@ -114,6 +114,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             {
                 foreach (int maNSX in l)
                 {
+                    //if (db.NuocSXs.Single(p => p.MaNuocSX == maNSX).TaiSan.Count > 0) return false;
                     db.NuocSXs.Remove(db.NuocSXs.Single(p => p.MaNuocSX == maNSX));
                 }
                 db.SaveChanges();

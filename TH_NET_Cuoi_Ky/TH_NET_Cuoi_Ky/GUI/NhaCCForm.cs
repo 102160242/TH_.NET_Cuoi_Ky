@@ -24,7 +24,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void LoadCBB()
         {
-            foreach (string i in nhaCC_BLL.loadCBB_BLL())
+            foreach (string i in nhaCC_BLL.loadCBBDiaChiNCC())
             {
                 if (cbbAddress.FindStringExact(i) < 0)
                 {
@@ -82,9 +82,9 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 Boolean result = nhaCC_BLL.updateNhaCC(new DTO.NhaCC
                 {
-                    MaNhaCC = Convert.ToInt32(txtMaNhaCC.Text),
+                   MaNhaCC = Convert.ToInt32(txtMaNhaCC.Text),
                    TenNhaCC = txtTenNhaCC.Text,
-                   DiaChi = cbbAddress.SelectedItem.ToString(),
+                   DiaChi = cbbAddress.SelectedItem == null ? cbbAddress.Text : cbbAddress.SelectedItem.ToString(),
                 });
                 if (result)
                 {
@@ -100,7 +100,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butDelete_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) người quản lý đã chọn?",
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) loại tài sản đã chọn?",
                                      "Xác nhận xóa dữ liệu!",
                                      MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)

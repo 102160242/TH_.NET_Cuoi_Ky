@@ -54,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\LoaiTSAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LoaiTSAddForm.Designer.cs">
+      <DependentUpon>LoaiTSAddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NguoiQLAddForrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
     </Compile>
     <Compile Include="GUI\NuocSXAddform.Designer.cs">
       <DependentUpon>NuocSXAddform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PhongAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PhongAddForm.Designer.cs">
+      <DependentUpon>PhongAddForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\TSAddForm.cs">
       <SubType>Form</SubType>
@@ -140,32 +152,28 @@
     <Compile Include="GUI\PhongForm.Designer.cs">
       <DependentUpon>PhongForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811261025219_v1.cs" />
-    <Compile Include="Migrations\201811261025219_v1.Designer.cs">
-      <DependentUpon>201811261025219_v1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812020415120_v2.cs" />
-    <Compile Include="Migrations\201812020415120_v2.Designer.cs">
-      <DependentUpon>201812020415120_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812020423348_v3.cs" />
-    <Compile Include="Migrations\201812020423348_v3.Designer.cs">
-      <DependentUpon>201812020423348_v3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812031333468_v4.cs" />
-    <Compile Include="Migrations\201812031333468_v4.Designer.cs">
-      <DependentUpon>201812031333468_v4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812031553564_v5.cs" />
-    <Compile Include="Migrations\201812031553564_v5.Designer.cs">
-      <DependentUpon>201812031553564_v5.cs</DependentUpon>
+    <Compile Include="Migrations\201812050657273_new.cs" />
+    <Compile Include="Migrations\201812050657273_new.Designer.cs">
+      <DependentUpon>201812050657273_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAL\QLCSVC.cs" />
+    <EmbeddedResource Include="GUI\LoaiTSAddForm.resx">
+      <DependentUpon>LoaiTSAddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\NguoiQLAddForrm.resx">
       <DependentUpon>NguoiQLAddForrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhaCCAddForm.resx">
+      <DependentUpon>NhaCCAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NuocSXAddform.resx">
+      <DependentUpon>NuocSXAddform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhongAddForm.resx">
+      <DependentUpon>PhongAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TSAddForm.resx">
       <DependentUpon>TSAddForm.cs</DependentUpon>
@@ -194,20 +202,8 @@
     <EmbeddedResource Include="GUI\PhongForm.resx">
       <DependentUpon>PhongForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811261025219_v1.resx">
-      <DependentUpon>201811261025219_v1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812020415120_v2.resx">
-      <DependentUpon>201812020415120_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812020423348_v3.resx">
-      <DependentUpon>201812020423348_v3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812031333468_v4.resx">
-      <DependentUpon>201812031333468_v4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812031553564_v5.resx">
-      <DependentUpon>201812031553564_v5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812050657273_new.resx">
+      <DependentUpon>201812050657273_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

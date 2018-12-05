@@ -100,8 +100,10 @@
             this.Controls.Add(this.but_Cancel);
             this.Controls.Add(this.but_OK);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "PhongAddForm";
-            this.Text = "PhongAddForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thêm Phòng";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PhongAddForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

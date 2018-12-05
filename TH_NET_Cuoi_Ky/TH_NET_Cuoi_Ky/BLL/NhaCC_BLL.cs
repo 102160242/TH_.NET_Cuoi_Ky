@@ -14,13 +14,23 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             db = new QLCSVC();
         }
-        public List<string> loadCBB_BLL()
+        public List<string> loadCBBTenNCC()
         {
             List<string> l = new List<string>();
             var data = db.NhaCCs.Select(p => new { p.TenNhaCC }).Distinct();
             foreach(var i in data)
             {
                 l.Add(i.TenNhaCC);
+            }
+            return l;
+        }
+        public List<string> loadCBBDiaChiNCC()
+        {
+            List<string> l = new List<string>();
+            var data = db.NhaCCs.Select(p => new { p.DiaChi }).Distinct();
+            foreach (var i in data)
+            {
+                l.Add(i.DiaChi);
             }
             return l;
         }

@@ -24,7 +24,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void LoadCBB()
         {
-            foreach(string i in nhaCC_BLL.loadCBB_BLL())
+            foreach(string i in nhaCC_BLL.loadCBBDiaChiNCC())
             {
                 if (cbbAddress.FindStringExact(i) < 0)
                 {
@@ -37,9 +37,8 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             Boolean result = nhaCC_BLL.addNhaCC(new DTO.NhaCC
             {
-                MaNhaCC = Convert.ToInt32(txtMaNhaCC.Text),
                 TenNhaCC = txtTenNhaCC.Text,
-                DiaChi =cbbAddress.SelectedItem.ToString(),
+                DiaChi = cbbAddress.SelectedItem == null ? cbbAddress.Text : cbbAddress.SelectedItem.ToString(),
             });
             if (result)
             {

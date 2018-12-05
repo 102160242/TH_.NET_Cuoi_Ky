@@ -33,7 +33,7 @@
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.but_Update = new System.Windows.Forms.Button();
             this.but_Search = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.txt_TenPhong = new System.Windows.Forms.TextBox();
             this.txt_MaPhong = new System.Windows.Forms.TextBox();
             this.but_Add = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // but_Delete
@@ -66,9 +66,9 @@
             // 
             // txt_Search
             // 
-            this.txt_Search.Location = new System.Drawing.Point(354, 69);
+            this.txt_Search.Location = new System.Drawing.Point(342, 69);
             this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(112, 20);
+            this.txt_Search.Size = new System.Drawing.Size(124, 20);
             this.txt_Search.TabIndex = 39;
             // 
             // but_Update
@@ -83,35 +83,38 @@
             // 
             // but_Search
             // 
-            this.but_Search.Location = new System.Drawing.Point(276, 67);
+            this.but_Search.Location = new System.Drawing.Point(258, 68);
             this.but_Search.Name = "but_Search";
-            this.but_Search.Size = new System.Drawing.Size(66, 23);
+            this.but_Search.Size = new System.Drawing.Size(78, 23);
             this.but_Search.TabIndex = 37;
             this.but_Search.Text = "Tìm kiếm";
             this.but_Search.UseVisualStyleBackColor = true;
+            this.but_Search.Click += new System.EventHandler(this.but_Search_Click);
             // 
-            // dataGridView1
+            // dgv
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 110);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(454, 189);
-            this.dataGridView1.TabIndex = 36;
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(12, 110);
+            this.dgv.Name = "dgv";
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(454, 189);
+            this.dgv.TabIndex = 36;
+            this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // txt_TenPhong
             // 
-            this.txt_TenPhong.Location = new System.Drawing.Point(112, 70);
+            this.txt_TenPhong.Location = new System.Drawing.Point(86, 70);
             this.txt_TenPhong.Name = "txt_TenPhong";
-            this.txt_TenPhong.Size = new System.Drawing.Size(103, 20);
+            this.txt_TenPhong.Size = new System.Drawing.Size(134, 20);
             this.txt_TenPhong.TabIndex = 31;
             // 
             // txt_MaPhong
             // 
-            this.txt_MaPhong.Location = new System.Drawing.Point(112, 22);
+            this.txt_MaPhong.Location = new System.Drawing.Point(86, 22);
             this.txt_MaPhong.Name = "txt_MaPhong";
             this.txt_MaPhong.ReadOnly = true;
-            this.txt_MaPhong.Size = new System.Drawing.Size(103, 20);
+            this.txt_MaPhong.Size = new System.Drawing.Size(134, 20);
             this.txt_MaPhong.TabIndex = 30;
             // 
             // but_Add
@@ -127,7 +130,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 25);
+            this.label2.Location = new System.Drawing.Point(17, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 25;
@@ -146,7 +149,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 70);
+            this.label1.Location = new System.Drawing.Point(17, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 23;
@@ -155,7 +158,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(273, 28);
+            this.label3.Location = new System.Drawing.Point(255, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 44;
@@ -164,9 +167,9 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(358, 25);
+            this.comboBox1.Location = new System.Drawing.Point(346, 25);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(108, 21);
+            this.comboBox1.Size = new System.Drawing.Size(120, 21);
             this.comboBox1.TabIndex = 45;
             // 
             // PhongForm
@@ -181,7 +184,7 @@
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.but_Update);
             this.Controls.Add(this.but_Search);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.txt_TenPhong);
             this.Controls.Add(this.txt_MaPhong);
             this.Controls.Add(this.but_Add);
@@ -191,9 +194,9 @@
             this.MaximizeBox = false;
             this.Name = "PhongForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PhongForm";
+            this.Text = "Quản lý Phòng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhongForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,7 +209,7 @@
         private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.Button but_Update;
         private System.Windows.Forms.Button but_Search;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.TextBox txt_TenPhong;
         private System.Windows.Forms.TextBox txt_MaPhong;
         private System.Windows.Forms.Button but_Add;

@@ -40,7 +40,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.but_Show = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // but_Delete
@@ -64,9 +69,9 @@
             // 
             // txt_Search
             // 
-            this.txt_Search.Location = new System.Drawing.Point(293, 23);
+            this.txt_Search.Location = new System.Drawing.Point(69, 31);
             this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(173, 20);
+            this.txt_Search.Size = new System.Drawing.Size(141, 20);
             this.txt_Search.TabIndex = 39;
             // 
             // but_Update
@@ -81,7 +86,7 @@
             // 
             // but_Search
             // 
-            this.but_Search.Location = new System.Drawing.Point(343, 68);
+            this.but_Search.Location = new System.Drawing.Point(69, 71);
             this.but_Search.Name = "but_Search";
             this.but_Search.Size = new System.Drawing.Size(75, 23);
             this.but_Search.TabIndex = 37;
@@ -91,6 +96,7 @@
             // 
             // dgv
             // 
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(12, 127);
             this.dgv.Name = "dgv";
@@ -101,14 +107,14 @@
             // 
             // txtTenNSX
             // 
-            this.txtTenNSX.Location = new System.Drawing.Point(85, 71);
+            this.txtTenNSX.Location = new System.Drawing.Point(75, 67);
             this.txtTenNSX.Name = "txtTenNSX";
             this.txtTenNSX.Size = new System.Drawing.Size(140, 20);
             this.txtTenNSX.TabIndex = 31;
             // 
             // txtMaNSX
             // 
-            this.txtMaNSX.Location = new System.Drawing.Point(85, 23);
+            this.txtMaNSX.Location = new System.Drawing.Point(75, 26);
             this.txtMaNSX.Name = "txtMaNSX";
             this.txtMaNSX.ReadOnly = true;
             this.txtMaNSX.Size = new System.Drawing.Size(140, 20);
@@ -127,7 +133,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 28);
+            this.label2.Location = new System.Drawing.Point(6, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 25;
@@ -146,36 +152,70 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 74);
+            this.label1.Location = new System.Drawing.Point(6, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "Tên Nước";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtMaNSX);
+            this.groupBox1.Controls.Add(this.txtTenNSX);
+            this.groupBox1.Location = new System.Drawing.Point(13, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(231, 100);
+            this.groupBox1.TabIndex = 44;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.but_Search);
+            this.groupBox2.Controls.Add(this.txt_Search);
+            this.groupBox2.Location = new System.Drawing.Point(250, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(216, 100);
+            this.groupBox2.TabIndex = 45;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Từ khóa";
             // 
             // NuocSXForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(478, 415);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.but_Delete);
             this.Controls.Add(this.but_Cancel);
-            this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.but_Update);
-            this.Controls.Add(this.but_Search);
             this.Controls.Add(this.dgv);
-            this.Controls.Add(this.txtTenNSX);
-            this.Controls.Add(this.txtMaNSX);
             this.Controls.Add(this.but_Add);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.but_Show);
-            this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "NuocSXForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Nước Sản Xuất";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuocSXForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -193,5 +233,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button but_Show;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label3;
     }
 }

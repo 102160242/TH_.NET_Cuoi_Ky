@@ -3,7 +3,7 @@ namespace TH_NET_Cuoi_Ky.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class v1 : DbMigration
+    public partial class _new : DbMigration
     {
         public override void Up()
         {
@@ -24,7 +24,7 @@ namespace TH_NET_Cuoi_Ky.Migrations
                         TenTS = c.String(nullable: false),
                         TSKT = c.String(nullable: false, maxLength: 50),
                         DVTinh = c.String(nullable: false, maxLength: 50),
-                        NamSX = c.DateTime(nullable: false, storeType: "date"),
+                        NamSX = c.Int(nullable: false),
                         MaNuocSX = c.Int(nullable: false),
                         MaLoaiTS = c.Int(nullable: false),
                         GhiChu = c.String(),
@@ -48,7 +48,7 @@ namespace TH_NET_Cuoi_Ky.Migrations
                         NgayXuat = c.DateTime(),
                         SLXuat = c.Int(),
                         NguyenGia = c.Double(nullable: false),
-                        NamSD = c.Int(nullable: false),
+                        NamSD = c.Int(),
                         TinhTrang = c.String(nullable: false, maxLength: 50),
                     })
                 .PrimaryKey(t => t.SoPhieu)
@@ -87,6 +87,9 @@ namespace TH_NET_Cuoi_Ky.Migrations
                     {
                         MaNguoiQL = c.Int(nullable: false, identity: true),
                         TenNguoiQL = c.String(nullable: false, maxLength: 50),
+                        SoDT = c.String(nullable: false, maxLength: 11),
+                        NgaySinh = c.DateTime(nullable: false),
+                        GioiTinh = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.MaNguoiQL);
             

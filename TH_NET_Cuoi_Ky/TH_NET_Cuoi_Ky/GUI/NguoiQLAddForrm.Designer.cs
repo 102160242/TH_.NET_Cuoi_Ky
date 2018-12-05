@@ -156,8 +156,10 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "NguoiQLAddForrm";
-            this.Text = "NguoiQLAddForrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thêm Người Quản Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NguoiQLAddForrm_FormClosed);
             this.Load += new System.EventHandler(this.NguoiQLAddForrm_Load);
             this.ResumeLayout(false);
