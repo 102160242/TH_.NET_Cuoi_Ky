@@ -73,6 +73,7 @@
             this.but_Cancel.Text = "Thoát";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Cancel.UseVisualStyleBackColor = true;
+            this.but_Cancel.Click += new System.EventHandler(this.but_Cancel_Click);
             // 
             // txt_Search
             // 

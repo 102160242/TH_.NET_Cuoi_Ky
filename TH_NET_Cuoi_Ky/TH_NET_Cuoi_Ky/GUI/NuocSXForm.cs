@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TH_NET_Cuoi_Ky.BLL;
 
 namespace TH_NET_Cuoi_Ky.GUI
 {
@@ -14,7 +15,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     {
         public delegate void dd();
         public dd ShowForm;
-        private BLL.NuocSX_BLL NSX_BLL;
+        NuocSX_BLL NSX_BLL;
         public NuocSXForm()
         {
             InitializeComponent();
@@ -24,15 +25,20 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void NuocSXForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ShowForm();
+            Dispose();
+        }
+        private void ShowNuocSX()
+        {
+            dgv.DataSource = NSX_BLL.Show_BLL();
         }
         private void Reload()
         {
-            dgv.DataSource = NSX_BLL.Show_BLL(); // Load lai du lieu cho DataGridView
+            ShowNuocSX();
             this.Visible = true; // Hien thi lai form
         }
         private void but_Show_Click(object sender, EventArgs e)
         {
-            dgv.DataSource = NSX_BLL.Show_BLL();
+            ShowNuocSX();
         }
 
         private void but_Search_Click(object sender, EventArgs e)
@@ -111,6 +117,12 @@ namespace TH_NET_Cuoi_Ky.GUI
             List<DTO.NuocSX> l = NSX_BLL.getNSXByID(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNuocSX"].Value.ToString()));
             txtMaNSX.Text = l[0].MaNuocSX.ToString();
             txtTenNSX.Text = l[0].TenNuocSX.ToString();
+        }
+
+        private void but_Cancel_Click(object sender, EventArgs e)
+        {
+            ShowForm();
+            Dispose();
         }
     }
 }

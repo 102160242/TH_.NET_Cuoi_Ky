@@ -79,6 +79,7 @@
             this.btnNuocSX.TabIndex = 13;
             this.btnNuocSX.Text = "Nước Sản Xuất";
             this.btnNuocSX.UseVisualStyleBackColor = true;
+            this.btnNuocSX.Click += new System.EventHandler(this.btnNuocSX_Click);
             // 
             // btnNhaCC
             // 
@@ -88,6 +89,7 @@
             this.btnNhaCC.TabIndex = 12;
             this.btnNhaCC.Text = "Nhà Cung Cấp";
             this.btnNhaCC.UseVisualStyleBackColor = true;
+            this.btnNhaCC.Click += new System.EventHandler(this.btnNhaCC_Click);
             // 
             // btnNhapXuat
             // 
@@ -97,6 +99,7 @@
             this.btnNhapXuat.TabIndex = 11;
             this.btnNhapXuat.Text = "Nhập Xuất";
             this.btnNhapXuat.UseVisualStyleBackColor = true;
+            this.btnNhapXuat.Click += new System.EventHandler(this.btnNhapXuat_Click);
             // 
             // btnPhong
             // 
@@ -106,6 +109,7 @@
             this.btnPhong.TabIndex = 10;
             this.btnPhong.Text = "Phòng";
             this.btnPhong.UseVisualStyleBackColor = true;
+            this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnNguoiQL
             // 
@@ -115,6 +119,7 @@
             this.btnNguoiQL.TabIndex = 9;
             this.btnNguoiQL.Text = "Người Quản Lý";
             this.btnNguoiQL.UseVisualStyleBackColor = true;
+            this.btnNguoiQL.Click += new System.EventHandler(this.btnNguoiQL_Click);
             // 
             // btnLoaiTS
             // 
@@ -124,6 +129,7 @@
             this.btnLoaiTS.TabIndex = 8;
             this.btnLoaiTS.Text = "Loại Tài Sản";
             this.btnLoaiTS.UseVisualStyleBackColor = true;
+            this.btnLoaiTS.Click += new System.EventHandler(this.btnLoaiTS_Click);
             // 
             // btnTS
             // 
@@ -134,6 +140,7 @@
             this.btnTS.TabIndex = 7;
             this.btnTS.Text = "Tài Sản";
             this.btnTS.UseVisualStyleBackColor = false;
+            this.btnTS.Click += new System.EventHandler(this.btnTS_Click);
             // 
             // MainForm
             // 

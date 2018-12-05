@@ -21,11 +21,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             InitializeComponent();
             this.LoaiTS_BLL = new LoaiTS_BLL();
         }
-
-        private void LoaiTSForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ShowForm();
-        }
         private void Reload()
         {
             ShowLoaiTS();
@@ -35,8 +30,9 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             LoaiTSAddForm f = new LoaiTSAddForm();
             f.ReloadLoaiTS += Reload;
-            this.Visible = false;
             f.Show();
+            this.Visible = false;
+            
         }
         private void ShowLoaiTS()
         {
@@ -111,6 +107,12 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
 
         private void butCancel_Click(object sender, EventArgs e)
+        {
+            ShowForm();
+            Dispose();
+        }
+
+        private void LoaiTSForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Reload();
             Dispose();

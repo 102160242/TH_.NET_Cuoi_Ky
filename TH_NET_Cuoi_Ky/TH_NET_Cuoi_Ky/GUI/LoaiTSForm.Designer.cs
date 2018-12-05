@@ -232,7 +232,7 @@
             this.Name = "LoaiTSForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý loại tài sản";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoaiTSForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoaiTSForm_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
