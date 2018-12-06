@@ -39,26 +39,28 @@
             // 
             // cbbAddress
             // 
+            this.cbbAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbAddress.FormattingEnabled = true;
-            this.cbbAddress.Location = new System.Drawing.Point(193, 80);
+            this.cbbAddress.Location = new System.Drawing.Point(168, 61);
             this.cbbAddress.Margin = new System.Windows.Forms.Padding(4);
             this.cbbAddress.Name = "cbbAddress";
             this.cbbAddress.Size = new System.Drawing.Size(235, 26);
-            this.cbbAddress.TabIndex = 31;
+            this.cbbAddress.TabIndex = 2;
             // 
             // txtTenNhaCC
             // 
-            this.txtTenNhaCC.Location = new System.Drawing.Point(193, 26);
+            this.txtTenNhaCC.Location = new System.Drawing.Point(168, 18);
             this.txtTenNhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNhaCC.Name = "txtTenNhaCC";
             this.txtTenNhaCC.Size = new System.Drawing.Size(235, 24);
-            this.txtTenNhaCC.TabIndex = 29;
+            this.txtTenNhaCC.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(41, 84);
+            this.label3.Location = new System.Drawing.Point(16, 65);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 18);
@@ -69,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(41, 30);
+            this.label2.Location = new System.Drawing.Point(16, 22);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 18);
@@ -81,11 +83,11 @@
             this.butOK.BackColor = System.Drawing.Color.Transparent;
             this.butOK.Image = ((System.Drawing.Image)(resources.GetObject("butOK.Image")));
             this.butOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butOK.Location = new System.Drawing.Point(173, 127);
+            this.butOK.Location = new System.Drawing.Point(107, 105);
             this.butOK.Margin = new System.Windows.Forms.Padding(4);
             this.butOK.Name = "butOK";
             this.butOK.Size = new System.Drawing.Size(68, 32);
-            this.butOK.TabIndex = 32;
+            this.butOK.TabIndex = 3;
             this.butOK.Text = "OK";
             this.butOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butOK.UseVisualStyleBackColor = false;
@@ -96,11 +98,11 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(313, 127);
+            this.butCancel.Location = new System.Drawing.Point(247, 105);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(88, 32);
-            this.butCancel.TabIndex = 33;
+            this.butCancel.TabIndex = 4;
             this.butCancel.Text = "Cancel";
             this.butCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butCancel.UseVisualStyleBackColor = false;
@@ -112,7 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(486, 169);
+            this.ClientSize = new System.Drawing.Size(421, 150);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.butOK);
             this.Controls.Add(this.cbbAddress);

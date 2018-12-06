@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(20, 29);
+            this.label1.Location = new System.Drawing.Point(14, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 18);
@@ -67,11 +67,11 @@
             this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(670, 457);
+            this.but_Cancel.Location = new System.Drawing.Point(547, 457);
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
             this.but_Cancel.Size = new System.Drawing.Size(87, 32);
-            this.but_Cancel.TabIndex = 12;
+            this.but_Cancel.TabIndex = 11;
             this.but_Cancel.Text = "Thoát";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Cancel.UseVisualStyleBackColor = false;
@@ -82,11 +82,11 @@
             this.butDelete.BackColor = System.Drawing.Color.Transparent;
             this.butDelete.Image = ((System.Drawing.Image)(resources.GetObject("butDelete.Image")));
             this.butDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butDelete.Location = new System.Drawing.Point(548, 457);
+            this.butDelete.Location = new System.Drawing.Point(431, 457);
             this.butDelete.Margin = new System.Windows.Forms.Padding(4);
             this.butDelete.Name = "butDelete";
             this.butDelete.Size = new System.Drawing.Size(78, 32);
-            this.butDelete.TabIndex = 13;
+            this.butDelete.TabIndex = 10;
             this.butDelete.Text = "Xóa";
             this.butDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butDelete.UseVisualStyleBackColor = false;
@@ -97,11 +97,11 @@
             this.butUpdate.BackColor = System.Drawing.Color.Transparent;
             this.butUpdate.Image = ((System.Drawing.Image)(resources.GetObject("butUpdate.Image")));
             this.butUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butUpdate.Location = new System.Drawing.Point(426, 457);
+            this.butUpdate.Location = new System.Drawing.Point(293, 457);
             this.butUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(103, 32);
-            this.butUpdate.TabIndex = 14;
+            this.butUpdate.TabIndex = 9;
             this.butUpdate.Text = "Cập nhật";
             this.butUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butUpdate.UseVisualStyleBackColor = false;
@@ -112,11 +112,11 @@
             this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butAdd.Location = new System.Drawing.Point(305, 457);
+            this.butAdd.Location = new System.Drawing.Point(182, 457);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(83, 32);
-            this.butAdd.TabIndex = 15;
+            this.butAdd.TabIndex = 8;
             this.butAdd.Text = "Thêm";
             this.butAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butAdd.UseVisualStyleBackColor = false;
@@ -127,11 +127,11 @@
             this.butShow.BackColor = System.Drawing.Color.Transparent;
             this.butShow.Image = ((System.Drawing.Image)(resources.GetObject("butShow.Image")));
             this.butShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butShow.Location = new System.Drawing.Point(184, 457);
+            this.butShow.Location = new System.Drawing.Point(58, 457);
             this.butShow.Margin = new System.Windows.Forms.Padding(4);
             this.butShow.Name = "butShow";
             this.butShow.Size = new System.Drawing.Size(100, 32);
-            this.butShow.TabIndex = 16;
+            this.butShow.TabIndex = 7;
             this.butShow.Text = "Hiển thị";
             this.butShow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butShow.UseVisualStyleBackColor = false;
@@ -141,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(20, 72);
+            this.label2.Location = new System.Drawing.Point(14, 72);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 18);
@@ -151,7 +151,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 124);
+            this.label3.Location = new System.Drawing.Point(14, 124);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 18);
@@ -160,40 +160,42 @@
             // 
             // txtMaNhaCC
             // 
-            this.txtMaNhaCC.Location = new System.Drawing.Point(172, 25);
+            this.txtMaNhaCC.Location = new System.Drawing.Point(152, 25);
             this.txtMaNhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNhaCC.Name = "txtMaNhaCC";
             this.txtMaNhaCC.ReadOnly = true;
-            this.txtMaNhaCC.Size = new System.Drawing.Size(278, 24);
-            this.txtMaNhaCC.TabIndex = 20;
+            this.txtMaNhaCC.Size = new System.Drawing.Size(191, 24);
+            this.txtMaNhaCC.TabIndex = 1;
             // 
             // txtTenNhaCC
             // 
-            this.txtTenNhaCC.Location = new System.Drawing.Point(172, 72);
+            this.txtTenNhaCC.Location = new System.Drawing.Point(152, 72);
             this.txtTenNhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNhaCC.Name = "txtTenNhaCC";
-            this.txtTenNhaCC.Size = new System.Drawing.Size(278, 24);
-            this.txtTenNhaCC.TabIndex = 21;
+            this.txtTenNhaCC.Size = new System.Drawing.Size(191, 24);
+            this.txtTenNhaCC.TabIndex = 2;
             // 
             // cbbAddress
             // 
+            this.cbbAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbAddress.FormattingEnabled = true;
-            this.cbbAddress.Location = new System.Drawing.Point(172, 120);
+            this.cbbAddress.Location = new System.Drawing.Point(152, 120);
             this.cbbAddress.Margin = new System.Windows.Forms.Padding(4);
             this.cbbAddress.Name = "cbbAddress";
-            this.cbbAddress.Size = new System.Drawing.Size(278, 26);
-            this.cbbAddress.TabIndex = 23;
+            this.cbbAddress.Size = new System.Drawing.Size(191, 26);
+            this.cbbAddress.TabIndex = 3;
             // 
             // dgv
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(18, 175);
+            this.dgv.Location = new System.Drawing.Point(5, 175);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(945, 274);
-            this.dgv.TabIndex = 25;
+            this.dgv.Size = new System.Drawing.Size(713, 274);
+            this.dgv.TabIndex = 6;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             // 
             // groupBox1
@@ -206,11 +208,11 @@
             this.groupBox1.Controls.Add(this.cbbAddress);
             this.groupBox1.Controls.Add(this.txtMaNhaCC);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(18, 11);
+            this.groupBox1.Location = new System.Drawing.Point(5, 11);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(470, 159);
+            this.groupBox1.Size = new System.Drawing.Size(358, 159);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -223,11 +225,11 @@
             this.groupBox2.Controls.Add(this.but_Search);
             this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(496, 11);
+            this.groupBox2.Location = new System.Drawing.Point(371, 12);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(460, 159);
+            this.groupBox2.Size = new System.Drawing.Size(347, 159);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
@@ -235,7 +237,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 45);
+            this.label4.Location = new System.Drawing.Point(11, 42);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 18);
@@ -247,11 +249,11 @@
             this.but_Search.BackColor = System.Drawing.Color.Transparent;
             this.but_Search.Image = ((System.Drawing.Image)(resources.GetObject("but_Search.Image")));
             this.but_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Search.Location = new System.Drawing.Point(183, 106);
+            this.but_Search.Location = new System.Drawing.Point(135, 109);
             this.but_Search.Margin = new System.Windows.Forms.Padding(4);
             this.but_Search.Name = "but_Search";
             this.but_Search.Size = new System.Drawing.Size(97, 32);
-            this.but_Search.TabIndex = 11;
+            this.but_Search.TabIndex = 5;
             this.but_Search.Text = "Tìm kiếm";
             this.but_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Search.UseVisualStyleBackColor = false;
@@ -259,11 +261,11 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(149, 40);
+            this.txtSearch.Location = new System.Drawing.Point(106, 42);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(218, 24);
-            this.txtSearch.TabIndex = 22;
+            this.txtSearch.Size = new System.Drawing.Size(201, 24);
+            this.txtSearch.TabIndex = 4;
             // 
             // NhaCCForm
             // 
@@ -271,7 +273,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(968, 500);
+            this.ClientSize = new System.Drawing.Size(723, 500);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgv);

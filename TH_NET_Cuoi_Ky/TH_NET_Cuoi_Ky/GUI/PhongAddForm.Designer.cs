@@ -42,11 +42,11 @@
             this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(280, 127);
+            this.but_Cancel.Location = new System.Drawing.Point(238, 131);
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
             this.but_Cancel.Size = new System.Drawing.Size(90, 32);
-            this.but_Cancel.TabIndex = 36;
+            this.but_Cancel.TabIndex = 4;
             this.but_Cancel.Text = "Cancel";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Cancel.UseVisualStyleBackColor = false;
@@ -57,7 +57,7 @@
             this.but_OK.BackColor = System.Drawing.Color.Transparent;
             this.but_OK.Image = ((System.Drawing.Image)(resources.GetObject("but_OK.Image")));
             this.but_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_OK.Location = new System.Drawing.Point(138, 127);
+            this.but_OK.Location = new System.Drawing.Point(96, 131);
             this.but_OK.Margin = new System.Windows.Forms.Padding(4);
             this.but_OK.Name = "but_OK";
             this.but_OK.Size = new System.Drawing.Size(73, 32);
@@ -71,7 +71,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(18, 79);
+            this.label1.Location = new System.Drawing.Point(18, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 18);
@@ -83,8 +83,8 @@
             this.txtTenPhong.Location = new System.Drawing.Point(144, 17);
             this.txtTenPhong.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(298, 24);
-            this.txtTenPhong.TabIndex = 38;
+            this.txtTenPhong.Size = new System.Drawing.Size(226, 24);
+            this.txtTenPhong.TabIndex = 1;
             // 
             // label2
             // 
@@ -99,12 +99,14 @@
             // 
             // cbbNguoiQL
             // 
+            this.cbbNguoiQL.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbNguoiQL.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbNguoiQL.FormattingEnabled = true;
-            this.cbbNguoiQL.Location = new System.Drawing.Point(144, 79);
+            this.cbbNguoiQL.Location = new System.Drawing.Point(144, 70);
             this.cbbNguoiQL.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNguoiQL.Name = "cbbNguoiQL";
-            this.cbbNguoiQL.Size = new System.Drawing.Size(298, 26);
-            this.cbbNguoiQL.TabIndex = 39;
+            this.cbbNguoiQL.Size = new System.Drawing.Size(226, 26);
+            this.cbbNguoiQL.TabIndex = 2;
             // 
             // PhongAddForm
             // 
@@ -112,7 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(484, 172);
+            this.ClientSize = new System.Drawing.Size(401, 188);
             this.Controls.Add(this.cbbNguoiQL);
             this.Controls.Add(this.txtTenPhong);
             this.Controls.Add(this.label2);
