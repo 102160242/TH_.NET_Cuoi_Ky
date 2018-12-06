@@ -15,7 +15,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             db = new QLCSVC();
         }
-        public List<string> loadCBB_BLL()
+        public List<string> loadCBBTenPhong_BLL()
         {
             List<string> l = new List<string>();
             var data = db.Phongs.Select(p => new { p.TenPhong }).Distinct();

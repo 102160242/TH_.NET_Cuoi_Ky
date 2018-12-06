@@ -182,5 +182,10 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return true;
         }
+        public List<string> LoadCBBTenTS()
+        {
+            var data = db.TaiSans.Select(p => p.TenTS).Distinct();
+            return data.ToList();
+        }
     }
 }
