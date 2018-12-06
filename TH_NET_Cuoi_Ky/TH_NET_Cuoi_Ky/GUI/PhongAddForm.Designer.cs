@@ -39,7 +39,7 @@
             // 
             // but_Cancel
             // 
-            this.but_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Cancel.Location = new System.Drawing.Point(280, 127);
@@ -54,7 +54,7 @@
             // 
             // but_OK
             // 
-            this.but_OK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.but_OK.BackColor = System.Drawing.Color.Transparent;
             this.but_OK.Image = ((System.Drawing.Image)(resources.GetObject("but_OK.Image")));
             this.but_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_OK.Location = new System.Drawing.Point(138, 127);

@@ -151,7 +151,7 @@
             // 
             // butAdd
             // 
-            this.butAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butAdd.Location = new System.Drawing.Point(371, 175);
@@ -166,7 +166,7 @@
             // 
             // butCancel
             // 
-            this.butCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butCancel.Location = new System.Drawing.Point(533, 175);
@@ -181,7 +181,7 @@
             // 
             // txtDvTinh
             // 
-            this.txtDvTinh.Location = new System.Drawing.Point(838, 132);
+            this.txtDvTinh.Location = new System.Drawing.Point(842, 109);
             this.txtDvTinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtDvTinh.Name = "txtDvTinh";
             this.txtDvTinh.Size = new System.Drawing.Size(89, 24);
@@ -192,7 +192,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(753, 134);
+            this.label8.Location = new System.Drawing.Point(757, 111);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 16);
@@ -203,7 +203,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(842, 85);
+            this.dateTimePicker1.Location = new System.Drawing.Point(842, 66);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
@@ -215,7 +215,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(745, 90);
+            this.label11.Location = new System.Drawing.Point(745, 71);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 16);

@@ -57,9 +57,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(18, 17);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(410, 138);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -68,7 +68,7 @@
             // txtTenLoaiTS
             // 
             this.txtTenLoaiTS.Location = new System.Drawing.Point(144, 78);
-            this.txtTenLoaiTS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenLoaiTS.Name = "txtTenLoaiTS";
             this.txtTenLoaiTS.Size = new System.Drawing.Size(244, 24);
             this.txtTenLoaiTS.TabIndex = 3;
@@ -76,7 +76,7 @@
             // txtMaLoaiTS
             // 
             this.txtMaLoaiTS.Location = new System.Drawing.Point(146, 35);
-            this.txtMaLoaiTS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaLoaiTS.Name = "txtMaLoaiTS";
             this.txtMaLoaiTS.ReadOnly = true;
             this.txtMaLoaiTS.Size = new System.Drawing.Size(242, 24);
@@ -109,9 +109,9 @@
             this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(448, 17);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(417, 138);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -119,11 +119,11 @@
             // 
             // butSearch
             // 
-            this.butSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.butSearch.BackColor = System.Drawing.Color.Transparent;
             this.butSearch.Image = ((System.Drawing.Image)(resources.GetObject("butSearch.Image")));
             this.butSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butSearch.Location = new System.Drawing.Point(156, 82);
-            this.butSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butSearch.Margin = new System.Windows.Forms.Padding(4);
             this.butSearch.Name = "butSearch";
             this.butSearch.Size = new System.Drawing.Size(99, 32);
             this.butSearch.TabIndex = 4;
@@ -135,7 +135,7 @@
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(112, 39);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(259, 24);
             this.txtSearch.TabIndex = 3;
@@ -155,7 +155,7 @@
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(18, 163);
-            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(848, 252);
@@ -164,11 +164,11 @@
             // 
             // butShow
             // 
-            this.butShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.butShow.BackColor = System.Drawing.Color.Transparent;
             this.butShow.Image = ((System.Drawing.Image)(resources.GetObject("butShow.Image")));
             this.butShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butShow.Location = new System.Drawing.Point(112, 426);
-            this.butShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butShow.Margin = new System.Windows.Forms.Padding(4);
             this.butShow.Name = "butShow";
             this.butShow.Size = new System.Drawing.Size(96, 32);
             this.butShow.TabIndex = 3;
@@ -179,11 +179,11 @@
             // 
             // butAdd
             // 
-            this.butAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butAdd.Location = new System.Drawing.Point(268, 426);
-            this.butAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(85, 32);
             this.butAdd.TabIndex = 5;
@@ -194,11 +194,11 @@
             // 
             // butUpdate
             // 
-            this.butUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.butUpdate.BackColor = System.Drawing.Color.Transparent;
             this.butUpdate.Image = ((System.Drawing.Image)(resources.GetObject("butUpdate.Image")));
             this.butUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butUpdate.Location = new System.Drawing.Point(399, 426);
-            this.butUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(103, 32);
             this.butUpdate.TabIndex = 6;
@@ -209,11 +209,11 @@
             // 
             // butDelete
             // 
-            this.butDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.butDelete.BackColor = System.Drawing.Color.Transparent;
             this.butDelete.Image = ((System.Drawing.Image)(resources.GetObject("butDelete.Image")));
             this.butDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butDelete.Location = new System.Drawing.Point(555, 426);
-            this.butDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butDelete.Margin = new System.Windows.Forms.Padding(4);
             this.butDelete.Name = "butDelete";
             this.butDelete.Size = new System.Drawing.Size(74, 32);
             this.butDelete.TabIndex = 7;
@@ -224,11 +224,11 @@
             // 
             // butCancel
             // 
-            this.butCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butCancel.Location = new System.Drawing.Point(668, 426);
-            this.butCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(77, 32);
             this.butCancel.TabIndex = 8;
@@ -252,7 +252,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "LoaiTSForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -51,7 +51,7 @@
             // 
             // but_Delete
             // 
-            this.but_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.but_Delete.BackColor = System.Drawing.Color.Transparent;
             this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
             this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Delete.Location = new System.Drawing.Point(461, 464);
@@ -66,7 +66,7 @@
             // 
             // but_Cancel
             // 
-            this.but_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Cancel.Location = new System.Drawing.Point(577, 464);
@@ -89,7 +89,7 @@
             // 
             // but_Update
             // 
-            this.but_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.but_Update.BackColor = System.Drawing.Color.Transparent;
             this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
             this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Update.Location = new System.Drawing.Point(321, 464);
@@ -104,7 +104,7 @@
             // 
             // but_Search
             // 
-            this.but_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.but_Search.BackColor = System.Drawing.Color.Transparent;
             this.but_Search.Image = ((System.Drawing.Image)(resources.GetObject("but_Search.Image")));
             this.but_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Search.Location = new System.Drawing.Point(125, 89);
@@ -148,7 +148,7 @@
             // 
             // but_Add
             // 
-            this.but_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.but_Add.BackColor = System.Drawing.Color.Transparent;
             this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
             this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Add.Location = new System.Drawing.Point(187, 464);
@@ -173,7 +173,7 @@
             // 
             // but_Show
             // 
-            this.but_Show.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.but_Show.BackColor = System.Drawing.Color.Transparent;
             this.but_Show.Image = ((System.Drawing.Image)(resources.GetObject("but_Show.Image")));
             this.but_Show.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Show.Location = new System.Drawing.Point(51, 464);

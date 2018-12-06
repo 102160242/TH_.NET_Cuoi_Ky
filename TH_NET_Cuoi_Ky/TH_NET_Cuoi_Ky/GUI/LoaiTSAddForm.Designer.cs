@@ -38,7 +38,7 @@
             // txtTenLoaiTS
             // 
             this.txtTenLoaiTS.Location = new System.Drawing.Point(196, 24);
-            this.txtTenLoaiTS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenLoaiTS.Name = "txtTenLoaiTS";
             this.txtTenLoaiTS.Size = new System.Drawing.Size(254, 24);
             this.txtTenLoaiTS.TabIndex = 5;
@@ -56,11 +56,11 @@
             // 
             // butOK
             // 
-            this.butOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.butOK.BackColor = System.Drawing.Color.Transparent;
             this.butOK.Image = ((System.Drawing.Image)(resources.GetObject("butOK.Image")));
             this.butOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butOK.Location = new System.Drawing.Point(172, 80);
-            this.butOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butOK.Margin = new System.Windows.Forms.Padding(4);
             this.butOK.Name = "butOK";
             this.butOK.Size = new System.Drawing.Size(71, 32);
             this.butOK.TabIndex = 6;
@@ -71,11 +71,11 @@
             // 
             // butCancel
             // 
-            this.butCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butCancel.Location = new System.Drawing.Point(307, 80);
-            this.butCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(97, 32);
             this.butCancel.TabIndex = 7;
@@ -97,7 +97,7 @@
             this.Controls.Add(this.label2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "LoaiTSAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
