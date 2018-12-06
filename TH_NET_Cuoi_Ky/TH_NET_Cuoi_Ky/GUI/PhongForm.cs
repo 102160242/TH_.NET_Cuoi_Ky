@@ -49,7 +49,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void Reload()
         {
-            ShowPhong();
+            ShowForm();
             this.Visible = true;
         }
 
@@ -124,6 +124,12 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void but_Search_Click(object sender, EventArgs e)
         {
             dgv.DataSource = Phong_BLL.ShowPhong_BLL(txt_Search.Text);
+        }
+
+        private void but_Cancel_Click(object sender, EventArgs e)
+        {
+            ShowForm();
+            Dispose();
         }
     }
 }

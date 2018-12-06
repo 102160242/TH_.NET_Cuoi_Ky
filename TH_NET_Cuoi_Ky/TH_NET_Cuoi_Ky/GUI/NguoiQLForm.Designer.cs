@@ -55,32 +55,36 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(23, 50);
+            this.label1.Location = new System.Drawing.Point(25, 59);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(76, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Họ và Tên";
             // 
             // but_Show
             // 
+            this.but_Show.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.but_Show.Image = ((System.Drawing.Image)(resources.GetObject("but_Show.Image")));
             this.but_Show.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Show.Location = new System.Drawing.Point(134, 397);
+            this.but_Show.Location = new System.Drawing.Point(168, 443);
+            this.but_Show.Margin = new System.Windows.Forms.Padding(4);
             this.but_Show.Name = "but_Show";
-            this.but_Show.Size = new System.Drawing.Size(75, 26);
+            this.but_Show.Size = new System.Drawing.Size(95, 36);
             this.but_Show.TabIndex = 1;
             this.but_Show.Text = "Hiển thị";
             this.but_Show.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.but_Show.UseVisualStyleBackColor = true;
+            this.but_Show.UseVisualStyleBackColor = false;
             this.but_Show.Click += new System.EventHandler(this.but_Show_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(23, 20);
+            this.label2.Location = new System.Drawing.Point(25, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(50, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mã số";
             // 
@@ -88,9 +92,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(23, 80);
+            this.label3.Location = new System.Drawing.Point(25, 101);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.Size = new System.Drawing.Size(73, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "Ngày sinh";
             // 
@@ -98,9 +103,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(406, 27);
+            this.label4.Location = new System.Drawing.Point(538, 19);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.Size = new System.Drawing.Size(94, 18);
             this.label4.TabIndex = 4;
             this.label4.Text = "Số điện thoại";
             // 
@@ -108,63 +114,71 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(406, 60);
+            this.label5.Location = new System.Drawing.Point(538, 65);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(62, 18);
             this.label5.TabIndex = 5;
             this.label5.Text = "Giới tính";
             // 
             // but_Add
             // 
+            this.but_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
             this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Add.Location = new System.Drawing.Point(228, 397);
+            this.but_Add.Location = new System.Drawing.Point(310, 443);
+            this.but_Add.Margin = new System.Windows.Forms.Padding(4);
             this.but_Add.Name = "but_Add";
-            this.but_Add.Size = new System.Drawing.Size(75, 26);
+            this.but_Add.Size = new System.Drawing.Size(87, 36);
             this.but_Add.TabIndex = 6;
             this.but_Add.Text = "Thêm";
             this.but_Add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.but_Add.UseVisualStyleBackColor = true;
+            this.but_Add.UseVisualStyleBackColor = false;
             this.but_Add.Click += new System.EventHandler(this.but_Add_Click);
             // 
             // txt_MaQL
             // 
-            this.txt_MaQL.Location = new System.Drawing.Point(92, 20);
+            this.txt_MaQL.Location = new System.Drawing.Point(129, 18);
+            this.txt_MaQL.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MaQL.Name = "txt_MaQL";
             this.txt_MaQL.ReadOnly = true;
-            this.txt_MaQL.Size = new System.Drawing.Size(200, 20);
+            this.txt_MaQL.Size = new System.Drawing.Size(298, 24);
             this.txt_MaQL.TabIndex = 7;
             // 
             // txt_TenQL
             // 
-            this.txt_TenQL.Location = new System.Drawing.Point(92, 50);
+            this.txt_TenQL.Location = new System.Drawing.Point(129, 59);
+            this.txt_TenQL.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TenQL.Name = "txt_TenQL";
-            this.txt_TenQL.Size = new System.Drawing.Size(200, 20);
+            this.txt_TenQL.Size = new System.Drawing.Size(298, 24);
             this.txt_TenQL.TabIndex = 8;
             // 
             // txt_SDT
             // 
-            this.txt_SDT.Location = new System.Drawing.Point(483, 27);
+            this.txt_SDT.Location = new System.Drawing.Point(654, 19);
+            this.txt_SDT.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SDT.Name = "txt_SDT";
-            this.txt_SDT.Size = new System.Drawing.Size(200, 20);
+            this.txt_SDT.Size = new System.Drawing.Size(298, 24);
             this.txt_SDT.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(92, 80);
+            this.dateTimePicker1.Location = new System.Drawing.Point(129, 101);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(298, 24);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // rb_Male
             // 
             this.rb_Male.AutoSize = true;
             this.rb_Male.BackColor = System.Drawing.Color.Transparent;
-            this.rb_Male.Location = new System.Drawing.Point(504, 60);
+            this.rb_Male.Location = new System.Drawing.Point(686, 65);
+            this.rb_Male.Margin = new System.Windows.Forms.Padding(4);
             this.rb_Male.Name = "rb_Male";
-            this.rb_Male.Size = new System.Drawing.Size(47, 17);
+            this.rb_Male.Size = new System.Drawing.Size(58, 22);
             this.rb_Male.TabIndex = 11;
             this.rb_Male.TabStop = true;
             this.rb_Male.Text = "Nam";
@@ -174,9 +188,10 @@
             // 
             this.rb_Female.AutoSize = true;
             this.rb_Female.BackColor = System.Drawing.Color.Transparent;
-            this.rb_Female.Location = new System.Drawing.Point(591, 60);
+            this.rb_Female.Location = new System.Drawing.Point(816, 65);
+            this.rb_Female.Margin = new System.Windows.Forms.Padding(4);
             this.rb_Female.Name = "rb_Female";
-            this.rb_Female.Size = new System.Drawing.Size(39, 17);
+            this.rb_Female.Size = new System.Drawing.Size(45, 22);
             this.rb_Female.TabIndex = 12;
             this.rb_Female.TabStop = true;
             this.rb_Female.Text = "Nữ";
@@ -186,78 +201,88 @@
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(4, 133);
+            this.dgv.Location = new System.Drawing.Point(3, 147);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(710, 258);
+            this.dgv.Size = new System.Drawing.Size(982, 288);
             this.dgv.TabIndex = 13;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // but_Search
             // 
+            this.but_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.but_Search.Image = ((System.Drawing.Image)(resources.GetObject("but_Search.Image")));
             this.but_Search.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.but_Search.Location = new System.Drawing.Point(414, 98);
+            this.but_Search.Location = new System.Drawing.Point(541, 87);
+            this.but_Search.Margin = new System.Windows.Forms.Padding(4);
             this.but_Search.Name = "but_Search";
-            this.but_Search.Size = new System.Drawing.Size(70, 29);
+            this.but_Search.Size = new System.Drawing.Size(105, 38);
             this.but_Search.TabIndex = 14;
             this.but_Search.Text = "Tìm kiếm";
             this.but_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.but_Search.UseVisualStyleBackColor = true;
+            this.but_Search.UseVisualStyleBackColor = false;
             this.but_Search.Click += new System.EventHandler(this.but_Search_Click);
             // 
             // but_Update
             // 
+            this.but_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
             this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Update.Location = new System.Drawing.Point(322, 397);
+            this.but_Update.Location = new System.Drawing.Point(450, 443);
+            this.but_Update.Margin = new System.Windows.Forms.Padding(4);
             this.but_Update.Name = "but_Update";
-            this.but_Update.Size = new System.Drawing.Size(75, 26);
+            this.but_Update.Size = new System.Drawing.Size(101, 36);
             this.but_Update.TabIndex = 15;
             this.but_Update.Text = "Cập nhật";
             this.but_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.but_Update.UseVisualStyleBackColor = true;
+            this.but_Update.UseVisualStyleBackColor = false;
             this.but_Update.Click += new System.EventHandler(this.but_Update_Click);
             // 
             // txt_Search
             // 
-            this.txt_Search.Location = new System.Drawing.Point(490, 103);
+            this.txt_Search.Location = new System.Drawing.Point(654, 97);
+            this.txt_Search.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(200, 20);
+            this.txt_Search.Size = new System.Drawing.Size(298, 24);
             this.txt_Search.TabIndex = 17;
             // 
             // but_Cancel
             // 
+            this.but_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(504, 398);
+            this.but_Cancel.Location = new System.Drawing.Point(724, 444);
+            this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.but_Cancel.Size = new System.Drawing.Size(81, 32);
             this.but_Cancel.TabIndex = 19;
             this.but_Cancel.Text = "Thoát";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.but_Cancel.UseVisualStyleBackColor = true;
+            this.but_Cancel.UseVisualStyleBackColor = false;
             this.but_Cancel.Click += new System.EventHandler(this.but_Cancel_Click);
             // 
             // but_Delete
             // 
-            this.but_Delete.BackColor = System.Drawing.Color.Gainsboro;
+            this.but_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
             this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Delete.Location = new System.Drawing.Point(414, 398);
+            this.but_Delete.Location = new System.Drawing.Point(601, 444);
+            this.but_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.but_Delete.Name = "but_Delete";
-            this.but_Delete.Size = new System.Drawing.Size(75, 23);
+            this.but_Delete.Size = new System.Drawing.Size(78, 32);
             this.but_Delete.TabIndex = 22;
             this.but_Delete.Text = "Xóa";
+            this.but_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Delete.UseVisualStyleBackColor = false;
             this.but_Delete.Click += new System.EventHandler(this.but_Delete_Click);
             // 
             // NguoiQLForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(717, 432);
+            this.ClientSize = new System.Drawing.Size(992, 483);
             this.Controls.Add(this.but_Delete);
             this.Controls.Add(this.but_Cancel);
             this.Controls.Add(this.txt_Search);
@@ -277,8 +302,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.but_Show);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NguoiQLForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

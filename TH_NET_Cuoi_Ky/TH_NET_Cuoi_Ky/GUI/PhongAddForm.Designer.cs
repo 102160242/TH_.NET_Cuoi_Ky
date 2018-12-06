@@ -39,72 +39,80 @@
             // 
             // but_Cancel
             // 
+            this.but_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(187, 92);
+            this.but_Cancel.Location = new System.Drawing.Point(280, 127);
+            this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(67, 23);
+            this.but_Cancel.Size = new System.Drawing.Size(90, 32);
             this.but_Cancel.TabIndex = 36;
             this.but_Cancel.Text = "Cancel";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.but_Cancel.UseVisualStyleBackColor = true;
+            this.but_Cancel.UseVisualStyleBackColor = false;
             this.but_Cancel.Click += new System.EventHandler(this.but_Cancel_Click);
             // 
             // but_OK
             // 
+            this.but_OK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.but_OK.Image = ((System.Drawing.Image)(resources.GetObject("but_OK.Image")));
             this.but_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_OK.Location = new System.Drawing.Point(92, 92);
+            this.but_OK.Location = new System.Drawing.Point(138, 127);
+            this.but_OK.Margin = new System.Windows.Forms.Padding(4);
             this.but_OK.Name = "but_OK";
-            this.but_OK.Size = new System.Drawing.Size(56, 23);
+            this.but_OK.Size = new System.Drawing.Size(73, 32);
             this.but_OK.TabIndex = 35;
             this.but_OK.Text = "OK";
             this.but_OK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.but_OK.UseVisualStyleBackColor = true;
+            this.but_OK.UseVisualStyleBackColor = false;
             this.but_OK.Click += new System.EventHandler(this.but_OK_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(12, 57);
+            this.label1.Location = new System.Drawing.Point(18, 79);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(106, 18);
             this.label1.TabIndex = 26;
             this.label1.Text = "Người Quản Lý";
             // 
             // txtTenPhong
             // 
-            this.txtTenPhong.Location = new System.Drawing.Point(96, 12);
+            this.txtTenPhong.Location = new System.Drawing.Point(144, 17);
+            this.txtTenPhong.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(200, 20);
+            this.txtTenPhong.Size = new System.Drawing.Size(298, 24);
             this.txtTenPhong.TabIndex = 38;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(12, 15);
+            this.label2.Location = new System.Drawing.Point(18, 21);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 37;
             this.label2.Text = "Tên Phòng";
             // 
             // cbbNguoiQL
             // 
             this.cbbNguoiQL.FormattingEnabled = true;
-            this.cbbNguoiQL.Location = new System.Drawing.Point(96, 57);
+            this.cbbNguoiQL.Location = new System.Drawing.Point(144, 79);
+            this.cbbNguoiQL.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNguoiQL.Name = "cbbNguoiQL";
-            this.cbbNguoiQL.Size = new System.Drawing.Size(200, 21);
+            this.cbbNguoiQL.Size = new System.Drawing.Size(298, 26);
             this.cbbNguoiQL.TabIndex = 39;
             // 
             // PhongAddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(323, 124);
+            this.ClientSize = new System.Drawing.Size(484, 172);
             this.Controls.Add(this.cbbNguoiQL);
             this.Controls.Add(this.txtTenPhong);
             this.Controls.Add(this.label2);
@@ -112,6 +120,8 @@
             this.Controls.Add(this.but_OK);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "PhongAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

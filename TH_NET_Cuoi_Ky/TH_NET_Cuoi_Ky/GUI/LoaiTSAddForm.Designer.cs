@@ -37,58 +37,67 @@
             // 
             // txtTenLoaiTS
             // 
-            this.txtTenLoaiTS.Location = new System.Drawing.Point(131, 17);
+            this.txtTenLoaiTS.Location = new System.Drawing.Point(196, 24);
+            this.txtTenLoaiTS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenLoaiTS.Name = "txtTenLoaiTS";
-            this.txtTenLoaiTS.Size = new System.Drawing.Size(171, 20);
+            this.txtTenLoaiTS.Size = new System.Drawing.Size(254, 24);
             this.txtTenLoaiTS.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(26, 17);
+            this.label2.Location = new System.Drawing.Point(39, 24);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.Size = new System.Drawing.Size(107, 18);
             this.label2.TabIndex = 4;
             this.label2.Text = "Tên loại tài sản";
             // 
             // butOK
             // 
+            this.butOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.butOK.Image = ((System.Drawing.Image)(resources.GetObject("butOK.Image")));
             this.butOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butOK.Location = new System.Drawing.Point(69, 55);
+            this.butOK.Location = new System.Drawing.Point(172, 80);
+            this.butOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butOK.Name = "butOK";
-            this.butOK.Size = new System.Drawing.Size(54, 23);
+            this.butOK.Size = new System.Drawing.Size(71, 32);
             this.butOK.TabIndex = 6;
             this.butOK.Text = "OK";
             this.butOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butOK.UseVisualStyleBackColor = true;
+            this.butOK.UseVisualStyleBackColor = false;
             this.butOK.Click += new System.EventHandler(this.butOK_Click);
             // 
             // butCancel
             // 
+            this.butCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(179, 55);
+            this.butCancel.Location = new System.Drawing.Point(307, 80);
+            this.butCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butCancel.Name = "butCancel";
-            this.butCancel.Size = new System.Drawing.Size(75, 23);
+            this.butCancel.Size = new System.Drawing.Size(97, 32);
             this.butCancel.TabIndex = 7;
             this.butCancel.Text = "Cancel";
             this.butCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butCancel.UseVisualStyleBackColor = true;
+            this.butCancel.UseVisualStyleBackColor = false;
             this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
             // LoaiTSAddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(331, 90);
+            this.ClientSize = new System.Drawing.Size(496, 125);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.butOK);
             this.Controls.Add(this.txtTenLoaiTS);
             this.Controls.Add(this.label2);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "LoaiTSAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -46,9 +46,10 @@
             // 
             this.rb_Female.AutoSize = true;
             this.rb_Female.BackColor = System.Drawing.Color.Transparent;
-            this.rb_Female.Location = new System.Drawing.Point(520, 45);
+            this.rb_Female.Location = new System.Drawing.Point(718, 53);
+            this.rb_Female.Margin = new System.Windows.Forms.Padding(4);
             this.rb_Female.Name = "rb_Female";
-            this.rb_Female.Size = new System.Drawing.Size(39, 17);
+            this.rb_Female.Size = new System.Drawing.Size(45, 22);
             this.rb_Female.TabIndex = 21;
             this.rb_Female.TabStop = true;
             this.rb_Female.Text = "Nữ";
@@ -58,9 +59,10 @@
             // 
             this.rb_Male.AutoSize = true;
             this.rb_Male.BackColor = System.Drawing.Color.Transparent;
-            this.rb_Male.Location = new System.Drawing.Point(433, 45);
+            this.rb_Male.Location = new System.Drawing.Point(588, 53);
+            this.rb_Male.Margin = new System.Windows.Forms.Padding(4);
             this.rb_Male.Name = "rb_Male";
-            this.rb_Male.Size = new System.Drawing.Size(47, 17);
+            this.rb_Male.Size = new System.Drawing.Size(58, 22);
             this.rb_Male.TabIndex = 20;
             this.rb_Male.TabStop = true;
             this.rb_Male.Text = "Nam";
@@ -68,25 +70,28 @@
             // 
             // txt_SDT
             // 
-            this.txt_SDT.Location = new System.Drawing.Point(407, 15);
+            this.txt_SDT.Location = new System.Drawing.Point(549, 11);
+            this.txt_SDT.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SDT.Name = "txt_SDT";
-            this.txt_SDT.Size = new System.Drawing.Size(205, 20);
+            this.txt_SDT.Size = new System.Drawing.Size(306, 24);
             this.txt_SDT.TabIndex = 19;
             // 
             // txt_TenQL
             // 
-            this.txt_TenQL.Location = new System.Drawing.Point(74, 15);
+            this.txt_TenQL.Location = new System.Drawing.Point(99, 11);
+            this.txt_TenQL.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TenQL.Name = "txt_TenQL";
-            this.txt_TenQL.Size = new System.Drawing.Size(200, 20);
+            this.txt_TenQL.Size = new System.Drawing.Size(298, 24);
             this.txt_TenQL.TabIndex = 18;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(335, 45);
+            this.label5.Location = new System.Drawing.Point(441, 53);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(62, 18);
             this.label5.TabIndex = 16;
             this.label5.Text = "Giới tính";
             // 
@@ -94,9 +99,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(335, 15);
+            this.label4.Location = new System.Drawing.Point(441, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.Size = new System.Drawing.Size(94, 18);
             this.label4.TabIndex = 15;
             this.label4.Text = "Số điện thoại";
             // 
@@ -104,62 +110,69 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.Location = new System.Drawing.Point(10, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(76, 18);
             this.label1.TabIndex = 13;
             this.label1.Text = "Họ và Tên";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(74, 45);
+            this.dateTimePicker1.Location = new System.Drawing.Point(99, 53);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(298, 24);
             this.dateTimePicker1.TabIndex = 23;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(15, 45);
+            this.label3.Location = new System.Drawing.Point(10, 53);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.Size = new System.Drawing.Size(73, 18);
             this.label3.TabIndex = 22;
             this.label3.Text = "Ngày sinh";
             // 
             // but_OK
             // 
+            this.but_OK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.but_OK.Image = ((System.Drawing.Image)(resources.GetObject("but_OK.Image")));
             this.but_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_OK.Location = new System.Drawing.Point(199, 86);
+            this.but_OK.Location = new System.Drawing.Point(346, 97);
+            this.but_OK.Margin = new System.Windows.Forms.Padding(4);
             this.but_OK.Name = "but_OK";
-            this.but_OK.Size = new System.Drawing.Size(56, 23);
+            this.but_OK.Size = new System.Drawing.Size(69, 32);
             this.but_OK.TabIndex = 24;
             this.but_OK.Text = "OK";
             this.but_OK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.but_OK.UseVisualStyleBackColor = true;
+            this.but_OK.UseVisualStyleBackColor = false;
             this.but_OK.Click += new System.EventHandler(this.but_OK_Click);
             // 
             // but_Cancel
             // 
+            this.but_Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(338, 86);
+            this.but_Cancel.Location = new System.Drawing.Point(514, 97);
+            this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(67, 23);
+            this.but_Cancel.Size = new System.Drawing.Size(89, 32);
             this.but_Cancel.TabIndex = 25;
             this.but_Cancel.Text = "Cancel";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.but_Cancel.UseVisualStyleBackColor = true;
+            this.but_Cancel.UseVisualStyleBackColor = false;
             this.but_Cancel.Click += new System.EventHandler(this.but_Cancel_Click);
             // 
             // NguoiQLAddForrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(623, 115);
+            this.ClientSize = new System.Drawing.Size(868, 138);
             this.Controls.Add(this.but_Cancel);
             this.Controls.Add(this.but_OK);
             this.Controls.Add(this.dateTimePicker1);
@@ -172,6 +185,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NguoiQLAddForrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

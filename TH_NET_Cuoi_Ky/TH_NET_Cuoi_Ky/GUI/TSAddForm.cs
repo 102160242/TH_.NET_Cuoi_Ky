@@ -31,7 +31,7 @@ namespace TH_NET_Cuoi_Ky
 
         private void butCancel_Click(object sender, EventArgs e)
         {
-            ReloadData();
+           
             Dispose();
         }
         private void butAdd_Click(object sender, EventArgs e)
