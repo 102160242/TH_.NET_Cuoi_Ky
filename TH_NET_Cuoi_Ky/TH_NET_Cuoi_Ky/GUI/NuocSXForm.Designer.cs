@@ -258,7 +258,7 @@
             this.Name = "NuocSXForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Nước Sản Xuất";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuocSXForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NuocSXForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

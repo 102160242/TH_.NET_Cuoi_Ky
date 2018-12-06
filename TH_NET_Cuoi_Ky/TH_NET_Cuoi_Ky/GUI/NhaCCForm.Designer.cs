@@ -286,7 +286,8 @@
             this.Name = "NhaCCForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhà cung cấp";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhaCCForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NhaCCForm_FormClosed);
+            this.Shown += new System.EventHandler(this.NhaCCForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

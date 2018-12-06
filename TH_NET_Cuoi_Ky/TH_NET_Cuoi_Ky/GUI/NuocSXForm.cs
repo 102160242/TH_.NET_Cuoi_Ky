@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NuocSXForm : Form
     {
         public delegate void dd();
-        public dd ShowForm;
+        public dd ShowMainForm;
         NuocSX_BLL NSX_BLL;
         public NuocSXForm()
         {
@@ -24,8 +24,6 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void NuocSXForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ShowForm();
-            Dispose();
         }
         private void ShowNuocSX()
         {
@@ -107,7 +105,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void but_Add_Click(object sender, EventArgs e)
         {
             NuocSXAddform f = new NuocSXAddform();
-            f.ReloadData += Reload;
+            f.ShowNuocSXForm += Reload;
             f.Show();
             this.Visible = false; // Tam an form
         }
@@ -121,7 +119,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ShowForm();
+            ShowMainForm();
+            Dispose();
+        }
+
+        private void NuocSXForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ShowMainForm();
             Dispose();
         }
     }

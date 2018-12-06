@@ -14,13 +14,12 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NhaCCForm : Form
     {
         public delegate void dd();
-        public dd ShowForm;
+        public dd ShowMainForm;
         NhaCC_BLL nhaCC_BLL;
         public NhaCCForm()
         {
             InitializeComponent();
             this.nhaCC_BLL = new NhaCC_BLL();
-            LoadCBB();
         }
         private void LoadCBB()
         {
@@ -31,10 +30,6 @@ namespace TH_NET_Cuoi_Ky.GUI
                     cbbAddress.Items.Add(i);
                 }
             }
-        }
-        private void NhaCCForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ShowForm();
         }
         private void Reload()
         {
@@ -52,7 +47,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ShowForm();
+            ShowMainForm();
             Dispose();
         }
 
@@ -67,7 +62,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void butAdd_Click(object sender, EventArgs e)
         {
             NhaCCAddForm f = new NhaCCAddForm();
-            f.ReloadNhaCC += Reload;
+            f.ShowNhaCCForm += Reload;
             f.Show();
             this.Visible = false;
         }
@@ -127,6 +122,16 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void but_Search_Click(object sender, EventArgs e)
         {
             dgv.DataSource = nhaCC_BLL.ShowNhaCC_BLL(txtSearch.Text);
+        }
+
+        private void NhaCCForm_Shown(object sender, EventArgs e)
+        {
+            LoadCBB();
+        }
+
+        private void NhaCCForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ShowMainForm();
         }
     }
 }

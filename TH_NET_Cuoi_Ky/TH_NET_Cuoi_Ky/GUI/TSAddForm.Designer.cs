@@ -253,6 +253,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Tài Sản mới";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddFormTS_FormClosed);
+            this.Shown += new System.EventHandler(this.AddFormTS_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

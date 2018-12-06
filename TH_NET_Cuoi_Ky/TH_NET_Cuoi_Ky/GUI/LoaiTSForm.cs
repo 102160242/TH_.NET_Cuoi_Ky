@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class LoaiTSForm : Form
     {
         public delegate void dd();
-        public dd ShowForm;
+        public dd ShowMainForm;
         LoaiTS_BLL LoaiTS_BLL;
         public LoaiTSForm()
         {
@@ -29,7 +29,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void butAdd_Click(object sender, EventArgs e)
         {
             LoaiTSAddForm f = new LoaiTSAddForm();
-            f.ReloadLoaiTS += Reload;
+            f.ShowLoaiTSForm += Reload;
             f.Show();
             this.Visible = false;
             
@@ -108,13 +108,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butCancel_Click(object sender, EventArgs e)
         {
-            ShowForm();
+            ShowMainForm();
             Dispose();
         }
 
         private void LoaiTSForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowForm();
+            ShowMainForm();
             Dispose();
         }
     }
