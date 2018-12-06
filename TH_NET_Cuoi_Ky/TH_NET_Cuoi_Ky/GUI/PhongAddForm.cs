@@ -16,13 +16,12 @@ namespace TH_NET_Cuoi_Ky.GUI
         Phong_BLL Phong_BLL;
         NguoiQL_BLL NguoiQL_BLL;
         public delegate void dd();
-        public dd ReloadPhong;
+        public dd ShowPhongForm;
         public PhongAddForm()
         {
             InitializeComponent();
             Phong_BLL = new Phong_BLL();
-            NguoiQL_BLL = new NguoiQL_BLL();
-            loadCbbNguoiQL();
+            NguoiQL_BLL = new NguoiQL_BLL();          
         }
 
         private void but_OK_Click(object sender, EventArgs e)
@@ -32,11 +31,11 @@ namespace TH_NET_Cuoi_Ky.GUI
                 TenPhong = txtTenPhong.Text,
                 MaNguoiQL = Phong_BLL.GetMaNQL(cbbNguoiQL.SelectedItem.ToString())
             });
-            Boolean phong = Phong_BLL.AddPhong(l);
-            if (phong)
+            Boolean result = Phong_BLL.AddPhong(l);
+            if (result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
-                ReloadPhong();
+                ShowPhongForm();
                 Dispose();
             }
             else
@@ -44,7 +43,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show("Không thể thêm Người quản lý mới. Vui lòng thử lại sau!");
             }
         }
-        private void loadCbbNguoiQL()
+        private void loadCBB()
         {
             foreach(string i in NguoiQL_BLL.loadcbb())
             {
@@ -55,14 +54,19 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ReloadPhong();
+            ShowPhongForm();
             Dispose();
         }
 
         private void PhongAddForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ReloadPhong();
+            ShowPhongForm();
             Dispose();
+        }
+
+        private void PhongAddForm_Shown(object sender, EventArgs e)
+        {
+            loadCBB();
         }
     }
 }

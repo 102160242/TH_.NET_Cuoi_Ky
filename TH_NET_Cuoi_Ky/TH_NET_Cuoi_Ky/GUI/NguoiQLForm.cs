@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NguoiQLForm : Form
     {
         public delegate void dd();
-        public dd ShowForm;
+        public dd ShowMainForm;
 
         NguoiQL_BLL Nguoi_BLL;
         public NguoiQLForm()
@@ -24,7 +24,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ShowForm();
+            ShowMainForm();
             Dispose();
         }
 
@@ -56,7 +56,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void but_Add_Click(object sender, EventArgs e)
         {
             NguoiQLAddForrm f = new NguoiQLAddForrm();
-            f.ReloadNguoiQL += Reload;
+            f.ShowNguoiQLForm += Reload;
             f.Show();
             this.Visible = false;
         }
@@ -64,7 +64,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void NguoiQLForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowForm();
+            ShowMainForm();
             Dispose();
         }
 

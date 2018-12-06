@@ -242,7 +242,7 @@
             this.Name = "PhongForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Phòng";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhongForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PhongForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

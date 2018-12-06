@@ -127,6 +127,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Nhà Cung Cấp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NhaCCAddForm_FormClosed);
+            this.Shown += new System.EventHandler(this.NhaCCAddForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

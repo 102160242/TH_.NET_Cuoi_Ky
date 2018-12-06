@@ -127,6 +127,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Phòng";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PhongAddForm_FormClosed);
+            this.Shown += new System.EventHandler(this.PhongAddForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

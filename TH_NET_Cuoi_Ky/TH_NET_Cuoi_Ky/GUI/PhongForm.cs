@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class PhongForm : Form
     {
         public delegate void dd();
-        public dd ShowForm;
+        public dd ShowMainForm;
         NguoiQL_BLL NQL_BLL;
         Phong_BLL Phong_BLL;
         public PhongForm()
@@ -34,7 +34,6 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void PhongForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ShowForm();
         }
 
         private void ShowPhong()
@@ -49,14 +48,14 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void Reload()
         {
-            ShowForm();
+            ShowPhong();
             this.Visible = true;
         }
 
         private void but_Add_Click(object sender, EventArgs e)
         {
             PhongAddForm f = new PhongAddForm();
-            f.ReloadPhong += Reload;
+            f.ShowPhongForm += Reload;
             f.Show();
             this.Visible = false;
         }
@@ -128,7 +127,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ShowForm();
+            ShowMainForm();
+            Dispose();
+        }
+
+        private void PhongForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ShowMainForm();
             Dispose();
         }
     }

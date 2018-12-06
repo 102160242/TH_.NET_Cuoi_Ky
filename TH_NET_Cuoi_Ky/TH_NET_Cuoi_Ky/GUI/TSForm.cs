@@ -15,10 +15,8 @@ namespace TH_NET_Cuoi_Ky
     public partial class Form1 : Form
     {
         public delegate void dd();
-        public dd ShowForm;
+        public dd ShowMainForm;
         TaiSan_BLL TS_BLL;
-
-
         Phong_BLL P_BLL;
         NhaCC_BLL NCC_BLL;
         NuocSX_BLL NSX_BLL;
@@ -31,8 +29,6 @@ namespace TH_NET_Cuoi_Ky
             this.NCC_BLL = new NhaCC_BLL();
             this.NSX_BLL = new NuocSX_BLL();
             this.LTS_BLL = new LoaiTS_BLL();
-            // Load tat ca cac ComboBox
-            this.loadAllCBB();
             // Them 2 lua chon SX vao ComboBox sap xep
             //cbbSort.Items.Add("Sắp xếp A-Z");
             //cbbSort.Items.Add("Sắp xếp Z-A");
@@ -128,7 +124,7 @@ namespace TH_NET_Cuoi_Ky
         private void butAdd_Click(object sender, EventArgs e)
         {
             AddFormTS f = new AddFormTS();
-            f.ReloadData += Reload;
+            f.ShowTSForm += Reload;
             f.Show();
             this.Visible = false; // Tam an form
         }
@@ -204,11 +200,6 @@ namespace TH_NET_Cuoi_Ky
                 }
             }
         }
-        private void TSForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ShowForm();
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             Dictionary<String, String> data = new Dictionary<String, String>();
@@ -225,6 +216,18 @@ namespace TH_NET_Cuoi_Ky
             if (txtTuKhoa.Text != "") data["TuKhoa"] = txtTuKhoa.Text;
             else data["TuKhoa"] = "";
             dgv.DataSource = TS_BLL.SearchTS(data);
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            // Load tat ca cac ComboBox
+            this.loadAllCBB();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ShowMainForm();
+            Dispose();
         }
     }
 }
