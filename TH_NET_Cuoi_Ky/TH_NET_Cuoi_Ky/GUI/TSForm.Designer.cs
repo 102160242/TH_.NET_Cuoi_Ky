@@ -85,7 +85,7 @@
             this.txtTuKhoa.Margin = new System.Windows.Forms.Padding(4);
             this.txtTuKhoa.Name = "txtTuKhoa";
             this.txtTuKhoa.Size = new System.Drawing.Size(265, 24);
-            this.txtTuKhoa.TabIndex = 5;
+            this.txtTuKhoa.TabIndex = 3;
             // 
             // btnSearch
             // 
@@ -97,7 +97,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(101, 32);
-            this.btnSearch.TabIndex = 6;
+            this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -105,21 +105,25 @@
             // 
             // cbbLoaiTS1
             // 
+            this.cbbLoaiTS1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbLoaiTS1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbLoaiTS1.FormattingEnabled = true;
             this.cbbLoaiTS1.Location = new System.Drawing.Point(120, 76);
             this.cbbLoaiTS1.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS1.Name = "cbbLoaiTS1";
             this.cbbLoaiTS1.Size = new System.Drawing.Size(250, 26);
-            this.cbbLoaiTS1.TabIndex = 4;
+            this.cbbLoaiTS1.TabIndex = 2;
             // 
             // cbbNuocSX1
             // 
+            this.cbbNuocSX1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbNuocSX1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbNuocSX1.FormattingEnabled = true;
             this.cbbNuocSX1.Location = new System.Drawing.Point(120, 28);
             this.cbbNuocSX1.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNuocSX1.Name = "cbbNuocSX1";
             this.cbbNuocSX1.Size = new System.Drawing.Size(250, 26);
-            this.cbbNuocSX1.TabIndex = 3;
+            this.cbbNuocSX1.TabIndex = 1;
             // 
             // label4
             // 
@@ -219,6 +223,8 @@
             // 
             // cbbLoaiTS
             // 
+            this.cbbLoaiTS.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbbLoaiTS.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbLoaiTS.FormattingEnabled = true;
             this.cbbLoaiTS.Location = new System.Drawing.Point(826, 8);
             this.cbbLoaiTS.Margin = new System.Windows.Forms.Padding(4);
@@ -392,11 +398,11 @@
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(0, 185);
+            this.dgv.Location = new System.Drawing.Point(4, 185);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1050, 242);
+            this.dgv.Size = new System.Drawing.Size(1025, 242);
             this.dgv.TabIndex = 10;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             // 
@@ -439,7 +445,7 @@
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(64, 32);
-            this.btnDel.TabIndex = 17;
+            this.btnDel.TabIndex = 13;
             this.btnDel.Text = "Xóa";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDel.UseVisualStyleBackColor = false;

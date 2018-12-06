@@ -37,17 +37,17 @@
             // 
             // txtTenLoaiTS
             // 
-            this.txtTenLoaiTS.Location = new System.Drawing.Point(196, 24);
+            this.txtTenLoaiTS.Location = new System.Drawing.Point(163, 31);
             this.txtTenLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenLoaiTS.Name = "txtTenLoaiTS";
-            this.txtTenLoaiTS.Size = new System.Drawing.Size(254, 24);
+            this.txtTenLoaiTS.Size = new System.Drawing.Size(217, 24);
             this.txtTenLoaiTS.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(39, 24);
+            this.label2.Location = new System.Drawing.Point(30, 34);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 18);
@@ -59,7 +59,7 @@
             this.butOK.BackColor = System.Drawing.Color.Transparent;
             this.butOK.Image = ((System.Drawing.Image)(resources.GetObject("butOK.Image")));
             this.butOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butOK.Location = new System.Drawing.Point(172, 80);
+            this.butOK.Location = new System.Drawing.Point(102, 75);
             this.butOK.Margin = new System.Windows.Forms.Padding(4);
             this.butOK.Name = "butOK";
             this.butOK.Size = new System.Drawing.Size(71, 32);
@@ -74,7 +74,7 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(307, 80);
+            this.butCancel.Location = new System.Drawing.Point(237, 75);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(97, 32);
@@ -90,7 +90,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(496, 125);
+            this.ClientSize = new System.Drawing.Size(397, 130);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.butOK);
             this.Controls.Add(this.txtTenLoaiTS);

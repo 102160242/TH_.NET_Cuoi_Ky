@@ -58,7 +58,7 @@
             this.but_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.but_Delete.Name = "but_Delete";
             this.but_Delete.Size = new System.Drawing.Size(71, 32);
-            this.but_Delete.TabIndex = 43;
+            this.but_Delete.TabIndex = 9;
             this.but_Delete.Text = "Xóa";
             this.but_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Delete.UseVisualStyleBackColor = false;
@@ -73,7 +73,7 @@
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
             this.but_Cancel.Size = new System.Drawing.Size(80, 32);
-            this.but_Cancel.TabIndex = 40;
+            this.but_Cancel.TabIndex = 10;
             this.but_Cancel.Text = "Thoát";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Cancel.UseVisualStyleBackColor = false;
@@ -85,18 +85,18 @@
             this.txt_Search.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(210, 24);
-            this.txt_Search.TabIndex = 39;
+            this.txt_Search.TabIndex = 3;
             // 
             // but_Update
             // 
             this.but_Update.BackColor = System.Drawing.Color.Transparent;
             this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
             this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Update.Location = new System.Drawing.Point(321, 464);
+            this.but_Update.Location = new System.Drawing.Point(316, 464);
             this.but_Update.Margin = new System.Windows.Forms.Padding(4);
             this.but_Update.Name = "but_Update";
             this.but_Update.Size = new System.Drawing.Size(101, 32);
-            this.but_Update.TabIndex = 38;
+            this.but_Update.TabIndex = 8;
             this.but_Update.Text = "Cập nhật";
             this.but_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Update.UseVisualStyleBackColor = false;
@@ -111,7 +111,7 @@
             this.but_Search.Margin = new System.Windows.Forms.Padding(4);
             this.but_Search.Name = "but_Search";
             this.but_Search.Size = new System.Drawing.Size(105, 32);
-            this.but_Search.TabIndex = 37;
+            this.but_Search.TabIndex = 4;
             this.but_Search.Text = "Tìm kiếm";
             this.but_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Search.UseVisualStyleBackColor = false;
@@ -121,12 +121,12 @@
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(23, 163);
+            this.dgv.Location = new System.Drawing.Point(4, 163);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(681, 293);
-            this.dgv.TabIndex = 36;
+            this.dgv.Size = new System.Drawing.Size(709, 293);
+            this.dgv.TabIndex = 5;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             // 
             // txtTenNSX
@@ -135,7 +135,7 @@
             this.txtTenNSX.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNSX.Name = "txtTenNSX";
             this.txtTenNSX.Size = new System.Drawing.Size(208, 24);
-            this.txtTenNSX.TabIndex = 31;
+            this.txtTenNSX.TabIndex = 2;
             // 
             // txtMaNSX
             // 
@@ -144,7 +144,7 @@
             this.txtMaNSX.Name = "txtMaNSX";
             this.txtMaNSX.ReadOnly = true;
             this.txtMaNSX.Size = new System.Drawing.Size(208, 24);
-            this.txtMaNSX.TabIndex = 30;
+            this.txtMaNSX.TabIndex = 1;
             // 
             // but_Add
             // 
@@ -155,7 +155,7 @@
             this.but_Add.Margin = new System.Windows.Forms.Padding(4);
             this.but_Add.Name = "but_Add";
             this.but_Add.Size = new System.Drawing.Size(83, 32);
-            this.but_Add.TabIndex = 29;
+            this.but_Add.TabIndex = 7;
             this.but_Add.Text = "Thêm";
             this.but_Add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Add.UseVisualStyleBackColor = false;
@@ -180,7 +180,7 @@
             this.but_Show.Margin = new System.Windows.Forms.Padding(4);
             this.but_Show.Name = "but_Show";
             this.but_Show.Size = new System.Drawing.Size(93, 32);
-            this.but_Show.TabIndex = 24;
+            this.but_Show.TabIndex = 6;
             this.but_Show.Text = "Hiển thị";
             this.but_Show.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_Show.UseVisualStyleBackColor = false;
@@ -203,11 +203,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtMaNSX);
             this.groupBox1.Controls.Add(this.txtTenNSX);
-            this.groupBox1.Location = new System.Drawing.Point(20, 17);
+            this.groupBox1.Location = new System.Drawing.Point(4, 17);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(346, 138);
+            this.groupBox1.Size = new System.Drawing.Size(362, 138);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -222,7 +222,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(324, 138);
+            this.groupBox2.Size = new System.Drawing.Size(338, 138);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";

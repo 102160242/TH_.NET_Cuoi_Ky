@@ -75,5 +75,10 @@ namespace TH_NET_Cuoi_Ky.GUI
             f.Show();
             this.Visible = false;
         }
+
+        private void butCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

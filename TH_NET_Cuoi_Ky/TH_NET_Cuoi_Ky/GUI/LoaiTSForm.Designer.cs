@@ -56,36 +56,36 @@
             this.groupBox1.Controls.Add(this.txtMaLoaiTS);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(18, 17);
+            this.groupBox1.Location = new System.Drawing.Point(3, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(410, 138);
+            this.groupBox1.Size = new System.Drawing.Size(325, 118);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
             // txtTenLoaiTS
             // 
-            this.txtTenLoaiTS.Location = new System.Drawing.Point(144, 78);
+            this.txtTenLoaiTS.Location = new System.Drawing.Point(124, 78);
             this.txtTenLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenLoaiTS.Name = "txtTenLoaiTS";
-            this.txtTenLoaiTS.Size = new System.Drawing.Size(244, 24);
-            this.txtTenLoaiTS.TabIndex = 3;
+            this.txtTenLoaiTS.Size = new System.Drawing.Size(193, 24);
+            this.txtTenLoaiTS.TabIndex = 2;
             // 
             // txtMaLoaiTS
             // 
-            this.txtMaLoaiTS.Location = new System.Drawing.Point(146, 35);
+            this.txtMaLoaiTS.Location = new System.Drawing.Point(126, 35);
             this.txtMaLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaLoaiTS.Name = "txtMaLoaiTS";
             this.txtMaLoaiTS.ReadOnly = true;
-            this.txtMaLoaiTS.Size = new System.Drawing.Size(242, 24);
-            this.txtMaLoaiTS.TabIndex = 2;
+            this.txtMaLoaiTS.Size = new System.Drawing.Size(191, 24);
+            this.txtMaLoaiTS.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 82);
+            this.label2.Location = new System.Drawing.Point(9, 82);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 18);
@@ -95,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 39);
+            this.label1.Location = new System.Drawing.Point(8, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 18);
@@ -108,11 +108,11 @@
             this.groupBox2.Controls.Add(this.butSearch);
             this.groupBox2.Controls.Add(this.txtSearch);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(448, 17);
+            this.groupBox2.Location = new System.Drawing.Point(336, 17);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(417, 138);
+            this.groupBox2.Size = new System.Drawing.Size(334, 114);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
@@ -122,7 +122,7 @@
             this.butSearch.BackColor = System.Drawing.Color.Transparent;
             this.butSearch.Image = ((System.Drawing.Image)(resources.GetObject("butSearch.Image")));
             this.butSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butSearch.Location = new System.Drawing.Point(156, 82);
+            this.butSearch.Location = new System.Drawing.Point(109, 74);
             this.butSearch.Margin = new System.Windows.Forms.Padding(4);
             this.butSearch.Name = "butSearch";
             this.butSearch.Size = new System.Drawing.Size(99, 32);
@@ -134,16 +134,16 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(112, 39);
+            this.txtSearch.Location = new System.Drawing.Point(109, 31);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(259, 24);
+            this.txtSearch.Size = new System.Drawing.Size(204, 24);
             this.txtSearch.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 39);
+            this.label3.Location = new System.Drawing.Point(19, 34);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 18);
@@ -154,12 +154,12 @@
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(18, 163);
+            this.dgv.Location = new System.Drawing.Point(3, 139);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(848, 252);
-            this.dgv.TabIndex = 2;
+            this.dgv.Size = new System.Drawing.Size(667, 276);
+            this.dgv.TabIndex = 5;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             // 
             // butShow
@@ -167,11 +167,11 @@
             this.butShow.BackColor = System.Drawing.Color.Transparent;
             this.butShow.Image = ((System.Drawing.Image)(resources.GetObject("butShow.Image")));
             this.butShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butShow.Location = new System.Drawing.Point(112, 426);
+            this.butShow.Location = new System.Drawing.Point(27, 430);
             this.butShow.Margin = new System.Windows.Forms.Padding(4);
             this.butShow.Name = "butShow";
             this.butShow.Size = new System.Drawing.Size(96, 32);
-            this.butShow.TabIndex = 3;
+            this.butShow.TabIndex = 6;
             this.butShow.Text = "Hiển thị";
             this.butShow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butShow.UseVisualStyleBackColor = false;
@@ -182,11 +182,11 @@
             this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butAdd.Location = new System.Drawing.Point(268, 426);
+            this.butAdd.Location = new System.Drawing.Point(183, 430);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(85, 32);
-            this.butAdd.TabIndex = 5;
+            this.butAdd.TabIndex = 7;
             this.butAdd.Text = "Thêm";
             this.butAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butAdd.UseVisualStyleBackColor = false;
@@ -197,11 +197,11 @@
             this.butUpdate.BackColor = System.Drawing.Color.Transparent;
             this.butUpdate.Image = ((System.Drawing.Image)(resources.GetObject("butUpdate.Image")));
             this.butUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butUpdate.Location = new System.Drawing.Point(399, 426);
+            this.butUpdate.Location = new System.Drawing.Point(314, 430);
             this.butUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(103, 32);
-            this.butUpdate.TabIndex = 6;
+            this.butUpdate.TabIndex = 8;
             this.butUpdate.Text = "Cập nhật";
             this.butUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butUpdate.UseVisualStyleBackColor = false;
@@ -212,11 +212,11 @@
             this.butDelete.BackColor = System.Drawing.Color.Transparent;
             this.butDelete.Image = ((System.Drawing.Image)(resources.GetObject("butDelete.Image")));
             this.butDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butDelete.Location = new System.Drawing.Point(555, 426);
+            this.butDelete.Location = new System.Drawing.Point(460, 430);
             this.butDelete.Margin = new System.Windows.Forms.Padding(4);
             this.butDelete.Name = "butDelete";
             this.butDelete.Size = new System.Drawing.Size(74, 32);
-            this.butDelete.TabIndex = 7;
+            this.butDelete.TabIndex = 9;
             this.butDelete.Text = "Xóa";
             this.butDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butDelete.UseVisualStyleBackColor = false;
@@ -227,11 +227,11 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(668, 426);
+            this.butCancel.Location = new System.Drawing.Point(583, 430);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(77, 32);
-            this.butCancel.TabIndex = 8;
+            this.butCancel.TabIndex = 10;
             this.butCancel.Text = "Thoát";
             this.butCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butCancel.UseVisualStyleBackColor = false;
@@ -242,7 +242,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(884, 475);
+            this.ClientSize = new System.Drawing.Size(674, 475);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.butAdd);
             this.Controls.Add(this.butUpdate);
