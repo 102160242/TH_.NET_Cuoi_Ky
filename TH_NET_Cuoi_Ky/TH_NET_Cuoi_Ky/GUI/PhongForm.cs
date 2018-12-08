@@ -73,22 +73,16 @@ namespace TH_NET_Cuoi_Ky.GUI
                 return;
             }
 
-            Boolean result = Phong_BLL.UpdatePhong(new DTO.Phong
+            (bool result, string msg) = Phong_BLL.updatePhong(new DTO.Phong
             {
                 MaPhong = Convert.ToInt32(txt_MaPhong.Text),
                 TenPhong = txt_TenPhong.Text,
-                MaNguoiQL = Phong_BLL.GetMaNQL(cbbNguoiQL.SelectedItem.ToString())
+                MaNguoiQL = Phong_BLL.getIdByName(cbbNguoiQL.SelectedItem.ToString())
                     
             });
-            if (result)
-            {
-                MessageBox.Show("Cập nhật thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-            }
-            
+
+            MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
             ShowPhong();
         }
 
@@ -104,15 +98,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                 {
                     l.Add(Convert.ToInt32(r.Cells["MaPhong"].Value.ToString()));
                 }
-                Boolean result = Phong_BLL.DeletePhong(l);
-                if (result)
-                {
-                    MessageBox.Show("Xóa thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                }
+                (bool result, string msg) = Phong_BLL.deletePhong(l);
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
                 ShowPhong();
             }
         }

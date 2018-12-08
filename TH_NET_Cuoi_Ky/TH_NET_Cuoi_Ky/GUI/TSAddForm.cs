@@ -59,7 +59,7 @@ namespace TH_NET_Cuoi_Ky
                 MaLoaiTS = maLoaiTS,
                 GhiChu = txtGhiChu.Text
             });
-            Boolean result = TS_BLL.addTS(l);
+            (bool result, string msg) = TS_BLL.addTS(l);
 
             if(result)
             {
@@ -69,7 +69,7 @@ namespace TH_NET_Cuoi_Ky
             }
             else
             {
-                MessageBox.Show("Không thể thêm Tài Sản mới. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi");
             }      
 
         }

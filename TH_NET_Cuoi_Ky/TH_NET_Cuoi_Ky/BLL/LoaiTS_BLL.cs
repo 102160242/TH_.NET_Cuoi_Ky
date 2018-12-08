@@ -53,7 +53,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             return data.ToList();
         }
 
-        internal bool addLoaiTS(List<DTO.LoaiTS> l)
+        public (bool, string) addLoaiTS(List<DTO.LoaiTS> l)
         {
             try
             {
@@ -66,14 +66,14 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Đã thêm thành công!");
         }
         
         public List<DTO.LoaiTS> getLoaiTSByID(int id)
@@ -84,7 +84,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             return data.ToList<DTO.LoaiTS>();
         }
 
-        internal bool updateLoaiTS(DTO.LoaiTS loaiTS)
+        public (bool, string) updateLoaiTS(DTO.LoaiTS loaiTS)
         {
             try
             {
@@ -98,22 +98,28 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Update thành công!");
         }
 
-        internal bool deleteLoaiTS(List<int> l)
+        public (bool, string) deleteLoaiTS(List<int> l)
         {
             try
             {
                 foreach (int maLoaiTS in l)
                 {
+                    // Kiem tra xem con Tai San nao thuoc Loai Tai San nay hay khong
+                    int count = db.TaiSans.Where(p => p.MaLoaiTS == maLoaiTS).Count();
+                    if (count > 0)
+                    {
+                        return (false, "Không thể xóa Loại tài sản có mã số " + maLoaiTS + " do còn Tài sản nào thuộc loại này!");
+                    }
                     db.LoaiTSs.Remove(db.LoaiTSs.Single(p => p.MaLoaiTS == maLoaiTS));
                 }
                 db.SaveChanges();
@@ -121,14 +127,14 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, một (hoặc nhiều) Loại Tài Sản đã không thể được xóa. Vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, một (hoặc nhiều) Loại Tài Sản đã không thể được xóa. Vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Xóa thành công");
         }
     }
 }

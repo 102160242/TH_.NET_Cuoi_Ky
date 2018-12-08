@@ -33,7 +33,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 TenNuocSX = txtTenNSX.Text,
             });
-            Boolean result = NSX_BLL.addNSX(l);
+            (bool result, string msg) = NSX_BLL.addNSX(l);
 
             if (result)
             {
@@ -43,7 +43,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
             else
             {
-                MessageBox.Show("Không thể thêm Tài Sản mới. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi");
             }
         }
 

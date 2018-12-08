@@ -106,7 +106,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                        select p;
             return data.ToList<DTO.TaiSan>();
         }
-        public Boolean updateTS(DTO.TaiSan TS)
+        public (bool, string) updateTS(DTO.TaiSan TS)
         {
             try
             {
@@ -126,16 +126,16 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch(System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch(Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Cập nhật thành công!");
         }
-        public Boolean addTS(List<DTO.TaiSan> l)
+        public (bool, string) addTS(List<DTO.TaiSan> l)
         {
             try
             {
@@ -148,16 +148,16 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Thêm Tài Sản mới thành công!");
         }
-        public Boolean deleteTS(List<int> l)
+        public (bool, string) deleteTS(List<int> l)
         {
             try
             {
@@ -166,6 +166,11 @@ namespace TH_NET_Cuoi_Ky.BLL
                     //DTO.TaiSan t = new DTO.TaiSan { MaTS = maTS };
                     //db.TaiSans.Attach(t);
                     //db.TaiSans.Remove(t);
+                    int count = db.NhapXuats.Where(p => p.MaTS == maTS).Count();
+                    if (count > 0)
+                    {
+                        return (false, "Không thể xóa Tài Sản có mã số " + maTS + " do có trong danh sách Nhập/Xuất!");
+                    }
                     db.TaiSans.Remove(db.TaiSans.Single(p => p.MaTS == maTS));
                 }
                 db.SaveChanges();
@@ -173,14 +178,14 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Một (hoặc nhiều) Tài Sản đã không thể xóa do có lỗi xảy ra!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Một (hoặc nhiều) Tài Sản đã không thể xóa do có lỗi xảy ra!");
             }
-            return true;
+            return (true, "Xóa thành công!");
         }
     }
 }

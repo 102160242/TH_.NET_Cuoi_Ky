@@ -33,11 +33,11 @@ namespace TH_NET_Cuoi_Ky.GUI
             l.Add(new DTO.NguoiQL
             {
                 TenNguoiQL = txt_TenQL.Text,
-                NgaySinh = dateTimePicker1.Value,
+                NgaySinh = dateTimePicker1.Value.Date,
                 SoDT = txt_SDT.Text,
                 GioiTinh = rb_Male.Checked,
             });
-            Boolean result = Nguoi_BLL.addNguoiQL(l);
+            (bool result, string msg) = Nguoi_BLL.addNguoiQL(l);
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
@@ -46,7 +46,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
             else
             {
-                MessageBox.Show("Không thể thêm Người quản lý mới. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi!");
             }
         }
 

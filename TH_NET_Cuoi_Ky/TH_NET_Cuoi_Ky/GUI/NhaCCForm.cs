@@ -80,21 +80,15 @@ namespace TH_NET_Cuoi_Ky.GUI
                 return;
             }
 
-            Boolean result = nhaCC_BLL.updateNhaCC(new DTO.NhaCC
+            (bool result, string msg) = nhaCC_BLL.updateNhaCC(new DTO.NhaCC
             {
                 MaNhaCC = Convert.ToInt32(txtMaNhaCC.Text),
                 TenNhaCC = txtTenNhaCC.Text,
                 DiaChi = cbbAddress.SelectedItem == null ? cbbAddress.Text : cbbAddress.SelectedItem.ToString(),
             });
-            if (result)
-            {
-                MessageBox.Show("Cập nhật thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-            }
-            
+
+            MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
             ShowNhaCC();
         }
 
@@ -111,15 +105,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                 {
                     l.Add(Convert.ToInt32(r.Cells["MaNhaCC"].Value.ToString()));
                 }
-                Boolean result = nhaCC_BLL.deleteNhaCC(l);
-                if (result)
-                {
-                    MessageBox.Show("Xóa thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                }
+                (bool result, string msg) = nhaCC_BLL.deleteNhaCC(l);
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
                 ShowNhaCC();// Refresh lai du lieu tren DataGridView
             }
         }

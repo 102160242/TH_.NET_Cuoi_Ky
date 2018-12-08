@@ -73,6 +73,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (txt_MaQL.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Người Quản Lý cần sửa!");
+                return;
             }
             if(txt_SDT.Text == "" || txt_TenQL.Text == "")
             {
@@ -80,22 +81,15 @@ namespace TH_NET_Cuoi_Ky.GUI
                 return;
             }
  
-            Boolean result = Nguoi_BLL.updateNguoiQL(new DTO.NguoiQL
+            (bool result, string msg) = Nguoi_BLL.updateNguoiQL(new DTO.NguoiQL
             {
                 MaNguoiQL = Convert.ToInt32(txt_MaQL.Text),
                 TenNguoiQL = txt_TenQL.Text,
-                NgaySinh = dateTimePicker1.Value,
+                NgaySinh = dateTimePicker1.Value.Date,
                 SoDT = txt_SDT.Text,
                 GioiTinh = rb_Male.Checked,
             });
-            if (result)
-            {
-                MessageBox.Show("Cập nhật thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-            }               
+            MessageBox.Show(msg, result ? "Thành công!" : "Lỗi");            
             ShowNguoiQL();
         }
 
@@ -112,15 +106,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                 {
                     l.Add(Convert.ToInt32(r.Cells["MaNguoiQL"].Value.ToString()));
                 }
-                Boolean result = Nguoi_BLL.deleteNguoiQL(l);
-                if (result)
-                {
-                    MessageBox.Show("Xóa thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                }
+                (bool result, string msg) = Nguoi_BLL.deleteNguoiQL(l);
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi"); // Hien thi thong bao ket qua
+                
                 ShowNguoiQL(); // Refresh lai du lieu tren DataGridView
             }
         }
