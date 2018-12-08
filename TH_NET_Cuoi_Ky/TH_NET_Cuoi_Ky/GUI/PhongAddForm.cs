@@ -26,6 +26,11 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_OK_Click(object sender, EventArgs e)
         {
+            if(txtTenPhong.Text == "" || cbbNguoiQL.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
             List<DTO.Phong> l = new List<DTO.Phong>();
             l.Add(new DTO.Phong {
                 TenPhong = txtTenPhong.Text,

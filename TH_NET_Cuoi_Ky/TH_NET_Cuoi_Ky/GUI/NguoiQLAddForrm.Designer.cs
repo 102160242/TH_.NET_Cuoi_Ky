@@ -59,6 +59,7 @@
             // 
             this.rb_Male.AutoSize = true;
             this.rb_Male.BackColor = System.Drawing.Color.Transparent;
+            this.rb_Male.Checked = true;
             this.rb_Male.Location = new System.Drawing.Point(169, 153);
             this.rb_Male.Margin = new System.Windows.Forms.Padding(4);
             this.rb_Male.Name = "rb_Male";
@@ -75,6 +76,7 @@
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(258, 24);
             this.txt_SDT.TabIndex = 3;
+            this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // txt_TenQL
             // 
@@ -192,7 +194,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Người Quản Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NguoiQLAddForrm_FormClosed);
-            this.Load += new System.EventHandler(this.NguoiQLAddForrm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

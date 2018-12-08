@@ -23,6 +23,11 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if(txtTenNSX.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
             List<DTO.NuocSX> l = new List<DTO.NuocSX>();
             l.Add(new DTO.NuocSX
             {

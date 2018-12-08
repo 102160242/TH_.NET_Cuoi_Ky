@@ -24,13 +24,20 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void but_OK_Click(object sender, EventArgs e)
         {
-            Boolean result = Nguoi_BLL.addNguoiQL(new DTO.NguoiQL
+            if(txt_TenQL.Text == "" || txt_SDT.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ các thông tin!");
+                return;
+            }
+            List<DTO.NguoiQL> l = new List<DTO.NguoiQL>();
+            l.Add(new DTO.NguoiQL
             {
                 TenNguoiQL = txt_TenQL.Text,
                 NgaySinh = dateTimePicker1.Value,
                 SoDT = txt_SDT.Text,
                 GioiTinh = rb_Male.Checked,
             });
+            Boolean result = Nguoi_BLL.addNguoiQL(l);
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
@@ -58,6 +65,15 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void NguoiQLAddForrm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Khong cho nhap chu cai
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

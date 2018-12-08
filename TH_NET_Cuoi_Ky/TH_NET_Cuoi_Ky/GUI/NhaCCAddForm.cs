@@ -34,11 +34,18 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butOK_Click(object sender, EventArgs e)
         {
-            Boolean result = nhaCC_BLL.addNhaCC(new DTO.NhaCC
+            if(txtTenNhaCC.Text == "" || cbbAddress.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+            List<DTO.NhaCC> l = new List<DTO.NhaCC>();
+            l.Add(new DTO.NhaCC
             {
                 TenNhaCC = txtTenNhaCC.Text,
                 DiaChi = cbbAddress.SelectedItem == null ? cbbAddress.Text : cbbAddress.SelectedItem.ToString(),
             });
+            Boolean result = nhaCC_BLL.addNhaCC(l);
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
