@@ -45,7 +45,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                 TenNhaCC = txtTenNhaCC.Text,
                 DiaChi = cbbAddress.SelectedItem == null ? cbbAddress.Text : cbbAddress.SelectedItem.ToString(),
             });
-            Boolean result = nhaCC_BLL.addNhaCC(l);
+            (bool result, string msg) = nhaCC_BLL.addNhaCC(l);
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
@@ -54,7 +54,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
             else
             {
-                MessageBox.Show("Không thể thêm Người quản lý mới. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi");
             }
         }
 

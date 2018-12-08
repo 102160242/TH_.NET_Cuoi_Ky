@@ -48,7 +48,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             var nha = from p in db.NhaCCs where p.MaNhaCC == id select p;
             return nha.ToList<DTO.NhaCC>();
         }
-        public Boolean addNhaCC(List<DTO.NhaCC> l)
+        public (bool, string) addNhaCC(List<DTO.NhaCC> l)
         {
             try
             {
@@ -61,16 +61,16 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Thêm Nhà Cung Cấp mới thành công!");
         }
-        public Boolean updateNhaCC(DTO.NhaCC nhaCC)
+        public (bool, string) updateNhaCC(DTO.NhaCC nhaCC)
         {
             try
             {
@@ -84,36 +84,42 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Update thành công!");
         }
-        public Boolean deleteNhaCC(List<int> l)
+        public (bool, string) deleteNhaCC(List<int> l)
         {
             try
             {
                 foreach (int maNhaCC in l)
                 {
+                    // Kiem tra xem con Tai San nao thuoc Loai Tai San nay hay khong
+                    int count = db.NhapXuats.Where(p => p.MaNhaCC == maNhaCC).Count();
+                    if (count > 0)
+                    {
+                        return (false, "Không thể xóa Nhà cung cấp có mã số " + maNhaCC + " do có trong danh sách Nhập/Xuất!");
+                    }
                     db.NhaCCs.Remove(db.NhaCCs.Single(p => p.MaNhaCC == maNhaCC));
+                    db.SaveChanges();
                 }
-                db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, một (hoặc nhiều) Nhà Cung Cấp đã không thể được xóa. Vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, một (hoặc nhiều) Nhà Cung Cấp đã không thể được xóa. Vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Xóa thành công");
         }
         public int GetIdByNhaCC (string NCC)
         {

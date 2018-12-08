@@ -35,7 +35,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 TenLoaiTS = txtTenLoaiTS.Text,
             });
-            Boolean result = LoaiTS_BLL.addLoaiTS(l);
+            (bool result, string msg) = LoaiTS_BLL.addLoaiTS(l);
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Loai Tai San
@@ -44,7 +44,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
             else
             {
-                MessageBox.Show("Không thể thêm Loại Tài Sản mới. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi");               
             }
         }
 

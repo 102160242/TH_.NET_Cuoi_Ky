@@ -57,20 +57,14 @@ namespace TH_NET_Cuoi_Ky.GUI
                 return;
             }
 
-            Boolean result = NSX_BLL.updateTS(new DTO.NuocSX
+            (bool result, string msg) = NSX_BLL.updateTS(new DTO.NuocSX
             {
                 MaNuocSX = Convert.ToInt32(txtMaNSX.Text),
                 TenNuocSX = txtTenNSX.Text
             });
-            if (result)
-            {
-                MessageBox.Show("Cập nhật thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-            }                
-            
+
+            MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
             dgv.DataSource = NSX_BLL.Show_BLL(); // Refresh lai du lieu tren DataGridView
         }
 
@@ -93,15 +87,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                     {
                         l.Add(Convert.ToInt32(r.Cells["MaNuocSX"].Value.ToString()));
                     }
-                    Boolean result = NSX_BLL.deleteTS(l);
-                    if (result)
-                    {
-                        MessageBox.Show("Xóa thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                    }
+                    (bool result, string msg) = NSX_BLL.deleteTS(l);
+
+                    MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
                     dgv.DataSource = NSX_BLL.Show_BLL(); // Refresh lai du lieu tren DataGridView
                 }
             }

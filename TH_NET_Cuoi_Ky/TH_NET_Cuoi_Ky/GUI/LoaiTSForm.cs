@@ -61,15 +61,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                 {
                     l.Add(Convert.ToInt32(r.Cells["MaLoaiTS"].Value.ToString()));
                 }
-                Boolean result = LoaiTS_BLL.deleteLoaiTS(l);
-                if (result)
-                {
-                    MessageBox.Show("Xóa thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                }
+                (bool result, string msg) = LoaiTS_BLL.deleteLoaiTS(l);
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+                
                 ShowLoaiTS();// Refresh lai du lieu tren DataGridView
             }
         }
@@ -87,20 +82,14 @@ namespace TH_NET_Cuoi_Ky.GUI
                 return;
             }
 
-            Boolean result = LoaiTS_BLL.updateLoaiTS(new DTO.LoaiTS
+            (bool result, string msg) = LoaiTS_BLL.updateLoaiTS(new DTO.LoaiTS
             {
                 MaLoaiTS = Convert.ToInt32(txtMaLoaiTS.Text),
                 TenLoaiTS = txtTenLoaiTS.Text,
             });
-            if (result)
-            {
-                MessageBox.Show("Cập nhật thành công!");
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-            }
-            
+
+            MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
             ShowLoaiTS();
         }
 

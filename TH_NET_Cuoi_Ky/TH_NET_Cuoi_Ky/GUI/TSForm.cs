@@ -150,7 +150,7 @@ namespace TH_NET_Cuoi_Ky
             }
             else
             {
-                Boolean result = TS_BLL.updateTS(new DTO.TaiSan
+                (bool result, string msg) = TS_BLL.updateTS(new DTO.TaiSan
                 {
                     MaTS = Convert.ToInt32(txtMaTS.Text),
                     TenTS = txtTenTS.Text,
@@ -161,14 +161,8 @@ namespace TH_NET_Cuoi_Ky
                     MaLoaiTS = maLoaiTS,
                     GhiChu = txtGhiChu.Text,
                 });
-                if(result)
-                {
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                }                
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
             }
             ShowTS(); // Refresh lai du lieu tren DataGridView
         }
@@ -191,15 +185,10 @@ namespace TH_NET_Cuoi_Ky
                     {
                         l.Add(Convert.ToInt32(r.Cells["MaTS"].Value.ToString()));
                     }
-                    Boolean result = TS_BLL.deleteTS(l);
-                    if (result)
-                    {
-                        MessageBox.Show("Xóa thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                    }
+                    (bool result, string msg) = TS_BLL.deleteTS(l);
+
+                    MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
                     ShowTS(); // Refresh lai du lieu tren DataGridView
                 }
             }

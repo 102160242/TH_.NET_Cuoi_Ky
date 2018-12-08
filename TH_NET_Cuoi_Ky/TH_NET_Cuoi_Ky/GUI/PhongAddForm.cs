@@ -34,9 +34,9 @@ namespace TH_NET_Cuoi_Ky.GUI
             List<DTO.Phong> l = new List<DTO.Phong>();
             l.Add(new DTO.Phong {
                 TenPhong = txtTenPhong.Text,
-                MaNguoiQL = Phong_BLL.GetMaNQL(cbbNguoiQL.SelectedItem.ToString())
+                MaNguoiQL = Phong_BLL.getIdByName(cbbNguoiQL.SelectedItem.ToString())
             });
-            Boolean result = Phong_BLL.AddPhong(l);
+            (bool result, string msg) = Phong_BLL.addPhong(l);
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
@@ -45,7 +45,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
             else
             {
-                MessageBox.Show("Không thể thêm Người quản lý mới. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi");
             }
         }
         private void loadCBB()
