@@ -79,23 +79,28 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (txtMaLoaiTS.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn loại Tài sản cần sửa!");
+                return;
+            }
+            if (txtTenLoaiTS.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            Boolean result = LoaiTS_BLL.updateLoaiTS(new DTO.LoaiTS
+            {
+                MaLoaiTS = Convert.ToInt32(txtMaLoaiTS.Text),
+                TenLoaiTS = txtTenLoaiTS.Text,
+            });
+            if (result)
+            {
+                MessageBox.Show("Cập nhật thành công!");
             }
             else
             {
-                Boolean result = LoaiTS_BLL.updateLoaiTS(new DTO.LoaiTS
-                {
-                    MaLoaiTS = Convert.ToInt32(txtMaLoaiTS.Text),
-                    TenLoaiTS = txtTenLoaiTS.Text,
-                });
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                }
+                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
             }
+            
             ShowLoaiTS();
         }
 

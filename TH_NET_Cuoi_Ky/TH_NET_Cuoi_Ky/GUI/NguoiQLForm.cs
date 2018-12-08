@@ -72,29 +72,32 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             if (txt_MaQL.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn Tài sản cần sửa!");
+                MessageBox.Show("Vui lòng chọn Người Quản Lý cần sửa!");
+            }
+            if(txt_SDT.Text == "" || txt_TenQL.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+ 
+            Boolean result = Nguoi_BLL.updateNguoiQL(new DTO.NguoiQL
+            {
+                MaNguoiQL = Convert.ToInt32(txt_MaQL.Text),
+                TenNguoiQL = txt_TenQL.Text,
+                NgaySinh = dateTimePicker1.Value,
+                SoDT = txt_SDT.Text,
+                GioiTinh = rb_Male.Checked,
+            });
+            if (result)
+            {
+                MessageBox.Show("Cập nhật thành công!");
             }
             else
             {
-                    Boolean result = Nguoi_BLL.updateNguoiQL (new DTO.NguoiQL
-                    {
-                        MaNguoiQL = Convert.ToInt32(txt_MaQL.Text),
-                        TenNguoiQL = txt_TenQL.Text,
-                        NgaySinh = dateTimePicker1.Value,
-                        SoDT = txt_SDT.Text,
-                        GioiTinh = rb_Male.Checked,
-                    });
-                    if (result)
-                    {
-                        MessageBox.Show("Cập nhật thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                    }
-                }
+                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
+            }               
             ShowNguoiQL();
-            }
+        }
 
         private void but_Delete_Click(object sender, EventArgs e)
         {
@@ -126,5 +129,14 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             dgv.DataSource = Nguoi_BLL.ShowNguoiQL_BLL(txt_Search.Text);
         }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Khong cho nhap chu cai
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
-    }
+}

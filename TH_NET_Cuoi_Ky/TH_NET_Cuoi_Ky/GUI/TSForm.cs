@@ -134,37 +134,41 @@ namespace TH_NET_Cuoi_Ky
             if(txtMaTS.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Tài sản cần sửa!");
+                return;
+            }
+            if (txtTenTS.Text == "" || txtDvTinh.Text == "" || txtTskt.Text == "" || cbbLoaiTS.SelectedIndex == -1 || cbbNuocSX.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            int maNuocSX = NSX_BLL.getIDByName(cbbNuocSX.SelectedItem.ToString());
+            int maLoaiTS = LTS_BLL.getIDByName(cbbLoaiTS.SelectedItem.ToString());
+            if(maNuocSX == -1 || maLoaiTS == -1)
+            {
+                MessageBox.Show("Không tồn tại Nước Sản Xuất hoặc Loại Tài Sản đã chọn!");
             }
             else
             {
-                int maNuocSX = NSX_BLL.getIDByName(cbbNuocSX.SelectedItem.ToString());
-                int maLoaiTS = LTS_BLL.getIDByName(cbbLoaiTS.SelectedItem.ToString());
-                if(maNuocSX == -1 || maLoaiTS == -1)
+                Boolean result = TS_BLL.updateTS(new DTO.TaiSan
                 {
-                    MessageBox.Show("Không tồn tại Nước Sản Xuất hoặc Loại Tài Sản đã chọn!");
+                    MaTS = Convert.ToInt32(txtMaTS.Text),
+                    TenTS = txtTenTS.Text,
+                    DVTinh = txtDvTinh.Text,
+                    TSKT = txtTskt.Text,
+                    MaNuocSX = maNuocSX,
+                    NamSX = dateTimePicker1.Value.Year,
+                    MaLoaiTS = maLoaiTS,
+                    GhiChu = txtGhiChu.Text,
+                });
+                if(result)
+                {
+                    MessageBox.Show("Cập nhật thành công!");
                 }
                 else
                 {
-                    Boolean result = TS_BLL.updateTS(new DTO.TaiSan
-                    {
-                        MaTS = Convert.ToInt32(txtMaTS.Text),
-                        TenTS = txtTenTS.Text,
-                        DVTinh = txtDvTinh.Text,
-                        TSKT = txtTskt.Text,
-                        MaNuocSX = maNuocSX,
-                        NamSX = dateTimePicker1.Value.Year,
-                        MaLoaiTS = maLoaiTS,
-                        GhiChu = txtGhiChu.Text,
-                    });
-                    if(result)
-                    {
-                        MessageBox.Show("Cập nhật thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                    }
-                }
+                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
+                }                
             }
             ShowTS(); // Refresh lai du lieu tren DataGridView
         }

@@ -36,7 +36,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             return data.ToList();
         }
 
-        internal bool addNSX(List<NuocSX> l)
+        internal bool addNSX(List<DTO.NuocSX> l)
         {
             try
             {

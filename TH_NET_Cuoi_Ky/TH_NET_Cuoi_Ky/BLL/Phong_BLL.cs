@@ -34,12 +34,14 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return phong.ToList();
         }
-        public Boolean AddPhong (List<DTO.Phong> phong)
+        public Boolean AddPhong (List<DTO.Phong> l)
         {
             try
             {
-                foreach (DTO.Phong i in phong )
-                    db.Phongs.Add(i);
+                foreach (DTO.Phong phong in l)
+                {
+                    db.Phongs.Add(phong);
+                }
                 db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)

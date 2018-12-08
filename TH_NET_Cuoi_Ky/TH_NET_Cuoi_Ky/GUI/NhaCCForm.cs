@@ -72,24 +72,29 @@ namespace TH_NET_Cuoi_Ky.GUI
             if(txtMaNhaCC.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Tài sản cần sửa!");
+                return;
+            }
+            if (txtTenNhaCC.Text == "" || cbbAddress.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            Boolean result = nhaCC_BLL.updateNhaCC(new DTO.NhaCC
+            {
+                MaNhaCC = Convert.ToInt32(txtMaNhaCC.Text),
+                TenNhaCC = txtTenNhaCC.Text,
+                DiaChi = cbbAddress.SelectedItem == null ? cbbAddress.Text : cbbAddress.SelectedItem.ToString(),
+            });
+            if (result)
+            {
+                MessageBox.Show("Cập nhật thành công!");
             }
             else
             {
-                Boolean result = nhaCC_BLL.updateNhaCC(new DTO.NhaCC
-                {
-                   MaNhaCC = Convert.ToInt32(txtMaNhaCC.Text),
-                   TenNhaCC = txtTenNhaCC.Text,
-                   DiaChi = cbbAddress.SelectedItem == null ? cbbAddress.Text : cbbAddress.SelectedItem.ToString(),
-                });
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                }
+                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
             }
+            
             ShowNhaCC();
         }
 

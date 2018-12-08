@@ -17,7 +17,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         }
         public dynamic ShowNguoiQL_BLL(string tuKhoa = "")
         {
-            var person = db.NguoiQLs.Select(p => new { p.MaNguoiQL, p.TenNguoiQL, p.NgaySinh, p.SoDT, p.GioiTinh });
+            var person = db.NguoiQLs.Select(p => new { p.MaNguoiQL, p.TenNguoiQL, p.NgaySinh, p.SoDT, GioiTinh = (p.GioiTinh) ? "Nam" : "Nữ" });
             if(tuKhoa != "")
             {
                 person = person.Where(p => p.TenNguoiQL.Contains(tuKhoa));
@@ -29,11 +29,14 @@ namespace TH_NET_Cuoi_Ky.BLL
             var person = from p in db.NguoiQLs where p.MaNguoiQL == id select p;
             return person.ToList<DTO.NguoiQL>();
         }
-        public Boolean addNguoiQL(DTO.NguoiQL nguoiQL)
+        public Boolean addNguoiQL(List<DTO.NguoiQL> l)
         {
             try
             {
-                db.NguoiQLs.Add(nguoiQL);
+                foreach(DTO.NguoiQL nguoiQL in l)
+                {
+                    db.NguoiQLs.Add(nguoiQL);
+                }
                 db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)

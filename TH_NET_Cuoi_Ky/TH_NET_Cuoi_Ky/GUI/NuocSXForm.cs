@@ -49,23 +49,28 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (txtMaNSX.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Nước cần sửa!");
+                return;
+            }
+            if(txtTenNSX.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            Boolean result = NSX_BLL.updateTS(new DTO.NuocSX
+            {
+                MaNuocSX = Convert.ToInt32(txtMaNSX.Text),
+                TenNuocSX = txtTenNSX.Text
+            });
+            if (result)
+            {
+                MessageBox.Show("Cập nhật thành công!");
             }
             else
             {
-                Boolean result = NSX_BLL.updateTS(new DTO.NuocSX
-                {
-                    MaNuocSX = Convert.ToInt32(txtMaNSX.Text),
-                    TenNuocSX = txtTenNSX.Text
-                });
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                }                
-            }
+                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
+            }                
+            
             dgv.DataSource = NSX_BLL.Show_BLL(); // Refresh lai du lieu tren DataGridView
         }
 

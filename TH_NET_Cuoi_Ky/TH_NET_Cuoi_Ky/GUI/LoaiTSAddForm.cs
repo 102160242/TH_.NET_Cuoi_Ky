@@ -25,6 +25,11 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butOK_Click(object sender, EventArgs e)
         {
+            if(txtTenLoaiTS.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
             List<DTO.LoaiTS> l = new List<DTO.LoaiTS>();
             l.Add(new DTO.LoaiTS
             {

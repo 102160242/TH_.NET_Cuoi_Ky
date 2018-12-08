@@ -48,11 +48,14 @@ namespace TH_NET_Cuoi_Ky.BLL
             var nha = from p in db.NhaCCs where p.MaNhaCC == id select p;
             return nha.ToList<DTO.NhaCC>();
         }
-        public Boolean addNhaCC(DTO.NhaCC nhaCC)
+        public Boolean addNhaCC(List<DTO.NhaCC> l)
         {
             try
             {
-                db.NhaCCs.Add(nhaCC);
+                foreach(DTO.NhaCC nhaCC in l)
+                {
+                    db.NhaCCs.Add(nhaCC);
+                }
                 db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)

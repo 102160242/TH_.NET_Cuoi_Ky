@@ -28,8 +28,8 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             foreach (string i in NQL_BLL.loadcbb())
             {
-                if (comboBox1.FindStringExact(i) < 0)
-                    comboBox1.Items.Add(i);
+                if (cbbNguoiQL.FindStringExact(i) < 0)
+                    cbbNguoiQL.Items.Add(i);
             }
         }
         private void PhongForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -65,25 +65,30 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (txt_MaPhong.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Phòng cần sửa!");
+                return;
+            }
+            if(txt_TenPhong.Text == "" || cbbNguoiQL.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            Boolean result = Phong_BLL.UpdatePhong(new DTO.Phong
+            {
+                MaPhong = Convert.ToInt32(txt_MaPhong.Text),
+                TenPhong = txt_TenPhong.Text,
+                MaNguoiQL = Phong_BLL.GetMaNQL(cbbNguoiQL.SelectedItem.ToString())
+                    
+            });
+            if (result)
+            {
+                MessageBox.Show("Cập nhật thành công!");
             }
             else
             {
-                Boolean result = Phong_BLL.UpdatePhong(new DTO.Phong
-                {
-                    MaPhong = Convert.ToInt32(txt_MaPhong.Text),
-                    TenPhong = txt_TenPhong.Text,
-                    MaNguoiQL = Phong_BLL.GetMaNQL(comboBox1.SelectedItem.ToString())
-                    
-                });
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                }
+                MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
             }
+            
             ShowPhong();
         }
 
@@ -117,7 +122,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             List<DTO.Phong> l = Phong_BLL.getPhongById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaPhong"].Value.ToString()));
             txt_MaPhong.Text = l[0].MaPhong.ToString();
             txt_TenPhong.Text = l[0].TenPhong;
-            comboBox1.SelectedItem = l[0].NguoiQL.TenNguoiQL;
+            cbbNguoiQL.SelectedItem = l[0].NguoiQL.TenNguoiQL;
         }
 
         private void but_Search_Click(object sender, EventArgs e)
