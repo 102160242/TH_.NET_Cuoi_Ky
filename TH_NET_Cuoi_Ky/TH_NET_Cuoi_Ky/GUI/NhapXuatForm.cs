@@ -154,8 +154,8 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MaTS = mataisan,
                 MaNhaCC = manhacungcap,
                 MaPhong = maphong,
-                NgayNhap = dateTimePicker2.Value.Date,
-                SLNhap = Convert.ToInt32(numericUpDown_SLXuat.Value),
+                NgayXuat = dateTimePicker2.Value.Date,
+                SLXuat = Convert.ToInt32(numericUpDown_SLXuat.Value),
                 NguyenGia = Convert.ToDouble(numericUpDown_GiaXuat.Value),
                 TinhTrang = txt_TinhTrangNhap.Text
             });
