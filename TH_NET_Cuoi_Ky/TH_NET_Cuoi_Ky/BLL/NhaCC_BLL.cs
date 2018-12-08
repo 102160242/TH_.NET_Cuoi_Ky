@@ -115,5 +115,21 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return true;
         }
+        public int GetIdByNhaCC (string NCC)
+        {
+            try
+            {
+                return db.NhaCCs.Where(p => p.TenNhaCC == NCC).Select(p => p.MaNhaCC).Single();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+            }
+            return -1;
+        }
     }
 }

@@ -118,12 +118,28 @@ namespace TH_NET_Cuoi_Ky.BLL
             return true;
         }
 
-        internal List<Phong> getPhongById(int id)
+        public List<Phong> getPhongById(int id)
         {
             var data = from p in db.Phongs
                        where p.MaPhong == id
                        select p;
             return data.ToList<DTO.Phong>();
+        }
+        public int GetIdByPhong(string Ph)
+        {
+            try
+            {
+                return db.Phongs.Where(p => p.TenPhong == Ph).Select(p => p.MaPhong).Single();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+            }
+            return -1;
         }
     }
 }
