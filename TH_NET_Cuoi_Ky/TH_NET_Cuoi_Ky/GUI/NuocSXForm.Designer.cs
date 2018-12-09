@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuocSXForm));
             this.but_Delete = new System.Windows.Forms.Button();
             this.but_Cancel = new System.Windows.Forms.Button();
@@ -44,9 +45,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.menuDGV = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.menuDGV.SuspendLayout();
             this.SuspendLayout();
             // 
             // but_Delete
@@ -120,14 +127,17 @@
             // dgv
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.BackgroundColor = System.Drawing.Color.White;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(4, 163);
+            this.dgv.ContextMenuStrip = this.menuDGV;
+            this.dgv.Location = new System.Drawing.Point(7, 24);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(709, 293);
+            this.dgv.Size = new System.Drawing.Size(695, 263);
             this.dgv.TabIndex = 5;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
+            this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // txtTenNSX
             // 
@@ -237,6 +247,40 @@
             this.label3.TabIndex = 40;
             this.label3.Text = "Từ khóa";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.dgv);
+            this.groupBox3.Location = new System.Drawing.Point(4, 163);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(709, 294);
+            this.groupBox3.TabIndex = 46;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh sách";
+            // 
+            // menuDGV
+            // 
+            this.menuDGV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.menuDGV.Name = "menuDGV";
+            this.menuDGV.Size = new System.Drawing.Size(153, 70);
+            this.menuDGV.Opening += new System.ComponentModel.CancelEventHandler(this.menuDGV_Opening);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateToolStripMenuItem.Text = "Sửa";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Xóa";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // NuocSXForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -244,12 +288,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(717, 499);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.but_Delete);
             this.Controls.Add(this.but_Cancel);
             this.Controls.Add(this.but_Update);
-            this.Controls.Add(this.dgv);
             this.Controls.Add(this.but_Add);
             this.Controls.Add(this.but_Show);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -264,6 +308,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.menuDGV.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -285,5 +331,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ContextMenuStrip menuDGV;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

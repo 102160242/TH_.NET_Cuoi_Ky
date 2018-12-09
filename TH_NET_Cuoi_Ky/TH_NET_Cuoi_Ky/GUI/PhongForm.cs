@@ -32,10 +32,6 @@ namespace TH_NET_Cuoi_Ky.GUI
                     cbbNguoiQL.Items.Add(i);
             }
         }
-        private void PhongForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
         private void ShowPhong()
         {
             dgv.DataSource = Phong_BLL.ShowPhong_BLL();
@@ -88,30 +84,12 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Delete_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) người quản lý đã chọn?",
-                                     "Xác nhận xóa dữ liệu!",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                List<int> l = new List<int>();
-                foreach (DataGridViewRow r in dgv.SelectedRows)
-                {
-                    l.Add(Convert.ToInt32(r.Cells["MaPhong"].Value.ToString()));
-                }
-                (bool result, string msg) = Phong_BLL.deletePhong(l);
-
-                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
-
-                ShowPhong();
-            }
+            this.deleteToolStripMenuItem_Click(sender, e);
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<DTO.Phong> l = Phong_BLL.getPhongById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaPhong"].Value.ToString()));
-            txt_MaPhong.Text = l[0].MaPhong.ToString();
-            txt_TenPhong.Text = l[0].TenPhong;
-            cbbNguoiQL.SelectedItem = l[0].NguoiQL.TenNguoiQL;
+            updateToolStripMenuItem_Click(sender, e);
         }
 
         private void but_Search_Click(object sender, EventArgs e)
@@ -129,6 +107,72 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             ShowMainForm();
             Dispose();
+        }
+
+        private void menuDGV_Opening(object sender, CancelEventArgs e)
+        {
+            var cms = sender as ContextMenuStrip;
+            var mousepos = Control.MousePosition;
+            if (cms != null)
+            {
+                var rel_mousePos = cms.PointToClient(mousepos);
+                if (cms.ClientRectangle.Contains(rel_mousePos))
+                {
+                    // Neu menu duoc mo bang chuot
+                    var dgv_rel_mousePos = dgv.PointToClient(mousepos);
+                    var hti = dgv.HitTest(dgv_rel_mousePos.X, dgv_rel_mousePos.Y);
+                    if (hti.RowIndex == -1)
+                    {
+                        // Huy su kien khi khong co hang nao
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void dgv_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgv.HitTest(e.X, e.Y);
+                dgv.ClearSelection();
+                if (hti.RowIndex != -1)
+                {
+                    dgv.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<DTO.Phong> l = Phong_BLL.getPhongById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaPhong"].Value.ToString()));
+            txt_MaPhong.Text = l[0].MaPhong.ToString();
+            txt_TenPhong.Text = l[0].TenPhong;
+            cbbNguoiQL.SelectedItem = l[0].NguoiQL.TenNguoiQL;
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) người quản lý đã chọn?",
+                         "Xác nhận xóa dữ liệu!",
+                         MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                List<int> l = new List<int>();
+                foreach (DataGridViewRow r in dgv.SelectedRows)
+                {
+                    l.Add(Convert.ToInt32(r.Cells["MaPhong"].Value.ToString()));
+                }
+                (bool result, string msg) = Phong_BLL.deletePhong(l);
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                ShowPhong();
+            }
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhongForm));
             this.but_Delete = new System.Windows.Forms.Button();
             this.but_Cancel = new System.Windows.Forms.Button();
@@ -35,6 +36,9 @@
             this.but_Update = new System.Windows.Forms.Button();
             this.but_Search = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.menuDGV = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_TenPhong = new System.Windows.Forms.TextBox();
             this.txt_MaPhong = new System.Windows.Forms.TextBox();
             this.but_Add = new System.Windows.Forms.Button();
@@ -46,9 +50,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.menuDGV.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // but_Delete
@@ -122,14 +129,40 @@
             // dgv
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.BackgroundColor = System.Drawing.Color.White;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(5, 152);
+            this.dgv.ContextMenuStrip = this.menuDGV;
+            this.dgv.Location = new System.Drawing.Point(11, 24);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(706, 280);
+            this.dgv.Size = new System.Drawing.Size(687, 250);
             this.dgv.TabIndex = 6;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
+            // 
+            // menuDGV
+            // 
+            this.menuDGV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.menuDGV.Name = "menuDGV";
+            this.menuDGV.Size = new System.Drawing.Size(95, 48);
+            this.menuDGV.Opening += new System.ComponentModel.CancelEventHandler(this.menuDGV_Opening);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateToolStripMenuItem.Text = "Sửa";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Xóa";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // txt_TenPhong
             // 
@@ -260,6 +293,17 @@
             this.label4.TabIndex = 40;
             this.label4.Text = "Từ khóa";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.dgv);
+            this.groupBox3.Location = new System.Drawing.Point(5, 152);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(706, 281);
+            this.groupBox3.TabIndex = 48;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh sách";
+            // 
             // PhongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -267,12 +311,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(716, 482);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.but_Delete);
             this.Controls.Add(this.but_Cancel);
             this.Controls.Add(this.but_Update);
-            this.Controls.Add(this.dgv);
             this.Controls.Add(this.but_Add);
             this.Controls.Add(this.BntShowPhong);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,10 +327,12 @@
             this.Text = "Quản lý Phòng";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PhongForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.menuDGV.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -310,5 +356,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip menuDGV;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
