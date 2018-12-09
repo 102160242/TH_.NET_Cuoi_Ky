@@ -217,7 +217,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             // Join list nhap va xuat lai
             var list = from p in nhap
                        join p2 in xuat
-                       on p.MaTS equals p2.MaTS
+                       on new { p.MaTS, p.MaNhaCC, p.MaPhong } equals new { p2.MaTS, p2.MaNhaCC, p2.MaPhong }
                        into ps
                        from T in ps.DefaultIfEmpty()
                        select new

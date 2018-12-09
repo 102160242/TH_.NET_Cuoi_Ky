@@ -46,7 +46,6 @@ namespace TH_NET_Cuoi_Ky
         private void Reload()
         {
             ShowTS(); // Load lai du lieu cho DataGridView
-            this.loadAllCBB();
             this.Visible = true; // Hien thi lai form
         }
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -234,8 +233,12 @@ namespace TH_NET_Cuoi_Ky
 
         private void showDetailToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ChiTietTSForm f = new ChiTietTSForm();
+            f.ShowTSForm += Reload;
+            f.ShowTSDetail(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString()));
+            f.Show();
+            this.Visible = false;
         }
-
         private void menuDGV_Opening(object sender, CancelEventArgs e)
         {
             var cms = sender as ContextMenuStrip;
