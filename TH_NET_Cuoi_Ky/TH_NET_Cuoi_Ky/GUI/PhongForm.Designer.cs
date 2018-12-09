@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhongForm));
             this.but_Delete = new System.Windows.Forms.Button();
             this.but_Cancel = new System.Windows.Forms.Button();
@@ -46,9 +47,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.menuDGV = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.menuDGV.SuspendLayout();
             this.SuspendLayout();
             // 
             // but_Delete
@@ -123,6 +129,7 @@
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.ContextMenuStrip = this.menuDGV;
             this.dgv.Location = new System.Drawing.Point(5, 152);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
@@ -260,6 +267,33 @@
             this.label4.TabIndex = 40;
             this.label4.Text = "Từ khóa";
             // 
+            // menuDGV
+            // 
+            this.menuDGV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDetailToolStripMenuItem,
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.menuDGV.Name = "menuDGV";
+            this.menuDGV.Size = new System.Drawing.Size(156, 70);
+            // 
+            // showDetailToolStripMenuItem
+            // 
+            this.showDetailToolStripMenuItem.Name = "showDetailToolStripMenuItem";
+            this.showDetailToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.showDetailToolStripMenuItem.Text = "Hiển thị chi tiết";
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.updateToolStripMenuItem.Text = "Cập nhật";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.deleteToolStripMenuItem.Text = "Xóa";
+            // 
             // PhongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -287,6 +321,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.menuDGV.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -310,5 +345,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip menuDGV;
+        private System.Windows.Forms.ToolStripMenuItem showDetailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

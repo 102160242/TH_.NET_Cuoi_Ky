@@ -32,10 +32,6 @@ namespace TH_NET_Cuoi_Ky.GUI
                     cbbNguoiQL.Items.Add(i);
             }
         }
-        private void PhongForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
         private void ShowPhong()
         {
             dgv.DataSource = Phong_BLL.ShowPhong_BLL();

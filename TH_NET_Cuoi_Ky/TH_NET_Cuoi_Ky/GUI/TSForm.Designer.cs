@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label6 = new System.Windows.Forms.Label();
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
@@ -61,11 +62,16 @@
             this.butAdd = new System.Windows.Forms.Button();
             this.butUpdate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
+            this.menuDGV = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.menuDGV.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -398,13 +404,16 @@
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.ContextMenuStrip = this.menuDGV;
             this.dgv.Location = new System.Drawing.Point(4, 185);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(1025, 242);
             this.dgv.TabIndex = 10;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
+            this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // butAdd
             // 
@@ -451,13 +460,44 @@
             this.btnDel.UseVisualStyleBackColor = false;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
+            // menuDGV
+            // 
+            this.menuDGV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDetailToolStripMenuItem,
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.menuDGV.Name = "menuDGV";
+            this.menuDGV.Size = new System.Drawing.Size(156, 92);
+            this.menuDGV.Opening += new System.ComponentModel.CancelEventHandler(this.menuDGV_Opening);
+            // 
+            // showDetailToolStripMenuItem
+            // 
+            this.showDetailToolStripMenuItem.Name = "showDetailToolStripMenuItem";
+            this.showDetailToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.showDetailToolStripMenuItem.Text = "Hiển thị chi tiết";
+            this.showDetailToolStripMenuItem.Click += new System.EventHandler(this.showDetailToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.updateToolStripMenuItem.Text = "Sửa";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.deleteToolStripMenuItem.Text = "Xóa";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1034, 469);
+            this.ClientSize = new System.Drawing.Size(1034, 472);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.butUpdate);
             this.Controls.Add(this.butAdd);
@@ -480,6 +520,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.menuDGV.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -517,6 +558,10 @@
         private System.Windows.Forms.ComboBox cbbLoaiTS;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ContextMenuStrip menuDGV;
+        private System.Windows.Forms.ToolStripMenuItem showDetailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 

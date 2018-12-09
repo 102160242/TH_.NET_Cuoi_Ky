@@ -187,5 +187,72 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return (true, "Xóa thành công!");
         }
+
+        public object ShowTSDetail(int maTS)
+        {
+            // Lay List Danh sach nhap va so luong
+            var nhap = from p in db.NhapXuats
+                       where p.NgayXuat == null
+                       where p.MaTS == maTS
+                       group p by new { p.MaTS, p.MaNhaCC, p.MaPhong } into g
+                       select new
+                       {
+                           MaTS = g.Key.MaTS,
+                           MaNhaCC = g.Key.MaNhaCC,
+                           MaPhong = g.Key.MaPhong,
+                           SL = g.Sum(p => p.SLNhap) == null ? 0 : g.Sum(p => p.SLNhap)
+                       };
+            // Lay List Danh sach xuat va so luong
+            var xuat = from p in db.NhapXuats
+                       where p.NgayNhap == null
+                       where p.MaTS == maTS
+                       group p by new { p.MaTS, p.MaNhaCC, p.MaPhong } into g
+                       select new
+                       {
+                           MaTS = g.Key.MaTS,
+                           MaNhaCC = g.Key.MaNhaCC,
+                           MaPhong = g.Key.MaPhong,
+                           SL = g.Sum(p => p.SLXuat) == null ? 0 : g.Sum(p => p.SLXuat)
+                       };
+            // Join list nhap va xuat lai
+            var list = from p in nhap
+                       join p2 in xuat
+                       on p.MaTS equals p2.MaTS
+                       into ps
+                       from T in ps.DefaultIfEmpty()
+                       select new
+                       {
+                           p.MaTS,
+                           p.MaNhaCC,
+                           p.MaPhong,
+                           SL = p.SL - (T.SL == null ? 0 : T.SL),
+                       };
+            // Join voi cac bang khac de lay ten Tai San, ten Phong, ten Nha Cung Cap
+            var data = from nx in list
+                       join ts in
+                       (
+                            from p in db.TaiSans select new { p.MaTS, p.TenTS }
+                       )
+                       on nx.MaTS equals ts.MaTS
+                       join ncc in
+                       (
+                            from p in db.NhaCCs select new { p.MaNhaCC, p.TenNhaCC }
+                       )
+                       on nx.MaNhaCC equals ncc.MaNhaCC
+                       join p in
+                       (
+                            from p in db.Phongs select new { p.MaPhong, p.TenPhong }
+                       )
+                       on nx.MaPhong equals p.MaPhong
+                       select new
+                       {
+                           nx.MaTS,
+                           ts.TenTS,
+                           ncc.TenNhaCC,
+                           p.TenPhong,
+                           nx.SL,
+                       };
+            return data.ToList();
+        }
     }
 }
