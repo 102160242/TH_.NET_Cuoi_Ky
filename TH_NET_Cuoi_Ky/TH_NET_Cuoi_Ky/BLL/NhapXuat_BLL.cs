@@ -17,6 +17,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         public dynamic ShowNhap_BLL()
         {
             var data = db.NhapXuats.Where(p => p.NgayNhap != null)
+                                   .OrderBy(p => new { p.TaiSan.TenTS, p.NgayNhap, p.Phong.TenPhong })
                                    .Select(p => new {
                                                          p.TaiSan.TenTS,
                                                          p.NhaCC.TenNhaCC,
@@ -33,6 +34,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         public dynamic ShowXuat_BLL()
         {
             var data = db.NhapXuats.Where(p => p.NgayXuat != null)
+                                   .OrderBy(p => new { p.TaiSan.TenTS, p.NgayNhap, p.Phong.TenPhong })
                                    .Select(p => new {
                                                        p.TaiSan.TenTS,
                                                        p.NhaCC.TenNhaCC,
@@ -45,7 +47,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                                                    });
             return data.ToList();
         }
-        public Boolean AddNhapXuat(List<DTO.NhapXuat> l)
+        public (bool, string) AddNhapXuat(List<DTO.NhapXuat> l)
         {
             try
             {
@@ -58,14 +60,14 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return(false, "Có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Thành công!");
         }
     }
 }

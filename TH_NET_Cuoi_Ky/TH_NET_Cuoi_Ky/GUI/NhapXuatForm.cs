@@ -19,7 +19,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         Phong_BLL p_BLL;
         NhapXuat_BLL NX_BLL;
         public delegate void dd();
-        public dd ShowForm;
+        public dd ShowMainForm;
         public NhapXuatForm()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void NhapXuatForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ShowForm();
+            ShowMainForm();
         }
 
         private void bnt_Nhap_Click(object sender, EventArgs e)
@@ -44,10 +44,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                 return;
             }
-            int mataisan = Ts_BLL.GetIDbyTS(cbb_TenTSNhap.SelectedItem.ToString());
-            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCCNhap.SelectedItem.ToString());
-            int maphong = p_BLL.GetIdByPhong(cbb_PhongNhap.SelectedItem.ToString());
-            if(mataisan == -1 || manhacungcap == -1 || maphong == -1)
+            int maTS = Ts_BLL.GetIDbyTS(cbb_TenTSNhap.SelectedItem.ToString());
+            int maNCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCCNhap.SelectedItem.ToString());
+            int maPhong = p_BLL.GetIdByPhong(cbb_PhongNhap.SelectedItem.ToString());
+            if(maTS == -1 || maNCC == -1 || maPhong == -1)
             {
                 MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
                 return;
@@ -55,15 +55,15 @@ namespace TH_NET_Cuoi_Ky.GUI
             List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
             l.Add(new DTO.NhapXuat
             {
-                MaTS = mataisan,
-                MaNhaCC = manhacungcap,
-                MaPhong = maphong,
+                MaTS = maTS,
+                MaNhaCC = maNCC,
+                MaPhong = maPhong,
                 NgayNhap = dateTimePicker1.Value.Date,
                 SLNhap = Convert.ToInt32(numericUpDown_SLNhap.Value),
                 NguyenGia = Convert.ToDouble(numericUpDown_GiaNhap.Value),
                 TinhTrang = txt_TinhTrangNhap.Text
             });
-            Boolean result = NX_BLL.AddNhapXuat(l);
+            (bool result, string msg) = NX_BLL.AddNhapXuat(l);
 
             if (result)
             {
@@ -72,7 +72,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
             else
             {
-                MessageBox.Show("Không thể Nhập. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi");
             }
         }
         private void LoadCbbTenTS()
@@ -159,7 +159,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                 NguyenGia = Convert.ToDouble(numericUpDown_GiaXuat.Value),
                 TinhTrang = txt_TinhTrangNhap.Text
             });
-            Boolean result = NX_BLL.AddNhapXuat(l);
+            (bool result, string msg) = NX_BLL.AddNhapXuat(l);
 
             if (result)
             {
@@ -168,8 +168,13 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
             else
             {
-                MessageBox.Show("Không thể Xuat. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi");
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            ShowMainForm();
         }
     }
 }
