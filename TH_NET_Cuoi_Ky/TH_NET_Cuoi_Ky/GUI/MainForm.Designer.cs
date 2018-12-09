@@ -52,7 +52,7 @@
             this.groupBox1.Controls.Add(this.btnNguoiQL);
             this.groupBox1.Controls.Add(this.btnLoaiTS);
             this.groupBox1.Controls.Add(this.btnTS);
-            this.groupBox1.Location = new System.Drawing.Point(4, 17);
+            this.groupBox1.Location = new System.Drawing.Point(8, 14);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -66,10 +66,10 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(496, 120);
+            this.butCancel.Location = new System.Drawing.Point(491, 111);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
-            this.butCancel.Size = new System.Drawing.Size(112, 32);
+            this.butCancel.Size = new System.Drawing.Size(121, 32);
             this.butCancel.TabIndex = 14;
             this.butCancel.Text = "Thoát";
             this.butCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -79,10 +79,10 @@
             // btnNuocSX
             // 
             this.btnNuocSX.BackColor = System.Drawing.Color.Transparent;
-            this.btnNuocSX.Location = new System.Drawing.Point(314, 120);
+            this.btnNuocSX.Location = new System.Drawing.Point(332, 111);
             this.btnNuocSX.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuocSX.Name = "btnNuocSX";
-            this.btnNuocSX.Size = new System.Drawing.Size(141, 32);
+            this.btnNuocSX.Size = new System.Drawing.Size(121, 32);
             this.btnNuocSX.TabIndex = 13;
             this.btnNuocSX.Text = "Nước Sản Xuất";
             this.btnNuocSX.UseVisualStyleBackColor = false;
@@ -91,10 +91,10 @@
             // btnNhaCC
             // 
             this.btnNhaCC.BackColor = System.Drawing.Color.Transparent;
-            this.btnNhaCC.Location = new System.Drawing.Point(155, 120);
+            this.btnNhaCC.Location = new System.Drawing.Point(173, 111);
             this.btnNhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhaCC.Name = "btnNhaCC";
-            this.btnNhaCC.Size = new System.Drawing.Size(132, 32);
+            this.btnNhaCC.Size = new System.Drawing.Size(121, 32);
             this.btnNhaCC.TabIndex = 12;
             this.btnNhaCC.Text = "Nhà Cung Cấp";
             this.btnNhaCC.UseVisualStyleBackColor = false;
@@ -103,10 +103,10 @@
             // btnNhapXuat
             // 
             this.btnNhapXuat.BackColor = System.Drawing.Color.Transparent;
-            this.btnNhapXuat.Location = new System.Drawing.Point(18, 120);
+            this.btnNhapXuat.Location = new System.Drawing.Point(14, 111);
             this.btnNhapXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapXuat.Name = "btnNhapXuat";
-            this.btnNhapXuat.Size = new System.Drawing.Size(112, 32);
+            this.btnNhapXuat.Size = new System.Drawing.Size(121, 32);
             this.btnNhapXuat.TabIndex = 11;
             this.btnNhapXuat.Text = "Nhập Xuất";
             this.btnNhapXuat.UseVisualStyleBackColor = false;
@@ -115,10 +115,10 @@
             // btnPhong
             // 
             this.btnPhong.BackColor = System.Drawing.Color.Transparent;
-            this.btnPhong.Location = new System.Drawing.Point(496, 37);
+            this.btnPhong.Location = new System.Drawing.Point(491, 36);
             this.btnPhong.Margin = new System.Windows.Forms.Padding(4);
             this.btnPhong.Name = "btnPhong";
-            this.btnPhong.Size = new System.Drawing.Size(112, 32);
+            this.btnPhong.Size = new System.Drawing.Size(121, 32);
             this.btnPhong.TabIndex = 10;
             this.btnPhong.Text = "Phòng";
             this.btnPhong.UseVisualStyleBackColor = false;
@@ -127,10 +127,10 @@
             // btnNguoiQL
             // 
             this.btnNguoiQL.BackColor = System.Drawing.Color.Transparent;
-            this.btnNguoiQL.Location = new System.Drawing.Point(314, 37);
+            this.btnNguoiQL.Location = new System.Drawing.Point(332, 36);
             this.btnNguoiQL.Margin = new System.Windows.Forms.Padding(4);
             this.btnNguoiQL.Name = "btnNguoiQL";
-            this.btnNguoiQL.Size = new System.Drawing.Size(141, 32);
+            this.btnNguoiQL.Size = new System.Drawing.Size(121, 32);
             this.btnNguoiQL.TabIndex = 9;
             this.btnNguoiQL.Text = "Người Quản Lý";
             this.btnNguoiQL.UseVisualStyleBackColor = false;
@@ -140,10 +140,10 @@
             // 
             this.btnLoaiTS.BackColor = System.Drawing.Color.Transparent;
             this.btnLoaiTS.ForeColor = System.Drawing.Color.Black;
-            this.btnLoaiTS.Location = new System.Drawing.Point(175, 37);
+            this.btnLoaiTS.Location = new System.Drawing.Point(173, 36);
             this.btnLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoaiTS.Name = "btnLoaiTS";
-            this.btnLoaiTS.Size = new System.Drawing.Size(112, 32);
+            this.btnLoaiTS.Size = new System.Drawing.Size(121, 32);
             this.btnLoaiTS.TabIndex = 8;
             this.btnLoaiTS.Text = "Loại Tài Sản";
             this.btnLoaiTS.UseVisualStyleBackColor = false;
@@ -153,10 +153,10 @@
             // 
             this.btnTS.BackColor = System.Drawing.Color.Transparent;
             this.btnTS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnTS.Location = new System.Drawing.Point(18, 37);
+            this.btnTS.Location = new System.Drawing.Point(14, 36);
             this.btnTS.Margin = new System.Windows.Forms.Padding(4);
             this.btnTS.Name = "btnTS";
-            this.btnTS.Size = new System.Drawing.Size(112, 32);
+            this.btnTS.Size = new System.Drawing.Size(121, 32);
             this.btnTS.TabIndex = 7;
             this.btnTS.Text = "Tài Sản";
             this.btnTS.UseVisualStyleBackColor = false;

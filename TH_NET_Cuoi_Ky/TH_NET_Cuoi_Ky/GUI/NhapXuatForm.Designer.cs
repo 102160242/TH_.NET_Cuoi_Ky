@@ -150,15 +150,15 @@
             // 
             // txt_TinhTrangNhap
             // 
-            this.txt_TinhTrangNhap.Location = new System.Drawing.Point(684, 15);
+            this.txt_TinhTrangNhap.Location = new System.Drawing.Point(758, 16);
             this.txt_TinhTrangNhap.Name = "txt_TinhTrangNhap";
-            this.txt_TinhTrangNhap.Size = new System.Drawing.Size(150, 24);
+            this.txt_TinhTrangNhap.Size = new System.Drawing.Size(168, 24);
             this.txt_TinhTrangNhap.TabIndex = 46;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(599, 17);
+            this.label13.Location = new System.Drawing.Point(673, 18);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 18);
             this.label13.TabIndex = 45;
@@ -166,9 +166,9 @@
             // 
             // bnt_HienThiNhap
             // 
-            this.bnt_HienThiNhap.Location = new System.Drawing.Point(834, 123);
+            this.bnt_HienThiNhap.Location = new System.Drawing.Point(837, 118);
             this.bnt_HienThiNhap.Name = "bnt_HienThiNhap";
-            this.bnt_HienThiNhap.Size = new System.Drawing.Size(90, 23);
+            this.bnt_HienThiNhap.Size = new System.Drawing.Size(90, 32);
             this.bnt_HienThiNhap.TabIndex = 44;
             this.bnt_HienThiNhap.Text = "Hiển Thị";
             this.bnt_HienThiNhap.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(331, 109);
+            this.label11.Location = new System.Drawing.Point(341, 102);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(72, 18);
@@ -186,17 +186,17 @@
             // 
             // numericUpDown_SLNhap
             // 
-            this.numericUpDown_SLNhap.Location = new System.Drawing.Point(428, 107);
+            this.numericUpDown_SLNhap.Location = new System.Drawing.Point(442, 100);
             this.numericUpDown_SLNhap.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_SLNhap.Name = "numericUpDown_SLNhap";
-            this.numericUpDown_SLNhap.Size = new System.Drawing.Size(150, 24);
+            this.numericUpDown_SLNhap.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_SLNhap.TabIndex = 42;
             // 
             // bnt_Nhap
             // 
             this.bnt_Nhap.Image = ((System.Drawing.Image)(resources.GetObject("bnt_Nhap.Image")));
             this.bnt_Nhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_Nhap.Location = new System.Drawing.Point(737, 118);
+            this.bnt_Nhap.Location = new System.Drawing.Point(740, 118);
             this.bnt_Nhap.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_Nhap.Name = "bnt_Nhap";
             this.bnt_Nhap.Size = new System.Drawing.Size(90, 32);
@@ -211,24 +211,24 @@
             this.cbb_TenTSNhap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_TenTSNhap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbb_TenTSNhap.FormattingEnabled = true;
-            this.cbb_TenTSNhap.Location = new System.Drawing.Point(135, 14);
+            this.cbb_TenTSNhap.Location = new System.Drawing.Point(137, 12);
             this.cbb_TenTSNhap.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_TenTSNhap.Name = "cbb_TenTSNhap";
-            this.cbb_TenTSNhap.Size = new System.Drawing.Size(150, 26);
+            this.cbb_TenTSNhap.Size = new System.Drawing.Size(168, 26);
             this.cbb_TenTSNhap.TabIndex = 39;
             // 
             // numericUpDown_GiaNhap
             // 
-            this.numericUpDown_GiaNhap.Location = new System.Drawing.Point(135, 105);
+            this.numericUpDown_GiaNhap.Location = new System.Drawing.Point(137, 100);
             this.numericUpDown_GiaNhap.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_GiaNhap.Name = "numericUpDown_GiaNhap";
-            this.numericUpDown_GiaNhap.Size = new System.Drawing.Size(150, 24);
+            this.numericUpDown_GiaNhap.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_GiaNhap.TabIndex = 38;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 108);
+            this.label4.Location = new System.Drawing.Point(18, 102);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 18);
@@ -237,16 +237,16 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(428, 57);
+            this.dateTimePicker1.Location = new System.Drawing.Point(442, 58);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 24);
+            this.dateTimePicker1.Size = new System.Drawing.Size(168, 24);
             this.dateTimePicker1.TabIndex = 36;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(331, 60);
+            this.label3.Location = new System.Drawing.Point(341, 60);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 18);
@@ -258,16 +258,16 @@
             this.cbb_PhongNhap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_PhongNhap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbb_PhongNhap.FormattingEnabled = true;
-            this.cbb_PhongNhap.Location = new System.Drawing.Point(428, 14);
+            this.cbb_PhongNhap.Location = new System.Drawing.Point(442, 14);
             this.cbb_PhongNhap.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_PhongNhap.Name = "cbb_PhongNhap";
-            this.cbb_PhongNhap.Size = new System.Drawing.Size(150, 26);
+            this.cbb_PhongNhap.Size = new System.Drawing.Size(168, 26);
             this.cbb_PhongNhap.TabIndex = 34;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(331, 17);
+            this.label2.Location = new System.Drawing.Point(341, 18);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 18);
@@ -279,16 +279,16 @@
             this.cbb_NhaCCNhap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_NhaCCNhap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbb_NhaCCNhap.FormattingEnabled = true;
-            this.cbb_NhaCCNhap.Location = new System.Drawing.Point(135, 57);
+            this.cbb_NhaCCNhap.Location = new System.Drawing.Point(137, 56);
             this.cbb_NhaCCNhap.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_NhaCCNhap.Name = "cbb_NhaCCNhap";
-            this.cbb_NhaCCNhap.Size = new System.Drawing.Size(150, 26);
+            this.cbb_NhaCCNhap.Size = new System.Drawing.Size(168, 26);
             this.cbb_NhaCCNhap.TabIndex = 32;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 67);
+            this.label1.Location = new System.Drawing.Point(18, 60);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 18);
@@ -299,7 +299,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 18);
+            this.label7.Location = new System.Drawing.Point(18, 16);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 18);
@@ -352,7 +352,7 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 23);
+            this.dataGridView2.Location = new System.Drawing.Point(8, 23);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(909, 257);
@@ -360,15 +360,15 @@
             // 
             // txt_TinhTrangXuat
             // 
-            this.txt_TinhTrangXuat.Location = new System.Drawing.Point(657, 16);
+            this.txt_TinhTrangXuat.Location = new System.Drawing.Point(763, 17);
             this.txt_TinhTrangXuat.Name = "txt_TinhTrangXuat";
-            this.txt_TinhTrangXuat.Size = new System.Drawing.Size(150, 24);
+            this.txt_TinhTrangXuat.Size = new System.Drawing.Size(168, 24);
             this.txt_TinhTrangXuat.TabIndex = 58;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(569, 18);
+            this.label14.Location = new System.Drawing.Point(669, 19);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(78, 18);
             this.label14.TabIndex = 57;
@@ -376,9 +376,9 @@
             // 
             // Bnt_HienThiXuat
             // 
-            this.Bnt_HienThiXuat.Location = new System.Drawing.Point(820, 17);
+            this.Bnt_HienThiXuat.Location = new System.Drawing.Point(704, 105);
             this.Bnt_HienThiXuat.Name = "Bnt_HienThiXuat";
-            this.Bnt_HienThiXuat.Size = new System.Drawing.Size(93, 23);
+            this.Bnt_HienThiXuat.Size = new System.Drawing.Size(100, 32);
             this.Bnt_HienThiXuat.TabIndex = 55;
             this.Bnt_HienThiXuat.Text = "Hiển Thị";
             this.Bnt_HienThiXuat.UseVisualStyleBackColor = true;
@@ -389,10 +389,10 @@
             this.cbb_TenTSXuat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_TenTSXuat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbb_TenTSXuat.FormattingEnabled = true;
-            this.cbb_TenTSXuat.Location = new System.Drawing.Point(122, 12);
+            this.cbb_TenTSXuat.Location = new System.Drawing.Point(134, 14);
             this.cbb_TenTSXuat.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_TenTSXuat.Name = "cbb_TenTSXuat";
-            this.cbb_TenTSXuat.Size = new System.Drawing.Size(150, 26);
+            this.cbb_TenTSXuat.Size = new System.Drawing.Size(168, 26);
             this.cbb_TenTSXuat.TabIndex = 54;
             // 
             // bnt_ThanhLy
@@ -411,7 +411,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(305, 108);
+            this.label12.Location = new System.Drawing.Point(360, 106);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 18);
@@ -420,10 +420,10 @@
             // 
             // numericUpDown_SLXuat
             // 
-            this.numericUpDown_SLXuat.Location = new System.Drawing.Point(398, 102);
+            this.numericUpDown_SLXuat.Location = new System.Drawing.Point(450, 102);
             this.numericUpDown_SLXuat.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_SLXuat.Name = "numericUpDown_SLXuat";
-            this.numericUpDown_SLXuat.Size = new System.Drawing.Size(150, 24);
+            this.numericUpDown_SLXuat.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_SLXuat.TabIndex = 51;
             // 
             // bnt_Xuat
@@ -442,16 +442,16 @@
             // 
             // numericUpDown_GiaXuat
             // 
-            this.numericUpDown_GiaXuat.Location = new System.Drawing.Point(122, 104);
+            this.numericUpDown_GiaXuat.Location = new System.Drawing.Point(134, 102);
             this.numericUpDown_GiaXuat.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_GiaXuat.Name = "numericUpDown_GiaXuat";
-            this.numericUpDown_GiaXuat.Size = new System.Drawing.Size(150, 24);
+            this.numericUpDown_GiaXuat.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_GiaXuat.TabIndex = 48;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 108);
+            this.label5.Location = new System.Drawing.Point(12, 108);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 18);
@@ -460,16 +460,16 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(398, 56);
+            this.dateTimePicker2.Location = new System.Drawing.Point(450, 60);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(150, 24);
+            this.dateTimePicker2.Size = new System.Drawing.Size(168, 24);
             this.dateTimePicker2.TabIndex = 46;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(305, 61);
+            this.label6.Location = new System.Drawing.Point(360, 64);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 18);
@@ -481,16 +481,16 @@
             this.cbb_PhongXuat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_PhongXuat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbb_PhongXuat.FormattingEnabled = true;
-            this.cbb_PhongXuat.Location = new System.Drawing.Point(399, 12);
+            this.cbb_PhongXuat.Location = new System.Drawing.Point(451, 16);
             this.cbb_PhongXuat.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_PhongXuat.Name = "cbb_PhongXuat";
-            this.cbb_PhongXuat.Size = new System.Drawing.Size(150, 26);
+            this.cbb_PhongXuat.Size = new System.Drawing.Size(168, 26);
             this.cbb_PhongXuat.TabIndex = 44;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(305, 18);
+            this.label8.Location = new System.Drawing.Point(360, 22);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 18);
@@ -502,16 +502,16 @@
             this.cbb_NhaCCXuat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_NhaCCXuat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbb_NhaCCXuat.FormattingEnabled = true;
-            this.cbb_NhaCCXuat.Location = new System.Drawing.Point(122, 56);
+            this.cbb_NhaCCXuat.Location = new System.Drawing.Point(134, 58);
             this.cbb_NhaCCXuat.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_NhaCCXuat.Name = "cbb_NhaCCXuat";
-            this.cbb_NhaCCXuat.Size = new System.Drawing.Size(150, 26);
+            this.cbb_NhaCCXuat.Size = new System.Drawing.Size(168, 26);
             this.cbb_NhaCCXuat.TabIndex = 42;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 65);
+            this.label9.Location = new System.Drawing.Point(12, 64);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 18);
@@ -522,7 +522,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(9, 16);
+            this.label10.Location = new System.Drawing.Point(12, 20);
             this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 18);
@@ -533,7 +533,7 @@
             // 
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(652, 477);
+            this.btnExit.Location = new System.Drawing.Point(635, 477);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(90, 32);
@@ -545,18 +545,18 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(242, 478);
+            this.button1.Location = new System.Drawing.Point(225, 478);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 31);
+            this.button1.Size = new System.Drawing.Size(90, 32);
             this.button1.TabIndex = 42;
             this.button1.Text = "Cập Nhật";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(434, 478);
+            this.button4.Location = new System.Drawing.Point(430, 478);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 31);
+            this.button4.Size = new System.Drawing.Size(90, 32);
             this.button4.TabIndex = 43;
             this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = true;
