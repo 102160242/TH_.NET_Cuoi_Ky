@@ -30,14 +30,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<DTO.NguoiQL> list = Nguoi_BLL.GetNguoiQLById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNguoiQL"].Value.ToString()));
-            txt_MaQL.Text = list[0].MaNguoiQL.ToString();
-            txt_TenQL.Text = list[0].TenNguoiQL;
-            dateTimePicker1.Value = list[0].NgaySinh;
-            txt_SDT.Text = list[0].SoDT;
-            if (list[0].GioiTinh == true) rb_Male.Checked = true;
-            else rb_Female.Checked = true;
-
+            this.updateToolStripMenuItem_Click(sender, e);
         }
         private void  ShowNguoiQL()
         {
@@ -95,6 +88,74 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Delete_Click(object sender, EventArgs e)
         {
+            this.deleteToolStripMenuItem_Click(sender, e);
+        }
+
+        private void but_Search_Click(object sender, EventArgs e)
+        {
+            dgv.DataSource = Nguoi_BLL.ShowNguoiQL_BLL(txt_Search.Text);
+        }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Khong cho nhap chu cai
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgv_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgv.HitTest(e.X, e.Y);
+                dgv.ClearSelection();
+                if (hti.RowIndex != -1)
+                {
+                    dgv.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void menuDGV_Opening(object sender, CancelEventArgs e)
+        {
+            var cms = sender as ContextMenuStrip;
+            var mousepos = Control.MousePosition;
+            if (cms != null)
+            {
+                var rel_mousePos = cms.PointToClient(mousepos);
+                if (cms.ClientRectangle.Contains(rel_mousePos))
+                {
+                    // Neu menu duoc mo bang chuot
+                    var dgv_rel_mousePos = dgv.PointToClient(mousepos);
+                    var hti = dgv.HitTest(dgv_rel_mousePos.X, dgv_rel_mousePos.Y);
+                    if (hti.RowIndex == -1)
+                    {
+                        // Huy su kien khi khong co hang nao
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<DTO.NguoiQL> list = Nguoi_BLL.GetNguoiQLById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNguoiQL"].Value.ToString()));
+            txt_MaQL.Text = list[0].MaNguoiQL.ToString();
+            txt_TenQL.Text = list[0].TenNguoiQL;
+            dateTimePicker1.Value = list[0].NgaySinh;
+            txt_SDT.Text = list[0].SoDT;
+            if (list[0].GioiTinh == true) rb_Male.Checked = true;
+            else rb_Female.Checked = true;
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) người quản lý đã chọn?",
                                      "Xác nhận xóa dữ liệu!",
                                      MessageBoxButtons.YesNo);
@@ -109,22 +170,8 @@ namespace TH_NET_Cuoi_Ky.GUI
                 (bool result, string msg) = Nguoi_BLL.deleteNguoiQL(l);
 
                 MessageBox.Show(msg, result ? "Thành công" : "Lỗi"); // Hien thi thong bao ket qua
-                
+
                 ShowNguoiQL(); // Refresh lai du lieu tren DataGridView
-            }
-        }
-
-        private void but_Search_Click(object sender, EventArgs e)
-        {
-            dgv.DataSource = Nguoi_BLL.ShowNguoiQL_BLL(txt_Search.Text);
-        }
-
-        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Khong cho nhap chu cai
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
             }
         }
     }

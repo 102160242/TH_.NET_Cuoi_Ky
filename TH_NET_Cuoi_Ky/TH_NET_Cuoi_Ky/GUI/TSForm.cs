@@ -156,30 +156,7 @@ namespace TH_NET_Cuoi_Ky
         }
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if(dgv.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
-            }
-            else
-            {
-                var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
-                         "Xác nhận xóa dữ liệu!",
-                         MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
-                {
-                    // Add MaTS cua cac hang duoc chon vao list
-                    List<int> l = new List<int>();
-                    foreach (DataGridViewRow r in dgv.SelectedRows)
-                    {
-                        l.Add(Convert.ToInt32(r.Cells["MaTS"].Value.ToString()));
-                    }
-                    (bool result, string msg) = TS_BLL.deleteTS(l);
-
-                    MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
-
-                    ShowTS(); // Refresh lai du lieu tren DataGridView
-                }
-            }
+            this.deleteToolStripMenuItem_Click(sender, e);
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -227,8 +204,6 @@ namespace TH_NET_Cuoi_Ky
                     dgv.Rows[hti.RowIndex].Selected = true;
                 }
             }
-
-
         }
 
         private void showDetailToolStripMenuItem_Click(object sender, EventArgs e)
@@ -281,7 +256,30 @@ namespace TH_NET_Cuoi_Ky
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            btnDel_Click(sender, e);
+            if (dgv.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
+            }
+            else
+            {
+                var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
+                         "Xác nhận xóa dữ liệu!",
+                         MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Add MaTS cua cac hang duoc chon vao list
+                    List<int> l = new List<int>();
+                    foreach (DataGridViewRow r in dgv.SelectedRows)
+                    {
+                        l.Add(Convert.ToInt32(r.Cells["MaTS"].Value.ToString()));
+                    }
+                    (bool result, string msg) = TS_BLL.deleteTS(l);
+
+                    MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                    ShowTS(); // Refresh lai du lieu tren DataGridView
+                }
+            }
         }
     }
 }
