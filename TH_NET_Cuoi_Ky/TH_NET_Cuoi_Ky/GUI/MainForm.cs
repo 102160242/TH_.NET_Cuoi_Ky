@@ -78,7 +78,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butCancel_Click(object sender, EventArgs e)
         {
-            Dispose();
+
         }
     }
 }
