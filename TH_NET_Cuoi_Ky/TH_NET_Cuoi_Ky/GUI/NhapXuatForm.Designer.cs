@@ -31,10 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhapXuatForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txt_TinhTrangNhap = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.bnt_HienThiNhap = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.numericUpDown_SLNhap = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
             this.bnt_Nhap = new System.Windows.Forms.Button();
             this.cbb_TenTSNhap = new System.Windows.Forms.ComboBox();
             this.numericUpDown_GiaNhap = new System.Windows.Forms.NumericUpDown();
@@ -47,6 +49,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txt_TinhTrangXuat = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Bnt_HienThiXuat = new System.Windows.Forms.Button();
             this.cbb_TenTSXuat = new System.Windows.Forms.ComboBox();
             this.bnt_ThanhLy = new System.Windows.Forms.Button();
@@ -62,23 +67,18 @@
             this.cbb_NhaCCXuat = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_TinhTrangNhap = new System.Windows.Forms.TextBox();
-            this.txt_TinhTrangXuat = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GiaNhap)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLXuat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GiaXuat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,6 +122,22 @@
             this.tabPage1.Text = "Nhập";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // txt_TinhTrangNhap
+            // 
+            this.txt_TinhTrangNhap.Location = new System.Drawing.Point(665, 111);
+            this.txt_TinhTrangNhap.Name = "txt_TinhTrangNhap";
+            this.txt_TinhTrangNhap.Size = new System.Drawing.Size(100, 24);
+            this.txt_TinhTrangNhap.TabIndex = 46;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(580, 113);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 18);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "Tình Trạng";
+            // 
             // bnt_HienThiNhap
             // 
             this.bnt_HienThiNhap.Location = new System.Drawing.Point(843, 20);
@@ -142,6 +158,17 @@
             this.label11.TabIndex = 43;
             this.label11.Text = "Số Lượng";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 148);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(926, 288);
+            this.dataGridView1.TabIndex = 1;
+            // 
             // numericUpDown_SLNhap
             // 
             this.numericUpDown_SLNhap.Location = new System.Drawing.Point(393, 112);
@@ -149,19 +176,6 @@
             this.numericUpDown_SLNhap.Name = "numericUpDown_SLNhap";
             this.numericUpDown_SLNhap.Size = new System.Drawing.Size(180, 24);
             this.numericUpDown_SLNhap.TabIndex = 42;
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(694, 477);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 32);
-            this.button2.TabIndex = 41;
-            this.button2.Text = "Thoát";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // bnt_Nhap
             // 
@@ -308,6 +322,32 @@
             this.tabPage2.Text = "Xuất";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txt_TinhTrangXuat
+            // 
+            this.txt_TinhTrangXuat.Location = new System.Drawing.Point(649, 108);
+            this.txt_TinhTrangXuat.Name = "txt_TinhTrangXuat";
+            this.txt_TinhTrangXuat.Size = new System.Drawing.Size(100, 24);
+            this.txt_TinhTrangXuat.TabIndex = 58;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(564, 110);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(78, 18);
+            this.label14.TabIndex = 57;
+            this.label14.Text = "Tình Trạng";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(7, 143);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(924, 290);
+            this.dataGridView2.TabIndex = 56;
+            // 
             // Bnt_HienThiXuat
             // 
             this.Bnt_HienThiXuat.Location = new System.Drawing.Point(802, 116);
@@ -328,6 +368,7 @@
             this.cbb_TenTSXuat.Name = "cbb_TenTSXuat";
             this.cbb_TenTSXuat.Size = new System.Drawing.Size(143, 26);
             this.cbb_TenTSXuat.TabIndex = 54;
+            this.cbb_TenTSXuat.SelectedIndexChanged += new System.EventHandler(this.cbb_TenTSXuat_SelectedIndexChanged);
             // 
             // bnt_ThanhLy
             // 
@@ -414,6 +455,7 @@
             // 
             this.cbb_PhongXuat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_PhongXuat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_PhongXuat.Enabled = false;
             this.cbb_PhongXuat.FormattingEnabled = true;
             this.cbb_PhongXuat.Location = new System.Drawing.Point(405, 12);
             this.cbb_PhongXuat.Margin = new System.Windows.Forms.Padding(4);
@@ -435,6 +477,7 @@
             // 
             this.cbb_NhaCCXuat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_NhaCCXuat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_NhaCCXuat.Enabled = false;
             this.cbb_NhaCCXuat.FormattingEnabled = true;
             this.cbb_NhaCCXuat.Location = new System.Drawing.Point(122, 56);
             this.cbb_NhaCCXuat.Margin = new System.Windows.Forms.Padding(4);
@@ -463,16 +506,18 @@
             this.label10.TabIndex = 40;
             this.label10.Text = "Tên tài sản";
             // 
-            // dataGridView1
+            // button2
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 148);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(926, 288);
-            this.dataGridView1.TabIndex = 1;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(694, 477);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 32);
+            this.button2.TabIndex = 41;
+            this.button2.Text = "Thoát";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -491,48 +536,6 @@
             this.button4.TabIndex = 43;
             this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 143);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(924, 290);
-            this.dataGridView2.TabIndex = 56;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(580, 113);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 18);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "Tình Trạng";
-            // 
-            // txt_TinhTrangNhap
-            // 
-            this.txt_TinhTrangNhap.Location = new System.Drawing.Point(665, 111);
-            this.txt_TinhTrangNhap.Name = "txt_TinhTrangNhap";
-            this.txt_TinhTrangNhap.Size = new System.Drawing.Size(100, 24);
-            this.txt_TinhTrangNhap.TabIndex = 46;
-            // 
-            // txt_TinhTrangXuat
-            // 
-            this.txt_TinhTrangXuat.Location = new System.Drawing.Point(649, 108);
-            this.txt_TinhTrangXuat.Name = "txt_TinhTrangXuat";
-            this.txt_TinhTrangXuat.Size = new System.Drawing.Size(100, 24);
-            this.txt_TinhTrangXuat.TabIndex = 58;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(564, 110);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(78, 18);
-            this.label14.TabIndex = 57;
-            this.label14.Text = "Tình Trạng";
             // 
             // NhapXuatForm
             // 
@@ -556,14 +559,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GiaNhap)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLXuat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GiaXuat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

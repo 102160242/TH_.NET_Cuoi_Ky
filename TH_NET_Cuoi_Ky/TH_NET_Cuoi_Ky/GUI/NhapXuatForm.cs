@@ -95,19 +95,9 @@ namespace TH_NET_Cuoi_Ky.GUI
                 if (cbb_NhaCCNhap.FindStringExact(i) < 0)
                     cbb_NhaCCNhap.Items.Add(i);
             }
-            foreach (string i in NCC_BLL.loadCBBTenNCC())
-            {
-                if (cbb_NhaCCXuat.FindStringExact(i) < 0)
-                    cbb_NhaCCXuat.Items.Add(i);
-            }
         }
         private void LoadCbbPhong()
         {
-            foreach (string i in p_BLL.loadCBBTenPhong_BLL())
-            {
-                if (cbb_PhongXuat.FindStringExact(i) < 0)
-                    cbb_PhongXuat.Items.Add(i);
-            }
             foreach (string i in p_BLL.loadCBBTenPhong_BLL())
             {
                 if (cbb_PhongNhap.FindStringExact(i) < 0)
@@ -170,6 +160,36 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 MessageBox.Show("Không thể Xuat. Vui lòng thử lại sau!");
             }
+        }
+        private void LoadCBBNhaCC_Xuat()
+        {
+            foreach(string i in NCC_BLL.LoadCCB_NhaCC_AfterTenTSChose(cbb_TenTSXuat.SelectedItem.ToString()))
+            {
+                if(cbb_NhaCCXuat.FindStringExact(i)<0)
+                {
+                    cbb_NhaCCXuat.Items.Add(i);
+                }
+            }
+            cbb_NhaCCXuat.Enabled = true;
+        }
+        private void LoadCBBPhong_Xuat()
+        {
+            foreach(string i in p_BLL.LoadCBB_Phong_AfterTenTSChose(cbb_TenTSXuat.SelectedItem.ToString()))
+            {
+                if(cbb_PhongXuat.FindStringExact(i)<0)
+                {
+                    cbb_PhongXuat.Items.Add(i);
+                }
+            }
+            cbb_PhongXuat.Enabled = true;
+        }
+
+        private void cbb_TenTSXuat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbb_PhongXuat.Items.Clear();
+            cbb_NhaCCXuat.Items.Clear();
+            LoadCBBNhaCC_Xuat();
+            LoadCBBPhong_Xuat();
         }
     }
 }
