@@ -29,6 +29,8 @@ namespace TH_NET_Cuoi_Ky
             this.NCC_BLL = new NhaCC_BLL();
             this.NSX_BLL = new NuocSX_BLL();
             this.LTS_BLL = new LoaiTS_BLL();
+            loadCBBLTS.RunWorkerAsync();
+            loadCBBNSX.RunWorkerAsync();
             // Them 2 lua chon SX vao ComboBox sap xep
             //cbbSort.Items.Add("Sắp xếp A-Z");
             //cbbSort.Items.Add("Sắp xếp Z-A");
@@ -176,12 +178,6 @@ namespace TH_NET_Cuoi_Ky
             dgv.DataSource = TS_BLL.SearchTS(data);
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
-        {
-            // Load tat ca cac ComboBox
-            this.loadAllCBB();
-        }
-
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             ShowMainForm();
@@ -278,6 +274,44 @@ namespace TH_NET_Cuoi_Ky
                     MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
 
                     ShowTS(); // Refresh lai du lieu tren DataGridView
+                }
+            }
+        }
+
+        private void loadCBBNSX_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in NSX_BLL.loadCBB_BLL())
+            {
+                if (cbbNuocSX1.FindStringExact(i) < 0)
+                {
+                    cbbNuocSX1.Invoke(new Action(() => {
+                        cbbNuocSX1.Items.Add(i);
+                    }));
+                }
+                if (cbbNuocSX.FindStringExact(i) < 0)
+                {
+                    cbbNuocSX.Invoke(new Action(() => {
+                        cbbNuocSX.Items.Add(i);
+                    }));
+                }
+            }
+        }
+
+        private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in LTS_BLL.loadCBB_BLL())
+            {
+                if (cbbLoaiTS1.FindStringExact(i) < 0)
+                {
+                    cbbLoaiTS1.Invoke(new Action(() => {
+                        cbbLoaiTS1.Items.Add(i);
+                    }));
+                }
+                if (cbbLoaiTS.FindStringExact(i) < 0)
+                {
+                    cbbLoaiTS.Invoke(new Action(() => {
+                        cbbLoaiTS.Items.Add(i);
+                    }));
                 }
             }
         }
