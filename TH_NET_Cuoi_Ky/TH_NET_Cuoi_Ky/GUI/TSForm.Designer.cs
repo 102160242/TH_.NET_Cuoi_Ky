@@ -80,7 +80,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(512, 36);
+            this.label6.Location = new System.Drawing.Point(528, 57);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 18);
@@ -89,10 +89,10 @@
             // 
             // txtTuKhoa
             // 
-            this.txtTuKhoa.Location = new System.Drawing.Point(633, 34);
+            this.txtTuKhoa.Location = new System.Drawing.Point(633, 54);
             this.txtTuKhoa.Margin = new System.Windows.Forms.Padding(4);
             this.txtTuKhoa.Name = "txtTuKhoa";
-            this.txtTuKhoa.Size = new System.Drawing.Size(265, 24);
+            this.txtTuKhoa.Size = new System.Drawing.Size(250, 24);
             this.txtTuKhoa.TabIndex = 3;
             // 
             // btnSearch
@@ -101,7 +101,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(713, 80);
+            this.btnSearch.Location = new System.Drawing.Point(713, 104);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(101, 32);
@@ -116,7 +116,7 @@
             this.cbbLoaiTS1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbLoaiTS1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbLoaiTS1.FormattingEnabled = true;
-            this.cbbLoaiTS1.Location = new System.Drawing.Point(120, 76);
+            this.cbbLoaiTS1.Location = new System.Drawing.Point(120, 78);
             this.cbbLoaiTS1.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS1.Name = "cbbLoaiTS1";
             this.cbbLoaiTS1.Size = new System.Drawing.Size(250, 26);
@@ -137,7 +137,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 82);
+            this.label4.Location = new System.Drawing.Point(9, 81);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 18);
@@ -159,7 +159,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 15);
+            this.label5.Location = new System.Drawing.Point(10, 15);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 16);
@@ -170,7 +170,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 65);
+            this.label7.Location = new System.Drawing.Point(10, 67);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 16);
@@ -181,7 +181,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 116);
+            this.label8.Location = new System.Drawing.Point(10, 113);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 16);
@@ -234,7 +234,7 @@
             this.cbbLoaiTS.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbLoaiTS.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbLoaiTS.FormattingEnabled = true;
-            this.cbbLoaiTS.Location = new System.Drawing.Point(826, 8);
+            this.cbbLoaiTS.Location = new System.Drawing.Point(829, 11);
             this.cbbLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS.Name = "cbbLoaiTS";
             this.cbbLoaiTS.Size = new System.Drawing.Size(181, 24);
@@ -244,7 +244,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(501, 108);
+            this.dateTimePicker1.Location = new System.Drawing.Point(500, 111);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
@@ -254,7 +254,7 @@
             // cbbNuocSX
             // 
             this.cbbNuocSX.FormattingEnabled = true;
-            this.cbbNuocSX.Location = new System.Drawing.Point(501, 60);
+            this.cbbNuocSX.Location = new System.Drawing.Point(500, 64);
             this.cbbNuocSX.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNuocSX.Name = "cbbNuocSX";
             this.cbbNuocSX.Size = new System.Drawing.Size(181, 24);
@@ -262,7 +262,7 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(826, 62);
+            this.txtGhiChu.Location = new System.Drawing.Point(829, 66);
             this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(181, 22);
@@ -273,7 +273,7 @@
             this.butShow.BackColor = System.Drawing.Color.Transparent;
             this.butShow.Image = ((System.Drawing.Image)(resources.GetObject("butShow.Image")));
             this.butShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butShow.Location = new System.Drawing.Point(862, 100);
+            this.butShow.Location = new System.Drawing.Point(865, 100);
             this.butShow.Margin = new System.Windows.Forms.Padding(4);
             this.butShow.Name = "butShow";
             this.butShow.Size = new System.Drawing.Size(87, 32);
@@ -285,7 +285,7 @@
             // 
             // txtTskt
             // 
-            this.txtTskt.Location = new System.Drawing.Point(501, 10);
+            this.txtTskt.Location = new System.Drawing.Point(500, 13);
             this.txtTskt.Margin = new System.Windows.Forms.Padding(4);
             this.txtTskt.Name = "txtTskt";
             this.txtTskt.Size = new System.Drawing.Size(181, 22);
@@ -293,34 +293,34 @@
             // 
             // txtDvTinh
             // 
-            this.txtDvTinh.Location = new System.Drawing.Point(105, 113);
+            this.txtDvTinh.Location = new System.Drawing.Point(104, 111);
             this.txtDvTinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtDvTinh.Name = "txtDvTinh";
-            this.txtDvTinh.Size = new System.Drawing.Size(210, 22);
+            this.txtDvTinh.Size = new System.Drawing.Size(181, 22);
             this.txtDvTinh.TabIndex = 3;
             // 
             // txtTenTS
             // 
-            this.txtTenTS.Location = new System.Drawing.Point(105, 62);
+            this.txtTenTS.Location = new System.Drawing.Point(104, 61);
             this.txtTenTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenTS.Name = "txtTenTS";
-            this.txtTenTS.Size = new System.Drawing.Size(210, 22);
+            this.txtTenTS.Size = new System.Drawing.Size(181, 22);
             this.txtTenTS.TabIndex = 2;
             // 
             // txtMaTS
             // 
-            this.txtMaTS.Location = new System.Drawing.Point(105, 12);
+            this.txtMaTS.Location = new System.Drawing.Point(104, 15);
             this.txtMaTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaTS.Name = "txtMaTS";
             this.txtMaTS.ReadOnly = true;
-            this.txtMaTS.Size = new System.Drawing.Size(210, 22);
+            this.txtMaTS.Size = new System.Drawing.Size(181, 22);
             this.txtMaTS.TabIndex = 1;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(729, 66);
+            this.label13.Location = new System.Drawing.Point(732, 68);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 16);
@@ -331,7 +331,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(729, 12);
+            this.label12.Location = new System.Drawing.Point(732, 12);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(76, 16);
@@ -342,7 +342,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(362, 113);
+            this.label11.Location = new System.Drawing.Point(365, 116);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 16);
@@ -353,7 +353,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(364, 62);
+            this.label10.Location = new System.Drawing.Point(367, 64);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 16);
@@ -364,7 +364,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(362, 12);
+            this.label9.Location = new System.Drawing.Point(365, 12);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(111, 16);
@@ -408,7 +408,7 @@
             this.dgv.BackgroundColor = System.Drawing.Color.White;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.ContextMenuStrip = this.menuDGV;
-            this.dgv.Location = new System.Drawing.Point(6, 24);
+            this.dgv.Location = new System.Drawing.Point(5, 24);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -454,7 +454,7 @@
             this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butAdd.Location = new System.Drawing.Point(317, 435);
+            this.butAdd.Location = new System.Drawing.Point(322, 435);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(81, 32);
@@ -469,7 +469,7 @@
             this.butUpdate.BackColor = System.Drawing.Color.Transparent;
             this.butUpdate.Image = ((System.Drawing.Image)(resources.GetObject("butUpdate.Image")));
             this.butUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butUpdate.Location = new System.Drawing.Point(481, 435);
+            this.butUpdate.Location = new System.Drawing.Point(478, 435);
             this.butUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(96, 32);
@@ -484,7 +484,7 @@
             this.btnDel.BackColor = System.Drawing.Color.Transparent;
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(665, 435);
+            this.btnDel.Location = new System.Drawing.Point(649, 435);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(64, 32);
@@ -498,7 +498,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.dgv);
-            this.groupBox2.Location = new System.Drawing.Point(4, 189);
+            this.groupBox2.Location = new System.Drawing.Point(5, 189);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1025, 239);
             this.groupBox2.TabIndex = 17;

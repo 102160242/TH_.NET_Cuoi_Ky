@@ -42,7 +42,7 @@
             this.cbbAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbAddress.FormattingEnabled = true;
-            this.cbbAddress.Location = new System.Drawing.Point(168, 61);
+            this.cbbAddress.Location = new System.Drawing.Point(169, 58);
             this.cbbAddress.Margin = new System.Windows.Forms.Padding(4);
             this.cbbAddress.Name = "cbbAddress";
             this.cbbAddress.Size = new System.Drawing.Size(235, 26);
@@ -50,7 +50,7 @@
             // 
             // txtTenNhaCC
             // 
-            this.txtTenNhaCC.Location = new System.Drawing.Point(168, 18);
+            this.txtTenNhaCC.Location = new System.Drawing.Point(169, 16);
             this.txtTenNhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNhaCC.Name = "txtTenNhaCC";
             this.txtTenNhaCC.Size = new System.Drawing.Size(235, 24);
@@ -60,7 +60,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(16, 65);
+            this.label3.Location = new System.Drawing.Point(13, 61);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 18);
@@ -71,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(16, 22);
+            this.label2.Location = new System.Drawing.Point(13, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 18);
@@ -83,10 +83,10 @@
             this.butOK.BackColor = System.Drawing.Color.Transparent;
             this.butOK.Image = ((System.Drawing.Image)(resources.GetObject("butOK.Image")));
             this.butOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butOK.Location = new System.Drawing.Point(107, 105);
+            this.butOK.Location = new System.Drawing.Point(108, 103);
             this.butOK.Margin = new System.Windows.Forms.Padding(4);
             this.butOK.Name = "butOK";
-            this.butOK.Size = new System.Drawing.Size(68, 32);
+            this.butOK.Size = new System.Drawing.Size(88, 32);
             this.butOK.TabIndex = 3;
             this.butOK.Text = "OK";
             this.butOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -98,7 +98,7 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(247, 105);
+            this.butCancel.Location = new System.Drawing.Point(248, 103);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(88, 32);
