@@ -28,14 +28,10 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             foreach (string i in NQL_BLL.loadcbb())
             {
-                if (comboBox1.FindStringExact(i) < 0)
-                    comboBox1.Items.Add(i);
+                if (cbbNguoiQL.FindStringExact(i) < 0)
+                    cbbNguoiQL.Items.Add(i);
             }
         }
-        private void PhongForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
         private void ShowPhong()
         {
             dgv.DataSource = Phong_BLL.ShowPhong_BLL();
@@ -65,59 +61,35 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (txt_MaPhong.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Phòng cần sửa!");
+                return;
             }
-            else
+            if(txt_TenPhong.Text == "" || cbbNguoiQL.SelectedIndex == -1)
             {
-                Boolean result = Phong_BLL.UpdatePhong(new DTO.Phong
-                {
-                    MaPhong = Convert.ToInt32(txt_MaPhong.Text),
-                    TenPhong = txt_TenPhong.Text,
-                    MaNguoiQL = Phong_BLL.GetMaNQL(comboBox1.SelectedItem.ToString())
-                    
-                });
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                }
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
             }
+
+            (bool result, string msg) = Phong_BLL.updatePhong(new DTO.Phong
+            {
+                MaPhong = Convert.ToInt32(txt_MaPhong.Text),
+                TenPhong = txt_TenPhong.Text,
+                MaNguoiQL = Phong_BLL.getIdByName(cbbNguoiQL.SelectedItem.ToString())
+                    
+            });
+
+            MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
             ShowPhong();
         }
 
         private void but_Delete_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) người quản lý đã chọn?",
-                                     "Xác nhận xóa dữ liệu!",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                List<int> l = new List<int>();
-                foreach (DataGridViewRow r in dgv.SelectedRows)
-                {
-                    l.Add(Convert.ToInt32(r.Cells["MaPhong"].Value.ToString()));
-                }
-                Boolean result = Phong_BLL.DeletePhong(l);
-                if (result)
-                {
-                    MessageBox.Show("Xóa thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                }
-                ShowPhong();
-            }
+            this.deleteToolStripMenuItem_Click(sender, e);
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<DTO.Phong> l = Phong_BLL.getPhongById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaPhong"].Value.ToString()));
-            txt_MaPhong.Text = l[0].MaPhong.ToString();
-            txt_TenPhong.Text = l[0].TenPhong;
-            comboBox1.SelectedItem = l[0].NguoiQL.TenNguoiQL;
+            updateToolStripMenuItem_Click(sender, e);
         }
 
         private void but_Search_Click(object sender, EventArgs e)
@@ -135,6 +107,72 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             ShowMainForm();
             Dispose();
+        }
+
+        private void menuDGV_Opening(object sender, CancelEventArgs e)
+        {
+            var cms = sender as ContextMenuStrip;
+            var mousepos = Control.MousePosition;
+            if (cms != null)
+            {
+                var rel_mousePos = cms.PointToClient(mousepos);
+                if (cms.ClientRectangle.Contains(rel_mousePos))
+                {
+                    // Neu menu duoc mo bang chuot
+                    var dgv_rel_mousePos = dgv.PointToClient(mousepos);
+                    var hti = dgv.HitTest(dgv_rel_mousePos.X, dgv_rel_mousePos.Y);
+                    if (hti.RowIndex == -1)
+                    {
+                        // Huy su kien khi khong co hang nao
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void dgv_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgv.HitTest(e.X, e.Y);
+                dgv.ClearSelection();
+                if (hti.RowIndex != -1)
+                {
+                    dgv.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<DTO.Phong> l = Phong_BLL.getPhongById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaPhong"].Value.ToString()));
+            txt_MaPhong.Text = l[0].MaPhong.ToString();
+            txt_TenPhong.Text = l[0].TenPhong;
+            cbbNguoiQL.SelectedItem = l[0].NguoiQL.TenNguoiQL;
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) người quản lý đã chọn?",
+                         "Xác nhận xóa dữ liệu!",
+                         MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                List<int> l = new List<int>();
+                foreach (DataGridViewRow r in dgv.SelectedRows)
+                {
+                    l.Add(Convert.ToInt32(r.Cells["MaPhong"].Value.ToString()));
+                }
+                (bool result, string msg) = Phong_BLL.deletePhong(l);
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                ShowPhong();
+            }
         }
     }
 }

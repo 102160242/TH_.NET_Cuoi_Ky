@@ -36,7 +36,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             return data.ToList();
         }
 
-        internal bool addNSX(List<NuocSX> l)
+        public (bool, string) addNSX(List<DTO.NuocSX> l)
         {
             try
             {
@@ -49,14 +49,14 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Thêm Nước Sản Xuất mới thành công!");
         }
 
         public int getIDByName(string TenNuocSX)
@@ -84,7 +84,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             return data.ToList<DTO.NuocSX>();
         }
 
-        internal bool updateTS(DTO.NuocSX NSX)
+        public (bool, string) updateTS(DTO.NuocSX NSX)
         {
             try
             {
@@ -98,38 +98,42 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Cập nhật thành công!");
         }
 
-        internal bool deleteTS(List<int> l)
+        public (bool, string) deleteTS(List<int> l)
         {
             try
             {
                 foreach (int maNSX in l)
                 {
-                    //if (db.NuocSXs.Single(p => p.MaNuocSX == maNSX).TaiSan.Count > 0) return false;
+                    int count = db.TaiSans.Where(p => p.MaNuocSX == maNSX).Count();
+                    if(count > 0)
+                    {
+                        return (false, "Không thể xóa Nước sản xuất có mã số " + maNSX + " do có trong danh sách Tài Sản!");
+                    }
                     db.NuocSXs.Remove(db.NuocSXs.Single(p => p.MaNuocSX == maNSX));
+                    db.SaveChanges();
                 }
-                db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Một (hoặc nhiều) Nước Sản Xuất đã không thể xóa do có lỗi xảy ra!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Một (hoặc nhiều) Nước Sản Xuất đã không thể xóa do có lỗi xảy ra!");
             }
-            return true;
+            return (true, "Đã xóa thành công!");
         }
     }
 }

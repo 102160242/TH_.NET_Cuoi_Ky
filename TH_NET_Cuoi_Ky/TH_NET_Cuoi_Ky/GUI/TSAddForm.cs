@@ -34,38 +34,43 @@ namespace TH_NET_Cuoi_Ky
         }
         private void butAdd_Click(object sender, EventArgs e)
         {
+            if(txtTenTS.Text == "" || txtDvTinh.Text == "" || txtTskt.Text == "" || cbbLoaiTS.SelectedIndex == -1 || cbbNuocSX.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
             int maNuocSX = NSX_BLL.getIDByName(cbbNuocSX.SelectedItem.ToString());
             int maLoaiTS = LTS_BLL.getIDByName(cbbLoaiTS.SelectedItem.ToString());
             if (maNuocSX == -1 || maLoaiTS == -1)
             {
                 MessageBox.Show("Không tồn tại Nước Sản Xuất hoặc Loại Tài Sản đã chọn!");
+                return;
+            }
+
+            List<DTO.TaiSan> l = new List<DTO.TaiSan>();
+            l.Add(new DTO.TaiSan
+            {
+                TenTS = txtTenTS.Text,
+                DVTinh = txtDvTinh.Text,
+                TSKT = txtTskt.Text,
+                MaNuocSX = maNuocSX,
+                NamSX = dateTimePicker1.Value.Year,
+                MaLoaiTS = maLoaiTS,
+                GhiChu = txtGhiChu.Text
+            });
+            (bool result, string msg) = TS_BLL.addTS(l);
+
+            if(result)
+            {
+                // Neu add thanh cong thi hien lai Form Tai San
+                ShowTSForm();
+                Dispose();
             }
             else
             {
-                List<DTO.TaiSan> l = new List<DTO.TaiSan>();
-                l.Add(new DTO.TaiSan
-                {
-                    TenTS = txtTenTS.Text,
-                    DVTinh = txtDvTinh.Text,
-                    TSKT = txtTskt.Text,
-                    MaNuocSX = maNuocSX,
-                    NamSX = dateTimePicker1.Value.Year,
-                    MaLoaiTS = maLoaiTS,
-                    GhiChu = txtGhiChu.Text
-                });
-                Boolean result = TS_BLL.addTS(l);
-
-                if(result)
-                {
-                    // Neu add thanh cong thi hien lai Form Tai San
-                    ShowTSForm();
-                    Dispose();
-                }
-                else
-                {
-                    MessageBox.Show("Không thể thêm Tài Sản mới. Vui lòng thử lại sau!");
-                }
-            }
+                MessageBox.Show(msg, "Lỗi");
+            }      
 
         }
         private void loadCBBNuocSX()

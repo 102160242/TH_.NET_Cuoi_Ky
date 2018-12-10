@@ -17,7 +17,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         }
         public dynamic ShowNguoiQL_BLL(string tuKhoa = "")
         {
-            var person = db.NguoiQLs.Select(p => new { p.MaNguoiQL, p.TenNguoiQL, p.NgaySinh, p.SoDT, p.GioiTinh });
+            var person = db.NguoiQLs.Select(p => new { p.MaNguoiQL, p.TenNguoiQL, p.NgaySinh, p.SoDT, GioiTinh = (p.GioiTinh) ? "Nam" : "Nữ" });
             if(tuKhoa != "")
             {
                 person = person.Where(p => p.TenNguoiQL.Contains(tuKhoa));
@@ -29,26 +29,29 @@ namespace TH_NET_Cuoi_Ky.BLL
             var person = from p in db.NguoiQLs where p.MaNguoiQL == id select p;
             return person.ToList<DTO.NguoiQL>();
         }
-        public Boolean addNguoiQL(DTO.NguoiQL nguoiQL)
+        public (bool, string) addNguoiQL(List<DTO.NguoiQL> l)
         {
             try
             {
-                db.NguoiQLs.Add(nguoiQL);
+                foreach(DTO.NguoiQL nguoiQL in l)
+                {
+                    db.NguoiQLs.Add(nguoiQL);
+                }
                 db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Thêm Người Quản Lý mới thành công!");
         }
-        public Boolean updateNguoiQL(DTO.NguoiQL nguoiQL)
+        public (bool, string) updateNguoiQL(DTO.NguoiQL nguoiQL)
         {
             try
             {
@@ -64,36 +67,41 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Cập nhật thất bại, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Cập nhật thất bại, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Cập nhật thành công!");
         }
-        public Boolean deleteNguoiQL(List<int> l)
+        public (bool, string) deleteNguoiQL(List<int> l)
         {
             try
             {
                 foreach (int maNguoiQL in l)
                 {
+                    int count = db.Phongs.Where(p => p.MaNguoiQL == maNguoiQL).Count();
+                    if(count > 0)
+                    {
+                        return (false, "Không thể xóa Người quản lý có mã số " + maNguoiQL + " do có trong danh sách Phòng!");
+                    }
                     db.NguoiQLs.Remove(db.NguoiQLs.Single(p => p.MaNguoiQL == maNguoiQL));
+                    db.SaveChanges();
                 }
-                db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Xóa thất bại, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Xóa thất bại, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Đã xóa thành công");
         }
         public List<string> loadcbb()
         {

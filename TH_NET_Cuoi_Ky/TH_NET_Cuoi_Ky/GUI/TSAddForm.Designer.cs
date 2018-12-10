@@ -52,7 +52,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 29);
+            this.label7.Location = new System.Drawing.Point(13, 26);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 16);
@@ -64,7 +64,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 71);
+            this.label9.Location = new System.Drawing.Point(13, 64);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(111, 16);
@@ -76,7 +76,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(7, 148);
+            this.label10.Location = new System.Drawing.Point(13, 140);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 16);
@@ -88,7 +88,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(7, 184);
+            this.label12.Location = new System.Drawing.Point(13, 180);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(76, 16);
@@ -100,7 +100,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(7, 260);
+            this.label13.Location = new System.Drawing.Point(13, 258);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 16);
@@ -109,7 +109,7 @@
             // 
             // txtTenTS
             // 
-            this.txtTenTS.Location = new System.Drawing.Point(138, 27);
+            this.txtTenTS.Location = new System.Drawing.Point(143, 21);
             this.txtTenTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenTS.Name = "txtTenTS";
             this.txtTenTS.Size = new System.Drawing.Size(220, 24);
@@ -117,7 +117,7 @@
             // 
             // txtTskt
             // 
-            this.txtTskt.Location = new System.Drawing.Point(138, 66);
+            this.txtTskt.Location = new System.Drawing.Point(143, 59);
             this.txtTskt.Margin = new System.Windows.Forms.Padding(4);
             this.txtTskt.Name = "txtTskt";
             this.txtTskt.Size = new System.Drawing.Size(220, 24);
@@ -128,7 +128,7 @@
             this.cbbLoaiTS.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbLoaiTS.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbLoaiTS.FormattingEnabled = true;
-            this.cbbLoaiTS.Location = new System.Drawing.Point(138, 184);
+            this.cbbLoaiTS.Location = new System.Drawing.Point(143, 175);
             this.cbbLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS.Name = "cbbLoaiTS";
             this.cbbLoaiTS.Size = new System.Drawing.Size(220, 26);
@@ -136,7 +136,7 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(138, 260);
+            this.txtGhiChu.Location = new System.Drawing.Point(143, 253);
             this.txtGhiChu.Margin = new System.Windows.Forms.Padding(4);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(220, 24);
@@ -147,7 +147,7 @@
             this.cbbNuocSX.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbNuocSX.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbNuocSX.FormattingEnabled = true;
-            this.cbbNuocSX.Location = new System.Drawing.Point(138, 143);
+            this.cbbNuocSX.Location = new System.Drawing.Point(143, 135);
             this.cbbNuocSX.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNuocSX.Name = "cbbNuocSX";
             this.cbbNuocSX.Size = new System.Drawing.Size(220, 26);
@@ -158,10 +158,10 @@
             this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butAdd.Location = new System.Drawing.Point(98, 310);
+            this.butAdd.Location = new System.Drawing.Point(79, 304);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
-            this.butAdd.Size = new System.Drawing.Size(73, 32);
+            this.butAdd.Size = new System.Drawing.Size(92, 32);
             this.butAdd.TabIndex = 8;
             this.butAdd.Text = "OK";
             this.butAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -173,7 +173,7 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(198, 310);
+            this.butCancel.Location = new System.Drawing.Point(203, 304);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(92, 32);
@@ -185,7 +185,7 @@
             // 
             // txtDvTinh
             // 
-            this.txtDvTinh.Location = new System.Drawing.Point(138, 105);
+            this.txtDvTinh.Location = new System.Drawing.Point(143, 97);
             this.txtDvTinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtDvTinh.Name = "txtDvTinh";
             this.txtDvTinh.Size = new System.Drawing.Size(220, 24);
@@ -196,7 +196,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 105);
+            this.label8.Location = new System.Drawing.Point(13, 102);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 16);
@@ -207,7 +207,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(138, 224);
+            this.dateTimePicker1.Location = new System.Drawing.Point(143, 215);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowUpDown = true;
@@ -219,7 +219,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(7, 224);
+            this.label11.Location = new System.Drawing.Point(13, 222);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 16);

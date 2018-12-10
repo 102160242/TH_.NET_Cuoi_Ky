@@ -50,28 +50,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butDelete_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) loại tài sản đã chọn?",
-                                     "Xác nhận xóa dữ liệu!",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                // Add MaLoaiTS cua cac hang duoc chon vao list
-                List<int> l = new List<int>();
-                foreach (DataGridViewRow r in dgv.SelectedRows)
-                {
-                    l.Add(Convert.ToInt32(r.Cells["MaLoaiTS"].Value.ToString()));
-                }
-                Boolean result = LoaiTS_BLL.deleteLoaiTS(l);
-                if (result)
-                {
-                    MessageBox.Show("Xóa thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                }
-                ShowLoaiTS();// Refresh lai du lieu tren DataGridView
-            }
+            this.deleteToolStripMenuItem_Click(sender, e);
         }
 
         private void butUpdate_Click(object sender, EventArgs e)
@@ -79,31 +58,28 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (txtMaLoaiTS.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn loại Tài sản cần sửa!");
+                return;
             }
-            else
+            if (txtTenLoaiTS.Text == "")
             {
-                Boolean result = LoaiTS_BLL.updateLoaiTS(new DTO.LoaiTS
-                {
-                    MaLoaiTS = Convert.ToInt32(txtMaLoaiTS.Text),
-                    TenLoaiTS = txtTenLoaiTS.Text,
-                });
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                }
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
             }
+
+            (bool result, string msg) = LoaiTS_BLL.updateLoaiTS(new DTO.LoaiTS
+            {
+                MaLoaiTS = Convert.ToInt32(txtMaLoaiTS.Text),
+                TenLoaiTS = txtTenLoaiTS.Text,
+            });
+
+            MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
             ShowLoaiTS();
         }
 
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<DTO.LoaiTS> list = LoaiTS_BLL.getLoaiTSByID(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaLoaiTS"].Value.ToString()));
-            txtMaLoaiTS.Text = list[0].MaLoaiTS.ToString();
-            txtTenLoaiTS.Text = list[0].TenLoaiTS;
+            this.updateToolStripMenuItem_Click(sender, e);
         }
 
         private void butCancel_Click(object sender, EventArgs e)
@@ -116,6 +92,72 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             ShowMainForm();
             Dispose();
+        }
+
+        private void dgv_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgv.HitTest(e.X, e.Y);
+                dgv.ClearSelection();
+                if (hti.RowIndex != -1)
+                {
+                    dgv.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void menuDGV_Opening(object sender, CancelEventArgs e)
+        {
+            var cms = sender as ContextMenuStrip;
+            var mousepos = Control.MousePosition;
+            if (cms != null)
+            {
+                var rel_mousePos = cms.PointToClient(mousepos);
+                if (cms.ClientRectangle.Contains(rel_mousePos))
+                {
+                    // Neu menu duoc mo bang chuot
+                    var dgv_rel_mousePos = dgv.PointToClient(mousepos);
+                    var hti = dgv.HitTest(dgv_rel_mousePos.X, dgv_rel_mousePos.Y);
+                    if (hti.RowIndex == -1)
+                    {
+                        // Huy su kien khi khong co hang nao
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<DTO.LoaiTS> list = LoaiTS_BLL.getLoaiTSByID(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaLoaiTS"].Value.ToString()));
+            txtMaLoaiTS.Text = list[0].MaLoaiTS.ToString();
+            txtTenLoaiTS.Text = list[0].TenLoaiTS;
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) loại tài sản đã chọn?",
+                                     "Xác nhận xóa dữ liệu!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                // Add MaLoaiTS cua cac hang duoc chon vao list
+                List<int> l = new List<int>();
+                foreach (DataGridViewRow r in dgv.SelectedRows)
+                {
+                    l.Add(Convert.ToInt32(r.Cells["MaLoaiTS"].Value.ToString()));
+                }
+                (bool result, string msg) = LoaiTS_BLL.deleteLoaiTS(l);
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                ShowLoaiTS();// Refresh lai du lieu tren DataGridView
+            }
         }
     }
 }

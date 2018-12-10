@@ -15,7 +15,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             db = new QLCSVC();
         }
-        public List<string> loadCBB_BLL()
+        public List<string> loadCBBTenPhong_BLL()
         {
             List<string> l = new List<string>();
             var data = db.Phongs.Select(p => new { p.TenPhong }).Distinct();
@@ -34,27 +34,29 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return phong.ToList();
         }
-        public Boolean AddPhong (List<DTO.Phong> phong)
+        public (bool, string) addPhong (List<DTO.Phong> l)
         {
             try
             {
-                foreach (DTO.Phong i in phong )
-                    db.Phongs.Add(i);
+                foreach (DTO.Phong phong in l)
+                {
+                    db.Phongs.Add(phong);
+                }
                 db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Thêm Phòng mới thành công!");
         } 
-        public int GetMaNQL (string s)
+        public int getIdByName (string s)
         {
             try
             {
@@ -70,29 +72,34 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return -1;
         }
-        public Boolean DeletePhong(List<int> l)
+        public (bool, string) deletePhong(List<int> l)
         {
             try
             {
-                foreach (int Maphong in l)
+                foreach (int maPhong in l)
                 {
-                    db.Phongs.Remove(db.Phongs.Single(p => p.MaPhong == Maphong));
+                    int count = db.NhapXuats.Where(p => p.MaPhong == maPhong).Count();
+                    if (count > 0)
+                    {
+                        return (false, "Không thể xóa Phòng có mã số " + maPhong + " do có trong danh sách Nhập/Xuất!");
+                    }
+                    db.Phongs.Remove(db.Phongs.Single(p => p.MaPhong == maPhong));
                 }
                 db.SaveChanges();
             }
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Một (hoặc nhiều) Phòng đã không thể xóa do có lỗi xảy ra!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Một (hoặc nhiều) Phòng đã không thể xóa do có lỗi xảy ra!");
             }
-            return true;
+            return (true, "Xóa thành công!");
         }
-        public Boolean UpdatePhong (DTO.Phong phong)
+        public (bool, string) updatePhong(DTO.Phong phong)
         {
             try
             {
@@ -106,22 +113,38 @@ namespace TH_NET_Cuoi_Ky.BLL
             catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
             catch (Exception e)
             {
                 Console.Write(e.Message);
-                return false;
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            return true;
+            return (true, "Cập nhật thành công!");
         }
 
-        internal List<Phong> getPhongById(int id)
+        public List<DTO.Phong> getPhongById(int id)
         {
             var data = from p in db.Phongs
                        where p.MaPhong == id
                        select p;
             return data.ToList<DTO.Phong>();
+        }
+        public int GetIdByPhong(string Ph)
+        {
+            try
+            {
+                return db.Phongs.Where(p => p.TenPhong == Ph).Select(p => p.MaPhong).Single();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+            }
+            return -1;
         }
     }
 }

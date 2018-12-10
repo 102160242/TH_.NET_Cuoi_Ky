@@ -49,27 +49,101 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (txtMaNSX.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Nước cần sửa!");
+                return;
             }
-            else
+            if(txtTenNSX.Text == "")
             {
-                Boolean result = NSX_BLL.updateTS(new DTO.NuocSX
-                {
-                    MaNuocSX = Convert.ToInt32(txtMaNSX.Text),
-                    TenNuocSX = txtTenNSX.Text
-                });
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                }                
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
             }
+
+            (bool result, string msg) = NSX_BLL.updateTS(new DTO.NuocSX
+            {
+                MaNuocSX = Convert.ToInt32(txtMaNSX.Text),
+                TenNuocSX = txtTenNSX.Text
+            });
+
+            MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
             dgv.DataSource = NSX_BLL.Show_BLL(); // Refresh lai du lieu tren DataGridView
         }
 
         private void but_Delete_Click(object sender, EventArgs e)
+        {
+            this.deleteToolStripMenuItem_Click(sender, e);
+        }
+
+        private void but_Add_Click(object sender, EventArgs e)
+        {
+            NuocSXAddform f = new NuocSXAddform();
+            f.ShowNuocSXForm += Reload;
+            f.Show();
+            this.Visible = false; // Tam an form
+        }
+
+        private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.updateToolStripMenuItem_Click(sender, e);
+        }
+
+        private void but_Cancel_Click(object sender, EventArgs e)
+        {
+            ShowMainForm();
+            Dispose();
+        }
+
+        private void NuocSXForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ShowMainForm();
+            Dispose();
+        }
+
+        private void dgv_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgv.HitTest(e.X, e.Y);
+                dgv.ClearSelection();
+                if (hti.RowIndex != -1)
+                {
+                    dgv.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void menuDGV_Opening(object sender, CancelEventArgs e)
+        {
+            var cms = sender as ContextMenuStrip;
+            var mousepos = Control.MousePosition;
+            if (cms != null)
+            {
+                var rel_mousePos = cms.PointToClient(mousepos);
+                if (cms.ClientRectangle.Contains(rel_mousePos))
+                {
+                    // Neu menu duoc mo bang chuot
+                    var dgv_rel_mousePos = dgv.PointToClient(mousepos);
+                    var hti = dgv.HitTest(dgv_rel_mousePos.X, dgv_rel_mousePos.Y);
+                    if (hti.RowIndex == -1)
+                    {
+                        // Huy su kien khi khong co hang nao
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<DTO.NuocSX> l = NSX_BLL.getNSXByID(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNuocSX"].Value.ToString()));
+            txtMaNSX.Text = l[0].MaNuocSX.ToString();
+            txtTenNSX.Text = l[0].TenNuocSX.ToString();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgv.SelectedRows.Count == 0)
             {
@@ -88,45 +162,13 @@ namespace TH_NET_Cuoi_Ky.GUI
                     {
                         l.Add(Convert.ToInt32(r.Cells["MaNuocSX"].Value.ToString()));
                     }
-                    Boolean result = NSX_BLL.deleteTS(l);
-                    if (result)
-                    {
-                        MessageBox.Show("Xóa thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                    }
+                    (bool result, string msg) = NSX_BLL.deleteTS(l);
+
+                    MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
                     dgv.DataSource = NSX_BLL.Show_BLL(); // Refresh lai du lieu tren DataGridView
                 }
             }
-        }
-
-        private void but_Add_Click(object sender, EventArgs e)
-        {
-            NuocSXAddform f = new NuocSXAddform();
-            f.ShowNuocSXForm += Reload;
-            f.Show();
-            this.Visible = false; // Tam an form
-        }
-
-        private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            List<DTO.NuocSX> l = NSX_BLL.getNSXByID(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNuocSX"].Value.ToString()));
-            txtMaNSX.Text = l[0].MaNuocSX.ToString();
-            txtTenNSX.Text = l[0].TenNuocSX.ToString();
-        }
-
-        private void but_Cancel_Click(object sender, EventArgs e)
-        {
-            ShowMainForm();
-            Dispose();
-        }
-
-        private void NuocSXForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ShowMainForm();
-            Dispose();
         }
     }
 }

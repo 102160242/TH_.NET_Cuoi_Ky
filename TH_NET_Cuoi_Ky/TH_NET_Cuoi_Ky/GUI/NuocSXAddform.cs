@@ -23,12 +23,17 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if(txtTenNSX.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
             List<DTO.NuocSX> l = new List<DTO.NuocSX>();
             l.Add(new DTO.NuocSX
             {
                 TenNuocSX = txtTenNSX.Text,
             });
-            Boolean result = NSX_BLL.addNSX(l);
+            (bool result, string msg) = NSX_BLL.addNSX(l);
 
             if (result)
             {
@@ -38,7 +43,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
             else
             {
-                MessageBox.Show("Không thể thêm Tài Sản mới. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi");
             }
         }
 

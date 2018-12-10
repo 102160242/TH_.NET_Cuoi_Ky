@@ -25,12 +25,17 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butOK_Click(object sender, EventArgs e)
         {
+            if(txtTenLoaiTS.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
             List<DTO.LoaiTS> l = new List<DTO.LoaiTS>();
             l.Add(new DTO.LoaiTS
             {
                 TenLoaiTS = txtTenLoaiTS.Text,
             });
-            Boolean result = LoaiTS_BLL.addLoaiTS(l);
+            (bool result, string msg) = LoaiTS_BLL.addLoaiTS(l);
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Loai Tai San
@@ -39,7 +44,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
             else
             {
-                MessageBox.Show("Không thể thêm Loại Tài Sản mới. Vui lòng thử lại sau!");
+                MessageBox.Show(msg, "Lỗi");               
             }
         }
 

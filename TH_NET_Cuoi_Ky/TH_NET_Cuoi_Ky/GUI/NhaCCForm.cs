@@ -53,10 +53,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<DTO.NhaCC> list = nhaCC_BLL.GetNhaCCById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNhaCC"].Value.ToString()));
-            txtMaNhaCC.Text = list[0].MaNhaCC.ToString();
-            txtTenNhaCC.Text = list[0].TenNhaCC;
-            cbbAddress.SelectedItem = list[0].DiaChi;
+            this.updateToolStripMenuItem_Click(sender, e);
         }
 
         private void butAdd_Click(object sender, EventArgs e)
@@ -72,51 +69,29 @@ namespace TH_NET_Cuoi_Ky.GUI
             if(txtMaNhaCC.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Tài sản cần sửa!");
+                return;
             }
-            else
+            if (txtTenNhaCC.Text == "" || cbbAddress.Text == "")
             {
-                Boolean result = nhaCC_BLL.updateNhaCC(new DTO.NhaCC
-                {
-                   MaNhaCC = Convert.ToInt32(txtMaNhaCC.Text),
-                   TenNhaCC = txtTenNhaCC.Text,
-                   DiaChi = cbbAddress.SelectedItem == null ? cbbAddress.Text : cbbAddress.SelectedItem.ToString(),
-                });
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                }
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
             }
+
+            (bool result, string msg) = nhaCC_BLL.updateNhaCC(new DTO.NhaCC
+            {
+                MaNhaCC = Convert.ToInt32(txtMaNhaCC.Text),
+                TenNhaCC = txtTenNhaCC.Text,
+                DiaChi = cbbAddress.SelectedItem == null ? cbbAddress.Text : cbbAddress.SelectedItem.ToString(),
+            });
+
+            MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
             ShowNhaCC();
         }
 
         private void butDelete_Click(object sender, EventArgs e)
         {
-            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) loại tài sản đã chọn?",
-                                     "Xác nhận xóa dữ liệu!",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                // Add MaTS cua cac hang duoc chon vao list
-                List<int> l = new List<int>();
-                foreach (DataGridViewRow r in dgv.SelectedRows)
-                {
-                    l.Add(Convert.ToInt32(r.Cells["MaNhaCC"].Value.ToString()));
-                }
-                Boolean result = nhaCC_BLL.deleteNhaCC(l);
-                if (result)
-                {
-                    MessageBox.Show("Xóa thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                }
-                ShowNhaCC();// Refresh lai du lieu tren DataGridView
-            }
+            this.deleteToolStripMenuItem_Click(sender, e);
         }
 
         private void but_Search_Click(object sender, EventArgs e)
@@ -132,6 +107,73 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void NhaCCForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             ShowMainForm();
+        }
+
+        private void dgv_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgv.HitTest(e.X, e.Y);
+                dgv.ClearSelection();
+                if (hti.RowIndex != -1)
+                {
+                    dgv.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void menuDGV_Opening(object sender, CancelEventArgs e)
+        {
+            var cms = sender as ContextMenuStrip;
+            var mousepos = Control.MousePosition;
+            if (cms != null)
+            {
+                var rel_mousePos = cms.PointToClient(mousepos);
+                if (cms.ClientRectangle.Contains(rel_mousePos))
+                {
+                    // Neu menu duoc mo bang chuot
+                    var dgv_rel_mousePos = dgv.PointToClient(mousepos);
+                    var hti = dgv.HitTest(dgv_rel_mousePos.X, dgv_rel_mousePos.Y);
+                    if (hti.RowIndex == -1)
+                    {
+                        // Huy su kien khi khong co hang nao
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<DTO.NhaCC> list = nhaCC_BLL.GetNhaCCById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNhaCC"].Value.ToString()));
+            txtMaNhaCC.Text = list[0].MaNhaCC.ToString();
+            txtTenNhaCC.Text = list[0].TenNhaCC;
+            cbbAddress.SelectedItem = list[0].DiaChi;
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) loại tài sản đã chọn?",
+                                     "Xác nhận xóa dữ liệu!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                // Add MaTS cua cac hang duoc chon vao list
+                List<int> l = new List<int>();
+                foreach (DataGridViewRow r in dgv.SelectedRows)
+                {
+                    l.Add(Convert.ToInt32(r.Cells["MaNhaCC"].Value.ToString()));
+                }
+                (bool result, string msg) = nhaCC_BLL.deleteNhaCC(l);
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                ShowNhaCC();// Refresh lai du lieu tren DataGridView
+            }
         }
     }
 }

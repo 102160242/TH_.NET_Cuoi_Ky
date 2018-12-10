@@ -30,14 +30,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            List<DTO.NguoiQL> list = Nguoi_BLL.GetNguoiQLById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNguoiQL"].Value.ToString()));
-            txt_MaQL.Text = list[0].MaNguoiQL.ToString();
-            txt_TenQL.Text = list[0].TenNguoiQL;
-            dateTimePicker1.Value = list[0].NgaySinh;
-            txt_SDT.Text = list[0].SoDT;
-            if (list[0].GioiTinh == true) rb_Male.Checked = true;
-            else rb_Female.Checked = true;
-
+            this.updateToolStripMenuItem_Click(sender, e);
         }
         private void  ShowNguoiQL()
         {
@@ -72,31 +65,96 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             if (txt_MaQL.Text == "")
             {
-                MessageBox.Show("Vui lòng chọn Tài sản cần sửa!");
+                MessageBox.Show("Vui lòng chọn Người Quản Lý cần sửa!");
+                return;
             }
-            else
+            if(txt_SDT.Text == "" || txt_TenQL.Text == "")
             {
-                    Boolean result = Nguoi_BLL.updateNguoiQL (new DTO.NguoiQL
-                    {
-                        MaNguoiQL = Convert.ToInt32(txt_MaQL.Text),
-                        TenNguoiQL = txt_TenQL.Text,
-                        NgaySinh = dateTimePicker1.Value,
-                        SoDT = txt_SDT.Text,
-                        GioiTinh = rb_Male.Checked,
-                    });
-                    if (result)
-                    {
-                        MessageBox.Show("Cập nhật thành công!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật thất bại. Vui lòng thử lại sau!");
-                    }
-                }
-            ShowNguoiQL();
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
             }
+ 
+            (bool result, string msg) = Nguoi_BLL.updateNguoiQL(new DTO.NguoiQL
+            {
+                MaNguoiQL = Convert.ToInt32(txt_MaQL.Text),
+                TenNguoiQL = txt_TenQL.Text,
+                NgaySinh = dateTimePicker1.Value.Date,
+                SoDT = txt_SDT.Text,
+                GioiTinh = rb_Male.Checked,
+            });
+            MessageBox.Show(msg, result ? "Thành công!" : "Lỗi");            
+            ShowNguoiQL();
+        }
 
         private void but_Delete_Click(object sender, EventArgs e)
+        {
+            this.deleteToolStripMenuItem_Click(sender, e);
+        }
+
+        private void but_Search_Click(object sender, EventArgs e)
+        {
+            dgv.DataSource = Nguoi_BLL.ShowNguoiQL_BLL(txt_Search.Text);
+        }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Khong cho nhap chu cai
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgv_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                var hti = dgv.HitTest(e.X, e.Y);
+                dgv.ClearSelection();
+                if (hti.RowIndex != -1)
+                {
+                    dgv.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void menuDGV_Opening(object sender, CancelEventArgs e)
+        {
+            var cms = sender as ContextMenuStrip;
+            var mousepos = Control.MousePosition;
+            if (cms != null)
+            {
+                var rel_mousePos = cms.PointToClient(mousepos);
+                if (cms.ClientRectangle.Contains(rel_mousePos))
+                {
+                    // Neu menu duoc mo bang chuot
+                    var dgv_rel_mousePos = dgv.PointToClient(mousepos);
+                    var hti = dgv.HitTest(dgv_rel_mousePos.X, dgv_rel_mousePos.Y);
+                    if (hti.RowIndex == -1)
+                    {
+                        // Huy su kien khi khong co hang nao
+                        e.Cancel = true;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<DTO.NguoiQL> list = Nguoi_BLL.GetNguoiQLById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaNguoiQL"].Value.ToString()));
+            txt_MaQL.Text = list[0].MaNguoiQL.ToString();
+            txt_TenQL.Text = list[0].TenNguoiQL;
+            dateTimePicker1.Value = list[0].NgaySinh;
+            txt_SDT.Text = list[0].SoDT;
+            if (list[0].GioiTinh == true) rb_Male.Checked = true;
+            else rb_Female.Checked = true;
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) người quản lý đã chọn?",
                                      "Xác nhận xóa dữ liệu!",
@@ -109,22 +167,12 @@ namespace TH_NET_Cuoi_Ky.GUI
                 {
                     l.Add(Convert.ToInt32(r.Cells["MaNguoiQL"].Value.ToString()));
                 }
-                Boolean result = Nguoi_BLL.deleteNguoiQL(l);
-                if (result)
-                {
-                    MessageBox.Show("Xóa thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Xóa thất bại. Vui lòng thử lại sau!");
-                }
+                (bool result, string msg) = Nguoi_BLL.deleteNguoiQL(l);
+
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi"); // Hien thi thong bao ket qua
+
                 ShowNguoiQL(); // Refresh lai du lieu tren DataGridView
             }
         }
-
-        private void but_Search_Click(object sender, EventArgs e)
-        {
-            dgv.DataSource = Nguoi_BLL.ShowNguoiQL_BLL(txt_Search.Text);
-        }
     }
-    }
+}
