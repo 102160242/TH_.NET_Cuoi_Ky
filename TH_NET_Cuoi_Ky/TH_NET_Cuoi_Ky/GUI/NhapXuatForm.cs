@@ -126,7 +126,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void Show_Nhap()
         {
-            dataGridView1.DataSource = NX_BLL.ShowNhap_BLL();
+            dgv.DataSource = NX_BLL.ShowNhap_BLL();
         }
         private void Show_Xuat()
         {

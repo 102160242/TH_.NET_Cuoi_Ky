@@ -22,7 +22,7 @@ namespace TH_NET_Cuoi_Ky
         }
         public void ShowTSDetail(int maTS)
         {
-            dataGridView1.DataSource = TS_BLL.ShowTSDetail(maTS);
+            dgv.DataSource = TS_BLL.ShowTSDetail(maTS);
         }
         private void ChiTietTSForm_FormClosed(object sender, FormClosedEventArgs e)
         {
