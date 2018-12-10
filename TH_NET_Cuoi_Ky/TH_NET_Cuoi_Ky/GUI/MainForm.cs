@@ -55,7 +55,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btnNhapXuat_Click(object sender, EventArgs e)
         {
             NhapXuatForm f = new NhapXuatForm();
-            f.ShowForm += ShowForm;
+            f.ShowMainForm += ShowForm;
             f.Show();
             this.Visible = false;
         }

@@ -121,5 +121,31 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return (true, "Xóa thành công");
         }
+        public int GetIdByNhaCC (string NCC)
+        {
+            try
+            {
+                return db.NhaCCs.Where(p => p.TenNhaCC == NCC).Select(p => p.MaNhaCC).Single();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+            }
+            return -1;
+        }
+        public List<string> LoadCCB_NhaCC_AfterTenTSChose(string ts,string ph)
+        {
+            //var mats = db.TaiSans.Where(p => p.TenTS == ts).Select(p => p.MaTS).Single();
+            //var data = db.NhapXuats.Where(p => p.MaTS == mats).Select(p => p.NhaCC.TenNhaCC);
+            var data = db.NhapXuats.Where(p => p.TaiSan.TenTS == ts)
+                                   .Select(p => new { p.Phong.TenPhong, p.NhaCC.TenNhaCC })
+                                   .Where(p => p.TenPhong == ph)
+                                   .Select(p => p.TenNhaCC);
+            return data.ToList();
+        } 
     }
 }

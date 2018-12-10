@@ -37,7 +37,7 @@
             // 
             // txtTenLoaiTS
             // 
-            this.txtTenLoaiTS.Location = new System.Drawing.Point(163, 31);
+            this.txtTenLoaiTS.Location = new System.Drawing.Point(154, 22);
             this.txtTenLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenLoaiTS.Name = "txtTenLoaiTS";
             this.txtTenLoaiTS.Size = new System.Drawing.Size(217, 24);
@@ -47,7 +47,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(30, 34);
+            this.label2.Location = new System.Drawing.Point(26, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 18);
@@ -59,10 +59,10 @@
             this.butOK.BackColor = System.Drawing.Color.Transparent;
             this.butOK.Image = ((System.Drawing.Image)(resources.GetObject("butOK.Image")));
             this.butOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butOK.Location = new System.Drawing.Point(102, 75);
+            this.butOK.Location = new System.Drawing.Point(85, 76);
             this.butOK.Margin = new System.Windows.Forms.Padding(4);
             this.butOK.Name = "butOK";
-            this.butOK.Size = new System.Drawing.Size(71, 32);
+            this.butOK.Size = new System.Drawing.Size(85, 32);
             this.butOK.TabIndex = 6;
             this.butOK.Text = "OK";
             this.butOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -74,10 +74,10 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(237, 75);
+            this.butCancel.Location = new System.Drawing.Point(220, 76);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
-            this.butCancel.Size = new System.Drawing.Size(97, 32);
+            this.butCancel.Size = new System.Drawing.Size(85, 32);
             this.butCancel.TabIndex = 7;
             this.butCancel.Text = "Cancel";
             this.butCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

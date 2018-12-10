@@ -63,10 +63,10 @@
             this.but_Delete.BackColor = System.Drawing.Color.Transparent;
             this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
             this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Delete.Location = new System.Drawing.Point(466, 440);
+            this.but_Delete.Location = new System.Drawing.Point(445, 439);
             this.but_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.but_Delete.Name = "but_Delete";
-            this.but_Delete.Size = new System.Drawing.Size(65, 32);
+            this.but_Delete.Size = new System.Drawing.Size(91, 32);
             this.but_Delete.TabIndex = 10;
             this.but_Delete.Text = "Xóa";
             this.but_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -78,10 +78,10 @@
             this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(580, 440);
+            this.but_Cancel.Location = new System.Drawing.Point(577, 439);
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(74, 32);
+            this.but_Cancel.Size = new System.Drawing.Size(91, 32);
             this.but_Cancel.TabIndex = 11;
             this.but_Cancel.Text = "Thoát";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -90,10 +90,10 @@
             // 
             // txt_Search
             // 
-            this.txt_Search.Location = new System.Drawing.Point(109, 40);
+            this.txt_Search.Location = new System.Drawing.Point(105, 28);
             this.txt_Search.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(204, 24);
+            this.txt_Search.Size = new System.Drawing.Size(219, 24);
             this.txt_Search.TabIndex = 4;
             // 
             // but_Update
@@ -101,10 +101,10 @@
             this.but_Update.BackColor = System.Drawing.Color.Transparent;
             this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
             this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Update.Location = new System.Drawing.Point(313, 440);
+            this.but_Update.Location = new System.Drawing.Point(313, 439);
             this.but_Update.Margin = new System.Windows.Forms.Padding(4);
             this.but_Update.Name = "but_Update";
-            this.but_Update.Size = new System.Drawing.Size(103, 32);
+            this.but_Update.Size = new System.Drawing.Size(91, 32);
             this.but_Update.TabIndex = 9;
             this.but_Update.Text = "Cập nhật";
             this.but_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -116,7 +116,7 @@
             this.but_Search.BackColor = System.Drawing.Color.Transparent;
             this.but_Search.Image = ((System.Drawing.Image)(resources.GetObject("but_Search.Image")));
             this.but_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Search.Location = new System.Drawing.Point(140, 85);
+            this.but_Search.Location = new System.Drawing.Point(112, 73);
             this.but_Search.Margin = new System.Windows.Forms.Padding(4);
             this.but_Search.Name = "but_Search";
             this.but_Search.Size = new System.Drawing.Size(101, 32);
@@ -132,7 +132,7 @@
             this.dgv.BackgroundColor = System.Drawing.Color.White;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.ContextMenuStrip = this.menuDGV;
-            this.dgv.Location = new System.Drawing.Point(11, 24);
+            this.dgv.Location = new System.Drawing.Point(10, 24);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -153,20 +153,20 @@
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.updateToolStripMenuItem.Text = "Sửa";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.deleteToolStripMenuItem.Text = "Xóa";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // txt_TenPhong
             // 
-            this.txt_TenPhong.Location = new System.Drawing.Point(124, 60);
+            this.txt_TenPhong.Location = new System.Drawing.Point(129, 53);
             this.txt_TenPhong.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TenPhong.Name = "txt_TenPhong";
             this.txt_TenPhong.Size = new System.Drawing.Size(219, 24);
@@ -174,7 +174,7 @@
             // 
             // txt_MaPhong
             // 
-            this.txt_MaPhong.Location = new System.Drawing.Point(124, 22);
+            this.txt_MaPhong.Location = new System.Drawing.Point(129, 16);
             this.txt_MaPhong.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MaPhong.Name = "txt_MaPhong";
             this.txt_MaPhong.ReadOnly = true;
@@ -186,10 +186,10 @@
             this.but_Add.BackColor = System.Drawing.Color.Transparent;
             this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
             this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Add.Location = new System.Drawing.Point(186, 440);
+            this.but_Add.Location = new System.Drawing.Point(181, 439);
             this.but_Add.Margin = new System.Windows.Forms.Padding(4);
             this.but_Add.Name = "but_Add";
-            this.but_Add.Size = new System.Drawing.Size(79, 32);
+            this.but_Add.Size = new System.Drawing.Size(91, 32);
             this.but_Add.TabIndex = 8;
             this.but_Add.Text = "Thêm";
             this.but_Add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -200,7 +200,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(8, 25);
+            this.label2.Location = new System.Drawing.Point(13, 22);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 18);
@@ -212,10 +212,10 @@
             this.BntShowPhong.BackColor = System.Drawing.Color.Transparent;
             this.BntShowPhong.Image = ((System.Drawing.Image)(resources.GetObject("BntShowPhong.Image")));
             this.BntShowPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BntShowPhong.Location = new System.Drawing.Point(52, 440);
+            this.BntShowPhong.Location = new System.Drawing.Point(49, 439);
             this.BntShowPhong.Margin = new System.Windows.Forms.Padding(4);
             this.BntShowPhong.Name = "BntShowPhong";
-            this.BntShowPhong.Size = new System.Drawing.Size(95, 32);
+            this.BntShowPhong.Size = new System.Drawing.Size(91, 32);
             this.BntShowPhong.TabIndex = 7;
             this.BntShowPhong.Text = "Hiển thị";
             this.BntShowPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -226,7 +226,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(8, 60);
+            this.label1.Location = new System.Drawing.Point(13, 56);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
@@ -237,7 +237,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(8, 99);
+            this.label3.Location = new System.Drawing.Point(13, 93);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 18);
@@ -249,7 +249,7 @@
             this.cbbNguoiQL.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbNguoiQL.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbNguoiQL.FormattingEnabled = true;
-            this.cbbNguoiQL.Location = new System.Drawing.Point(124, 96);
+            this.cbbNguoiQL.Location = new System.Drawing.Point(129, 90);
             this.cbbNguoiQL.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNguoiQL.Name = "cbbNguoiQL";
             this.cbbNguoiQL.Size = new System.Drawing.Size(219, 26);
@@ -264,7 +264,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt_MaPhong);
-            this.groupBox1.Location = new System.Drawing.Point(5, 13);
+            this.groupBox1.Location = new System.Drawing.Point(5, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(360, 132);
             this.groupBox1.TabIndex = 46;
@@ -277,7 +277,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txt_Search);
             this.groupBox2.Controls.Add(this.but_Search);
-            this.groupBox2.Location = new System.Drawing.Point(371, 13);
+            this.groupBox2.Location = new System.Drawing.Point(371, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(340, 132);
             this.groupBox2.TabIndex = 47;
@@ -287,7 +287,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 43);
+            this.label4.Location = new System.Drawing.Point(16, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 18);
             this.label4.TabIndex = 40;
@@ -297,7 +297,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.dgv);
-            this.groupBox3.Location = new System.Drawing.Point(5, 152);
+            this.groupBox3.Location = new System.Drawing.Point(5, 151);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(706, 281);
             this.groupBox3.TabIndex = 48;

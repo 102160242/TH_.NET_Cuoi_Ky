@@ -15,7 +15,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             db = new QLCSVC();
         }
-        public List<string> loadCBB_BLL()
+        public List<string> loadCBBTenPhong_BLL()
         {
             List<string> l = new List<string>();
             var data = db.Phongs.Select(p => new { p.TenPhong }).Distinct();
@@ -129,6 +129,29 @@ namespace TH_NET_Cuoi_Ky.BLL
                        where p.MaPhong == id
                        select p;
             return data.ToList<DTO.Phong>();
+        }
+        public int GetIdByPhong(string Ph)
+        {
+            try
+            {
+                return db.Phongs.Where(p => p.TenPhong == Ph).Select(p => p.MaPhong).Single();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+            }
+            return -1;
+        }
+        public List<string> LoadCBB_Phong_AfterTenTSChose(string ts)
+        {
+            //var mats = db.TaiSans.Where(p => p.TenTS == ts).Select(p => p.MaTS).Single();
+            //var data = db.NhapXuats.Where(p => p.MaTS == mats).Select(p => p.Phong.TenPhong);
+            var data = db.NhapXuats.Where(p => p.TaiSan.TenTS == ts).Select(p => p.Phong.TenPhong);
+            return data.ToList();
         }
     }
 }

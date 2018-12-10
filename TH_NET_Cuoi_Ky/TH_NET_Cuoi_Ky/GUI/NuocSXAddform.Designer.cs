@@ -37,17 +37,17 @@
             // 
             // txtTenNSX
             // 
-            this.txtTenNSX.Location = new System.Drawing.Point(109, 29);
+            this.txtTenNSX.Location = new System.Drawing.Point(94, 21);
             this.txtTenNSX.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNSX.Name = "txtTenNSX";
-            this.txtTenNSX.Size = new System.Drawing.Size(268, 24);
+            this.txtTenNSX.Size = new System.Drawing.Size(283, 24);
             this.txtTenNSX.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(13, 29);
+            this.label1.Location = new System.Drawing.Point(13, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 18);
@@ -59,10 +59,10 @@
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(109, 73);
+            this.btnAdd.Location = new System.Drawing.Point(91, 65);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(65, 32);
+            this.btnAdd.Size = new System.Drawing.Size(86, 32);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "OK";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -74,7 +74,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(232, 73);
+            this.btnCancel.Location = new System.Drawing.Point(214, 65);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(86, 32);
