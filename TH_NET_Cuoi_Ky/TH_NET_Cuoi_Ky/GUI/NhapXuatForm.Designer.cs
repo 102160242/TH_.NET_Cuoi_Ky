@@ -37,11 +37,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.bnt_HienThiNhap = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.numericUpDown_SLNhap = new System.Windows.Forms.NumericUpDown();
             this.bnt_Nhap = new System.Windows.Forms.Button();
             this.cbb_TenTSNhap = new System.Windows.Forms.ComboBox();
-            this.numericUpDown_GiaNhap = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,7 +59,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.numericUpDown_SLXuat = new System.Windows.Forms.NumericUpDown();
             this.bnt_Xuat = new System.Windows.Forms.Button();
-            this.numericUpDown_GiaXuat = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -73,17 +70,17 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.txt_GiaNhap = new System.Windows.Forms.TextBox();
+            this.txt_GiaXuat = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLNhap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GiaNhap)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLXuat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GiaXuat)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -101,6 +98,7 @@
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.txt_GiaNhap);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.txt_TinhTrangNhap);
             this.tabPage1.Controls.Add(this.label13);
@@ -109,7 +107,6 @@
             this.tabPage1.Controls.Add(this.numericUpDown_SLNhap);
             this.tabPage1.Controls.Add(this.bnt_Nhap);
             this.tabPage1.Controls.Add(this.cbb_TenTSNhap);
-            this.tabPage1.Controls.Add(this.numericUpDown_GiaNhap);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.label3);
@@ -127,8 +124,6 @@
             this.tabPage1.Text = "Nhập";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // txt_TinhTrangNhap
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -144,12 +139,13 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(913, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(923, 253);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // txt_TinhTrangNhap
             // 
@@ -187,17 +183,6 @@
             this.label11.TabIndex = 43;
             this.label11.Text = "Số Lượng";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 148);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(926, 288);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // numericUpDown_SLNhap
             // 
             this.numericUpDown_SLNhap.Location = new System.Drawing.Point(442, 100);
@@ -230,14 +215,6 @@
             this.cbb_TenTSNhap.Name = "cbb_TenTSNhap";
             this.cbb_TenTSNhap.Size = new System.Drawing.Size(168, 26);
             this.cbb_TenTSNhap.TabIndex = 39;
-            // 
-            // numericUpDown_GiaNhap
-            // 
-            this.numericUpDown_GiaNhap.Location = new System.Drawing.Point(137, 100);
-            this.numericUpDown_GiaNhap.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown_GiaNhap.Name = "numericUpDown_GiaNhap";
-            this.numericUpDown_GiaNhap.Size = new System.Drawing.Size(168, 24);
-            this.numericUpDown_GiaNhap.TabIndex = 38;
             // 
             // label4
             // 
@@ -324,6 +301,7 @@
             // 
             this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.txt_GiaXuat);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.txt_TinhTrangXuat);
             this.tabPage2.Controls.Add(this.label14);
@@ -333,7 +311,6 @@
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.numericUpDown_SLXuat);
             this.tabPage2.Controls.Add(this.bnt_Xuat);
-            this.tabPage2.Controls.Add(this.numericUpDown_GiaXuat);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.dateTimePicker2);
             this.tabPage2.Controls.Add(this.label6);
@@ -351,8 +328,6 @@
             this.tabPage2.Text = "Xuất";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txt_TinhTrangXuat
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView2);
@@ -368,11 +343,12 @@
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(8, 23);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 23);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(909, 257);
+            this.dataGridView2.Size = new System.Drawing.Size(920, 263);
             this.dataGridView2.TabIndex = 56;
+            this.dataGridView2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
             // 
             // txt_TinhTrangXuat
             // 
@@ -389,16 +365,6 @@
             this.label14.Size = new System.Drawing.Size(78, 18);
             this.label14.TabIndex = 57;
             this.label14.Text = "Tình Trạng";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 143);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(924, 290);
-            this.dataGridView2.TabIndex = 56;
             // 
             // Bnt_HienThiXuat
             // 
@@ -467,14 +433,6 @@
             this.bnt_Xuat.UseVisualStyleBackColor = true;
             this.bnt_Xuat.Click += new System.EventHandler(this.bnt_Xuat_Click);
             // 
-            // numericUpDown_GiaXuat
-            // 
-            this.numericUpDown_GiaXuat.Location = new System.Drawing.Point(134, 102);
-            this.numericUpDown_GiaXuat.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown_GiaXuat.Name = "numericUpDown_GiaXuat";
-            this.numericUpDown_GiaXuat.Size = new System.Drawing.Size(168, 24);
-            this.numericUpDown_GiaXuat.TabIndex = 48;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -514,6 +472,7 @@
             this.cbb_PhongXuat.Name = "cbb_PhongXuat";
             this.cbb_PhongXuat.Size = new System.Drawing.Size(168, 26);
             this.cbb_PhongXuat.TabIndex = 44;
+            this.cbb_PhongXuat.SelectedIndexChanged += new System.EventHandler(this.cbb_PhongXuat_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -560,7 +519,6 @@
             // 
             // btnExit
             // 
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(635, 477);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
@@ -590,6 +548,22 @@
             this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // txt_GiaNhap
+            // 
+            this.txt_GiaNhap.Location = new System.Drawing.Point(137, 101);
+            this.txt_GiaNhap.Name = "txt_GiaNhap";
+            this.txt_GiaNhap.Size = new System.Drawing.Size(168, 24);
+            this.txt_GiaNhap.TabIndex = 48;
+            this.txt_GiaNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaNhap_KeyPress);
+            // 
+            // txt_GiaXuat
+            // 
+            this.txt_GiaXuat.Location = new System.Drawing.Point(134, 105);
+            this.txt_GiaXuat.Name = "txt_GiaXuat";
+            this.txt_GiaXuat.Size = new System.Drawing.Size(168, 24);
+            this.txt_GiaXuat.TabIndex = 60;
+            this.txt_GiaXuat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaXuat_KeyPress);
+            // 
             // NhapXuatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -615,13 +589,11 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLNhap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GiaNhap)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLXuat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_GiaXuat)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -639,7 +611,6 @@
         private System.Windows.Forms.ComboBox cbb_NhaCCNhap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown_GiaNhap;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown numericUpDown_SLNhap;
@@ -650,7 +621,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numericUpDown_SLXuat;
         private System.Windows.Forms.Button bnt_Xuat;
-        private System.Windows.Forms.NumericUpDown numericUpDown_GiaXuat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label6;
@@ -671,5 +641,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txt_GiaNhap;
+        private System.Windows.Forms.TextBox txt_GiaXuat;
     }
 }

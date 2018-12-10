@@ -39,15 +39,15 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void bnt_Nhap_Click(object sender, EventArgs e)
         {
-            if(cbb_NhaCCNhap.SelectedIndex == -1 || cbb_PhongNhap.SelectedIndex == -1 || cbb_TenTSNhap.SelectedIndex == -1 || numericUpDown_GiaNhap.Value <= 0 || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
+            if(cbb_NhaCCNhap.SelectedIndex == -1 || cbb_PhongNhap.SelectedIndex == -1 || cbb_TenTSNhap.SelectedIndex == -1 || Convert.ToDouble(txt_GiaNhap.Text) <0 || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                 return;
             }
-            int maTS = Ts_BLL.GetIDbyTS(cbb_TenTSNhap.SelectedItem.ToString());
-            int maNCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCCNhap.SelectedItem.ToString());
-            int maPhong = p_BLL.GetIdByPhong(cbb_PhongNhap.SelectedItem.ToString());
-            if(maTS == -1 || maNCC == -1 || maPhong == -1)
+            int mataisan = Ts_BLL.GetIDbyTS(cbb_TenTSNhap.SelectedItem.ToString());
+            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCCNhap.SelectedItem.ToString());
+            int maphong = p_BLL.GetIdByPhong(cbb_PhongNhap.SelectedItem.ToString());
+            if(mataisan == -1 || manhacungcap == -1 || maphong == -1)
             {
                 MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
                 return;
@@ -55,17 +55,17 @@ namespace TH_NET_Cuoi_Ky.GUI
             List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
             l.Add(new DTO.NhapXuat
             {
-                MaTS = maTS,
-                MaNhaCC = maNCC,
-                MaPhong = maPhong,
+                MaTS = mataisan,
+                MaNhaCC = manhacungcap,
+                MaPhong = maphong,
                 NgayNhap = dateTimePicker1.Value.Date,
                 SLNhap = Convert.ToInt32(numericUpDown_SLNhap.Value),
-                NguyenGia = Convert.ToDouble(numericUpDown_GiaNhap.Value),
+                NguyenGia = Convert.ToDouble(txt_GiaNhap.Text),
                 TinhTrang = txt_TinhTrangNhap.Text
             });
-            (bool result, string msg) = NX_BLL.AddNhapXuat(l);
+            (Boolean result , string msg) = NX_BLL.AddNhapXuat(l);
 
-            if (result)
+            if (result )
             {
                 // Neu add thanh cong thi hien lai Form Tai San
                 Show_Nhap();
@@ -125,7 +125,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void bnt_Xuat_Click(object sender, EventArgs e)
         {
-            if (cbb_NhaCCXuat.SelectedIndex == -1 || cbb_PhongXuat.SelectedIndex == -1 || cbb_TenTSXuat.SelectedIndex == -1 || numericUpDown_GiaXuat.Value <= 0 || numericUpDown_SLXuat.Value <= 0 || txt_TinhTrangXuat.Text == "")
+            if (cbb_NhaCCXuat.SelectedIndex == -1 || cbb_PhongXuat.SelectedIndex == -1 || cbb_TenTSXuat.SelectedIndex == -1 || Convert.ToDouble(txt_GiaXuat.Text) < 0 || numericUpDown_SLXuat.Value <= 0 || txt_TinhTrangXuat.Text == "")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                 return;
@@ -146,10 +146,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MaPhong = maphong,
                 NgayXuat = dateTimePicker2.Value.Date,
                 SLXuat = Convert.ToInt32(numericUpDown_SLXuat.Value),
-                NguyenGia = Convert.ToDouble(numericUpDown_GiaXuat.Value),
-                TinhTrang = txt_TinhTrangNhap.Text
+                NguyenGia = Convert.ToDouble(txt_GiaXuat.Text),
+                TinhTrang = txt_TinhTrangXuat.Text
             });
-            (bool result, string msg) = NX_BLL.AddNhapXuat(l);
+            (Boolean result,string msg) = NX_BLL.AddNhapXuat(l);
 
             if (result)
             {
@@ -163,7 +163,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void LoadCBBNhaCC_Xuat()
         {
-            foreach(string i in NCC_BLL.LoadCCB_NhaCC_AfterTenTSChose(cbb_TenTSXuat.SelectedItem.ToString()))
+            foreach(string i in NCC_BLL.LoadCCB_NhaCC_AfterTenTSChose(cbb_TenTSXuat.SelectedItem.ToString() , cbb_PhongXuat.SelectedItem.ToString()))
             {
                 if(cbb_NhaCCXuat.FindStringExact(i)<0)
                 {
@@ -186,15 +186,72 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void cbb_TenTSXuat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbb_PhongXuat.Items.Clear();
-            cbb_NhaCCXuat.Items.Clear();
-            LoadCBBNhaCC_Xuat();
+            cbb_PhongXuat.Items.Clear();  
             LoadCBBPhong_Xuat();
+            cbb_NhaCCXuat.Enabled = false;
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            dispose();
+            Dispose();
             ShowMainForm();
+        }
+
+        private void cbb_PhongXuat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbb_NhaCCXuat.Items.Clear();
+            LoadCBBNhaCC_Xuat();
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            cbb_TenTSNhap.SelectedItem = dataGridView1.SelectedRows[0].Cells["TenTS"].Value.ToString();
+            cbb_NhaCCNhap.SelectedItem = dataGridView1.SelectedRows[0].Cells["TenNhaCC"].Value.ToString();
+            cbb_PhongNhap.SelectedItem = dataGridView1.SelectedRows[0].Cells["TenPhong"].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells["NgayNhap"].Value).Date;
+            txt_GiaNhap.Text = dataGridView1.SelectedRows[0].Cells["NguyenGia"].Value.ToString();
+            numericUpDown_SLNhap.Value = Convert.ToDecimal(dataGridView1.SelectedRows[0].Cells["SLNhap"].Value);
+            txt_TinhTrangNhap.Text = dataGridView1.SelectedRows[0].Cells["TinhTrang"].Value.ToString();
+        }
+
+        private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            cbb_TenTSXuat.SelectedItem = dataGridView2.SelectedRows[0].Cells["TenTS"].Value.ToString(); 
+            cbb_PhongXuat.SelectedItem = dataGridView2.SelectedRows[0].Cells["TenPhong"].Value.ToString();
+            cbb_NhaCCXuat.SelectedItem = dataGridView2.SelectedRows[0].Cells["TenNhaCC"].Value.ToString();
+            dateTimePicker2.Value = Convert.ToDateTime(dataGridView2.SelectedRows[0].Cells["NgayXuat"].Value).Date;
+            txt_GiaXuat.Text = dataGridView2.SelectedRows[0].Cells["NguyenGia"].Value.ToString();
+            numericUpDown_SLXuat.Value = Convert.ToDecimal(dataGridView2.SelectedRows[0].Cells["SLXuat"].Value);
+            txt_TinhTrangXuat.Text = dataGridView2.SelectedRows[0].Cells["TinhTrang"].Value.ToString();
+        }
+
+        private void txt_GiaNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_GiaXuat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

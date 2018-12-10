@@ -148,8 +148,9 @@ namespace TH_NET_Cuoi_Ky.BLL
         }
         public List<string> LoadCBB_Phong_AfterTenTSChose(string ts)
         {
-            var mats = db.TaiSans.Where(p => p.TenTS == ts).Select(p => p.MaTS).Single();
-            var data = db.NhapXuats.Where(p => p.MaTS == mats).Select(p => p.Phong.TenPhong);
+            //var mats = db.TaiSans.Where(p => p.TenTS == ts).Select(p => p.MaTS).Single();
+            //var data = db.NhapXuats.Where(p => p.MaTS == mats).Select(p => p.Phong.TenPhong);
+            var data = db.NhapXuats.Where(p => p.TaiSan.TenTS == ts).Select(p => p.Phong.TenPhong);
             return data.ToList();
         }
     }

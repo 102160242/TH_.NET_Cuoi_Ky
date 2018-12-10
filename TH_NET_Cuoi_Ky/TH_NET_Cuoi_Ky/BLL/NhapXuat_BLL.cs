@@ -27,8 +27,6 @@ namespace TH_NET_Cuoi_Ky.BLL
                                                          NamSD = p.NamSD == null ? 0 : p.NamSD,
                                                          p.TinhTrang
                                                      });
-            /*var data = from p in db.NhapXuats
-                       join t in db.TaiSans*/
             return data.ToList();
         }
         public dynamic ShowXuat_BLL()
