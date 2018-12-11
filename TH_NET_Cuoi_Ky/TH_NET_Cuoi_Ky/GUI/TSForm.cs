@@ -29,8 +29,7 @@ namespace TH_NET_Cuoi_Ky
             this.NCC_BLL = new NhaCC_BLL();
             this.NSX_BLL = new NuocSX_BLL();
             this.LTS_BLL = new LoaiTS_BLL();
-            loadCBBLTS.RunWorkerAsync();
-            loadCBBNSX.RunWorkerAsync();
+
             // Them 2 lua chon SX vao ComboBox sap xep
             //cbbSort.Items.Add("Sắp xếp A-Z");
             //cbbSort.Items.Add("Sắp xếp Z-A");
@@ -314,6 +313,12 @@ namespace TH_NET_Cuoi_Ky
                     }));
                 }
             }
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            loadCBBLTS.RunWorkerAsync();
+            loadCBBNSX.RunWorkerAsync();
         }
     }
 }
