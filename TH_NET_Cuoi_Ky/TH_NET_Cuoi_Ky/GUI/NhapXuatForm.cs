@@ -116,11 +116,11 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void Show_Nhap()
         {
-            dataGridView1.DataSource = NX_BLL.ShowNhap_BLL();
+            dgvNhap.DataSource = NX_BLL.ShowNhap_BLL();
         }
         private void Show_Xuat()
         {
-            dataGridView2.DataSource = NX_BLL.ShowXuat_BLL();
+            dgvXuat.DataSource = NX_BLL.ShowXuat_BLL();
         }
 
         private void bnt_Xuat_Click(object sender, EventArgs e)
@@ -204,24 +204,24 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            cbb_TenTSNhap.SelectedItem = dataGridView1.SelectedRows[0].Cells["TenTS"].Value.ToString();
-            cbb_NhaCCNhap.SelectedItem = dataGridView1.SelectedRows[0].Cells["TenNhaCC"].Value.ToString();
-            cbb_PhongNhap.SelectedItem = dataGridView1.SelectedRows[0].Cells["TenPhong"].Value.ToString();
-            dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells["NgayNhap"].Value).Date;
-            txt_GiaNhap.Text = dataGridView1.SelectedRows[0].Cells["NguyenGia"].Value.ToString();
-            numericUpDown_SLNhap.Value = Convert.ToDecimal(dataGridView1.SelectedRows[0].Cells["SLNhap"].Value);
-            txt_TinhTrangNhap.Text = dataGridView1.SelectedRows[0].Cells["TinhTrang"].Value.ToString();
+            cbb_TenTSNhap.SelectedItem = dgvNhap.SelectedRows[0].Cells["TenTS"].Value.ToString();
+            cbb_NhaCCNhap.SelectedItem = dgvNhap.SelectedRows[0].Cells["TenNhaCC"].Value.ToString();
+            cbb_PhongNhap.SelectedItem = dgvNhap.SelectedRows[0].Cells["TenPhong"].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(dgvNhap.SelectedRows[0].Cells["NgayNhap"].Value).Date;
+            txt_GiaNhap.Text = dgvNhap.SelectedRows[0].Cells["NguyenGia"].Value.ToString();
+            numericUpDown_SLNhap.Value = Convert.ToDecimal(dgvNhap.SelectedRows[0].Cells["SLNhap"].Value);
+            txt_TinhTrangNhap.Text = dgvNhap.SelectedRows[0].Cells["TinhTrang"].Value.ToString();
         }
 
         private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            cbb_TenTSXuat.SelectedItem = dataGridView2.SelectedRows[0].Cells["TenTS"].Value.ToString(); 
-            cbb_PhongXuat.SelectedItem = dataGridView2.SelectedRows[0].Cells["TenPhong"].Value.ToString();
-            cbb_NhaCCXuat.SelectedItem = dataGridView2.SelectedRows[0].Cells["TenNhaCC"].Value.ToString();
-            dateTimePicker2.Value = Convert.ToDateTime(dataGridView2.SelectedRows[0].Cells["NgayXuat"].Value).Date;
-            txt_GiaXuat.Text = dataGridView2.SelectedRows[0].Cells["NguyenGia"].Value.ToString();
-            numericUpDown_SLXuat.Value = Convert.ToDecimal(dataGridView2.SelectedRows[0].Cells["SLXuat"].Value);
-            txt_TinhTrangXuat.Text = dataGridView2.SelectedRows[0].Cells["TinhTrang"].Value.ToString();
+            cbb_TenTSXuat.SelectedItem = dgvXuat.SelectedRows[0].Cells["TenTS"].Value.ToString(); 
+            cbb_PhongXuat.SelectedItem = dgvXuat.SelectedRows[0].Cells["TenPhong"].Value.ToString();
+            cbb_NhaCCXuat.SelectedItem = dgvXuat.SelectedRows[0].Cells["TenNhaCC"].Value.ToString();
+            dateTimePicker2.Value = Convert.ToDateTime(dgvXuat.SelectedRows[0].Cells["NgayXuat"].Value).Date;
+            txt_GiaXuat.Text = dgvXuat.SelectedRows[0].Cells["NguyenGia"].Value.ToString();
+            numericUpDown_SLXuat.Value = Convert.ToDecimal(dgvXuat.SelectedRows[0].Cells["SLXuat"].Value);
+            txt_TinhTrangXuat.Text = dgvXuat.SelectedRows[0].Cells["TinhTrang"].Value.ToString();
         }
 
         private void txt_GiaNhap_KeyPress(object sender, KeyPressEventArgs e)
