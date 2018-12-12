@@ -33,7 +33,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txt_GiaNhap = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvNhap = new System.Windows.Forms.DataGridView();
             this.txt_TinhTrangNhap = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.bnt_HienThiNhap = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txt_GiaXuat = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvXuat = new System.Windows.Forms.DataGridView();
             this.txt_TinhTrangXuat = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.Bnt_HienThiXuat = new System.Windows.Forms.Button();
@@ -78,11 +78,11 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLNhap)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXuat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLXuat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,7 +137,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgvNhap);
             this.groupBox1.Location = new System.Drawing.Point(7, 156);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(924, 277);
@@ -145,18 +145,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lịch sử nhập";
             // 
-            // dataGridView1
+            // dgvNhap
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(923, 253);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dgvNhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhap.BackgroundColor = System.Drawing.Color.White;
+            this.dgvNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhap.Location = new System.Drawing.Point(0, 24);
+            this.dgvNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvNhap.Name = "dgvNhap";
+            this.dgvNhap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNhap.Size = new System.Drawing.Size(923, 253);
+            this.dgvNhap.TabIndex = 1;
+            this.dgvNhap.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // txt_TinhTrangNhap
             // 
@@ -176,11 +176,14 @@
             // 
             // bnt_HienThiNhap
             // 
+            this.bnt_HienThiNhap.Image = ((System.Drawing.Image)(resources.GetObject("bnt_HienThiNhap.Image")));
+            this.bnt_HienThiNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bnt_HienThiNhap.Location = new System.Drawing.Point(837, 118);
             this.bnt_HienThiNhap.Name = "bnt_HienThiNhap";
             this.bnt_HienThiNhap.Size = new System.Drawing.Size(90, 32);
             this.bnt_HienThiNhap.TabIndex = 44;
             this.bnt_HienThiNhap.Text = "Hiển Thị";
+            this.bnt_HienThiNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnt_HienThiNhap.UseVisualStyleBackColor = true;
             this.bnt_HienThiNhap.Click += new System.EventHandler(this.bnt_HienThiNhap_Click);
             // 
@@ -349,7 +352,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.dgvXuat);
             this.groupBox2.Location = new System.Drawing.Point(7, 156);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(924, 286);
@@ -357,17 +360,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lịch sử xuất";
             // 
-            // dataGridView2
+            // dgvXuat
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 24);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(923, 253);
-            this.dataGridView2.TabIndex = 56;
-            this.dataGridView2.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
+            this.dgvXuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvXuat.BackgroundColor = System.Drawing.Color.White;
+            this.dgvXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvXuat.Location = new System.Drawing.Point(0, 24);
+            this.dgvXuat.Name = "dgvXuat";
+            this.dgvXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvXuat.Size = new System.Drawing.Size(923, 253);
+            this.dgvXuat.TabIndex = 56;
+            this.dgvXuat.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
             // 
             // txt_TinhTrangXuat
             // 
@@ -387,11 +390,14 @@
             // 
             // Bnt_HienThiXuat
             // 
+            this.Bnt_HienThiXuat.Image = ((System.Drawing.Image)(resources.GetObject("Bnt_HienThiXuat.Image")));
+            this.Bnt_HienThiXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Bnt_HienThiXuat.Location = new System.Drawing.Point(837, 118);
             this.Bnt_HienThiXuat.Name = "Bnt_HienThiXuat";
             this.Bnt_HienThiXuat.Size = new System.Drawing.Size(90, 32);
             this.Bnt_HienThiXuat.TabIndex = 55;
             this.Bnt_HienThiXuat.Text = "Hiển Thị";
+            this.Bnt_HienThiXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Bnt_HienThiXuat.UseVisualStyleBackColor = true;
             this.Bnt_HienThiXuat.Click += new System.EventHandler(this.Bnt_HienThiXuat_Click);
             // 
@@ -411,10 +417,10 @@
             // 
             this.bnt_ThanhLy.Image = ((System.Drawing.Image)(resources.GetObject("bnt_ThanhLy.Image")));
             this.bnt_ThanhLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_ThanhLy.Location = new System.Drawing.Point(642, 117);
+            this.bnt_ThanhLy.Location = new System.Drawing.Point(639, 117);
             this.bnt_ThanhLy.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_ThanhLy.Name = "bnt_ThanhLy";
-            this.bnt_ThanhLy.Size = new System.Drawing.Size(90, 32);
+            this.bnt_ThanhLy.Size = new System.Drawing.Size(93, 32);
             this.bnt_ThanhLy.TabIndex = 53;
             this.bnt_ThanhLy.Text = "Thanh Lý";
             this.bnt_ThanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -442,10 +448,10 @@
             // 
             this.bnt_Xuat.Image = ((System.Drawing.Image)(resources.GetObject("bnt_Xuat.Image")));
             this.bnt_Xuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_Xuat.Location = new System.Drawing.Point(740, 118);
+            this.bnt_Xuat.Location = new System.Drawing.Point(758, 118);
             this.bnt_Xuat.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_Xuat.Name = "bnt_Xuat";
-            this.bnt_Xuat.Size = new System.Drawing.Size(90, 32);
+            this.bnt_Xuat.Size = new System.Drawing.Size(72, 32);
             this.bnt_Xuat.TabIndex = 49;
             this.bnt_Xuat.Text = "Xuất";
             this.bnt_Xuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -538,11 +544,12 @@
             // 
             // btnExit
             // 
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(635, 477);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(90, 32);
+            this.btnExit.Size = new System.Drawing.Size(77, 32);
             this.btnExit.TabIndex = 41;
             this.btnExit.Text = "Thoát";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -551,20 +558,26 @@
             // 
             // button1
             // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(225, 478);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 32);
+            this.button1.Size = new System.Drawing.Size(94, 32);
             this.button1.TabIndex = 42;
             this.button1.Text = "Cập Nhật";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(430, 478);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 32);
+            this.button4.Size = new System.Drawing.Size(74, 32);
             this.button4.TabIndex = 43;
             this.button4.Text = "Xóa";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // loadCBBTS_Nhap
@@ -603,12 +616,12 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLNhap)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXuat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLXuat)).EndInit();
             this.ResumeLayout(false);
 
@@ -619,7 +632,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvNhap;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbb_PhongNhap;
@@ -650,7 +663,7 @@
         private System.Windows.Forms.Button Bnt_HienThiXuat;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvXuat;
         private System.Windows.Forms.TextBox txt_TinhTrangNhap;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_TinhTrangXuat;
