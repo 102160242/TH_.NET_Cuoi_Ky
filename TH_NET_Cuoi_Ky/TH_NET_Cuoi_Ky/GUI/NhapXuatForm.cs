@@ -27,9 +27,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             NCC_BLL = new NhaCC_BLL();
             p_BLL = new Phong_BLL();
             NX_BLL = new NhapXuat_BLL();
-            LoadCbbNhaCC();
-            LoadCbbPhong();
-            LoadCbbTenTS();
         }
 
         private void NhapXuatForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -75,35 +72,35 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show(msg, "Lỗi");
             }
         }
-        private void LoadCbbTenTS()
-        {
-            foreach (string i in Ts_BLL.LoadCBBTenTS())
-            {
-                if (cbb_TenTSNhap.FindStringExact(i) < 0)
-                    cbb_TenTSNhap.Items.Add(i);
-            }
-            foreach (string i in Ts_BLL.LoadCBBTenTS())
-            {
-                if (cbb_TenTSXuat.FindStringExact(i) < 0)
-                    cbb_TenTSXuat.Items.Add(i);
-            }
-        }
-        private void LoadCbbNhaCC()
-        {
-            foreach (string i in NCC_BLL.loadCBBTenNCC())
-            {
-                if (cbb_NhaCCNhap.FindStringExact(i) < 0)
-                    cbb_NhaCCNhap.Items.Add(i);
-            }
-        }
-        private void LoadCbbPhong()
-        {
-            foreach (string i in p_BLL.loadCBBTenPhong_BLL())
-            {
-                if (cbb_PhongNhap.FindStringExact(i) < 0)
-                    cbb_PhongNhap.Items.Add(i);
-            }
-        }
+        //private void LoadCbbTenTS()
+        //{
+        //    foreach (string i in Ts_BLL.LoadCBBTenTS())
+        //    {
+        //        if (cbb_TenTSNhap.FindStringExact(i) < 0)
+        //            cbb_TenTSNhap.Items.Add(i);
+        //    }
+        //    foreach (string i in Ts_BLL.LoadCBBTenTS())
+        //    {
+        //        if (cbb_TenTSXuat.FindStringExact(i) < 0)
+        //            cbb_TenTSXuat.Items.Add(i);
+        //    }
+        //}
+        //private void LoadCbbNhaCC()
+        //{
+        //    foreach (string i in NCC_BLL.loadCBBTenNCC())
+        //    {
+        //        if (cbb_NhaCCNhap.FindStringExact(i) < 0)
+        //            cbb_NhaCCNhap.Items.Add(i);
+        //    }
+        //}
+        //private void LoadCbbPhong()
+        //{
+        //    foreach (string i in p_BLL.loadCBBTenPhong_BLL())
+        //    {
+        //        if (cbb_PhongNhap.FindStringExact(i) < 0)
+        //            cbb_PhongNhap.Items.Add(i);
+        //    }
+        //}
 
         private void bnt_HienThiNhap_Click(object sender, EventArgs e)
         {
@@ -252,6 +249,64 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 e.Handled = true;
             }
+        }
+
+        private void loadCBBTS_Nhap_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in Ts_BLL.LoadCBBTenTS())
+            {
+                if (cbb_TenTSNhap.FindStringExact(i) < 0)
+                {
+                    cbb_TenTSNhap.Invoke(new Action(() =>
+                    {
+                        cbb_TenTSNhap.Items.Add(i);
+                    }));
+                }
+            }
+            foreach (string i in Ts_BLL.LoadCBBTenTS())
+            {
+                if (cbb_TenTSXuat.FindStringExact(i) < 0)
+                {
+                    cbb_TenTSXuat.Invoke(new Action(() =>
+                    {
+                        cbb_TenTSXuat.Items.Add(i);
+                    }));
+                }
+            }
+        }
+
+        private void loadCBBPhong_Nhap_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in p_BLL.loadCBBTenPhong_BLL())
+            {
+                if (cbb_PhongNhap.FindStringExact(i) < 0)
+                {
+                    cbb_PhongNhap.Invoke(new Action(() => {
+                        cbb_PhongNhap.Items.Add(i);
+                    }));
+                }
+            }
+        }
+
+        private void loadCBBNCC_Nhap_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in NCC_BLL.loadCBBTenNCC())
+            {
+                if (cbb_NhaCCNhap.FindStringExact(i) < 0)
+                {
+                    cbb_NhaCCNhap.Invoke(new Action(() =>
+                    {
+                        cbb_NhaCCNhap.Items.Add(i);
+                    }));
+                }
+            }
+        }
+
+        private void NhapXuatForm_Shown(object sender, EventArgs e)
+        {
+            loadCBBTS_Nhap.RunWorkerAsync();
+            loadCBBPhong_Nhap.RunWorkerAsync();
+            loadCBBNCC_Nhap.RunWorkerAsync();
         }
     }
 }

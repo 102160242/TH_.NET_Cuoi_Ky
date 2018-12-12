@@ -73,26 +73,26 @@ namespace TH_NET_Cuoi_Ky
             }      
 
         }
-        private void loadCBBNuocSX()
-        {
-            foreach (string i in NSX_BLL.loadCBB_BLL())
-            {
-                if (cbbNuocSX.FindStringExact(i) < 0)
-                {
-                    cbbNuocSX.Items.Add(i);
-                }
-            }
-        }
-        private void loadCBBLoaiTS()
-        {
-            foreach (string i in LTS_BLL.loadCBB_BLL())
-            {
-                if (cbbLoaiTS.FindStringExact(i) < 0)
-                {
-                    cbbLoaiTS.Items.Add(i);
-                }
-            }
-        }
+        //private void loadCBBNuocSX()
+        //{
+        //    foreach (string i in NSX_BLL.loadCBB_BLL())
+        //    {
+        //        if (cbbNuocSX.FindStringExact(i) < 0)
+        //        {
+        //            cbbNuocSX.Items.Add(i);
+        //        }
+        //    }
+        //}
+        //private void loadCBBLoaiTS()
+        //{
+        //    foreach (string i in LTS_BLL.loadCBB_BLL())
+        //    {
+        //        if (cbbLoaiTS.FindStringExact(i) < 0)
+        //        {
+        //            cbbLoaiTS.Items.Add(i);
+        //        }
+        //    }
+        //}
         private void AddFormTS_FormClosed(object sender, FormClosedEventArgs e)
         {
             ShowTSForm();
@@ -101,8 +101,35 @@ namespace TH_NET_Cuoi_Ky
 
         private void AddFormTS_Shown(object sender, EventArgs e)
         {
-            loadCBBNuocSX();
-            loadCBBLoaiTS();
+            loadCBBNuocSX.RunWorkerAsync();
+            loadCBBLoaiTS.RunWorkerAsync();
+        }
+
+        private void loadCBBNuocSX_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in NSX_BLL.loadCBB_BLL())
+            {
+                if (cbbNuocSX.FindStringExact(i) < 0)
+                {
+                    cbbNuocSX.Invoke(new Action(() =>
+                    {
+                        cbbNuocSX.Items.Add(i);
+                    }));
+                }
+            }
+        }
+
+        private void loadCBBLoaiTS_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in LTS_BLL.loadCBB_BLL())
+            {
+                if (cbbLoaiTS.FindStringExact(i) < 0)
+                {
+                    cbbLoaiTS.Invoke(new Action(() => {
+                        cbbLoaiTS.Items.Add(i);
+                    }));
+                }
+            }
         }
     }
 }

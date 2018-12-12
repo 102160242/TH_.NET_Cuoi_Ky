@@ -22,16 +22,15 @@ namespace TH_NET_Cuoi_Ky.GUI
             InitializeComponent();
             this.Phong_BLL = new Phong_BLL();
             NQL_BLL = new NguoiQL_BLL();
-            loadCBB();
         }
-        private void loadCBB()
-        {
-            foreach (string i in NQL_BLL.loadcbb())
-            {
-                if (cbbNguoiQL.FindStringExact(i) < 0)
-                    cbbNguoiQL.Items.Add(i);
-            }
-        }
+        //private void loadCBB()
+        //{
+        //    foreach (string i in NQL_BLL.loadcbb())
+        //    {
+        //        if (cbbNguoiQL.FindStringExact(i) < 0)
+        //            cbbNguoiQL.Items.Add(i);
+        //    }
+        //}
         private void ShowPhong()
         {
             dgv.DataSource = Phong_BLL.ShowPhong_BLL();
@@ -173,6 +172,22 @@ namespace TH_NET_Cuoi_Ky.GUI
 
                 ShowPhong();
             }
+        }
+
+        private void loadCBB_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in NQL_BLL.loadcbb())
+            {
+                if (cbbNguoiQL.FindStringExact(i) < 0)
+                    cbbNguoiQL.Invoke(new Action(() => {
+                        cbbNguoiQL.Items.Add(i);
+                    }));
+            }
+        }
+
+        private void PhongForm_Shown(object sender, EventArgs e)
+        {
+            loadCBB.RunWorkerAsync();
         }
     }
 }

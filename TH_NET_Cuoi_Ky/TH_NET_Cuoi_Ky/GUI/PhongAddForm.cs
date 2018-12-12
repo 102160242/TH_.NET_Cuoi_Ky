@@ -48,14 +48,14 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show(msg, "Lỗi");
             }
         }
-        private void loadCBB()
-        {
-            foreach(string i in NguoiQL_BLL.loadcbb())
-            {
-                if (cbbNguoiQL.FindStringExact(i) < 0)
-                    cbbNguoiQL.Items.Add(i);
-            }
-        }
+        //private void loadCBB()
+        //{
+        //    foreach(string i in NguoiQL_BLL.loadcbb())
+        //    {
+        //        if (cbbNguoiQL.FindStringExact(i) < 0)
+        //            cbbNguoiQL.Items.Add(i);
+        //    }
+        //}
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
@@ -71,7 +71,20 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void PhongAddForm_Shown(object sender, EventArgs e)
         {
-            loadCBB();
+            loadCBB.RunWorkerAsync();
+        }
+
+        private void loadCBB_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in NguoiQL_BLL.loadcbb())
+            {
+                if (cbbNguoiQL.FindStringExact(i) < 0)
+                {
+                    cbbNguoiQL.Invoke(new Action(() => {
+                        cbbNguoiQL.Items.Add(i);
+                    }));
+                }
+            }
         }
     }
 }

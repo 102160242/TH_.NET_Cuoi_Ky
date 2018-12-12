@@ -21,16 +21,16 @@ namespace TH_NET_Cuoi_Ky.GUI
             InitializeComponent();
             this.nhaCC_BLL = new NhaCC_BLL();
         }
-        private void LoadCBB()
-        {
-            foreach (string i in nhaCC_BLL.loadCBBDiaChiNCC())
-            {
-                if (cbbAddress.FindStringExact(i) < 0)
-                {
-                    cbbAddress.Items.Add(i);
-                }
-            }
-        }
+        //private void LoadCBB()
+        //{
+        //    foreach (string i in nhaCC_BLL.loadCBBDiaChiNCC())
+        //    {
+        //        if (cbbAddress.FindStringExact(i) < 0)
+        //        {
+        //            cbbAddress.Items.Add(i);
+        //        }
+        //    }
+        //}
         private void Reload()
         {
             ShowNhaCC();
@@ -101,7 +101,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void NhaCCForm_Shown(object sender, EventArgs e)
         {
-            LoadCBB();
+            loadCBB.RunWorkerAsync();
         }
 
         private void NhaCCForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -173,6 +173,17 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
 
                 ShowNhaCC();// Refresh lai du lieu tren DataGridView
+            }
+        }
+
+        private void loadCBB_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in nhaCC_BLL.loadCBBDiaChiNCC())
+            {
+                if (cbbAddress.FindStringExact(i) < 0)
+                {
+                    cbbAddress.Invoke(new Action(() => { cbbAddress.Items.Add(i); }));
+                }
             }
         }
     }

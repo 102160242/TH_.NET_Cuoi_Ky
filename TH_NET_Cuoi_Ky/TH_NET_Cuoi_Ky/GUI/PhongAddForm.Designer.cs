@@ -35,6 +35,7 @@
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbbNguoiQL = new System.Windows.Forms.ComboBox();
+            this.loadCBB = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // but_Cancel
@@ -108,6 +109,10 @@
             this.cbbNguoiQL.Size = new System.Drawing.Size(226, 26);
             this.cbbNguoiQL.TabIndex = 2;
             // 
+            // loadCBB
+            // 
+            this.loadCBB.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBB_DoWork);
+            // 
             // PhongAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -143,5 +148,6 @@
         private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbNguoiQL;
+        private System.ComponentModel.BackgroundWorker loadCBB;
     }
 }

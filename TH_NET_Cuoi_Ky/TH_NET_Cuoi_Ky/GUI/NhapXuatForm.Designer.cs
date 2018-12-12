@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhapXuatForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txt_GiaNhap = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txt_TinhTrangNhap = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txt_GiaXuat = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.txt_TinhTrangXuat = new System.Windows.Forms.TextBox();
@@ -70,8 +72,9 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.txt_GiaNhap = new System.Windows.Forms.TextBox();
-            this.txt_GiaXuat = new System.Windows.Forms.TextBox();
+            this.loadCBBTS_Nhap = new System.ComponentModel.BackgroundWorker();
+            this.loadCBBNCC_Nhap = new System.ComponentModel.BackgroundWorker();
+            this.loadCBBPhong_Nhap = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -123,6 +126,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhập";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txt_GiaNhap
+            // 
+            this.txt_GiaNhap.Location = new System.Drawing.Point(137, 96);
+            this.txt_GiaNhap.Name = "txt_GiaNhap";
+            this.txt_GiaNhap.Size = new System.Drawing.Size(168, 24);
+            this.txt_GiaNhap.TabIndex = 48;
+            this.txt_GiaNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaNhap_KeyPress);
             // 
             // groupBox1
             // 
@@ -327,6 +338,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Xuất";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txt_GiaXuat
+            // 
+            this.txt_GiaXuat.Location = new System.Drawing.Point(137, 96);
+            this.txt_GiaXuat.Name = "txt_GiaXuat";
+            this.txt_GiaXuat.Size = new System.Drawing.Size(168, 24);
+            this.txt_GiaXuat.TabIndex = 60;
+            this.txt_GiaXuat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaXuat_KeyPress);
             // 
             // groupBox2
             // 
@@ -548,21 +567,17 @@
             this.button4.Text = "Xóa";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // txt_GiaNhap
+            // loadCBBTS_Nhap
             // 
-            this.txt_GiaNhap.Location = new System.Drawing.Point(137, 96);
-            this.txt_GiaNhap.Name = "txt_GiaNhap";
-            this.txt_GiaNhap.Size = new System.Drawing.Size(168, 24);
-            this.txt_GiaNhap.TabIndex = 48;
-            this.txt_GiaNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaNhap_KeyPress);
+            this.loadCBBTS_Nhap.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBTS_Nhap_DoWork);
             // 
-            // txt_GiaXuat
+            // loadCBBNCC_Nhap
             // 
-            this.txt_GiaXuat.Location = new System.Drawing.Point(137, 96);
-            this.txt_GiaXuat.Name = "txt_GiaXuat";
-            this.txt_GiaXuat.Size = new System.Drawing.Size(168, 24);
-            this.txt_GiaXuat.TabIndex = 60;
-            this.txt_GiaXuat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_GiaXuat_KeyPress);
+            this.loadCBBNCC_Nhap.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBNCC_Nhap_DoWork);
+            // 
+            // loadCBBPhong_Nhap
+            // 
+            this.loadCBBPhong_Nhap.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBPhong_Nhap_DoWork);
             // 
             // NhapXuatForm
             // 
@@ -583,6 +598,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhập xuất tài sản";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NhapXuatForm_FormClosing);
+            this.Shown += new System.EventHandler(this.NhapXuatForm_Shown);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -643,5 +659,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txt_GiaNhap;
         private System.Windows.Forms.TextBox txt_GiaXuat;
+        private System.ComponentModel.BackgroundWorker loadCBBTS_Nhap;
+        private System.ComponentModel.BackgroundWorker loadCBBNCC_Nhap;
+        private System.ComponentModel.BackgroundWorker loadCBBPhong_Nhap;
     }
 }

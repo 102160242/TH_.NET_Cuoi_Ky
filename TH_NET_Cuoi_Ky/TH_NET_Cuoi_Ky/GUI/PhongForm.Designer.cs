@@ -51,6 +51,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.loadCBB = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.menuDGV.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -304,6 +305,10 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách";
             // 
+            // loadCBB
+            // 
+            this.loadCBB.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBB_DoWork);
+            // 
             // PhongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -326,6 +331,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Phòng";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PhongForm_FormClosed);
+            this.Shown += new System.EventHandler(this.PhongForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.menuDGV.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -360,5 +366,6 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.ComponentModel.BackgroundWorker loadCBB;
     }
 }

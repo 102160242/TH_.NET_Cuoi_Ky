@@ -21,16 +21,16 @@ namespace TH_NET_Cuoi_Ky.GUI
             InitializeComponent();
             this.nhaCC_BLL = new NhaCC_BLL();
         }
-        private void LoadCBB()
-        {
-            foreach(string i in nhaCC_BLL.loadCBBDiaChiNCC())
-            {
-                if (cbbAddress.FindStringExact(i) < 0)
-                {
-                    cbbAddress.Items.Add(i);
-                }
-            }
-        }
+        //private void LoadCBB()
+        //{
+        //    foreach(string i in nhaCC_BLL.loadCBBDiaChiNCC())
+        //    {
+        //        if (cbbAddress.FindStringExact(i) < 0)
+        //        {
+        //            cbbAddress.Items.Add(i);
+        //        }
+        //    }
+        //}
 
         private void butOK_Click(object sender, EventArgs e)
         {
@@ -72,7 +72,18 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void NhaCCAddForm_Shown(object sender, EventArgs e)
         {
-            LoadCBB();
+            loadCBB.RunWorkerAsync();
+        }
+
+        private void loadCBB_DoWork(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in nhaCC_BLL.loadCBBDiaChiNCC())
+            {
+                if (cbbAddress.FindStringExact(i) < 0)
+                {
+                    cbbAddress.Invoke(new Action(() => { cbbAddress.Items.Add(i); }));
+                }
+            }
         }
     }
 }

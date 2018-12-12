@@ -45,6 +45,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
+            this.loadCBBNuocSX = new System.ComponentModel.BackgroundWorker();
+            this.loadCBBLoaiTS = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // label7
@@ -226,6 +228,14 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Năm sản xuất";
             // 
+            // loadCBBNuocSX
+            // 
+            this.loadCBBNuocSX.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBNuocSX_DoWork);
+            // 
+            // loadCBBLoaiTS
+            // 
+            this.loadCBBLoaiTS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBLoaiTS_DoWork);
+            // 
             // AddFormTS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -280,5 +290,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label11;
+        private System.ComponentModel.BackgroundWorker loadCBBNuocSX;
+        private System.ComponentModel.BackgroundWorker loadCBBLoaiTS;
     }
 }

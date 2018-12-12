@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.butOK = new System.Windows.Forms.Button();
             this.butCancel = new System.Windows.Forms.Button();
+            this.loadCBB = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // cbbAddress
@@ -108,6 +109,10 @@
             this.butCancel.UseVisualStyleBackColor = false;
             this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
+            // loadCBB
+            // 
+            this.loadCBB.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBB_DoWork);
+            // 
             // NhaCCAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -143,5 +148,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button butOK;
         private System.Windows.Forms.Button butCancel;
+        private System.ComponentModel.BackgroundWorker loadCBB;
     }
 }

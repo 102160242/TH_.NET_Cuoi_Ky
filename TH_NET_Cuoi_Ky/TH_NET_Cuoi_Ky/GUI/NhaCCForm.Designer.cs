@@ -51,6 +51,7 @@
             this.but_Search = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.loadCBB = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.menuDGV.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -311,6 +312,10 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách";
             // 
+            // loadCBB
+            // 
+            this.loadCBB.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBB_DoWork);
+            // 
             // NhaCCForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -368,5 +373,6 @@
         private System.Windows.Forms.ContextMenuStrip menuDGV;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker loadCBB;
     }
 }
