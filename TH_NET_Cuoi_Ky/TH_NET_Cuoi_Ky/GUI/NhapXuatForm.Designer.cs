@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhapXuatForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txt_Phieu_Nhap = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.txt_GiaNhap = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvNhap = new System.Windows.Forms.DataGridView();
@@ -50,6 +52,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txt_phieu_xuat = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.txt_GiaXuat = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvXuat = new System.Windows.Forms.DataGridView();
@@ -75,10 +79,6 @@
             this.loadCBBTS_Nhap = new System.ComponentModel.BackgroundWorker();
             this.loadCBBNCC_Nhap = new System.ComponentModel.BackgroundWorker();
             this.loadCBBPhong_Nhap = new System.ComponentModel.BackgroundWorker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_Phieu_Nhap = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txt_phieu_xuat = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -132,6 +132,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhập";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txt_Phieu_Nhap
+            // 
+            this.txt_Phieu_Nhap.Location = new System.Drawing.Point(137, 16);
+            this.txt_Phieu_Nhap.Name = "txt_Phieu_Nhap";
+            this.txt_Phieu_Nhap.ReadOnly = true;
+            this.txt_Phieu_Nhap.Size = new System.Drawing.Size(168, 24);
+            this.txt_Phieu_Nhap.TabIndex = 50;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(18, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 18);
+            this.label15.TabIndex = 49;
+            this.label15.Text = "Số Phiếu";
             // 
             // txt_GiaNhap
             // 
@@ -207,6 +224,11 @@
             // 
             this.numericUpDown_SLNhap.Location = new System.Drawing.Point(442, 96);
             this.numericUpDown_SLNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDown_SLNhap.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_SLNhap.Name = "numericUpDown_SLNhap";
             this.numericUpDown_SLNhap.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_SLNhap.TabIndex = 42;
@@ -351,6 +373,23 @@
             this.tabPage2.Text = "Xuất";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txt_phieu_xuat
+            // 
+            this.txt_phieu_xuat.Location = new System.Drawing.Point(137, 16);
+            this.txt_phieu_xuat.Name = "txt_phieu_xuat";
+            this.txt_phieu_xuat.ReadOnly = true;
+            this.txt_phieu_xuat.Size = new System.Drawing.Size(168, 24);
+            this.txt_phieu_xuat.TabIndex = 62;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(18, 20);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(68, 18);
+            this.label16.TabIndex = 61;
+            this.label16.Text = "Số Phiếu";
+            // 
             // txt_GiaXuat
             // 
             this.txt_GiaXuat.Location = new System.Drawing.Point(442, 56);
@@ -449,6 +488,11 @@
             // 
             this.numericUpDown_SLXuat.Location = new System.Drawing.Point(442, 96);
             this.numericUpDown_SLXuat.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDown_SLXuat.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDown_SLXuat.Name = "numericUpDown_SLXuat";
             this.numericUpDown_SLXuat.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_SLXuat.TabIndex = 51;
@@ -602,40 +646,6 @@
             // loadCBBPhong_Nhap
             // 
             this.loadCBBPhong_Nhap.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBPhong_Nhap_DoWork);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(18, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 18);
-            this.label15.TabIndex = 49;
-            this.label15.Text = "Số Phiếu";
-            // 
-            // txt_Phieu_Nhap
-            // 
-            this.txt_Phieu_Nhap.Location = new System.Drawing.Point(137, 16);
-            this.txt_Phieu_Nhap.Name = "txt_Phieu_Nhap";
-            this.txt_Phieu_Nhap.ReadOnly = true;
-            this.txt_Phieu_Nhap.Size = new System.Drawing.Size(168, 24);
-            this.txt_Phieu_Nhap.TabIndex = 50;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(18, 20);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(68, 18);
-            this.label16.TabIndex = 61;
-            this.label16.Text = "Số Phiếu";
-            // 
-            // txt_phieu_xuat
-            // 
-            this.txt_phieu_xuat.Location = new System.Drawing.Point(137, 16);
-            this.txt_phieu_xuat.Name = "txt_phieu_xuat";
-            this.txt_phieu_xuat.ReadOnly = true;
-            this.txt_phieu_xuat.Size = new System.Drawing.Size(168, 24);
-            this.txt_phieu_xuat.TabIndex = 62;
             // 
             // NhapXuatForm
             // 

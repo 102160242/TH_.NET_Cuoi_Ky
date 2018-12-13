@@ -360,9 +360,11 @@ namespace TH_NET_Cuoi_Ky.GUI
                     MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                     return;
                 }
-                if (Convert.ToInt32(numericUpDown_SLXuat.Value) > Ts_BLL.Check_Xuat(Convert.ToInt32(txt_phieu_xuat.Text)))
+
+                int maxXuat = Ts_BLL.Check_Xuat(Convert.ToInt32(txt_phieu_xuat.Text));
+                if (Convert.ToInt32(numericUpDown_SLXuat.Value) > maxXuat)
                 {
-                    MessageBox.Show("Số lượng không hợp lệ , vui lòng kiểm tra lại");
+                    MessageBox.Show("Số lượng không hợp lệ, giá trị tối đa có thể là " + maxXuat);
                     return;
                 }
                 (bool result, string msg) = NX_BLL.Update_Xuat(new DTO.NhapXuat
