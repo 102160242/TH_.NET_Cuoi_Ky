@@ -183,6 +183,8 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void cbb_TenTSXuat_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbb_PhongXuat.Text = "";
+            cbb_NhaCCXuat.Text = "";
             cbb_PhongXuat.Items.Clear();  
             LoadCBBPhong_Xuat();
             cbb_NhaCCXuat.Enabled = false;
@@ -195,12 +197,14 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void cbb_PhongXuat_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cbb_NhaCCXuat.Text = "";
             cbb_NhaCCXuat.Items.Clear();
             LoadCBBNhaCC_Xuat();
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            txt_Phieu_Nhap.Text = dgvNhap.SelectedRows[0].Cells["SoPhieu"].Value.ToString();
             cbb_TenTSNhap.SelectedItem = dgvNhap.SelectedRows[0].Cells["TenTS"].Value.ToString();
             cbb_NhaCCNhap.SelectedItem = dgvNhap.SelectedRows[0].Cells["TenNhaCC"].Value.ToString();
             cbb_PhongNhap.SelectedItem = dgvNhap.SelectedRows[0].Cells["TenPhong"].Value.ToString();
@@ -212,6 +216,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void dataGridView2_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            txt_phieu_xuat.Text = dgvXuat.SelectedRows[0].Cells["SoPhieu"].Value.ToString();
             cbb_TenTSXuat.SelectedItem = dgvXuat.SelectedRows[0].Cells["TenTS"].Value.ToString(); 
             cbb_PhongXuat.SelectedItem = dgvXuat.SelectedRows[0].Cells["TenPhong"].Value.ToString();
             cbb_NhaCCXuat.SelectedItem = dgvXuat.SelectedRows[0].Cells["TenNhaCC"].Value.ToString();
@@ -307,6 +312,73 @@ namespace TH_NET_Cuoi_Ky.GUI
             loadCBBTS_Nhap.RunWorkerAsync();
             loadCBBPhong_Nhap.RunWorkerAsync();
             loadCBBNCC_Nhap.RunWorkerAsync();
+        }
+
+        private void bntUpdate_Click(object sender, EventArgs e)
+        {
+            if(tabControl1.SelectedIndex==0)
+            {
+                if (txt_Phieu_Nhap.Text == "")
+                {
+                    MessageBox.Show("Vui lòng chọn Phiếu cần sửa!");
+                    return;
+                }
+                if (cbb_NhaCCNhap.SelectedIndex == -1 || cbb_PhongNhap.SelectedIndex == -1 || cbb_TenTSNhap.SelectedIndex == -1 || Convert.ToDouble(txt_GiaNhap.Text) < 0 || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
+                {
+                        MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                        return;
+                }
+                if (Convert.ToInt32(numericUpDown_SLNhap.Value) < Ts_BLL.check_Nhap(Convert.ToInt32(txt_Phieu_Nhap.Text)))
+                {
+                    MessageBox.Show("Số lượng không hợp lệ , vui lòng kiểm tra lại");
+                    return;
+                }
+
+                (bool result, string msg) = NX_BLL.Update_Nhap(new DTO.NhapXuat
+                {
+                    SoPhieu = Convert.ToInt32(txt_Phieu_Nhap.Text),
+                    MaTS = Ts_BLL.GetIDbyTS(cbb_TenTSNhap.SelectedItem.ToString()),
+                    MaNhaCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCCNhap.SelectedItem.ToString()),
+                    MaPhong = p_BLL.GetIdByPhong(cbb_PhongNhap.SelectedItem.ToString()),
+                    NgayNhap = dateTimePicker1.Value,
+                    SLNhap = Convert.ToInt32(numericUpDown_SLNhap.Value),
+                    NguyenGia = Convert.ToInt32(txt_GiaNhap.Text),
+                    TinhTrang = txt_TinhTrangNhap.Text
+                });
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+                Show_Nhap();
+            }
+            if (tabControl1.SelectedIndex == 1)
+            {
+                if (txt_phieu_xuat.Text == "")
+                {
+                    MessageBox.Show("Vui lòng chọn Phiếu cần sửa!");
+                    return;
+                }
+                if (cbb_NhaCCXuat.SelectedIndex == -1 || cbb_PhongXuat.SelectedIndex == -1 || cbb_TenTSXuat.SelectedIndex == -1 || Convert.ToDouble(txt_GiaXuat.Text) < 0 || numericUpDown_SLXuat.Value <= 0 || txt_TinhTrangXuat.Text == "")
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                    return;
+                }
+                if (Convert.ToInt32(numericUpDown_SLXuat.Value) > Ts_BLL.Check_Xuat(Convert.ToInt32(txt_phieu_xuat.Text)))
+                {
+                    MessageBox.Show("Số lượng không hợp lệ , vui lòng kiểm tra lại");
+                    return;
+                }
+                (bool result, string msg) = NX_BLL.Update_Xuat(new DTO.NhapXuat
+                {
+                    SoPhieu = Convert.ToInt32(txt_phieu_xuat.Text),
+                    MaTS = Ts_BLL.GetIDbyTS(cbb_TenTSXuat.SelectedItem.ToString()),
+                    MaNhaCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCCXuat.SelectedItem.ToString()),
+                    MaPhong = p_BLL.GetIdByPhong(cbb_PhongXuat.SelectedItem.ToString()),
+                    NgayXuat = dateTimePicker2.Value,
+                    SLXuat = Convert.ToInt32(numericUpDown_SLXuat.Value),
+                    NguyenGia = Convert.ToInt32(txt_GiaXuat.Text),
+                    TinhTrang = txt_TinhTrangXuat.Text
+                });
+                MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+                Show_Xuat();
+            }
         }
     }
 }

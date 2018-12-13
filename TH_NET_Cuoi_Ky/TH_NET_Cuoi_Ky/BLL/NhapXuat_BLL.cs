@@ -17,8 +17,9 @@ namespace TH_NET_Cuoi_Ky.BLL
         public dynamic ShowNhap_BLL()
         {
             var data = db.NhapXuats.Where(p => p.NgayNhap != null)
-                                   .OrderBy(p => new { p.TaiSan.TenTS, p.NgayNhap, p.Phong.TenPhong })
+                                   .OrderBy(p => new { p.SoPhieu, p.TaiSan.TenTS, p.NgayNhap, p.Phong.TenPhong })
                                    .Select(p => new {
+                                                         p.SoPhieu,
                                                          p.TaiSan.TenTS,
                                                          p.NhaCC.TenNhaCC,
                                                          p.Phong.TenPhong,
@@ -32,8 +33,9 @@ namespace TH_NET_Cuoi_Ky.BLL
         public dynamic ShowXuat_BLL()
         {
             var data = db.NhapXuats.Where(p => p.NgayXuat != null)
-                                   .OrderBy(p => new { p.TaiSan.TenTS, p.NgayNhap, p.Phong.TenPhong })
+                                   .OrderBy(p => new { p.SoPhieu, p.TaiSan.TenTS, p.NgayNhap, p.Phong.TenPhong })
                                    .Select(p => new {
+                                                       p.SoPhieu,
                                                        p.TaiSan.TenTS,
                                                        p.NhaCC.TenNhaCC,
                                                        p.Phong.TenPhong,
@@ -66,6 +68,58 @@ namespace TH_NET_Cuoi_Ky.BLL
                 return(false, "Có lỗi xảy ra, vui lòng thử lại sau!");
             }
             return (true, "Thành công!");
+        }
+        public (bool , string) Update_Nhap (DTO.NhapXuat NX)
+        {
+            try
+            {
+                var data = db.NhapXuats.SingleOrDefault(p => p.SoPhieu == NX.SoPhieu);
+                data.MaTS = NX.MaTS;
+                data.MaNhaCC = NX.MaNhaCC;
+                data.MaPhong = NX.MaPhong;
+                data.NgayNhap = NX.NgayNhap;
+                data.SLNhap = NX.SLNhap;
+                data.NguyenGia = NX.NguyenGia;
+                data.TinhTrang = NX.TinhTrang;
+                db.SaveChanges();
+            }
+            catch(System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
+            }
+            catch(Exception e)
+            {
+                Console.Write(e.Message);
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
+            }
+            return(true, "Cập nhật thành công!");
+        }
+        public(bool ,string) Update_Xuat(DTO.NhapXuat NX)
+        {
+            try
+            {
+                var data = db.NhapXuats.SingleOrDefault(p => p.SoPhieu == NX.SoPhieu);
+                data.MaTS = NX.MaTS;
+                data.MaNhaCC = NX.MaNhaCC;
+                data.MaPhong = NX.MaPhong;
+                data.NgayXuat = NX.NgayXuat;
+                data.SLXuat = NX.SLXuat;
+                data.NguyenGia = NX.NguyenGia;
+                data.TinhTrang = NX.TinhTrang;
+                db.SaveChanges();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+                return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
+            }
+            return (true, "Cập nhật thành công!");
         }
     }
 }

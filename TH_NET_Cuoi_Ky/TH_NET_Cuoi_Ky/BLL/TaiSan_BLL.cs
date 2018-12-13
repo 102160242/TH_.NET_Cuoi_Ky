@@ -274,5 +274,56 @@ namespace TH_NET_Cuoi_Ky.BLL
                        };
             return data.ToList();
         }
+        public dynamic check_Nhap(int sp)
+        {
+            var getinfo = db.NhapXuats.Where(p => p.SoPhieu == sp)
+                                      .Select(p => new { p.MaTS, p.MaNhaCC, p.MaPhong }).ToList();
+            var getslnhap = db.NhapXuats.Where(p => p.SoPhieu != sp)
+                                        .Where(p => p.MaTS == getinfo[0].MaTS)
+                                        .Where(p => p.MaNhaCC == getinfo[0].MaNhaCC)
+                                        .Where(p => p.MaPhong == getinfo[0].MaPhong)
+                                        .GroupBy(g => g.MaTS).Select(g => g.Sum(p => p.SLNhap)).SingleOrDefault();
+            var getslxuat = db.NhapXuats.Where(p => p.MaTS == getinfo[0].MaTS)
+                                        .Where(p => p.MaNhaCC == getinfo[0].MaNhaCC)
+                                        .Where(p => p.MaPhong == getinfo[0].MaPhong)
+                                        .GroupBy(g => g.MaTS).Select(g => g.Sum(p => p.SLXuat)).SingleOrDefault();
+            //return Math.Abs(Convert.ToInt32(getslnhap) - Convert.ToInt32(getslxuat));
+            return getslnhap ;
+        }
+        public dynamic Check_Xuat(int sp)
+        {
+            var getinfo = db.NhapXuats.Where(p => p.SoPhieu == sp)
+                                      .Select(p => new { p.MaTS, p.MaNhaCC, p.MaPhong }).ToList();
+            /*var getslnhap = db.NhapXuats.Where(p => p.MaTS == getinfo[0].MaTS)
+                                        .Where(p => p.MaNhaCC == getinfo[0].MaNhaCC)
+                                        .Where(p => p.MaPhong == getinfo[0].MaPhong)
+                                        .GroupBy(g => g.SoPhieu).Select(g => g.Sum(p => p.SLNhap)).SingleOrDefault();
+            var getslxuat = db.NhapXuats.Where(p => p.SoPhieu != sp)
+                                        .Where(p => p.MaTS == getinfo[0].MaTS)
+                                        .Where(p => p.MaNhaCC == getinfo[0].MaNhaCC)
+                                        .Where(p => p.MaPhong == getinfo[0].MaPhong)
+                                        .GroupBy(g => g.SoPhieu).Select(g => g.Sum(p => p.SLXuat)).SingleOrDefault();
+            return Convert.ToInt32(getslnhap)-Convert.ToInt32(getslxuat);*/
+            var getslnhap = from p in db.NhapXuats
+                            where p.MaNhaCC == getinfo[0].MaNhaCC
+                            where p.MaPhong == getinfo[0].MaPhong
+                            where p.MaTS == getinfo[0].MaTS
+                            group p by p.MaTS into g
+                            select new {MaTS = g.Key, sl = g.Sum(p => p.SLNhap) };
+
+            var getslxuat = from p in db.NhapXuats
+                              where p.SoPhieu != sp
+                              where p.MaNhaCC == getinfo[0].MaNhaCC
+                              where p.MaPhong == getinfo[0].MaPhong
+                              where p.MaTS == getinfo[0].MaTS
+                              group p by p.MaTS into g
+                              select new { MaTS = g.Key,sl = g.Sum(p => p.SLXuat) };
+            var data = from p1 in getslnhap
+                       join p2 in getslxuat
+                       on p1.MaTS equals p2.MaTS
+                       select new { SLhienco = (p1.sl - p2.sl) };
+            return data.ToList();
+
+        }
     }
 }
