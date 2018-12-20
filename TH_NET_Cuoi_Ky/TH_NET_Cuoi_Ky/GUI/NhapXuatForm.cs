@@ -146,6 +146,15 @@ namespace TH_NET_Cuoi_Ky.GUI
                 NguyenGia = Convert.ToDouble(txt_GiaXuat.Text),
                 TinhTrang = txt_TinhTrangXuat.Text
             });
+            //kiem tra so luong xuat ra co vuot qua sl nhap hay k
+            foreach(DTO.NhapXuat i in l)
+            {
+                if(NX_BLL.getSLNhap(i.MaTS,i.MaPhong,i.MaNhaCC) < i.SLXuat)
+                {
+                    MessageBox.Show("Số lượng không hợp lệ, giá trị cao nhất có thể là " + NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC));
+                    return;
+                }
+            }
             (Boolean result,string msg) = NX_BLL.AddNhapXuat(l);
 
             if (result)
@@ -328,9 +337,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                         MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                         return;
                 }
-                if (Convert.ToInt32(numericUpDown_SLNhap.Value) < Ts_BLL.check_Nhap(Convert.ToInt32(txt_Phieu_Nhap.Text)))
+                int minNhap = NX_BLL.check_Nhap(Convert.ToInt32(txt_Phieu_Nhap.Text));
+                if (Convert.ToInt32(numericUpDown_SLNhap.Value) < Math.Abs(minNhap))
                 {
-                    MessageBox.Show("Số lượng không hợp lệ , vui lòng kiểm tra lại");
+                    MessageBox.Show("Số lượng không hợp lệ, giá trị thấp nhất có thể là " + Math.Abs(minNhap));
                     return;
                 }
 
@@ -361,7 +371,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                     return;
                 }
 
-                int maxXuat = Ts_BLL.Check_Xuat(Convert.ToInt32(txt_phieu_xuat.Text));
+                int maxXuat = NX_BLL.Check_Xuat(Convert.ToInt32(txt_phieu_xuat.Text));
                 if (Convert.ToInt32(numericUpDown_SLXuat.Value) > maxXuat)
                 {
                     MessageBox.Show("Số lượng không hợp lệ, giá trị tối đa có thể là " + maxXuat);
@@ -380,6 +390,73 @@ namespace TH_NET_Cuoi_Ky.GUI
                 });
                 MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
                 Show_Xuat();
+            }
+        }
+
+        private void bntDelete_Click(object sender, EventArgs e)
+        {
+            if(tabControl1.SelectedIndex == 0)
+            {
+                if (dgvNhap.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
+                }
+                else
+                {
+                    var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
+                             "Xác nhận xóa dữ liệu!",
+                             MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        // Add So phieu nhap cua cac hang duoc chon vao list
+                        List<int> l = new List<int>();
+                        foreach (DataGridViewRow r in dgvNhap.SelectedRows)
+                        {
+                            l.Add(Convert.ToInt32(r.Cells["SoPhieu"].Value.ToString()));
+                        }
+                        //kiem tra xem cac phan tu duoc chon khi xoa di co anh huong toi xuat khong
+                        foreach(int i in l)
+                        {
+                            if(NX_BLL.check_Nhap(i)<0)
+                            {
+                                MessageBox.Show("Không thể xóa số phiếu " + i + " vì đã có số lượng xuất ra");
+                                return;
+                            }
+                        }
+                        (bool result, string msg) = NX_BLL.deleteNX(l);
+
+                        MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                        Show_Nhap(); // Refresh lai du lieu tren DataGridView
+                    }
+                }
+            }
+            if(tabControl1.SelectedIndex == 1)
+            {
+                if (dgvXuat.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
+                }
+                else
+                {
+                    var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
+                             "Xác nhận xóa dữ liệu!",
+                             MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        // Add so phieu cua cac hang duoc chon vao list
+                        List<int> l = new List<int>();
+                        foreach (DataGridViewRow r in dgvXuat.SelectedRows)
+                        {
+                            l.Add(Convert.ToInt32(r.Cells["SoPhieu"].Value.ToString()));
+                        }
+                        (bool result, string msg) = NX_BLL.deleteNX(l);
+
+                        MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                        Show_Xuat(); // Refresh lai du lieu tren DataGridView
+                    }
+                }
             }
         }
     }

@@ -75,7 +75,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.bntUpdate = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.bntDelete = new System.Windows.Forms.Button();
             this.loadCBBTS_Nhap = new System.ComponentModel.BackgroundWorker();
             this.loadCBBNCC_Nhap = new System.ComponentModel.BackgroundWorker();
             this.loadCBBPhong_Nhap = new System.ComponentModel.BackgroundWorker();
@@ -623,17 +623,18 @@
             this.bntUpdate.UseVisualStyleBackColor = true;
             this.bntUpdate.Click += new System.EventHandler(this.bntUpdate_Click);
             // 
-            // button4
+            // bntDelete
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(430, 478);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(74, 32);
-            this.button4.TabIndex = 43;
-            this.button4.Text = "Xóa";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
+            this.bntDelete.Image = ((System.Drawing.Image)(resources.GetObject("bntDelete.Image")));
+            this.bntDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntDelete.Location = new System.Drawing.Point(430, 478);
+            this.bntDelete.Name = "bntDelete";
+            this.bntDelete.Size = new System.Drawing.Size(74, 32);
+            this.bntDelete.TabIndex = 43;
+            this.bntDelete.Text = "Xóa";
+            this.bntDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bntDelete.UseVisualStyleBackColor = true;
+            this.bntDelete.Click += new System.EventHandler(this.bntDelete_Click);
             // 
             // loadCBBTS_Nhap
             // 
@@ -654,7 +655,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 520);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.bntDelete);
             this.Controls.Add(this.bntUpdate);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnExit);
@@ -717,7 +718,7 @@
         private System.Windows.Forms.Button bnt_HienThiNhap;
         private System.Windows.Forms.Button Bnt_HienThiXuat;
         private System.Windows.Forms.Button bntUpdate;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button bntDelete;
         private System.Windows.Forms.DataGridView dgvXuat;
         private System.Windows.Forms.TextBox txt_TinhTrangNhap;
         private System.Windows.Forms.Label label13;
