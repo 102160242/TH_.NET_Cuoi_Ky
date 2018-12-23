@@ -24,15 +24,14 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowLoaiTS();
-            this.Visible = true;
+            //this.Visible = true;
         }
         private void butAdd_Click(object sender, EventArgs e)
         {
             LoaiTSAddForm f = new LoaiTSAddForm();
-            f.ShowLoaiTSForm += Reload;
-            f.Show();
-            this.Visible = false;
-            
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;            
         }
         private void ShowLoaiTS()
         {

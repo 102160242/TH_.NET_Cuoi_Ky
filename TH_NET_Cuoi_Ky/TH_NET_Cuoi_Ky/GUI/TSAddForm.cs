@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky
     public partial class AddFormTS : Form
     {
         public delegate void dd();
-        public dd ShowTSForm;
+        public dd BackToPreviousForm;
         TaiSan_BLL TS_BLL;
         NuocSX_BLL NSX_BLL;
         LoaiTS_BLL LTS_BLL;
@@ -29,7 +29,7 @@ namespace TH_NET_Cuoi_Ky
 
         private void butCancel_Click(object sender, EventArgs e)
         {
-            ShowTSForm();
+            BackToPreviousForm();
             Dispose();
         }
         private void butAdd_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace TH_NET_Cuoi_Ky
             if(result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
-                ShowTSForm();
+                BackToPreviousForm();
                 Dispose();
             }
             else
@@ -95,7 +95,7 @@ namespace TH_NET_Cuoi_Ky
         //}
         private void AddFormTS_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowTSForm();
+            BackToPreviousForm();
             Dispose();
         }
 

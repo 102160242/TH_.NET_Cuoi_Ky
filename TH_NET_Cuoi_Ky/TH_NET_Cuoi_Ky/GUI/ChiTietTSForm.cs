@@ -27,7 +27,7 @@ namespace TH_NET_Cuoi_Ky
         }
         public void Reload()
         {
-            this.Visible = true;
+            //this.Visible = true;
         }
         private void ChiTietTSForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -85,9 +85,9 @@ namespace TH_NET_Cuoi_Ky
             f.setCBBNhaCC(tenNCC);
             f.setCBBPhong(tenPhong);
             f.BackToPreviousForm += Reload;
-            f.Show();
+            f.ShowDialog();
 
-            this.Visible = false;
+            //this.Visible = false;
         }
 
         private void chuyenPhongToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,9 +101,8 @@ namespace TH_NET_Cuoi_Ky
             f.setCBBNhaCC(tenNCC);
             f.setCBBPhongXuat(tenPhong);
             f.BackToPreviousForm += Reload;
-            f.Show();
-
-            this.Visible = false;
+            f.ShowDialog();
+            //this.Visible = false;
         }
     }
 }

@@ -463,9 +463,9 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void bntLuanchuyen_Click(object sender, EventArgs e)
         {
             LuanChuyen f = new LuanChuyen();
-            f.BackToPreviousForm += Reload;
-            f.Show();
-            this.Visible = false;
+            //f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;
         }
         private void Reload()
         {
@@ -477,9 +477,9 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void bnt_ThanhLy_Click(object sender, EventArgs e)
         {
             ThanhLy f = new ThanhLy();
-            f.BackToPreviousForm += Reload;
-            f.Show();
-            this.Visible = false; 
+           // f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false; 
         }
     }
 }

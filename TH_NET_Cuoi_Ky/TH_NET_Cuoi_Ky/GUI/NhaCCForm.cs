@@ -34,7 +34,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowNhaCC();
-            this.Visible = true;
+            //this.Visible = true;
         }
         private void ShowNhaCC()
         {
@@ -59,9 +59,9 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void butAdd_Click(object sender, EventArgs e)
         {
             NhaCCAddForm f = new NhaCCAddForm();
-            f.ShowNhaCCForm += Reload;
-            f.Show();
-            this.Visible = false;
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;
         }
 
         private void butUpdate_Click(object sender, EventArgs e)

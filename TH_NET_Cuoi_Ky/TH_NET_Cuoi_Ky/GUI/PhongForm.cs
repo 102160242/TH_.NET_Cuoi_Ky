@@ -44,15 +44,15 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowPhong();
-            this.Visible = true;
+            //this.Visible = true;
         }
 
         private void but_Add_Click(object sender, EventArgs e)
         {
             PhongAddForm f = new PhongAddForm();
-            f.ShowPhongForm += Reload;
-            f.Show();
-            this.Visible = false;
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;
         }
 
         private void but_Update_Click(object sender, EventArgs e)

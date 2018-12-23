@@ -113,9 +113,9 @@ namespace TH_NET_Cuoi_Ky
         private void butAdd_Click(object sender, EventArgs e)
         {
             AddFormTS f = new AddFormTS();
-            f.ShowTSForm += Reload;
-            f.Show();
-            this.Visible = false; // Tam an form
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false; // Tam an form
         }
 
         private void butUpdate_Click(object sender, EventArgs e)

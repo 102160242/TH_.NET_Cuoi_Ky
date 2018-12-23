@@ -28,7 +28,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
         // Set CBB, khong cho thay doi

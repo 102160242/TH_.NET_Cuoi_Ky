@@ -44,14 +44,14 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowNguoiQL();
-            this.Visible = true;
+            //this.Visible = true;
         }
         private void but_Add_Click(object sender, EventArgs e)
         {
             NguoiQLAddForrm f = new NguoiQLAddForrm();
-            f.ShowNguoiQLForm += Reload;
-            f.Show();
-            this.Visible = false;
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;
         }
 
 

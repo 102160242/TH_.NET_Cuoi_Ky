@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NhaCCAddForm : Form
     {
         public delegate void dd();
-        public dd ShowNhaCCForm;
+        public dd BackToPreviousForm;
         NhaCC_BLL nhaCC_BLL;
         public NhaCCAddForm()
         {
@@ -49,7 +49,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
-                ShowNhaCCForm();
+                BackToPreviousForm();
                 Dispose();
             }
             else
@@ -60,13 +60,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butCancel_Click(object sender, EventArgs e)
         {
-            ShowNhaCCForm();
+            BackToPreviousForm();
             Dispose();
         }
 
         private void NhaCCAddForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowNhaCCForm();
+            BackToPreviousForm();
             Dispose();
         }
 
