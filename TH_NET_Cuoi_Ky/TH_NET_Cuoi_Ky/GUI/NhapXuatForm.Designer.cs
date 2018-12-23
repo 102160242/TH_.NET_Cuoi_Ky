@@ -61,7 +61,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.Bnt_HienThiXuat = new System.Windows.Forms.Button();
             this.cbb_TenTSXuat = new System.Windows.Forms.ComboBox();
-            this.bnt_ThanhLy = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.numericUpDown_SLXuat = new System.Windows.Forms.NumericUpDown();
             this.bnt_Xuat = new System.Windows.Forms.Button();
@@ -73,12 +72,14 @@
             this.cbb_NhaCCXuat = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.bnt_ThanhLy = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.bntUpdate = new System.Windows.Forms.Button();
             this.bntDelete = new System.Windows.Forms.Button();
             this.loadCBBTS_Nhap = new System.ComponentModel.BackgroundWorker();
             this.loadCBBNCC_Nhap = new System.ComponentModel.BackgroundWorker();
             this.loadCBBPhong_Nhap = new System.ComponentModel.BackgroundWorker();
+            this.bntLuanchuyen = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -352,7 +353,6 @@
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.Bnt_HienThiXuat);
             this.tabPage2.Controls.Add(this.cbb_TenTSXuat);
-            this.tabPage2.Controls.Add(this.bnt_ThanhLy);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.numericUpDown_SLXuat);
             this.tabPage2.Controls.Add(this.bnt_Xuat);
@@ -460,19 +460,6 @@
             this.cbb_TenTSXuat.Size = new System.Drawing.Size(168, 26);
             this.cbb_TenTSXuat.TabIndex = 54;
             this.cbb_TenTSXuat.SelectedIndexChanged += new System.EventHandler(this.cbb_TenTSXuat_SelectedIndexChanged);
-            // 
-            // bnt_ThanhLy
-            // 
-            this.bnt_ThanhLy.Image = ((System.Drawing.Image)(resources.GetObject("bnt_ThanhLy.Image")));
-            this.bnt_ThanhLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_ThanhLy.Location = new System.Drawing.Point(639, 117);
-            this.bnt_ThanhLy.Margin = new System.Windows.Forms.Padding(4);
-            this.bnt_ThanhLy.Name = "bnt_ThanhLy";
-            this.bnt_ThanhLy.Size = new System.Drawing.Size(93, 32);
-            this.bnt_ThanhLy.TabIndex = 53;
-            this.bnt_ThanhLy.Text = "Thanh Lý";
-            this.bnt_ThanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bnt_ThanhLy.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -596,11 +583,25 @@
             this.label10.TabIndex = 40;
             this.label10.Text = "Tên tài sản";
             // 
+            // bnt_ThanhLy
+            // 
+            this.bnt_ThanhLy.Image = ((System.Drawing.Image)(resources.GetObject("bnt_ThanhLy.Image")));
+            this.bnt_ThanhLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bnt_ThanhLy.Location = new System.Drawing.Point(584, 479);
+            this.bnt_ThanhLy.Margin = new System.Windows.Forms.Padding(4);
+            this.bnt_ThanhLy.Name = "bnt_ThanhLy";
+            this.bnt_ThanhLy.Size = new System.Drawing.Size(93, 32);
+            this.bnt_ThanhLy.TabIndex = 53;
+            this.bnt_ThanhLy.Text = "Thanh Lý";
+            this.bnt_ThanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bnt_ThanhLy.UseVisualStyleBackColor = true;
+            this.bnt_ThanhLy.Click += new System.EventHandler(this.bnt_ThanhLy_Click);
+            // 
             // btnExit
             // 
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(635, 477);
+            this.btnExit.Location = new System.Drawing.Point(733, 477);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(77, 32);
@@ -648,6 +649,16 @@
             // 
             this.loadCBBPhong_Nhap.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBPhong_Nhap_DoWork);
             // 
+            // bntLuanchuyen
+            // 
+            this.bntLuanchuyen.Location = new System.Drawing.Point(27, 478);
+            this.bntLuanchuyen.Name = "bntLuanchuyen";
+            this.bntLuanchuyen.Size = new System.Drawing.Size(102, 32);
+            this.bntLuanchuyen.TabIndex = 44;
+            this.bntLuanchuyen.Text = "Luân Chuyển";
+            this.bntLuanchuyen.UseVisualStyleBackColor = true;
+            this.bntLuanchuyen.Click += new System.EventHandler(this.bntLuanchuyen_Click);
+            // 
             // NhapXuatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -655,10 +666,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 520);
+            this.Controls.Add(this.bntLuanchuyen);
             this.Controls.Add(this.bntDelete);
             this.Controls.Add(this.bntUpdate);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.bnt_ThanhLy);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -735,5 +748,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txt_phieu_xuat;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button bntLuanchuyen;
     }
 }
