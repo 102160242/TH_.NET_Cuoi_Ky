@@ -34,7 +34,13 @@ namespace TH_NET_Cuoi_Ky
             ShowTSForm();
             Dispose();
         }
-
+        public void setLabel(String TenTS, String TSKT, String DVTinh, String NamSX)
+        {
+            labelTenTS.Text = TenTS;
+            labelTSKT.Text = TSKT;
+            labelDonViTinh.Text = DVTinh;
+            labelNamSX.Text = NamSX;
+        }
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             var cms = sender as ContextMenuStrip;
@@ -72,7 +78,10 @@ namespace TH_NET_Cuoi_Ky
                 }
             }
         }
-
+        private void btnThanhLy_Click(object sender, EventArgs e)
+        {
+            thanhLyToolStripMenuItem_Click(sender, e);
+        }
         private void thanhLyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String tenTS = dgv.SelectedRows[0].Cells["TenTS"].Value.ToString();
@@ -89,7 +98,10 @@ namespace TH_NET_Cuoi_Ky
 
             //this.Visible = false;
         }
-
+        private void btnChuyenPhong_Click(object sender, EventArgs e)
+        {
+            chuyenPhongToolStripMenuItem_Click(sender, e);
+        }
         private void chuyenPhongToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String tenTS = dgv.SelectedRows[0].Cells["TenTS"].Value.ToString();
@@ -103,6 +115,20 @@ namespace TH_NET_Cuoi_Ky
             f.BackToPreviousForm += Reload;
             f.ShowDialog();
             //this.Visible = false;
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                btnThanhLy.Enabled = true;
+                btnChuyenPhong.Enabled = true;
+            }
+            else
+            {
+                btnThanhLy.Enabled = false;
+                btnChuyenPhong.Enabled = false;
+            }
         }
     }
 }

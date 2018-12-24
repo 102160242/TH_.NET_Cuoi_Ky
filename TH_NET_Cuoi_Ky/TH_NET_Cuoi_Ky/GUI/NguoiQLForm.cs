@@ -174,5 +174,19 @@ namespace TH_NET_Cuoi_Ky.GUI
                 ShowNguoiQL(); // Refresh lai du lieu tren DataGridView
             }
         }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                but_Delete.Enabled = true;
+                but_Update.Enabled = true;
+            }
+            else
+            {
+                but_Delete.Enabled = false;
+                but_Update.Enabled = false;
+            }
+        }
     }
 }

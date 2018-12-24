@@ -170,5 +170,19 @@ namespace TH_NET_Cuoi_Ky.GUI
                 }
             }
         }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgv.SelectedRows.Count > 0)
+            {
+                but_Update.Enabled = true;
+                but_Delete.Enabled = true;
+            }
+            else
+            {
+                but_Update.Enabled = false;
+                but_Delete.Enabled = false;
+            }
+        }
     }
 }

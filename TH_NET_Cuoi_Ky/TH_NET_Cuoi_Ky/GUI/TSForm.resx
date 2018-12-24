@@ -2284,7 +2284,7 @@
         vSdZ9qdnxbaT5DoOhmLnDHJuVU8HlgwUN1R7312wawD/VzLZbwArbTzXLcjFAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="butUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAZlJREFUOE+9jN8rQ3EYxk9cu9g/IJMfIW2MkGFTLpgmv+sgLpR2gwinWLtaWwmh

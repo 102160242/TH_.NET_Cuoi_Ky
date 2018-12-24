@@ -38,10 +38,10 @@
             this.dgvNhap = new System.Windows.Forms.DataGridView();
             this.txt_TinhTrangNhap = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.bnt_HienThiNhap = new System.Windows.Forms.Button();
+            this.btnHienThiNhap = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.numericUpDown_SLNhap = new System.Windows.Forms.NumericUpDown();
-            this.bnt_Nhap = new System.Windows.Forms.Button();
+            this.btnNhap = new System.Windows.Forms.Button();
             this.cbb_TenTSNhap = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -59,11 +59,11 @@
             this.dgvXuat = new System.Windows.Forms.DataGridView();
             this.txt_TinhTrangXuat = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.Bnt_HienThiXuat = new System.Windows.Forms.Button();
+            this.btnHienThiXuat = new System.Windows.Forms.Button();
             this.cbb_TenTSXuat = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.numericUpDown_SLXuat = new System.Windows.Forms.NumericUpDown();
-            this.bnt_Xuat = new System.Windows.Forms.Button();
+            this.btnXuat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,14 +72,14 @@
             this.cbb_NhaCCXuat = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.bnt_ThanhLy = new System.Windows.Forms.Button();
+            this.btn_ThanhLy = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.bntUpdate = new System.Windows.Forms.Button();
-            this.bntDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.loadCBBTS_Nhap = new System.ComponentModel.BackgroundWorker();
             this.loadCBBNCC_Nhap = new System.ComponentModel.BackgroundWorker();
             this.loadCBBPhong_Nhap = new System.ComponentModel.BackgroundWorker();
-            this.bntLuanchuyen = new System.Windows.Forms.Button();
+            this.btnLuanchuyen = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -101,6 +101,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(946, 471);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -112,10 +113,10 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.txt_TinhTrangNhap);
             this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.bnt_HienThiNhap);
+            this.tabPage1.Controls.Add(this.btnHienThiNhap);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.numericUpDown_SLNhap);
-            this.tabPage1.Controls.Add(this.bnt_Nhap);
+            this.tabPage1.Controls.Add(this.btnNhap);
             this.tabPage1.Controls.Add(this.cbb_TenTSNhap);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
@@ -181,6 +182,7 @@
             this.dgvNhap.Size = new System.Drawing.Size(923, 253);
             this.dgvNhap.TabIndex = 1;
             this.dgvNhap.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dgvNhap.SelectionChanged += new System.EventHandler(this.dgvNhap_SelectionChanged);
             // 
             // txt_TinhTrangNhap
             // 
@@ -198,18 +200,18 @@
             this.label13.TabIndex = 45;
             this.label13.Text = "Tình Trạng";
             // 
-            // bnt_HienThiNhap
+            // btnHienThiNhap
             // 
-            this.bnt_HienThiNhap.Image = ((System.Drawing.Image)(resources.GetObject("bnt_HienThiNhap.Image")));
-            this.bnt_HienThiNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_HienThiNhap.Location = new System.Drawing.Point(837, 118);
-            this.bnt_HienThiNhap.Name = "bnt_HienThiNhap";
-            this.bnt_HienThiNhap.Size = new System.Drawing.Size(90, 32);
-            this.bnt_HienThiNhap.TabIndex = 44;
-            this.bnt_HienThiNhap.Text = "Hiển Thị";
-            this.bnt_HienThiNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bnt_HienThiNhap.UseVisualStyleBackColor = true;
-            this.bnt_HienThiNhap.Click += new System.EventHandler(this.bnt_HienThiNhap_Click);
+            this.btnHienThiNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThiNhap.Image")));
+            this.btnHienThiNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHienThiNhap.Location = new System.Drawing.Point(837, 118);
+            this.btnHienThiNhap.Name = "btnHienThiNhap";
+            this.btnHienThiNhap.Size = new System.Drawing.Size(90, 32);
+            this.btnHienThiNhap.TabIndex = 44;
+            this.btnHienThiNhap.Text = "Hiển Thị";
+            this.btnHienThiNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHienThiNhap.UseVisualStyleBackColor = true;
+            this.btnHienThiNhap.Click += new System.EventHandler(this.btnHienThiNhap_Click);
             // 
             // label11
             // 
@@ -234,19 +236,19 @@
             this.numericUpDown_SLNhap.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_SLNhap.TabIndex = 42;
             // 
-            // bnt_Nhap
+            // btnNhap
             // 
-            this.bnt_Nhap.Image = ((System.Drawing.Image)(resources.GetObject("bnt_Nhap.Image")));
-            this.bnt_Nhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_Nhap.Location = new System.Drawing.Point(740, 118);
-            this.bnt_Nhap.Margin = new System.Windows.Forms.Padding(4);
-            this.bnt_Nhap.Name = "bnt_Nhap";
-            this.bnt_Nhap.Size = new System.Drawing.Size(90, 32);
-            this.bnt_Nhap.TabIndex = 40;
-            this.bnt_Nhap.Text = "Nhập ";
-            this.bnt_Nhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bnt_Nhap.UseVisualStyleBackColor = true;
-            this.bnt_Nhap.Click += new System.EventHandler(this.bnt_Nhap_Click);
+            this.btnNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnNhap.Image")));
+            this.btnNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhap.Location = new System.Drawing.Point(740, 118);
+            this.btnNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.Size = new System.Drawing.Size(90, 32);
+            this.btnNhap.TabIndex = 40;
+            this.btnNhap.Text = "Nhập ";
+            this.btnNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // cbb_TenTSNhap
             // 
@@ -351,11 +353,11 @@
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.txt_TinhTrangXuat);
             this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.Bnt_HienThiXuat);
+            this.tabPage2.Controls.Add(this.btnHienThiXuat);
             this.tabPage2.Controls.Add(this.cbb_TenTSXuat);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.numericUpDown_SLXuat);
-            this.tabPage2.Controls.Add(this.bnt_Xuat);
+            this.tabPage2.Controls.Add(this.btnXuat);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.dateTimePicker2);
             this.tabPage2.Controls.Add(this.label6);
@@ -419,6 +421,7 @@
             this.dgvXuat.Size = new System.Drawing.Size(923, 253);
             this.dgvXuat.TabIndex = 56;
             this.dgvXuat.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
+            this.dgvXuat.SelectionChanged += new System.EventHandler(this.dgvXuat_SelectionChanged);
             // 
             // txt_TinhTrangXuat
             // 
@@ -436,18 +439,18 @@
             this.label14.TabIndex = 57;
             this.label14.Text = "Tình Trạng";
             // 
-            // Bnt_HienThiXuat
+            // btnHienThiXuat
             // 
-            this.Bnt_HienThiXuat.Image = ((System.Drawing.Image)(resources.GetObject("Bnt_HienThiXuat.Image")));
-            this.Bnt_HienThiXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Bnt_HienThiXuat.Location = new System.Drawing.Point(837, 118);
-            this.Bnt_HienThiXuat.Name = "Bnt_HienThiXuat";
-            this.Bnt_HienThiXuat.Size = new System.Drawing.Size(90, 32);
-            this.Bnt_HienThiXuat.TabIndex = 55;
-            this.Bnt_HienThiXuat.Text = "Hiển Thị";
-            this.Bnt_HienThiXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Bnt_HienThiXuat.UseVisualStyleBackColor = true;
-            this.Bnt_HienThiXuat.Click += new System.EventHandler(this.Bnt_HienThiXuat_Click);
+            this.btnHienThiXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThiXuat.Image")));
+            this.btnHienThiXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHienThiXuat.Location = new System.Drawing.Point(837, 118);
+            this.btnHienThiXuat.Name = "btnHienThiXuat";
+            this.btnHienThiXuat.Size = new System.Drawing.Size(90, 32);
+            this.btnHienThiXuat.TabIndex = 55;
+            this.btnHienThiXuat.Text = "Hiển Thị";
+            this.btnHienThiXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHienThiXuat.UseVisualStyleBackColor = true;
+            this.btnHienThiXuat.Click += new System.EventHandler(this.btnHienThiXuat_Click);
             // 
             // cbb_TenTSXuat
             // 
@@ -484,19 +487,19 @@
             this.numericUpDown_SLXuat.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_SLXuat.TabIndex = 51;
             // 
-            // bnt_Xuat
+            // btnXuat
             // 
-            this.bnt_Xuat.Image = ((System.Drawing.Image)(resources.GetObject("bnt_Xuat.Image")));
-            this.bnt_Xuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_Xuat.Location = new System.Drawing.Point(758, 118);
-            this.bnt_Xuat.Margin = new System.Windows.Forms.Padding(4);
-            this.bnt_Xuat.Name = "bnt_Xuat";
-            this.bnt_Xuat.Size = new System.Drawing.Size(72, 32);
-            this.bnt_Xuat.TabIndex = 49;
-            this.bnt_Xuat.Text = "Xuất";
-            this.bnt_Xuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bnt_Xuat.UseVisualStyleBackColor = true;
-            this.bnt_Xuat.Click += new System.EventHandler(this.bnt_Xuat_Click);
+            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
+            this.btnXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuat.Location = new System.Drawing.Point(758, 118);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(72, 32);
+            this.btnXuat.TabIndex = 49;
+            this.btnXuat.Text = "Xuất";
+            this.btnXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuat.UseVisualStyleBackColor = true;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // label5
             // 
@@ -583,19 +586,20 @@
             this.label10.TabIndex = 40;
             this.label10.Text = "Tên tài sản";
             // 
-            // bnt_ThanhLy
+            // btn_ThanhLy
             // 
-            this.bnt_ThanhLy.Image = ((System.Drawing.Image)(resources.GetObject("bnt_ThanhLy.Image")));
-            this.bnt_ThanhLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_ThanhLy.Location = new System.Drawing.Point(584, 479);
-            this.bnt_ThanhLy.Margin = new System.Windows.Forms.Padding(4);
-            this.bnt_ThanhLy.Name = "bnt_ThanhLy";
-            this.bnt_ThanhLy.Size = new System.Drawing.Size(93, 32);
-            this.bnt_ThanhLy.TabIndex = 53;
-            this.bnt_ThanhLy.Text = "Thanh Lý";
-            this.bnt_ThanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bnt_ThanhLy.UseVisualStyleBackColor = true;
-            this.bnt_ThanhLy.Click += new System.EventHandler(this.bnt_ThanhLy_Click);
+            this.btn_ThanhLy.Enabled = false;
+            this.btn_ThanhLy.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThanhLy.Image")));
+            this.btn_ThanhLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ThanhLy.Location = new System.Drawing.Point(584, 479);
+            this.btn_ThanhLy.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_ThanhLy.Name = "btn_ThanhLy";
+            this.btn_ThanhLy.Size = new System.Drawing.Size(93, 32);
+            this.btn_ThanhLy.TabIndex = 53;
+            this.btn_ThanhLy.Text = "Thanh Lý";
+            this.btn_ThanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ThanhLy.UseVisualStyleBackColor = true;
+            this.btn_ThanhLy.Click += new System.EventHandler(this.btn_ThanhLy_Click);
             // 
             // btnExit
             // 
@@ -611,31 +615,33 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // bntUpdate
+            // btnUpdate
             // 
-            this.bntUpdate.Image = ((System.Drawing.Image)(resources.GetObject("bntUpdate.Image")));
-            this.bntUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntUpdate.Location = new System.Drawing.Point(225, 478);
-            this.bntUpdate.Name = "bntUpdate";
-            this.bntUpdate.Size = new System.Drawing.Size(94, 32);
-            this.bntUpdate.TabIndex = 42;
-            this.bntUpdate.Text = "Cập Nhật";
-            this.bntUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bntUpdate.UseVisualStyleBackColor = true;
-            this.bntUpdate.Click += new System.EventHandler(this.bntUpdate_Click);
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(225, 478);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(94, 32);
+            this.btnUpdate.TabIndex = 42;
+            this.btnUpdate.Text = "Cập Nhật";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // bntDelete
+            // btnDelete
             // 
-            this.bntDelete.Image = ((System.Drawing.Image)(resources.GetObject("bntDelete.Image")));
-            this.bntDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntDelete.Location = new System.Drawing.Point(430, 478);
-            this.bntDelete.Name = "bntDelete";
-            this.bntDelete.Size = new System.Drawing.Size(74, 32);
-            this.bntDelete.TabIndex = 43;
-            this.bntDelete.Text = "Xóa";
-            this.bntDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bntDelete.UseVisualStyleBackColor = true;
-            this.bntDelete.Click += new System.EventHandler(this.bntDelete_Click);
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(430, 478);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(74, 32);
+            this.btnDelete.TabIndex = 43;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // loadCBBTS_Nhap
             // 
@@ -649,15 +655,16 @@
             // 
             this.loadCBBPhong_Nhap.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBPhong_Nhap_DoWork);
             // 
-            // bntLuanchuyen
+            // btnLuanchuyen
             // 
-            this.bntLuanchuyen.Location = new System.Drawing.Point(27, 478);
-            this.bntLuanchuyen.Name = "bntLuanchuyen";
-            this.bntLuanchuyen.Size = new System.Drawing.Size(102, 32);
-            this.bntLuanchuyen.TabIndex = 44;
-            this.bntLuanchuyen.Text = "Luân Chuyển";
-            this.bntLuanchuyen.UseVisualStyleBackColor = true;
-            this.bntLuanchuyen.Click += new System.EventHandler(this.bntLuanchuyen_Click);
+            this.btnLuanchuyen.Enabled = false;
+            this.btnLuanchuyen.Location = new System.Drawing.Point(27, 478);
+            this.btnLuanchuyen.Name = "btnLuanchuyen";
+            this.btnLuanchuyen.Size = new System.Drawing.Size(102, 32);
+            this.btnLuanchuyen.TabIndex = 44;
+            this.btnLuanchuyen.Text = "Luân Chuyển";
+            this.btnLuanchuyen.UseVisualStyleBackColor = true;
+            this.btnLuanchuyen.Click += new System.EventHandler(this.btnLuanchuyen_Click);
             // 
             // NhapXuatForm
             // 
@@ -666,12 +673,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 520);
-            this.Controls.Add(this.bntLuanchuyen);
-            this.Controls.Add(this.bntDelete);
-            this.Controls.Add(this.bntUpdate);
+            this.Controls.Add(this.btnLuanchuyen);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.bnt_ThanhLy);
+            this.Controls.Add(this.btn_ThanhLy);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -713,12 +720,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown numericUpDown_SLNhap;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button bnt_Nhap;
+        private System.Windows.Forms.Button btnNhap;
         private System.Windows.Forms.ComboBox cbb_TenTSNhap;
-        private System.Windows.Forms.Button bnt_ThanhLy;
+        private System.Windows.Forms.Button btn_ThanhLy;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numericUpDown_SLXuat;
-        private System.Windows.Forms.Button bnt_Xuat;
+        private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label6;
@@ -728,10 +735,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbb_TenTSXuat;
-        private System.Windows.Forms.Button bnt_HienThiNhap;
-        private System.Windows.Forms.Button Bnt_HienThiXuat;
-        private System.Windows.Forms.Button bntUpdate;
-        private System.Windows.Forms.Button bntDelete;
+        private System.Windows.Forms.Button btnHienThiNhap;
+        private System.Windows.Forms.Button btnHienThiXuat;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dgvXuat;
         private System.Windows.Forms.TextBox txt_TinhTrangNhap;
         private System.Windows.Forms.Label label13;
@@ -748,6 +755,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txt_phieu_xuat;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button bntLuanchuyen;
+        private System.Windows.Forms.Button btnLuanchuyen;
     }
 }

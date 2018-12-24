@@ -12,7 +12,7 @@ using TH_NET_Cuoi_Ky.BLL;
 
 namespace TH_NET_Cuoi_Ky
 {
-    public partial class Form1 : Form
+    public partial class TSForm : Form
     {
         public delegate void dd();
         public dd ShowMainForm;
@@ -21,7 +21,7 @@ namespace TH_NET_Cuoi_Ky
         NhaCC_BLL NCC_BLL;
         NuocSX_BLL NSX_BLL;
         LoaiTS_BLL LTS_BLL;
-        public Form1()
+        public TSForm()
         {
             InitializeComponent();
             this.TS_BLL = new TaiSan_BLL();
@@ -118,9 +118,9 @@ namespace TH_NET_Cuoi_Ky
             //this.Visible = false; // Tam an form
         }
 
-        private void butUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(txtMaTS.Text == "")
+            if (txtMaTS.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn Tài sản cần sửa!");
                 return;
@@ -133,7 +133,7 @@ namespace TH_NET_Cuoi_Ky
 
             int maNuocSX = NSX_BLL.getIDByName(cbbNuocSX.SelectedItem.ToString());
             int maLoaiTS = LTS_BLL.getIDByName(cbbLoaiTS.SelectedItem.ToString());
-            if(maNuocSX == -1 || maLoaiTS == -1)
+            if (maNuocSX == -1 || maLoaiTS == -1)
             {
                 MessageBox.Show("Không tồn tại Nước Sản Xuất hoặc Loại Tài Sản đã chọn!");
             }
@@ -203,9 +203,16 @@ namespace TH_NET_Cuoi_Ky
 
         private void showDetailToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int maTS = Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString());
+            String tenTS = dgv.SelectedRows[0].Cells["TenTS"].Value.ToString();
+            String TSKT = dgv.SelectedRows[0].Cells["TSKT"].Value.ToString();
+            String DVTinh = dgv.SelectedRows[0].Cells["DVTinh"].Value.ToString();
+            String NamSX = dgv.SelectedRows[0].Cells["NamSX"].Value.ToString();
+
             ChiTietTSForm f = new ChiTietTSForm();
             f.ShowTSForm += Reload;
-            f.ShowTSDetail(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString()));
+            f.ShowTSDetail(maTS);
+            f.setLabel(tenTS, TSKT, DVTinh, NamSX);
             f.Show();
             this.Visible = false;
         }
@@ -319,6 +326,20 @@ namespace TH_NET_Cuoi_Ky
         {
             loadCBBLTS.RunWorkerAsync();
             loadCBBNSX.RunWorkerAsync();
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgv.SelectedRows.Count > 0)
+            {
+                btnDel.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
+            else
+            {
+                btnDel.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
         }
     }
 }
