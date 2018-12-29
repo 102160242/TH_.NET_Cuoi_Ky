@@ -22,7 +22,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void ThanhLy_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
 
