@@ -78,10 +78,11 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                 return;
             }
-            int mataisan = TS_BLL.GetIDbyTS(cbb_TenTS.SelectedItem.ToString());
-            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCC.SelectedItem.ToString());
-            int maphong = P_BLL.GetIdByPhong(cbb_PhongXuat.SelectedItem.ToString());
-            if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
+            int maTS = TS_BLL.GetIDbyTS(cbb_TenTS.SelectedItem.ToString());
+            int maNCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCC.SelectedItem.ToString());
+            int maPhongXuat = P_BLL.GetIdByPhong(cbb_PhongXuat.SelectedItem.ToString());
+            int maPhongNhap = P_BLL.GetIdByPhong(cbbPhongNhap.SelectedItem.ToString());
+            if (maTS == -1 || maNCC == -1 || maPhongXuat == -1 || maPhongNhap == -1)
             {
                 MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
                 return;
@@ -89,9 +90,9 @@ namespace TH_NET_Cuoi_Ky.GUI
             List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
             l.Add(new DTO.NhapXuat
             {
-                MaTS = mataisan,
-                MaNhaCC = manhacungcap,
-                MaPhong = maphong,
+                MaTS = maTS,
+                MaNhaCC = maNCC,
+                MaPhong = maPhongXuat,
                 NgayXuat = dateTimePicker1.Value.Date,
                 SLXuat = Convert.ToInt32(numericUpDown_SLNhap.Value),
                 NguyenGia = 0,
@@ -99,9 +100,9 @@ namespace TH_NET_Cuoi_Ky.GUI
             });
             l.Add(new DTO.NhapXuat
             {
-                MaTS = mataisan,
-                MaNhaCC = manhacungcap,
-                MaPhong = maphong,
+                MaTS = maTS,
+                MaNhaCC = maNCC,
+                MaPhong = maPhongNhap,
                 NgayNhap = dateTimePicker1.Value.Date,
                 SLNhap = Convert.ToInt32(numericUpDown_SLNhap.Value),
                 NguyenGia = 0,
@@ -120,7 +121,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
             if (result)
             {
-                MessageBox.Show("Thành công");
+                //MessageBox.Show("Thành công");
                 Dispose();
             }
             else

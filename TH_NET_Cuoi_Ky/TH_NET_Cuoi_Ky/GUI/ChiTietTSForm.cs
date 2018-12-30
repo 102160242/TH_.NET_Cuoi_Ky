@@ -91,8 +91,8 @@ namespace TH_NET_Cuoi_Ky
 
             f.allowCBBToBeLoaded = false;
             f.setCBBTenTS(tenTS);
-            f.setCBBNhaCC(tenNCC);
             f.setCBBPhong(tenPhong);
+            f.setCBBNhaCC(tenNCC);
             f.BackToPreviousForm += Reload;
             f.ShowDialog();
 
@@ -110,8 +110,9 @@ namespace TH_NET_Cuoi_Ky
             LuanChuyen f = new LuanChuyen();
 
             f.setCBBTenTS(tenTS);
-            f.setCBBNhaCC(tenNCC);
             f.setCBBPhongXuat(tenPhong);
+            f.setCBBNhaCC(tenNCC);
+            f.allowCBBToBeLoaded = false;
             f.BackToPreviousForm += Reload;
             f.ShowDialog();
             //this.Visible = false;
