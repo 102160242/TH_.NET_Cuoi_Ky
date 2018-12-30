@@ -42,8 +42,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbbPhongNhap = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bnt_OK = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.loadCBBTS = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLNhap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +97,7 @@
             this.cbb_TenTS.Name = "cbb_TenTS";
             this.cbb_TenTS.Size = new System.Drawing.Size(168, 26);
             this.cbb_TenTS.TabIndex = 59;
+            this.cbb_TenTS.SelectedIndexChanged += new System.EventHandler(this.cbb_TenTS_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -120,12 +122,14 @@
             // 
             this.cbb_PhongXuat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_PhongXuat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_PhongXuat.Enabled = false;
             this.cbb_PhongXuat.FormattingEnabled = true;
             this.cbb_PhongXuat.Location = new System.Drawing.Point(134, 45);
             this.cbb_PhongXuat.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_PhongXuat.Name = "cbb_PhongXuat";
             this.cbb_PhongXuat.Size = new System.Drawing.Size(168, 26);
             this.cbb_PhongXuat.TabIndex = 55;
+            this.cbb_PhongXuat.SelectedIndexChanged += new System.EventHandler(this.cbb_PhongXuat_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -141,6 +145,7 @@
             // 
             this.cbb_NhaCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_NhaCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_NhaCC.Enabled = false;
             this.cbb_NhaCC.FormattingEnabled = true;
             this.cbb_NhaCC.Location = new System.Drawing.Point(134, 85);
             this.cbb_NhaCC.Margin = new System.Windows.Forms.Padding(4);
@@ -171,6 +176,7 @@
             // 
             // cbbPhongNhap
             // 
+            this.cbbPhongNhap.Enabled = false;
             this.cbbPhongNhap.FormattingEnabled = true;
             this.cbbPhongNhap.Location = new System.Drawing.Point(134, 125);
             this.cbbPhongNhap.Name = "cbbPhongNhap";
@@ -186,14 +192,15 @@
             this.label5.TabIndex = 66;
             this.label5.Text = "Phòng nhập";
             // 
-            // button1
+            // bnt_OK
             // 
-            this.button1.Location = new System.Drawing.Point(18, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bnt_OK.Location = new System.Drawing.Point(18, 291);
+            this.bnt_OK.Name = "bnt_OK";
+            this.bnt_OK.Size = new System.Drawing.Size(75, 29);
+            this.bnt_OK.TabIndex = 67;
+            this.bnt_OK.Text = "OK";
+            this.bnt_OK.UseVisualStyleBackColor = true;
+            this.bnt_OK.Click += new System.EventHandler(this.bnt_OK_Click);
             // 
             // button2
             // 
@@ -205,13 +212,17 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // loadCBBTS
+            // 
+            this.loadCBBTS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBTS_DoWork);
+            // 
             // LuanChuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 325);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bnt_OK);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbbPhongNhap);
             this.Controls.Add(this.txt_TinhTrangNhap);
@@ -258,7 +269,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbbPhongNhap;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bnt_OK;
         private System.Windows.Forms.Button button2;
+        private System.ComponentModel.BackgroundWorker loadCBBTS;
     }
 }
