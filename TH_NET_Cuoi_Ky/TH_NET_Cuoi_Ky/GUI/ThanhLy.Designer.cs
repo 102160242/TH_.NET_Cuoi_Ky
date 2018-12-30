@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bnt_OK = new System.Windows.Forms.Button();
             this.txt_TinhTrang = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cbb_TenTS = new System.Windows.Forms.ComboBox();
@@ -44,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.numericUpDown_SL = new System.Windows.Forms.NumericUpDown();
+            this.LoadCBBTS = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SL)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,14 +58,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // bnt_OK
             // 
-            this.button1.Location = new System.Drawing.Point(18, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 83;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bnt_OK.Location = new System.Drawing.Point(18, 275);
+            this.bnt_OK.Name = "bnt_OK";
+            this.bnt_OK.Size = new System.Drawing.Size(75, 29);
+            this.bnt_OK.TabIndex = 83;
+            this.bnt_OK.Text = "OK";
+            this.bnt_OK.UseVisualStyleBackColor = true;
+            this.bnt_OK.Click += new System.EventHandler(this.bnt_OK_Click);
             // 
             // txt_TinhTrang
             // 
@@ -92,6 +94,7 @@
             this.cbb_TenTS.Name = "cbb_TenTS";
             this.cbb_TenTS.Size = new System.Drawing.Size(168, 26);
             this.cbb_TenTS.TabIndex = 76;
+            this.cbb_TenTS.SelectedIndexChanged += new System.EventHandler(this.cbb_TenTS_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -116,12 +119,14 @@
             // 
             this.cbb_Phong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_Phong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_Phong.Enabled = false;
             this.cbb_Phong.FormattingEnabled = true;
             this.cbb_Phong.Location = new System.Drawing.Point(134, 45);
             this.cbb_Phong.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_Phong.Name = "cbb_Phong";
             this.cbb_Phong.Size = new System.Drawing.Size(168, 26);
             this.cbb_Phong.TabIndex = 73;
+            this.cbb_Phong.SelectedIndexChanged += new System.EventHandler(this.cbb_Phong_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -137,6 +142,7 @@
             // 
             this.cbb_NhaCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_NhaCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_NhaCC.Enabled = false;
             this.cbb_NhaCC.FormattingEnabled = true;
             this.cbb_NhaCC.Location = new System.Drawing.Point(134, 85);
             this.cbb_NhaCC.Margin = new System.Windows.Forms.Padding(4);
@@ -205,6 +211,10 @@
             this.numericUpDown_SL.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_SL.TabIndex = 87;
             // 
+            // LoadCBBTS
+            // 
+            this.LoadCBBTS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.LoadCBBTS_DoWork_1);
+            // 
             // ThanhLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -215,7 +225,7 @@
             this.Controls.Add(this.txt_NguyenGia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bnt_OK);
             this.Controls.Add(this.txt_TinhTrang);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cbb_TenTS);
@@ -244,7 +254,7 @@
         #endregion
 
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bnt_OK;
         private System.Windows.Forms.TextBox txt_TinhTrang;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbb_TenTS;
@@ -259,5 +269,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown numericUpDown_SL;
+        private System.ComponentModel.BackgroundWorker LoadCBBTS;
     }
 }

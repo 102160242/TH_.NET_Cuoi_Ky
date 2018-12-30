@@ -374,28 +374,6 @@ namespace TH_NET_Cuoi_Ky.GUI
                 }
             }
         }
-
-        private void bntLuanchuyen_Click(object sender, EventArgs e)
-        {
-            LuanChuyen f = new LuanChuyen();
-            f.ShowNhapXuatForm += Reload;
-            f.Show();
-            this.Visible = false;
-        }
-        private void Reload()
-        {
-            Show_Nhap();
-            Show_Xuat();
-            this.Visible = true;
-        }
-
-        private void bnt_ThanhLy_Click(object sender, EventArgs e)
-        {
-            ThanhLy f = new ThanhLy();
-            f.ShowNhapXuatForm += Reload;
-            f.Show();
-            this.Visible = false; 
-        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex == 0)

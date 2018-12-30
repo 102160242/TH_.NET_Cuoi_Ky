@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TH_NET_Cuoi_Ky.BLL;
 
 namespace TH_NET_Cuoi_Ky.GUI
 {
@@ -15,9 +16,18 @@ namespace TH_NET_Cuoi_Ky.GUI
         public delegate void dd();
         public dd BackToPreviousForm;
         public bool allowCBBToBeLoaded = true;
+        TaiSan_BLL TS_BLL;
+        NhaCC_BLL NCC_BLL;
+        Phong_BLL P_BLL;
+        NhapXuat_BLL NX_BLL;
         public ThanhLy()
         {
             InitializeComponent();
+            TS_BLL = new TaiSan_BLL();
+            NCC_BLL = new NhaCC_BLL();
+            P_BLL = new Phong_BLL();
+            NX_BLL = new NhapXuat_BLL();
+
         }
 
         private void ThanhLy_FormClosed(object sender, FormClosedEventArgs e)
@@ -59,7 +69,106 @@ namespace TH_NET_Cuoi_Ky.GUI
             // Load CBB Khong dong bo
             if(allowCBBToBeLoaded)
             {
+                LoadCBBTS.RunWorkerAsync();
 
+            }
+        }
+        private void LoadCBBNhaCC()
+        {
+            foreach (string i in NCC_BLL.LoadCCB_NhaCC_AfterTenTSChose(cbb_TenTS.SelectedItem.ToString(), cbb_Phong.SelectedItem.ToString()))
+            {
+                if (cbb_NhaCC.FindStringExact(i) < 0)
+                {
+                    cbb_NhaCC.Items.Add(i);
+                }
+            }
+            cbb_NhaCC.Enabled = true;
+        }
+        private void LoadCBBPhong()
+        {
+            foreach (string i in P_BLL.LoadCBB_Phong_AfterTenTSChose(cbb_TenTS.SelectedItem.ToString()))
+            {
+                if (cbb_Phong.FindStringExact(i) < 0)
+                {
+                    cbb_Phong.Items.Add(i);
+                }
+            }
+            cbb_Phong.Enabled = true;
+        }
+        private void cbb_TenTS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbb_Phong.Text = "";
+            cbb_NhaCC.Text = "";
+            cbb_Phong.Items.Clear();
+            LoadCBBPhong();
+            cbb_NhaCC.Enabled = false;
+        }
+        private void cbb_Phong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbb_NhaCC.Text = "";
+            cbb_NhaCC.Items.Clear();
+            LoadCBBNhaCC();
+        }
+
+        private void LoadCBBTS_DoWork_1(object sender, DoWorkEventArgs e)
+        {
+            foreach (string i in TS_BLL.LoadCBBTenTS())
+            {
+                if (cbb_TenTS.FindStringExact(i) < 0)
+                {
+                    cbb_TenTS.Invoke(new Action(() =>
+                    {
+                        cbb_TenTS.Items.Add(i);
+                    }));
+                }
+            }
+        }
+
+        private void bnt_OK_Click(object sender, EventArgs e)
+        {
+            if (cbb_NhaCC.SelectedIndex == -1 || cbb_Phong.SelectedIndex == -1 || cbb_TenTS.SelectedIndex == -1 || Convert.ToDouble(txt_NguyenGia.Text) < 0 || numericUpDown_SL.Value <= 0 || txt_TinhTrang.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                return;
+            }
+            int mataisan = TS_BLL.GetIDbyTS(cbb_TenTS.SelectedItem.ToString());
+            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCC.SelectedItem.ToString());
+            int maphong = P_BLL.GetIdByPhong(cbb_Phong.SelectedItem.ToString());
+            if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
+            {
+                MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
+                return;
+            }
+            List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
+            l.Add(new DTO.NhapXuat
+            {
+                MaTS = mataisan,
+                MaNhaCC = manhacungcap,
+                MaPhong = maphong,
+                NgayXuat = dateTimePicker1.Value.Date,
+                SLXuat = Convert.ToInt32(numericUpDown_SL.Value),
+                NguyenGia = Convert.ToDouble(txt_NguyenGia.Text),
+                TinhTrang = txt_TinhTrang.Text
+            });
+            //kiem tra so luong xuat ra co vuot qua sl nhap hay k
+            foreach (DTO.NhapXuat i in l)
+            {
+                if (NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC) < i.SLXuat)
+                {
+                    MessageBox.Show("Số lượng không hợp lệ, giá trị cao nhất có thể là " + NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC));
+                    return;
+                }
+            }
+            (Boolean result, string msg) = NX_BLL.AddNhapXuat(l);
+
+            if (result)
+            {
+                MessageBox.Show("Thành công");
+                Dispose();
+            }
+            else
+            {
+                MessageBox.Show(msg, "Lỗi");
             }
         }
     }
