@@ -218,6 +218,7 @@
             this.dgv.Size = new System.Drawing.Size(706, 263);
             this.dgv.TabIndex = 9;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -261,6 +262,7 @@
             // but_Update
             // 
             this.but_Update.BackColor = System.Drawing.Color.Transparent;
+            this.but_Update.Enabled = false;
             this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
             this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Update.Location = new System.Drawing.Point(318, 443);
@@ -299,6 +301,7 @@
             // but_Delete
             // 
             this.but_Delete.BackColor = System.Drawing.Color.Transparent;
+            this.but_Delete.Enabled = false;
             this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
             this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.but_Delete.Location = new System.Drawing.Point(457, 444);

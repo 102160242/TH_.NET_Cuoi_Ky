@@ -24,15 +24,14 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowLoaiTS();
-            this.Visible = true;
+            //this.Visible = true;
         }
         private void butAdd_Click(object sender, EventArgs e)
         {
             LoaiTSAddForm f = new LoaiTSAddForm();
-            f.ShowLoaiTSForm += Reload;
-            f.Show();
-            this.Visible = false;
-            
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;            
         }
         private void ShowLoaiTS()
         {
@@ -157,6 +156,20 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
 
                 ShowLoaiTS();// Refresh lai du lieu tren DataGridView
+            }
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                butUpdate.Enabled = true;
+                butDelete.Enabled = true;
+            }
+            else
+            {
+                butUpdate.Enabled = false;
+                butDelete.Enabled = false;
             }
         }
     }

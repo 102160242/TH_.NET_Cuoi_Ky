@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NguoiQLAddForrm : Form
     {
         public delegate void dd();
-        public dd ShowNguoiQLForm;
+        public dd BackToPreviousForm;
         NguoiQL_BLL Nguoi_BLL;
         public NguoiQLAddForrm()
         {
@@ -41,7 +41,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
-                ShowNguoiQLForm();
+                BackToPreviousForm();
                 Dispose();
             }
             else
@@ -52,13 +52,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ShowNguoiQLForm();
+            BackToPreviousForm();
             Dispose();
         }
 
         private void NguoiQLAddForrm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowNguoiQLForm();
+            BackToPreviousForm();
             Dispose();
         }
 

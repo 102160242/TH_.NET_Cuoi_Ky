@@ -22,7 +22,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void btnTS_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            TSForm f = new TSForm();
             f.ShowMainForm += ShowForm;
             f.Show();
             this.Visible = false;

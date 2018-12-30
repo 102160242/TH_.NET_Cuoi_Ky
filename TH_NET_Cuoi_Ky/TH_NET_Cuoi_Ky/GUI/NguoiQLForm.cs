@@ -44,14 +44,14 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowNguoiQL();
-            this.Visible = true;
+            //this.Visible = true;
         }
         private void but_Add_Click(object sender, EventArgs e)
         {
             NguoiQLAddForrm f = new NguoiQLAddForrm();
-            f.ShowNguoiQLForm += Reload;
-            f.Show();
-            this.Visible = false;
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;
         }
 
 
@@ -172,6 +172,20 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show(msg, result ? "Thành công" : "Lỗi"); // Hien thi thong bao ket qua
 
                 ShowNguoiQL(); // Refresh lai du lieu tren DataGridView
+            }
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                but_Delete.Enabled = true;
+                but_Update.Enabled = true;
+            }
+            else
+            {
+                but_Delete.Enabled = false;
+                but_Update.Enabled = false;
             }
         }
     }

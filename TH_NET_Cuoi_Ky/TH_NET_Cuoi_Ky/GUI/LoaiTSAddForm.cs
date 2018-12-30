@@ -15,7 +15,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class LoaiTSAddForm : Form
     {
         public delegate void dd();
-        public dd ShowLoaiTSForm;
+        public dd BackToPreviousForm;
         LoaiTS_BLL LoaiTS_BLL;
         public LoaiTSAddForm()
         {
@@ -39,7 +39,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Loai Tai San
-                ShowLoaiTSForm();
+                BackToPreviousForm();
                 Dispose();
             }
             else
@@ -50,13 +50,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butCancel_Click(object sender, EventArgs e)
         {
-            ShowLoaiTSForm();
+            BackToPreviousForm();
             Dispose();
         }
 
         private void LoaiTSAddForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowLoaiTSForm();
+            BackToPreviousForm();
             Dispose();
         }
     }

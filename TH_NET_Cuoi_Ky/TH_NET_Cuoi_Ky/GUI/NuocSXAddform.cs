@@ -13,7 +13,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NuocSXAddform : Form
     {
         public delegate void dd();
-        public dd ShowNuocSXForm;
+        public dd BackToPreviousForm;
         BLL.NuocSX_BLL NSX_BLL;
         public NuocSXAddform()
         {
@@ -38,7 +38,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Nuoc SX
-                ShowNuocSXForm();
+                BackToPreviousForm();
                 Dispose();
             }
             else
@@ -49,13 +49,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ShowNuocSXForm();
+            BackToPreviousForm();
             Dispose();
         }
 
         private void NuocSXAddform_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowNuocSXForm();
+            BackToPreviousForm();
             Dispose();
         }
     }

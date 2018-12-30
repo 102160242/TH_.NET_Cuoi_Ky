@@ -44,15 +44,15 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowPhong();
-            this.Visible = true;
+            //this.Visible = true;
         }
 
         private void but_Add_Click(object sender, EventArgs e)
         {
             PhongAddForm f = new PhongAddForm();
-            f.ShowPhongForm += Reload;
-            f.Show();
-            this.Visible = false;
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;
         }
 
         private void but_Update_Click(object sender, EventArgs e)
@@ -188,6 +188,20 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void PhongForm_Shown(object sender, EventArgs e)
         {
             loadCBB.RunWorkerAsync();
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgv.SelectedRows.Count > 0)
+            {
+                but_Update.Enabled = true;
+                but_Delete.Enabled = true;
+            }
+            else
+            {
+                but_Update.Enabled = false;
+                but_Delete.Enabled = false;
+            }
         }
     }
 }

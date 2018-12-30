@@ -1,6 +1,6 @@
 ﻿namespace TH_NET_Cuoi_Ky
 {
-    partial class Form1
+    partial class TSForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TSForm));
             this.label6 = new System.Windows.Forms.Label();
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -64,7 +64,7 @@
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.butAdd = new System.Windows.Forms.Button();
-            this.butUpdate = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.loadCBBLTS = new System.ComponentModel.BackgroundWorker();
@@ -418,6 +418,7 @@
             this.dgv.TabIndex = 10;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -466,24 +467,26 @@
             this.butAdd.UseVisualStyleBackColor = false;
             this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
-            // butUpdate
+            // btnUpdate
             // 
-            this.butUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.butUpdate.Image = ((System.Drawing.Image)(resources.GetObject("butUpdate.Image")));
-            this.butUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butUpdate.Location = new System.Drawing.Point(478, 435);
-            this.butUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.butUpdate.Name = "butUpdate";
-            this.butUpdate.Size = new System.Drawing.Size(96, 32);
-            this.butUpdate.TabIndex = 12;
-            this.butUpdate.Text = "Cập nhật";
-            this.butUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butUpdate.UseVisualStyleBackColor = false;
-            this.butUpdate.Click += new System.EventHandler(this.butUpdate_Click);
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(478, 435);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(96, 32);
+            this.btnUpdate.TabIndex = 12;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDel
             // 
             this.btnDel.BackColor = System.Drawing.Color.Transparent;
+            this.btnDel.Enabled = false;
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDel.Location = new System.Drawing.Point(649, 435);
@@ -515,7 +518,7 @@
             // 
             this.loadCBBNSX.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBNSX_DoWork);
             // 
-            // Form1
+            // TSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -524,14 +527,14 @@
             this.ClientSize = new System.Drawing.Size(1034, 472);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.butUpdate);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.butAdd);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "TSForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý cơ sở vật chất khoa CNTT";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -579,7 +582,7 @@
         private System.Windows.Forms.TextBox txtTenTS;
         private System.Windows.Forms.Button butShow;
         private System.Windows.Forms.Button butAdd;
-        private System.Windows.Forms.Button butUpdate;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.ComboBox cbbLoaiTS;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.GroupBox groupBox1;

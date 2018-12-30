@@ -16,7 +16,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         Phong_BLL Phong_BLL;
         NguoiQL_BLL NguoiQL_BLL;
         public delegate void dd();
-        public dd ShowPhongForm;
+        public dd BackToPreviousForm;
         public PhongAddForm()
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (result)
             {
                 // Neu add thanh cong thi hien lai Form Tai San
-                ShowPhongForm();
+                BackToPreviousForm();
                 Dispose();
             }
             else
@@ -59,13 +59,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ShowPhongForm();
+            BackToPreviousForm();
             Dispose();
         }
 
         private void PhongAddForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowPhongForm();
+            BackToPreviousForm();
             Dispose();
         }
 

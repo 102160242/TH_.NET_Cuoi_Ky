@@ -34,7 +34,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowNhaCC();
-            this.Visible = true;
+            //this.Visible = true;
         }
         private void ShowNhaCC()
         {
@@ -59,9 +59,9 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void butAdd_Click(object sender, EventArgs e)
         {
             NhaCCAddForm f = new NhaCCAddForm();
-            f.ShowNhaCCForm += Reload;
-            f.Show();
-            this.Visible = false;
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;
         }
 
         private void butUpdate_Click(object sender, EventArgs e)
@@ -184,6 +184,20 @@ namespace TH_NET_Cuoi_Ky.GUI
                 {
                     cbbAddress.Invoke(new Action(() => { cbbAddress.Items.Add(i); }));
                 }
+            }
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                butDelete.Enabled = true;
+                butUpdate.Enabled = true;
+            }
+            else
+            {
+                butDelete.Enabled = false;
+                butUpdate.Enabled = false;
             }
         }
     }

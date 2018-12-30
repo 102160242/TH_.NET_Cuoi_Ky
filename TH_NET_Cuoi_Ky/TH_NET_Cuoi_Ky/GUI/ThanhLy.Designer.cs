@@ -30,23 +30,26 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.txt_TinhTrangNhap = new System.Windows.Forms.TextBox();
+            this.txt_TinhTrang = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.cbb_TenTSNhap = new System.Windows.Forms.ComboBox();
+            this.cbb_TenTS = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbb_PhongNhap = new System.Windows.Forms.ComboBox();
+            this.cbb_Phong = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbb_NhaCCNhap = new System.Windows.Forms.ComboBox();
+            this.cbb_NhaCC = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt_GiaNhap = new System.Windows.Forms.TextBox();
+            this.txt_NguyenGia = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.numericUpDown_SL = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SL)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(227, 251);
+            this.button2.Location = new System.Drawing.Point(227, 275);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 28);
             this.button2.TabIndex = 84;
@@ -56,44 +59,44 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 251);
+            this.button1.Location = new System.Drawing.Point(18, 275);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 29);
             this.button1.TabIndex = 83;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // txt_TinhTrangNhap
+            // txt_TinhTrang
             // 
-            this.txt_TinhTrangNhap.Location = new System.Drawing.Point(134, 205);
-            this.txt_TinhTrangNhap.Name = "txt_TinhTrangNhap";
-            this.txt_TinhTrangNhap.Size = new System.Drawing.Size(168, 24);
-            this.txt_TinhTrangNhap.TabIndex = 80;
+            this.txt_TinhTrang.Location = new System.Drawing.Point(134, 229);
+            this.txt_TinhTrang.Name = "txt_TinhTrang";
+            this.txt_TinhTrang.Size = new System.Drawing.Size(168, 24);
+            this.txt_TinhTrang.TabIndex = 80;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 209);
+            this.label13.Location = new System.Drawing.Point(15, 233);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 18);
             this.label13.TabIndex = 79;
             this.label13.Text = "Tình Trạng";
             // 
-            // cbb_TenTSNhap
+            // cbb_TenTS
             // 
-            this.cbb_TenTSNhap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbb_TenTSNhap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbb_TenTSNhap.FormattingEnabled = true;
-            this.cbb_TenTSNhap.Location = new System.Drawing.Point(134, 5);
-            this.cbb_TenTSNhap.Margin = new System.Windows.Forms.Padding(4);
-            this.cbb_TenTSNhap.Name = "cbb_TenTSNhap";
-            this.cbb_TenTSNhap.Size = new System.Drawing.Size(168, 26);
-            this.cbb_TenTSNhap.TabIndex = 76;
+            this.cbb_TenTS.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbb_TenTS.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_TenTS.FormattingEnabled = true;
+            this.cbb_TenTS.Location = new System.Drawing.Point(134, 5);
+            this.cbb_TenTS.Margin = new System.Windows.Forms.Padding(4);
+            this.cbb_TenTS.Name = "cbb_TenTS";
+            this.cbb_TenTS.Size = new System.Drawing.Size(168, 26);
+            this.cbb_TenTS.TabIndex = 76;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(134, 165);
+            this.dateTimePicker1.Location = new System.Drawing.Point(134, 189);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 24);
@@ -102,23 +105,23 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 169);
+            this.label3.Location = new System.Drawing.Point(15, 193);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 18);
             this.label3.TabIndex = 74;
             this.label3.Text = "Ngày Xuất";
             // 
-            // cbb_PhongNhap
+            // cbb_Phong
             // 
-            this.cbb_PhongNhap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbb_PhongNhap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbb_PhongNhap.FormattingEnabled = true;
-            this.cbb_PhongNhap.Location = new System.Drawing.Point(134, 45);
-            this.cbb_PhongNhap.Margin = new System.Windows.Forms.Padding(4);
-            this.cbb_PhongNhap.Name = "cbb_PhongNhap";
-            this.cbb_PhongNhap.Size = new System.Drawing.Size(168, 26);
-            this.cbb_PhongNhap.TabIndex = 73;
+            this.cbb_Phong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbb_Phong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_Phong.FormattingEnabled = true;
+            this.cbb_Phong.Location = new System.Drawing.Point(134, 45);
+            this.cbb_Phong.Margin = new System.Windows.Forms.Padding(4);
+            this.cbb_Phong.Name = "cbb_Phong";
+            this.cbb_Phong.Size = new System.Drawing.Size(168, 26);
+            this.cbb_Phong.TabIndex = 73;
             // 
             // label2
             // 
@@ -130,16 +133,16 @@
             this.label2.TabIndex = 72;
             this.label2.Text = "Phòng Xuất";
             // 
-            // cbb_NhaCCNhap
+            // cbb_NhaCC
             // 
-            this.cbb_NhaCCNhap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbb_NhaCCNhap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbb_NhaCCNhap.FormattingEnabled = true;
-            this.cbb_NhaCCNhap.Location = new System.Drawing.Point(134, 85);
-            this.cbb_NhaCCNhap.Margin = new System.Windows.Forms.Padding(4);
-            this.cbb_NhaCCNhap.Name = "cbb_NhaCCNhap";
-            this.cbb_NhaCCNhap.Size = new System.Drawing.Size(168, 26);
-            this.cbb_NhaCCNhap.TabIndex = 71;
+            this.cbb_NhaCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbb_NhaCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbb_NhaCC.FormattingEnabled = true;
+            this.cbb_NhaCC.Location = new System.Drawing.Point(134, 85);
+            this.cbb_NhaCC.Margin = new System.Windows.Forms.Padding(4);
+            this.cbb_NhaCC.Name = "cbb_NhaCC";
+            this.cbb_NhaCC.Size = new System.Drawing.Size(168, 26);
+            this.cbb_NhaCC.TabIndex = 71;
             // 
             // label1
             // 
@@ -162,12 +165,12 @@
             this.label7.TabIndex = 69;
             this.label7.Text = "Tên tài sản";
             // 
-            // txt_GiaNhap
+            // txt_NguyenGia
             // 
-            this.txt_GiaNhap.Location = new System.Drawing.Point(136, 125);
-            this.txt_GiaNhap.Name = "txt_GiaNhap";
-            this.txt_GiaNhap.Size = new System.Drawing.Size(168, 24);
-            this.txt_GiaNhap.TabIndex = 86;
+            this.txt_NguyenGia.Location = new System.Drawing.Point(136, 125);
+            this.txt_NguyenGia.Name = "txt_NguyenGia";
+            this.txt_NguyenGia.Size = new System.Drawing.Size(168, 24);
+            this.txt_NguyenGia.TabIndex = 86;
             // 
             // label4
             // 
@@ -179,33 +182,60 @@
             this.label4.TabIndex = 85;
             this.label4.Text = "Nguyên Giá";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 161);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 18);
+            this.label11.TabIndex = 88;
+            this.label11.Text = "Số Lượng";
+            // 
+            // numericUpDown_SL
+            // 
+            this.numericUpDown_SL.Location = new System.Drawing.Point(137, 157);
+            this.numericUpDown_SL.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDown_SL.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDown_SL.Name = "numericUpDown_SL";
+            this.numericUpDown_SL.Size = new System.Drawing.Size(168, 24);
+            this.numericUpDown_SL.TabIndex = 87;
+            // 
             // ThanhLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 295);
-            this.Controls.Add(this.txt_GiaNhap);
+            this.ClientSize = new System.Drawing.Size(323, 329);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.numericUpDown_SL);
+            this.Controls.Add(this.txt_NguyenGia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.txt_TinhTrangNhap);
+            this.Controls.Add(this.txt_TinhTrang);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.cbb_TenTSNhap);
+            this.Controls.Add(this.cbb_TenTS);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbb_PhongNhap);
+            this.Controls.Add(this.cbb_Phong);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbb_NhaCCNhap);
+            this.Controls.Add(this.cbb_NhaCC);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ThanhLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ThanhLy_FormClosed);
+            this.Shown += new System.EventHandler(this.ThanhLy_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,17 +245,19 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txt_TinhTrangNhap;
+        private System.Windows.Forms.TextBox txt_TinhTrang;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox cbb_TenTSNhap;
+        private System.Windows.Forms.ComboBox cbb_TenTS;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbb_PhongNhap;
+        private System.Windows.Forms.ComboBox cbb_Phong;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbb_NhaCCNhap;
+        private System.Windows.Forms.ComboBox cbb_NhaCC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_GiaNhap;
+        private System.Windows.Forms.TextBox txt_NguyenGia;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown numericUpDown_SL;
     }
 }

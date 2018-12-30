@@ -33,45 +33,6 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             ShowMainForm();
         }
-
-        private void bnt_Nhap_Click(object sender, EventArgs e)
-        {
-            if(cbb_NhaCCNhap.SelectedIndex == -1 || cbb_PhongNhap.SelectedIndex == -1 || cbb_TenTSNhap.SelectedIndex == -1 || Convert.ToDouble(txt_GiaNhap.Text) <0 || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
-                return;
-            }
-            int mataisan = Ts_BLL.GetIDbyTS(cbb_TenTSNhap.SelectedItem.ToString());
-            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCCNhap.SelectedItem.ToString());
-            int maphong = p_BLL.GetIdByPhong(cbb_PhongNhap.SelectedItem.ToString());
-            if(mataisan == -1 || manhacungcap == -1 || maphong == -1)
-            {
-                MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
-                return;
-            }
-            List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
-            l.Add(new DTO.NhapXuat
-            {
-                MaTS = mataisan,
-                MaNhaCC = manhacungcap,
-                MaPhong = maphong,
-                NgayNhap = dateTimePicker1.Value.Date,
-                SLNhap = Convert.ToInt32(numericUpDown_SLNhap.Value),
-                NguyenGia = Convert.ToDouble(txt_GiaNhap.Text),
-                TinhTrang = txt_TinhTrangNhap.Text
-            });
-            (Boolean result , string msg) = NX_BLL.AddNhapXuat(l);
-
-            if (result )
-            {
-                // Neu add thanh cong thi hien lai Form Tai San
-                Show_Nhap();
-            }
-            else
-            {
-                MessageBox.Show(msg, "Lỗi");
-            }
-        }
         //private void LoadCbbTenTS()
         //{
         //    foreach (string i in Ts_BLL.LoadCBBTenTS())
@@ -101,16 +62,6 @@ namespace TH_NET_Cuoi_Ky.GUI
         //            cbb_PhongNhap.Items.Add(i);
         //    }
         //}
-
-        private void bnt_HienThiNhap_Click(object sender, EventArgs e)
-        {
-            Show_Nhap();
-        }
-
-        private void Bnt_HienThiXuat_Click(object sender, EventArgs e)
-        {
-            Show_Xuat();
-        }
         private void Show_Nhap()
         {
             dgvNhap.DataSource = NX_BLL.ShowNhap_BLL();
@@ -118,54 +69,6 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Show_Xuat()
         {
             dgvXuat.DataSource = NX_BLL.ShowXuat_BLL();
-        }
-
-        private void bnt_Xuat_Click(object sender, EventArgs e)
-        {
-            if (cbb_NhaCCXuat.SelectedIndex == -1 || cbb_PhongXuat.SelectedIndex == -1 || cbb_TenTSXuat.SelectedIndex == -1 || Convert.ToDouble(txt_GiaXuat.Text) < 0 || numericUpDown_SLXuat.Value <= 0 || txt_TinhTrangXuat.Text == "")
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
-                return;
-            }
-            int mataisan = Ts_BLL.GetIDbyTS(cbb_TenTSXuat.SelectedItem.ToString());
-            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCCXuat.SelectedItem.ToString());
-            int maphong = p_BLL.GetIdByPhong(cbb_PhongXuat.SelectedItem.ToString());
-            if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
-            {
-                MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
-                return;
-            }
-            List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
-            l.Add(new DTO.NhapXuat
-            {
-                MaTS = mataisan,
-                MaNhaCC = manhacungcap,
-                MaPhong = maphong,
-                NgayXuat = dateTimePicker2.Value.Date,
-                SLXuat = Convert.ToInt32(numericUpDown_SLXuat.Value),
-                NguyenGia = Convert.ToDouble(txt_GiaXuat.Text),
-                TinhTrang = txt_TinhTrangXuat.Text
-            });
-            //kiem tra so luong xuat ra co vuot qua sl nhap hay k
-            foreach(DTO.NhapXuat i in l)
-            {
-                if(NX_BLL.getSLNhap(i.MaTS,i.MaPhong,i.MaNhaCC) < i.SLXuat)
-                {
-                    MessageBox.Show("Số lượng không hợp lệ, giá trị cao nhất có thể là " + NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC));
-                    return;
-                }
-            }
-            (Boolean result,string msg) = NX_BLL.AddNhapXuat(l);
-
-            if (result)
-            {
-                // Neu add thanh cong thi hien lai Form Tai San
-                Show_Xuat();
-            }
-            else
-            {
-                MessageBox.Show(msg, "Lỗi");
-            }
         }
         private void LoadCBBNhaCC_Xuat()
         {
@@ -323,9 +226,179 @@ namespace TH_NET_Cuoi_Ky.GUI
             loadCBBNCC_Nhap.RunWorkerAsync();
         }
 
-        private void bntUpdate_Click(object sender, EventArgs e)
+        private void Reload()
         {
-            if(tabControl1.SelectedIndex==0)
+            Show_Nhap();
+            Show_Xuat();
+            this.Visible = true;
+        }
+
+        public void enableBtn(bool enable)
+        {
+            btnDelete.Enabled = enable;
+            btnUpdate.Enabled = enable;
+            btnLuanchuyen.Enabled = enable;
+            btn_ThanhLy.Enabled = enable;
+        }
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.enableBtn(false);
+
+            if (tabControl1.SelectedIndex == 0)
+            {
+                if(dgvNhap.SelectedRows.Count > 0)
+                {
+                    this.enableBtn(true);
+                }
+                else
+                {
+                    this.enableBtn(false);
+                }
+            }
+            else
+            {
+                if (dgvXuat.SelectedRows.Count > 0)
+                {
+                    this.enableBtn(true);
+                }
+                else
+                {
+                    this.enableBtn(false);
+                }
+            }
+        }
+
+        private void dgvNhap_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvNhap.SelectedRows.Count > 0)
+            {
+                this.enableBtn(true);
+            }
+            else
+            {
+                this.enableBtn(false);
+            }
+        }
+
+        private void dgvXuat_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvXuat.SelectedRows.Count > 0)
+            {
+                this.enableBtn(true);
+            }
+            else
+            {
+                this.enableBtn(false);
+            }
+        }
+
+        private void btn_ThanhLy_Click(object sender, EventArgs e)
+        {
+            ThanhLy f = new ThanhLy();
+            // f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false; 
+        }
+
+        private void btnLuanchuyen_Click(object sender, EventArgs e)
+        {
+            LuanChuyen f = new LuanChuyen();
+            //f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0)
+            {
+                if (dgvNhap.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
+                }
+                else
+                {
+                    var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
+                             "Xác nhận xóa dữ liệu!",
+                             MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        // Add So phieu nhap cua cac hang duoc chon vao list
+                        List<int> l = new List<int>();
+                        foreach (DataGridViewRow r in dgvNhap.SelectedRows)
+                        {
+                            l.Add(Convert.ToInt32(r.Cells["SoPhieu"].Value.ToString()));
+                        }
+                        //kiem tra xem cac phan tu duoc chon khi xoa di co anh huong toi xuat khong
+                        foreach (int i in l)
+                        {
+                            if (NX_BLL.check_Nhap(i) < 0)
+                            {
+                                MessageBox.Show("Không thể xóa số phiếu " + i + " vì đã có số lượng xuất ra");
+                                return;
+                            }
+                        }
+                        (bool result, string msg) = NX_BLL.deleteNX(l);
+
+                        MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                        Show_Nhap(); // Refresh lai du lieu tren DataGridView
+                    }
+                }
+            }
+            if (tabControl1.SelectedIndex == 1)
+            {
+                if (dgvXuat.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
+                }
+                else
+                {
+                    var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
+                             "Xác nhận xóa dữ liệu!",
+                             MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        // Add so phieu cua cac hang duoc chon vao list
+                        List<int> l = new List<int>();
+                        foreach (DataGridViewRow r in dgvXuat.SelectedRows)
+                        {
+                            l.Add(Convert.ToInt32(r.Cells["SoPhieu"].Value.ToString()));
+                        }
+                        (bool result, string msg) = NX_BLL.deleteNX(l);
+
+                        MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                        Show_Xuat(); // Refresh lai du lieu tren DataGridView
+                    }
+                }
+            }
+        }
+
+        private void bntLuanchuyen_Click(object sender, EventArgs e)
+        {
+            LuanChuyen f = new LuanChuyen();
+            f.ShowNhapXuatForm += Reload;
+            f.Show();
+            this.Visible = false;
+        }
+        private void Reload()
+        {
+            Show_Nhap();
+            Show_Xuat();
+            this.Visible = true;
+        }
+
+        private void bnt_ThanhLy_Click(object sender, EventArgs e)
+        {
+            ThanhLy f = new ThanhLy();
+            f.ShowNhapXuatForm += Reload;
+            f.Show();
+            this.Visible = false; 
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0)
             {
                 if (txt_Phieu_Nhap.Text == "")
                 {
@@ -334,8 +407,8 @@ namespace TH_NET_Cuoi_Ky.GUI
                 }
                 if (cbb_NhaCCNhap.SelectedIndex == -1 || cbb_PhongNhap.SelectedIndex == -1 || cbb_TenTSNhap.SelectedIndex == -1 || Convert.ToDouble(txt_GiaNhap.Text) < 0 || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
                 {
-                        MessageBox.Show("Vui lòng kiểm tra lại thông tin");
-                        return;
+                    MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                    return;
                 }
                 int minNhap = NX_BLL.check_Nhap(Convert.ToInt32(txt_Phieu_Nhap.Text));
                 if (Convert.ToInt32(numericUpDown_SLNhap.Value) < Math.Abs(minNhap))
@@ -393,93 +466,101 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
         }
 
-        private void bntDelete_Click(object sender, EventArgs e)
+        private void btnXuat_Click(object sender, EventArgs e)
         {
-            if(tabControl1.SelectedIndex == 0)
+            if (cbb_NhaCCXuat.SelectedIndex == -1 || cbb_PhongXuat.SelectedIndex == -1 || cbb_TenTSXuat.SelectedIndex == -1 || Convert.ToDouble(txt_GiaXuat.Text) < 0 || numericUpDown_SLXuat.Value <= 0 || txt_TinhTrangXuat.Text == "")
             {
-                if (dgvNhap.SelectedRows.Count == 0)
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                return;
+            }
+            int mataisan = Ts_BLL.GetIDbyTS(cbb_TenTSXuat.SelectedItem.ToString());
+            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCCXuat.SelectedItem.ToString());
+            int maphong = p_BLL.GetIdByPhong(cbb_PhongXuat.SelectedItem.ToString());
+            if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
+            {
+                MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
+                return;
+            }
+            List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
+            l.Add(new DTO.NhapXuat
+            {
+                MaTS = mataisan,
+                MaNhaCC = manhacungcap,
+                MaPhong = maphong,
+                NgayXuat = dateTimePicker2.Value.Date,
+                SLXuat = Convert.ToInt32(numericUpDown_SLXuat.Value),
+                NguyenGia = Convert.ToDouble(txt_GiaXuat.Text),
+                TinhTrang = txt_TinhTrangXuat.Text
+            });
+            //kiem tra so luong xuat ra co vuot qua sl nhap hay k
+            foreach (DTO.NhapXuat i in l)
+            {
+                if (NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC) < i.SLXuat)
                 {
-                    MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
-                }
-                else
-                {
-                    var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
-                             "Xác nhận xóa dữ liệu!",
-                             MessageBoxButtons.YesNo);
-                    if (confirmResult == DialogResult.Yes)
-                    {
-                        // Add So phieu nhap cua cac hang duoc chon vao list
-                        List<int> l = new List<int>();
-                        foreach (DataGridViewRow r in dgvNhap.SelectedRows)
-                        {
-                            l.Add(Convert.ToInt32(r.Cells["SoPhieu"].Value.ToString()));
-                        }
-                        //kiem tra xem cac phan tu duoc chon khi xoa di co anh huong toi xuat khong
-                        foreach(int i in l)
-                        {
-                            if(NX_BLL.check_Nhap(i)<0)
-                            {
-                                MessageBox.Show("Không thể xóa số phiếu " + i + " vì đã có số lượng xuất ra");
-                                return;
-                            }
-                        }
-                        (bool result, string msg) = NX_BLL.deleteNX(l);
-
-                        MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
-
-                        Show_Nhap(); // Refresh lai du lieu tren DataGridView
-                    }
+                    MessageBox.Show("Số lượng không hợp lệ, giá trị cao nhất có thể là " + NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC));
+                    return;
                 }
             }
-            if(tabControl1.SelectedIndex == 1)
+            (Boolean result, string msg) = NX_BLL.AddNhapXuat(l);
+
+            if (result)
             {
-                if (dgvXuat.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
-                }
-                else
-                {
-                    var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
-                             "Xác nhận xóa dữ liệu!",
-                             MessageBoxButtons.YesNo);
-                    if (confirmResult == DialogResult.Yes)
-                    {
-                        // Add so phieu cua cac hang duoc chon vao list
-                        List<int> l = new List<int>();
-                        foreach (DataGridViewRow r in dgvXuat.SelectedRows)
-                        {
-                            l.Add(Convert.ToInt32(r.Cells["SoPhieu"].Value.ToString()));
-                        }
-                        (bool result, string msg) = NX_BLL.deleteNX(l);
-
-                        MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
-
-                        Show_Xuat(); // Refresh lai du lieu tren DataGridView
-                    }
-                }
+                // Neu add thanh cong thi hien lai Form Tai San
+                Show_Xuat();
+            }
+            else
+            {
+                MessageBox.Show(msg, "Lỗi");
             }
         }
 
-        private void bntLuanchuyen_Click(object sender, EventArgs e)
+        private void btnHienThiXuat_Click(object sender, EventArgs e)
         {
-            LuanChuyen f = new LuanChuyen();
-            f.ShowNhapXuatForm += Reload;
-            f.Show();
-            this.Visible = false;
+            Show_Xuat();
         }
-        private void Reload()
+
+        private void btnNhap_Click(object sender, EventArgs e)
+        {
+            if (cbb_NhaCCNhap.SelectedIndex == -1 || cbb_PhongNhap.SelectedIndex == -1 || cbb_TenTSNhap.SelectedIndex == -1 || Convert.ToDouble(txt_GiaNhap.Text) < 0 || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                return;
+            }
+            int mataisan = Ts_BLL.GetIDbyTS(cbb_TenTSNhap.SelectedItem.ToString());
+            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCCNhap.SelectedItem.ToString());
+            int maphong = p_BLL.GetIdByPhong(cbb_PhongNhap.SelectedItem.ToString());
+            if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
+            {
+                MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
+                return;
+            }
+            List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
+            l.Add(new DTO.NhapXuat
+            {
+                MaTS = mataisan,
+                MaNhaCC = manhacungcap,
+                MaPhong = maphong,
+                NgayNhap = dateTimePicker1.Value.Date,
+                SLNhap = Convert.ToInt32(numericUpDown_SLNhap.Value),
+                NguyenGia = Convert.ToDouble(txt_GiaNhap.Text),
+                TinhTrang = txt_TinhTrangNhap.Text
+            });
+            (Boolean result, string msg) = NX_BLL.AddNhapXuat(l);
+
+            if (result)
+            {
+                // Neu add thanh cong thi hien lai Form Tai San
+                Show_Nhap();
+            }
+            else
+            {
+                MessageBox.Show(msg, "Lỗi");
+            }
+        }
+
+        private void btnHienThiNhap_Click(object sender, EventArgs e)
         {
             Show_Nhap();
-            Show_Xuat();
-            this.Visible = true;
-        }
-
-        private void bnt_ThanhLy_Click(object sender, EventArgs e)
-        {
-            ThanhLy f = new ThanhLy();
-            f.ShowNhapXuatForm += Reload;
-            f.Show();
-            this.Visible = false; 
         }
     }
 }

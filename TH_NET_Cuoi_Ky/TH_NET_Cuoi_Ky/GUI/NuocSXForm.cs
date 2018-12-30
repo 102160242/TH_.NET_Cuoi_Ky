@@ -32,7 +32,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowNuocSX();
-            this.Visible = true; // Hien thi lai form
+            //this.Visible = true; // Hien thi lai form
         }
         private void but_Show_Click(object sender, EventArgs e)
         {
@@ -76,9 +76,9 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void but_Add_Click(object sender, EventArgs e)
         {
             NuocSXAddform f = new NuocSXAddform();
-            f.ShowNuocSXForm += Reload;
-            f.Show();
-            this.Visible = false; // Tam an form
+            f.BackToPreviousForm += Reload;
+            f.ShowDialog();
+            //this.Visible = false; // Tam an form
         }
 
         private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -168,6 +168,20 @@ namespace TH_NET_Cuoi_Ky.GUI
 
                     dgv.DataSource = NSX_BLL.Show_BLL(); // Refresh lai du lieu tren DataGridView
                 }
+            }
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgv.SelectedRows.Count > 0)
+            {
+                but_Update.Enabled = true;
+                but_Delete.Enabled = true;
+            }
+            else
+            {
+                but_Update.Enabled = false;
+                but_Delete.Enabled = false;
             }
         }
     }
