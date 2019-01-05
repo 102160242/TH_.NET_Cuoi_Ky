@@ -264,6 +264,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                             from p in db.Phongs select new { p.MaPhong, p.TenPhong }
                        )
                        on nx.MaPhong equals p.MaPhong
+                       where nx.SL != 0
                        select new
                        {
                            nx.MaTS,

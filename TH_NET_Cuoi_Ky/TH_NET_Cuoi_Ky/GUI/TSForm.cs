@@ -211,7 +211,8 @@ namespace TH_NET_Cuoi_Ky
 
             ChiTietTSForm f = new ChiTietTSForm();
             f.ShowTSForm += Reload;
-            f.ShowTSDetail(maTS);
+            f.setMaTS(maTS);
+            f.ShowTSDetail();
             f.setLabel(tenTS, TSKT, DVTinh, NamSX);
             f.Show();
             this.Visible = false;

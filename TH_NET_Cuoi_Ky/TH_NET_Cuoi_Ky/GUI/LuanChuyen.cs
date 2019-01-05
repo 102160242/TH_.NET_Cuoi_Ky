@@ -31,13 +31,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void LuanChuyen_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //BackToPreviousForm();
+            BackToPreviousForm();
             Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //BackToPreviousForm();
+            BackToPreviousForm();
             Dispose();
         }
         // Set CBB, khong cho thay doi

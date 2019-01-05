@@ -16,14 +16,19 @@ namespace TH_NET_Cuoi_Ky
         public delegate void dd();
         public dd ShowTSForm;
         BLL.TaiSan_BLL TS_BLL;
+        private int maTS;
         public ChiTietTSForm()
         {
             InitializeComponent();
             TS_BLL = new BLL.TaiSan_BLL();
         }
-        public void ShowTSDetail(int maTS)
+        public void setMaTS(int maTS)
         {
-            dgv.DataSource = TS_BLL.ShowTSDetail(maTS);
+            this.maTS = maTS;
+        }
+        public void ShowTSDetail()
+        {        
+            dgv.DataSource = TS_BLL.ShowTSDetail(this.maTS);
         }
         public void Reload()
         {
@@ -93,7 +98,7 @@ namespace TH_NET_Cuoi_Ky
             f.setCBBTenTS(tenTS);
             f.setCBBPhong(tenPhong);
             f.setCBBNhaCC(tenNCC);
-            f.BackToPreviousForm += Reload;
+            f.BackToPreviousForm += ShowTSDetail;
             f.ShowDialog();
 
             //this.Visible = false;
@@ -113,7 +118,7 @@ namespace TH_NET_Cuoi_Ky
             f.setCBBPhongXuat(tenPhong);
             f.setCBBNhaCC(tenNCC);
             f.allowCBBToBeLoaded = false;
-            f.BackToPreviousForm += Reload;
+            f.BackToPreviousForm += ShowTSDetail;
             f.ShowDialog();
             //this.Visible = false;
         }

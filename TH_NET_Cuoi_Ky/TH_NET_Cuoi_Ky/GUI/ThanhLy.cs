@@ -32,13 +32,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void ThanhLy_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //BackToPreviousForm();
+            BackToPreviousForm();
             Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //BackToPreviousForm();
+            BackToPreviousForm();
             Dispose();
         }
         // Set CBB, khong cho thay doi
@@ -131,10 +131,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                 return;
             }
-            int mataisan = TS_BLL.GetIDbyTS(cbb_TenTS.SelectedItem.ToString());
-            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCC.SelectedItem.ToString());
-            int maphong = P_BLL.GetIdByPhong(cbb_Phong.SelectedItem.ToString());
-            if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
+            int maTS = TS_BLL.GetIDbyTS(cbb_TenTS.SelectedItem.ToString());
+            int maNCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCC.SelectedItem.ToString());
+            int maPhong = P_BLL.GetIdByPhong(cbb_Phong.SelectedItem.ToString());
+            if (maTS == -1 || maNCC == -1 || maPhong == -1)
             {
                 MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
                 return;
@@ -142,9 +142,9 @@ namespace TH_NET_Cuoi_Ky.GUI
             List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
             l.Add(new DTO.NhapXuat
             {
-                MaTS = mataisan,
-                MaNhaCC = manhacungcap,
-                MaPhong = maphong,
+                MaTS = maTS,
+                MaNhaCC = maNCC,
+                MaPhong = maPhong,
                 NgayXuat = dateTimePicker1.Value.Date,
                 SLXuat = Convert.ToInt32(numericUpDown_SL.Value),
                 NguyenGia = Convert.ToDouble(txt_NguyenGia.Text),
@@ -163,7 +163,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
             if (result)
             {
-                MessageBox.Show("Thành công");
+                //MessageBox.Show("Thành công");
                 Dispose();
             }
             else
