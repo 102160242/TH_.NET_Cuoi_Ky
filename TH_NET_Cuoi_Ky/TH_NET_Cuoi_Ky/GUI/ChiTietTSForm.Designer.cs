@@ -1,4 +1,4 @@
-﻿namespace TH_NET_Cuoi_Ky
+﻿namespace TH_NET_Cuoi_Ky.GUI
 {
     partial class ChiTietTSForm
     {

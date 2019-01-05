@@ -13,8 +13,12 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NuocSXAddform : Form
     {
         public delegate void dd();
+        public delegate void dd2(string s);
         public dd BackToPreviousForm;
+        public dd2 returnNuocSX;
         BLL.NuocSX_BLL NSX_BLL;
+        private bool allow = false;
+
         public NuocSXAddform()
         {
             InitializeComponent();
@@ -39,6 +43,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 // Neu add thanh cong thi hien lai Form Nuoc SX
                 BackToPreviousForm();
+                if (this.allow) returnNuocSX(txtTenNSX.Text);
                 Dispose();
             }
             else
@@ -57,6 +62,11 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             //BackToPreviousForm();
             Dispose();
+        }
+
+        internal void allowReturnNuocSX(bool v)
+        {
+            this.allow = v;
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace TH_NET_Cuoi_Ky
+﻿namespace TH_NET_Cuoi_Ky.GUI
 {
-    partial class AddFormTS
+    partial class TSAddForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFormTS));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TSAddForm));
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -134,6 +134,7 @@
             this.cbbLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS.Name = "cbbLoaiTS";
             this.cbbLoaiTS.Size = new System.Drawing.Size(220, 26);
+            this.cbbLoaiTS.Sorted = true;
             this.cbbLoaiTS.TabIndex = 5;
             this.cbbLoaiTS.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiTS_SelectedIndexChanged);
             // 
@@ -154,6 +155,7 @@
             this.cbbNuocSX.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNuocSX.Name = "cbbNuocSX";
             this.cbbNuocSX.Size = new System.Drawing.Size(220, 26);
+            this.cbbNuocSX.Sorted = true;
             this.cbbNuocSX.TabIndex = 4;
             this.cbbNuocSX.SelectedIndexChanged += new System.EventHandler(this.cbbNuocSX_SelectedIndexChanged);
             // 
@@ -238,7 +240,7 @@
             // 
             this.loadCBBLTS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBLTS_DoWork);
             // 
-            // AddFormTS
+            // TSAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -265,7 +267,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "AddFormTS";
+            this.Name = "TSAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Tài Sản mới";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddFormTS_FormClosed);

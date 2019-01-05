@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TH_NET_Cuoi_Ky.GUI;
 
-namespace TH_NET_Cuoi_Ky
+namespace TH_NET_Cuoi_Ky.GUI
 {
     public partial class ChiTietTSForm : Form
     {
@@ -139,8 +139,11 @@ namespace TH_NET_Cuoi_Ky
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
-            NhapForm f = new NhapForm();
+            String tenTS = labelTenTS.Text;
+
+            NhapForm f = new NhapForm();          
             f.BackToPreviousForm += ShowTSDetail;
+            f.setCBBTenTS(tenTS);
             f.ShowDialog();
         }
     }

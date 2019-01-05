@@ -31,7 +31,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void LuanChuyen_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
 
@@ -122,6 +122,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (result)
             {
                 //MessageBox.Show("Thành công");
+                BackToPreviousForm();
                 Dispose();
             }
             else

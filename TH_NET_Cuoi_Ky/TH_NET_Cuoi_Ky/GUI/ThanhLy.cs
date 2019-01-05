@@ -32,13 +32,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void ThanhLy_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
         // Set CBB, khong cho thay doi
@@ -164,11 +164,27 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (result)
             {
                 //MessageBox.Show("Thành công");
+                BackToPreviousForm();
                 Dispose();
             }
             else
             {
                 MessageBox.Show(msg, "Lỗi");
+            }
+        }
+
+        private void txt_NguyenGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

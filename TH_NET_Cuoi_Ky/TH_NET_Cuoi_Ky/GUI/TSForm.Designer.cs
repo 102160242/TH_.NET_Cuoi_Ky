@@ -1,4 +1,4 @@
-﻿namespace TH_NET_Cuoi_Ky
+﻿namespace TH_NET_Cuoi_Ky.GUI
 {
     partial class TSForm
     {
@@ -122,6 +122,7 @@
             this.cbbLoaiTS1.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS1.Name = "cbbLoaiTS1";
             this.cbbLoaiTS1.Size = new System.Drawing.Size(250, 26);
+            this.cbbLoaiTS1.Sorted = true;
             this.cbbLoaiTS1.TabIndex = 2;
             this.cbbLoaiTS1.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiTS1_SelectedIndexChanged);
             // 
@@ -134,6 +135,7 @@
             this.cbbNuocSX1.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNuocSX1.Name = "cbbNuocSX1";
             this.cbbNuocSX1.Size = new System.Drawing.Size(250, 26);
+            this.cbbNuocSX1.Sorted = true;
             this.cbbNuocSX1.TabIndex = 1;
             this.cbbNuocSX1.SelectedIndexChanged += new System.EventHandler(this.cbbNuocSX1_SelectedIndexChanged);
             // 
@@ -242,6 +244,7 @@
             this.cbbLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS.Name = "cbbLoaiTS";
             this.cbbLoaiTS.Size = new System.Drawing.Size(181, 24);
+            this.cbbLoaiTS.Sorted = true;
             this.cbbLoaiTS.TabIndex = 7;
             this.cbbLoaiTS.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiTS_SelectedIndexChanged);
             // 
@@ -263,6 +266,7 @@
             this.cbbNuocSX.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNuocSX.Name = "cbbNuocSX";
             this.cbbNuocSX.Size = new System.Drawing.Size(181, 24);
+            this.cbbNuocSX.Sorted = true;
             this.cbbNuocSX.TabIndex = 5;
             this.cbbNuocSX.SelectedIndexChanged += new System.EventHandler(this.cbbNuocSX_SelectedIndexChanged);
             // 

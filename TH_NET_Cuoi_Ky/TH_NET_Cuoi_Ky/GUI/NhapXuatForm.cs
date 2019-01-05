@@ -11,7 +11,6 @@ using TH_NET_Cuoi_Ky.BLL;
 
 namespace TH_NET_Cuoi_Ky.GUI
 {
-
     public partial class NhapXuatForm : Form
     {
         TaiSan_BLL Ts_BLL;
@@ -295,7 +294,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btn_ThanhLy_Click(object sender, EventArgs e)
         {
             ThanhLy f = new ThanhLy();
-            // f.BackToPreviousForm += Reload;
+            f.BackToPreviousForm += () => { };
             f.ShowDialog();
             //this.Visible = false; 
         }
@@ -535,6 +534,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show(msg, "Lỗi");
             }*/
             NhapForm f = new NhapForm();
+            f.BackToPreviousForm += () => { };
             f.ShowDialog();
         }
 

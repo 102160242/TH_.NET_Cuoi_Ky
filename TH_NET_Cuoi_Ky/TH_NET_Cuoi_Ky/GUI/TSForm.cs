@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using TH_NET_Cuoi_Ky.BLL;
 using TH_NET_Cuoi_Ky.GUI;
 
-namespace TH_NET_Cuoi_Ky
+namespace TH_NET_Cuoi_Ky.GUI
 {
     public partial class TSForm : Form
     {
@@ -54,14 +54,7 @@ namespace TH_NET_Cuoi_Ky
         {
             this.updateToolStripMenuItem_Click(sender, e);   
         }
-        // CBB
-        private void loadAllCBB()
-        {
-            //this.loadCBBPhong();
-            //this.loadCBBNhaCC();
-            this.loadCBBNuocSX();
-            this.loadCBBLoaiTS();
-        }
+
         //private void loadCBBPhong()
         //{
         //    foreach (string i in P_BLL.loadCBB_BLL())
@@ -82,46 +75,60 @@ namespace TH_NET_Cuoi_Ky
         //        }
         //    }
         //}
-        private void loadCBBNuocSX()
+        //private void loadCBBNuocSX()
+        //{
+        //    cbbNuocSX1.Items.Clear();
+        //    cbbNuocSX1.Items.Add(" ** Thêm mới ** ");
+        //    cbbNuocSX.Items.Clear();
+        //    cbbNuocSX.Items.Add(" ** Thêm mới ** ");
+        //    foreach (string i in NSX_BLL.loadCBB_BLL())
+        //    {
+        //        if (cbbNuocSX1.FindStringExact(i) < 0)
+        //        {
+        //            cbbNuocSX1.Items.Add(i);
+        //        }
+        //        if (cbbNuocSX.FindStringExact(i) < 0)
+        //        {
+        //            cbbNuocSX.Items.Add(i);
+        //        }
+        //    }
+        //}
+        //private void loadCBBLoaiTS()
+        //{
+        //    cbbLoaiTS.Items.Clear();
+        //    cbbLoaiTS.Items.Add(" ** Thêm mới ** ");
+        //    cbbLoaiTS1.Items.Clear();
+        //    cbbLoaiTS1.Items.Add(" ** Thêm mới ** ");
+        //    foreach (string i in LTS_BLL.loadCBB_BLL())
+        //    {
+        //        if (cbbLoaiTS1.FindStringExact(i) < 0)
+        //        {
+        //            cbbLoaiTS1.Items.Add(i);
+        //        }
+        //        if (cbbLoaiTS.FindStringExact(i) < 0)
+        //        {
+        //            cbbLoaiTS.Items.Add(i);
+        //        }
+        //    }
+        //}
+        private void addNewNuocSX(String tenNSX)
         {
-            cbbNuocSX1.Items.Clear();
-            cbbNuocSX1.Items.Add(" ** Thêm mới ** ");
-            cbbNuocSX.Items.Clear();
-            cbbNuocSX.Items.Add(" ** Thêm mới ** ");
-            foreach (string i in NSX_BLL.loadCBB_BLL())
-            {
-                if (cbbNuocSX1.FindStringExact(i) < 0)
-                {
-                    cbbNuocSX1.Items.Add(i);
-                }
-                if (cbbNuocSX.FindStringExact(i) < 0)
-                {
-                    cbbNuocSX.Items.Add(i);
-                }
-            }
-        }
-        private void loadCBBLoaiTS()
-        {
-            cbbLoaiTS.Items.Clear();
-            cbbLoaiTS.Items.Add(" ** Thêm mới ** ");
-            cbbLoaiTS1.Items.Clear();
-            cbbLoaiTS1.Items.Add(" ** Thêm mới ** ");
-            foreach (string i in LTS_BLL.loadCBB_BLL())
-            {
-                if (cbbLoaiTS1.FindStringExact(i) < 0)
-                {
-                    cbbLoaiTS1.Items.Add(i);
-                }
-                if (cbbLoaiTS.FindStringExact(i) < 0)
-                {
-                    cbbLoaiTS.Items.Add(i);
-                }
-            }
-        }
+            cbbNuocSX.Items.Add(tenNSX);
+            cbbNuocSX.SelectedItem = tenNSX;
+            cbbNuocSX1.Items.Add(tenNSX);
+            cbbNuocSX1.SelectedItem = tenNSX;
 
+        }
+        private void addNewLoaiTS(String tenLoaiTS)
+        {
+            cbbLoaiTS.Items.Add(tenLoaiTS);
+            cbbLoaiTS.SelectedItem = tenLoaiTS;
+            cbbLoaiTS1.Items.Add(tenLoaiTS);
+            cbbLoaiTS1.SelectedItem = tenLoaiTS;
+        }
         private void butAdd_Click(object sender, EventArgs e)
         {
-            AddFormTS f = new AddFormTS();
+            TSAddForm f = new TSAddForm();
             f.BackToPreviousForm += Reload;
             f.ShowDialog();
             //this.Visible = false; // Tam an form
@@ -394,33 +401,39 @@ namespace TH_NET_Cuoi_Ky
         {
             if(cbbLoaiTS.SelectedIndex == 0)
             {
-                LoaiTSAddForm f = new LoaiTSAddForm();
-                f.BackToPreviousForm += loadCBBLoaiTS;
-                f.ShowDialog();
                 cbbLoaiTS.SelectedIndex = -1;
                 cbbLoaiTS.Text = "";
+                LoaiTSAddForm f = new LoaiTSAddForm();
+                f.BackToPreviousForm += () => { };
+                f.allowtoReturnTenLoaiTS(true);
+                f.returnTenLoaiTS += addNewLoaiTS;
+                f.ShowDialog();
             }
         }
         private void cbbLoaiTS1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbbLoaiTS1.SelectedIndex == 0)
             {
-                LoaiTSAddForm f = new LoaiTSAddForm();
-                f.BackToPreviousForm += loadCBBLoaiTS;
-                f.ShowDialog();
                 cbbLoaiTS1.SelectedIndex = -1;
                 cbbLoaiTS1.Text = "";
+                LoaiTSAddForm f = new LoaiTSAddForm();
+                f.BackToPreviousForm += () => { };
+                f.allowtoReturnTenLoaiTS(true);
+                f.returnTenLoaiTS += addNewLoaiTS;
+                f.ShowDialog();
             }
         }
         private void cbbNuocSX_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbbNuocSX.SelectedIndex == 0)
             {
-                NuocSXAddform f = new NuocSXAddform();
-                f.BackToPreviousForm += loadCBBNuocSX;
-                f.ShowDialog();
                 cbbNuocSX.SelectedIndex = -1;
                 cbbNuocSX.Text = "";
+                NuocSXAddform f = new NuocSXAddform();
+                f.BackToPreviousForm += () => { };
+                f.allowReturnNuocSX(true);
+                f.returnNuocSX += addNewNuocSX;
+                f.ShowDialog();
             }
         }
 
@@ -428,11 +441,13 @@ namespace TH_NET_Cuoi_Ky
         {
             if (cbbNuocSX1.SelectedIndex == 0)
             {
-                NuocSXAddform f = new NuocSXAddform();
-                f.BackToPreviousForm += loadCBBNuocSX;
-                f.ShowDialog();
                 cbbNuocSX1.SelectedIndex = -1;
                 cbbNuocSX1.Text = "";
+                NuocSXAddform f = new NuocSXAddform();
+                f.BackToPreviousForm += () => { };
+                f.allowReturnNuocSX(true);
+                f.returnNuocSX += addNewNuocSX;
+                f.ShowDialog();           
             }
         }
     }

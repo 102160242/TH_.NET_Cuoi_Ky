@@ -16,14 +16,20 @@ namespace TH_NET_Cuoi_Ky.GUI
         Phong_BLL Phong_BLL;
         NguoiQL_BLL NguoiQL_BLL;
         public delegate void dd();
+        public delegate void dd2(String s);
         public dd BackToPreviousForm;
+        public dd2 returnTenPhong;
+        private bool allow = false;
         public PhongAddForm()
         {
             InitializeComponent();
             Phong_BLL = new Phong_BLL();
             NguoiQL_BLL = new NguoiQL_BLL();          
         }
-
+        public void allowtoReturnTenPhong(bool value)
+        {
+            this.allow = value;
+        }
         private void but_OK_Click(object sender, EventArgs e)
         {
             if(txtTenPhong.Text == "" || cbbNguoiQL.SelectedIndex == -1)
@@ -41,6 +47,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 // Neu add thanh cong thi hien lai Form Tai San
                 BackToPreviousForm();
+                if (this.allow) returnTenPhong(txtTenPhong.Text);
                 Dispose();
             }
             else

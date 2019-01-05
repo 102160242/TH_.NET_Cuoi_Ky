@@ -52,6 +52,7 @@
             // 
             // LoadCBBTS
             // 
+            this.LoadCBBTS.WorkerSupportsCancellation = true;
             this.LoadCBBTS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.LoadCBBTS_DoWork);
             // 
             // label11
@@ -75,14 +76,15 @@
             0});
             this.numericUpDown_SL.Name = "numericUpDown_SL";
             this.numericUpDown_SL.Size = new System.Drawing.Size(168, 24);
-            this.numericUpDown_SL.TabIndex = 103;
+            this.numericUpDown_SL.TabIndex = 5;
             // 
             // txt_NguyenGia
             // 
             this.txt_NguyenGia.Location = new System.Drawing.Point(137, 135);
             this.txt_NguyenGia.Name = "txt_NguyenGia";
             this.txt_NguyenGia.Size = new System.Drawing.Size(168, 24);
-            this.txt_NguyenGia.TabIndex = 102;
+            this.txt_NguyenGia.TabIndex = 4;
+            this.txt_NguyenGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NguyenGia_KeyPress);
             // 
             // label4
             // 
@@ -99,7 +101,7 @@
             this.button2.Location = new System.Drawing.Point(228, 285);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 28);
-            this.button2.TabIndex = 100;
+            this.button2.TabIndex = 9;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -109,7 +111,7 @@
             this.bnt_OK.Location = new System.Drawing.Point(19, 285);
             this.bnt_OK.Name = "bnt_OK";
             this.bnt_OK.Size = new System.Drawing.Size(75, 29);
-            this.bnt_OK.TabIndex = 99;
+            this.bnt_OK.TabIndex = 8;
             this.bnt_OK.Text = "OK";
             this.bnt_OK.UseVisualStyleBackColor = true;
             this.bnt_OK.Click += new System.EventHandler(this.bnt_OK_Click);
@@ -119,7 +121,7 @@
             this.txt_TinhTrang.Location = new System.Drawing.Point(135, 239);
             this.txt_TinhTrang.Name = "txt_TinhTrang";
             this.txt_TinhTrang.Size = new System.Drawing.Size(168, 24);
-            this.txt_TinhTrang.TabIndex = 98;
+            this.txt_TinhTrang.TabIndex = 7;
             // 
             // label13
             // 
@@ -139,7 +141,9 @@
             this.cbb_TenTS.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_TenTS.Name = "cbb_TenTS";
             this.cbb_TenTS.Size = new System.Drawing.Size(168, 26);
-            this.cbb_TenTS.TabIndex = 96;
+            this.cbb_TenTS.Sorted = true;
+            this.cbb_TenTS.TabIndex = 1;
+            this.cbb_TenTS.SelectedIndexChanged += new System.EventHandler(this.cbb_TenTS_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -148,7 +152,7 @@
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 24);
-            this.dateTimePicker1.TabIndex = 95;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // label3
             // 
@@ -169,7 +173,9 @@
             this.cbb_Phong.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_Phong.Name = "cbb_Phong";
             this.cbb_Phong.Size = new System.Drawing.Size(168, 26);
-            this.cbb_Phong.TabIndex = 93;
+            this.cbb_Phong.Sorted = true;
+            this.cbb_Phong.TabIndex = 2;
+            this.cbb_Phong.SelectedIndexChanged += new System.EventHandler(this.cbb_Phong_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -190,7 +196,9 @@
             this.cbb_NhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_NhaCC.Name = "cbb_NhaCC";
             this.cbb_NhaCC.Size = new System.Drawing.Size(168, 26);
-            this.cbb_NhaCC.TabIndex = 91;
+            this.cbb_NhaCC.Sorted = true;
+            this.cbb_NhaCC.TabIndex = 3;
+            this.cbb_NhaCC.SelectedIndexChanged += new System.EventHandler(this.cbb_NhaCC_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -244,7 +252,7 @@
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NhapForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

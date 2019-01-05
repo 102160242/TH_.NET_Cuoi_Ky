@@ -10,17 +10,24 @@ using System.Windows.Forms;
 using TH_NET_Cuoi_Ky.BLL;
 using TH_NET_Cuoi_Ky.GUI;
 
-namespace TH_NET_Cuoi_Ky
+namespace TH_NET_Cuoi_Ky.GUI
 {
-    public partial class AddFormTS : Form
+    public partial class TSAddForm : Form
     {
         public delegate void dd();
+        public delegate void dd2(String s);
         public dd BackToPreviousForm;
+        public dd2 returnTenTS;
+        private bool allow = false;
         TaiSan_BLL TS_BLL;
         NuocSX_BLL NSX_BLL;
         LoaiTS_BLL LTS_BLL;
+        public void allowtoReturnTenTS(bool value)
+        {
+            this.allow = value;
+        }
 
-        public AddFormTS()
+        public TSAddForm()
         {
             InitializeComponent();
             TS_BLL = new TaiSan_BLL();
@@ -66,6 +73,7 @@ namespace TH_NET_Cuoi_Ky
             {
                 // Neu add thanh cong thi hien lai Form Tai San
                 BackToPreviousForm();
+                if (this.allow) returnTenTS(txtTenTS.Text);
                 Dispose();
             }
             else
@@ -129,7 +137,16 @@ namespace TH_NET_Cuoi_Ky
                 }
             }
         }
-
+        private void addNewNuocSX(String tenNSX)
+        {
+            cbbNuocSX.Items.Add(tenNSX);
+            cbbNuocSX.SelectedItem = tenNSX;
+        }
+        private void addNewLoaiTS(String tenLoaiTS)
+        {
+            cbbLoaiTS.Items.Add(tenLoaiTS);
+            cbbLoaiTS.SelectedItem = tenLoaiTS;
+        }
         private void loadCBBNSX_DoWork(object sender, DoWorkEventArgs e)
         {
             // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
@@ -174,11 +191,13 @@ namespace TH_NET_Cuoi_Ky
         {
             if (cbbNuocSX.SelectedIndex == 0)
             {
-                NuocSXAddform f = new NuocSXAddform();
-                f.BackToPreviousForm += loadCBBNuocSX;
-                f.ShowDialog();
                 cbbNuocSX.SelectedIndex = -1;
                 cbbNuocSX.Text = "";
+                NuocSXAddform f = new NuocSXAddform();
+                f.BackToPreviousForm += () => { };
+                f.allowReturnNuocSX(true);
+                f.returnNuocSX += addNewNuocSX;
+                f.ShowDialog();
             }
         }
 
@@ -186,11 +205,14 @@ namespace TH_NET_Cuoi_Ky
         {
             if (cbbLoaiTS.SelectedIndex == 0)
             {
-                LoaiTSAddForm f = new LoaiTSAddForm();
-                f.BackToPreviousForm += loadCBBLoaiTS;
-                f.ShowDialog();
                 cbbLoaiTS.SelectedIndex = -1;
                 cbbLoaiTS.Text = "";
+                LoaiTSAddForm f = new LoaiTSAddForm();
+                f.BackToPreviousForm += () => { };
+                f.allowtoReturnTenLoaiTS(true);
+                f.returnTenLoaiTS += addNewLoaiTS;
+                f.ShowDialog();
+
             }
         }
     }

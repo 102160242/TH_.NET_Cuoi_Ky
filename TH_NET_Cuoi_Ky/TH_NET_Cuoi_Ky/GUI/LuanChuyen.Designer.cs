@@ -53,7 +53,7 @@
             this.txt_TinhTrangNhap.Location = new System.Drawing.Point(134, 245);
             this.txt_TinhTrangNhap.Name = "txt_TinhTrangNhap";
             this.txt_TinhTrangNhap.Size = new System.Drawing.Size(168, 24);
-            this.txt_TinhTrangNhap.TabIndex = 63;
+            this.txt_TinhTrangNhap.TabIndex = 7;
             // 
             // label13
             // 
@@ -85,7 +85,7 @@
             0});
             this.numericUpDown_SLNhap.Name = "numericUpDown_SLNhap";
             this.numericUpDown_SLNhap.Size = new System.Drawing.Size(168, 24);
-            this.numericUpDown_SLNhap.TabIndex = 60;
+            this.numericUpDown_SLNhap.TabIndex = 5;
             // 
             // cbb_TenTS
             // 
@@ -96,7 +96,7 @@
             this.cbb_TenTS.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_TenTS.Name = "cbb_TenTS";
             this.cbb_TenTS.Size = new System.Drawing.Size(168, 26);
-            this.cbb_TenTS.TabIndex = 59;
+            this.cbb_TenTS.TabIndex = 1;
             this.cbb_TenTS.SelectedIndexChanged += new System.EventHandler(this.cbb_TenTS_SelectedIndexChanged);
             // 
             // dateTimePicker1
@@ -106,7 +106,7 @@
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(168, 24);
-            this.dateTimePicker1.TabIndex = 57;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // label3
             // 
@@ -128,7 +128,7 @@
             this.cbb_PhongXuat.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_PhongXuat.Name = "cbb_PhongXuat";
             this.cbb_PhongXuat.Size = new System.Drawing.Size(168, 26);
-            this.cbb_PhongXuat.TabIndex = 55;
+            this.cbb_PhongXuat.TabIndex = 2;
             this.cbb_PhongXuat.SelectedIndexChanged += new System.EventHandler(this.cbb_PhongXuat_SelectedIndexChanged);
             // 
             // label2
@@ -151,7 +151,7 @@
             this.cbb_NhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_NhaCC.Name = "cbb_NhaCC";
             this.cbb_NhaCC.Size = new System.Drawing.Size(168, 26);
-            this.cbb_NhaCC.TabIndex = 53;
+            this.cbb_NhaCC.TabIndex = 3;
             // 
             // label1
             // 
@@ -181,7 +181,7 @@
             this.cbbPhongNhap.Location = new System.Drawing.Point(134, 125);
             this.cbbPhongNhap.Name = "cbbPhongNhap";
             this.cbbPhongNhap.Size = new System.Drawing.Size(168, 26);
-            this.cbbPhongNhap.TabIndex = 65;
+            this.cbbPhongNhap.TabIndex = 4;
             // 
             // label5
             // 
@@ -197,7 +197,7 @@
             this.bnt_OK.Location = new System.Drawing.Point(18, 291);
             this.bnt_OK.Name = "bnt_OK";
             this.bnt_OK.Size = new System.Drawing.Size(75, 29);
-            this.bnt_OK.TabIndex = 67;
+            this.bnt_OK.TabIndex = 8;
             this.bnt_OK.Text = "OK";
             this.bnt_OK.UseVisualStyleBackColor = true;
             this.bnt_OK.Click += new System.EventHandler(this.bnt_OK_Click);
@@ -207,7 +207,7 @@
             this.button2.Location = new System.Drawing.Point(227, 291);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 29);
-            this.button2.TabIndex = 68;
+            this.button2.TabIndex = 9;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);

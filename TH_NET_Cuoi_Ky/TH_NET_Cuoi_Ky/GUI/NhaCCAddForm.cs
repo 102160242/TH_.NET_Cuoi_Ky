@@ -14,8 +14,12 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NhaCCAddForm : Form
     {
         public delegate void dd();
+        public delegate void dd2(string s);
+
         public dd BackToPreviousForm;
+        public dd2 returnTenNCC;
         NhaCC_BLL nhaCC_BLL;
+        private bool allow = false;
         public NhaCCAddForm()
         {
             InitializeComponent();
@@ -50,6 +54,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 // Neu add thanh cong thi hien lai Form Tai San
                 BackToPreviousForm();
+                if (this.allow) returnTenNCC(txtTenNhaCC.Text);
                 Dispose();
             }
             else
@@ -84,6 +89,11 @@ namespace TH_NET_Cuoi_Ky.GUI
                     cbbAddress.Invoke(new Action(() => { cbbAddress.Items.Add(i); }));
                 }
             }
+        }
+
+        internal void allowtoReturnTenNCC(bool v)
+        {
+            this.allow = v;
         }
     }
 }
