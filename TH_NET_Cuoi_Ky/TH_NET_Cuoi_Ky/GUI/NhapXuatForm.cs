@@ -499,7 +499,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
-            if (cbb_NhaCCNhap.SelectedIndex == -1 || cbb_PhongNhap.SelectedIndex == -1 || cbb_TenTSNhap.SelectedIndex == -1 || Convert.ToDouble(txt_GiaNhap.Text) < 0 || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
+            /*if (cbb_NhaCCNhap.SelectedIndex == -1 || cbb_PhongNhap.SelectedIndex == -1 || cbb_TenTSNhap.SelectedIndex == -1 || Convert.ToDouble(txt_GiaNhap.Text) < 0 || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                 return;
@@ -533,7 +533,9 @@ namespace TH_NET_Cuoi_Ky.GUI
             else
             {
                 MessageBox.Show(msg, "Lỗi");
-            }
+            }*/
+            NhapForm f = new NhapForm();
+            f.ShowDialog();
         }
 
         private void btnHienThiNhap_Click(object sender, EventArgs e)

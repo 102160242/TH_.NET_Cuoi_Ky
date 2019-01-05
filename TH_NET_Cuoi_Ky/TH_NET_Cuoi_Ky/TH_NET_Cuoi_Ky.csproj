@@ -87,6 +87,12 @@
     <Compile Include="GUI\NhaCCAddForm.Designer.cs">
       <DependentUpon>NhaCCAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NhapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NhapForm.Designer.cs">
+      <DependentUpon>NhapForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NuocSXAddform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhaCCAddForm.resx">
       <DependentUpon>NhaCCAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhapForm.resx">
+      <DependentUpon>NhapForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NuocSXAddform.resx">
       <DependentUpon>NuocSXAddform.cs</DependentUpon>
