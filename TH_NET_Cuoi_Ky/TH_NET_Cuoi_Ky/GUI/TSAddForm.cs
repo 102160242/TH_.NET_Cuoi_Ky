@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TH_NET_Cuoi_Ky.BLL;
+using TH_NET_Cuoi_Ky.GUI;
 
 namespace TH_NET_Cuoi_Ky
 {
@@ -29,7 +30,7 @@ namespace TH_NET_Cuoi_Ky
 
         private void butCancel_Click(object sender, EventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
         private void butAdd_Click(object sender, EventArgs e)
@@ -95,18 +96,48 @@ namespace TH_NET_Cuoi_Ky
         //}
         private void AddFormTS_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
 
         private void AddFormTS_Shown(object sender, EventArgs e)
         {
-            loadCBBNuocSX.RunWorkerAsync();
-            loadCBBLoaiTS.RunWorkerAsync();
+            loadCBBNSX.RunWorkerAsync();
+            loadCBBLTS.RunWorkerAsync();
+        }
+        private void loadCBBNuocSX()
+        {
+            cbbNuocSX.Items.Clear();
+            cbbNuocSX.Items.Add(" ** Thêm mới ** ");
+            foreach (string i in NSX_BLL.loadCBB_BLL())
+            {
+                if (cbbNuocSX.FindStringExact(i) < 0)
+                {
+                    cbbNuocSX.Items.Add(i);
+                }
+            }
+        }
+        private void loadCBBLoaiTS()
+        {
+            cbbLoaiTS.Items.Clear();
+            cbbLoaiTS.Items.Add(" ** Thêm mới ** ");
+            foreach (string i in LTS_BLL.loadCBB_BLL())
+            {
+                if (cbbLoaiTS.FindStringExact(i) < 0)
+                {
+                    cbbLoaiTS.Items.Add(i);
+                }
+            }
         }
 
-        private void loadCBBNuocSX_DoWork(object sender, DoWorkEventArgs e)
+        private void loadCBBNSX_DoWork(object sender, DoWorkEventArgs e)
         {
+            // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
+            cbbNuocSX.Invoke(new Action(() =>
+            {
+                cbbNuocSX.Items.Clear();
+                cbbNuocSX.Items.Add(" ** Thêm mới ** ");
+            }));
             foreach (string i in NSX_BLL.loadCBB_BLL())
             {
                 if (cbbNuocSX.FindStringExact(i) < 0)
@@ -119,16 +150,47 @@ namespace TH_NET_Cuoi_Ky
             }
         }
 
-        private void loadCBBLoaiTS_DoWork(object sender, DoWorkEventArgs e)
+        private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
         {
+            // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
+            cbbLoaiTS.Invoke(new Action(() =>
+            {
+                cbbLoaiTS.Items.Clear();
+                cbbLoaiTS.Items.Add(" ** Thêm mới ** ");
+            }));
             foreach (string i in LTS_BLL.loadCBB_BLL())
             {
                 if (cbbLoaiTS.FindStringExact(i) < 0)
                 {
-                    cbbLoaiTS.Invoke(new Action(() => {
+                    cbbLoaiTS.Invoke(new Action(() =>
+                    {
                         cbbLoaiTS.Items.Add(i);
                     }));
                 }
+            }
+        }
+
+        private void cbbNuocSX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbNuocSX.SelectedIndex == 0)
+            {
+                NuocSXAddform f = new NuocSXAddform();
+                f.BackToPreviousForm += loadCBBNuocSX;
+                f.ShowDialog();
+                cbbNuocSX.SelectedIndex = -1;
+                cbbNuocSX.Text = "";
+            }
+        }
+
+        private void cbbLoaiTS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbLoaiTS.SelectedIndex == 0)
+            {
+                LoaiTSAddForm f = new LoaiTSAddForm();
+                f.BackToPreviousForm += loadCBBLoaiTS;
+                f.ShowDialog();
+                cbbLoaiTS.SelectedIndex = -1;
+                cbbLoaiTS.Text = "";
             }
         }
     }

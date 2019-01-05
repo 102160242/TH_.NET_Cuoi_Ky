@@ -49,13 +49,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
 
         private void NuocSXAddform_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
     }

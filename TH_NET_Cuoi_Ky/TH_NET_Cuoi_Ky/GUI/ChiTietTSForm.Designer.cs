@@ -218,6 +218,7 @@
             this.btnNhap.TabIndex = 10;
             this.btnNhap.Text = "Nhập";
             this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // btnThanhLy
             // 

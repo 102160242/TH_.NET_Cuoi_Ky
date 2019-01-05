@@ -13,6 +13,8 @@ namespace TH_NET_Cuoi_Ky.GUI
 {
     public partial class NhapForm : Form
     {
+        public delegate void dd();
+        public dd BackToPreviousForm;
         TaiSan_BLL TS_BLL;
         Phong_BLL P_BLL;
         NhaCC_BLL NCC_BLL;
@@ -56,7 +58,8 @@ namespace TH_NET_Cuoi_Ky.GUI
 
             if (result)
             {
-                MessageBox.Show("Thành công");
+                //MessageBox.Show("Thành công");
+                BackToPreviousForm();
                 Dispose();
             }
             else

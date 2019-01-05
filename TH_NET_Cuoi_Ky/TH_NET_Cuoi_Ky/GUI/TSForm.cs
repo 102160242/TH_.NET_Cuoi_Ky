@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TH_NET_Cuoi_Ky.BLL;
+using TH_NET_Cuoi_Ky.GUI;
 
 namespace TH_NET_Cuoi_Ky
 {
@@ -83,6 +84,10 @@ namespace TH_NET_Cuoi_Ky
         //}
         private void loadCBBNuocSX()
         {
+            cbbNuocSX1.Items.Clear();
+            cbbNuocSX1.Items.Add(" ** Thêm mới ** ");
+            cbbNuocSX.Items.Clear();
+            cbbNuocSX.Items.Add(" ** Thêm mới ** ");
             foreach (string i in NSX_BLL.loadCBB_BLL())
             {
                 if (cbbNuocSX1.FindStringExact(i) < 0)
@@ -97,6 +102,10 @@ namespace TH_NET_Cuoi_Ky
         }
         private void loadCBBLoaiTS()
         {
+            cbbLoaiTS.Items.Clear();
+            cbbLoaiTS.Items.Add(" ** Thêm mới ** ");
+            cbbLoaiTS1.Items.Clear();
+            cbbLoaiTS1.Items.Add(" ** Thêm mới ** ");
             foreach (string i in LTS_BLL.loadCBB_BLL())
             {
                 if (cbbLoaiTS1.FindStringExact(i) < 0)
@@ -287,43 +296,81 @@ namespace TH_NET_Cuoi_Ky
 
         private void loadCBBNSX_DoWork(object sender, DoWorkEventArgs e)
         {
+            // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
+            cbbNuocSX1.Invoke(new Action(() =>
+            {
+                cbbNuocSX1.Items.Clear();
+                cbbNuocSX1.Items.Add(" ** Thêm mới ** ");
+            }));
+            cbbNuocSX.Invoke(new Action(() =>
+            {
+                cbbNuocSX.Items.Clear();
+                cbbNuocSX.Items.Add(" ** Thêm mới ** ");
+            }));
             foreach (string i in NSX_BLL.loadCBB_BLL())
             {
                 if (cbbNuocSX1.FindStringExact(i) < 0)
                 {
-                    cbbNuocSX1.Invoke(new Action(() => {
+                    cbbNuocSX1.Invoke(new Action(() =>
+                    {
                         cbbNuocSX1.Items.Add(i);
                     }));
                 }
                 if (cbbNuocSX.FindStringExact(i) < 0)
                 {
-                    cbbNuocSX.Invoke(new Action(() => {
+                    cbbNuocSX.Invoke(new Action(() =>
+                    {
                         cbbNuocSX.Items.Add(i);
                     }));
                 }
             }
         }
-
-        private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
+        //private void loadCBBNSX_DoWork(object sender, DoWorkEventArgs e)
+        //{
+        //    cbbNuocSX1.Invoke(new Action(() => {
+        //    loadCBBNuocSX();
+        //}));
+        //}
+    private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
+    {
+        // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
+        cbbLoaiTS1.Invoke(new Action(() =>
         {
-            foreach (string i in LTS_BLL.loadCBB_BLL())
+            cbbLoaiTS1.Items.Clear();
+            cbbLoaiTS1.Items.Add(" ** Thêm mới ** ");
+        }));
+        cbbLoaiTS.Invoke(new Action(() =>
+        {
+            cbbLoaiTS.Items.Clear();
+            cbbLoaiTS.Items.Add(" ** Thêm mới ** ");
+        }));
+        foreach (string i in LTS_BLL.loadCBB_BLL())
+        {
+            cbbLoaiTS1.Invoke(new Action(() =>
             {
                 if (cbbLoaiTS1.FindStringExact(i) < 0)
                 {
-                    cbbLoaiTS1.Invoke(new Action(() => {
-                        cbbLoaiTS1.Items.Add(i);
-                    }));
+                    cbbLoaiTS1.Items.Add(i);
+
                 }
-                if (cbbLoaiTS.FindStringExact(i) < 0)
+            }));  
+            if (cbbLoaiTS.FindStringExact(i) < 0)
+            {
+                cbbLoaiTS.Invoke(new Action(() =>
                 {
-                    cbbLoaiTS.Invoke(new Action(() => {
-                        cbbLoaiTS.Items.Add(i);
-                    }));
-                }
+                    cbbLoaiTS.Items.Add(i);
+                }));
             }
         }
+    }
+    //private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
+    //{
+    //    cbbLoaiTS1.Invoke(new Action(() => {
+    //        loadCBBLoaiTS();
+    //    }));
+    //}
 
-        private void Form1_Shown(object sender, EventArgs e)
+    private void Form1_Shown(object sender, EventArgs e)
         {
             loadCBBLTS.RunWorkerAsync();
             loadCBBNSX.RunWorkerAsync();
@@ -340,6 +387,52 @@ namespace TH_NET_Cuoi_Ky
             {
                 btnDel.Enabled = false;
                 btnUpdate.Enabled = false;
+            }
+        }
+
+        private void cbbLoaiTS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbbLoaiTS.SelectedIndex == 0)
+            {
+                LoaiTSAddForm f = new LoaiTSAddForm();
+                f.BackToPreviousForm += loadCBBLoaiTS;
+                f.ShowDialog();
+                cbbLoaiTS.SelectedIndex = -1;
+                cbbLoaiTS.Text = "";
+            }
+        }
+        private void cbbLoaiTS1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbLoaiTS1.SelectedIndex == 0)
+            {
+                LoaiTSAddForm f = new LoaiTSAddForm();
+                f.BackToPreviousForm += loadCBBLoaiTS;
+                f.ShowDialog();
+                cbbLoaiTS1.SelectedIndex = -1;
+                cbbLoaiTS1.Text = "";
+            }
+        }
+        private void cbbNuocSX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbNuocSX.SelectedIndex == 0)
+            {
+                NuocSXAddform f = new NuocSXAddform();
+                f.BackToPreviousForm += loadCBBNuocSX;
+                f.ShowDialog();
+                cbbNuocSX.SelectedIndex = -1;
+                cbbNuocSX.Text = "";
+            }
+        }
+
+        private void cbbNuocSX1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbNuocSX1.SelectedIndex == 0)
+            {
+                NuocSXAddform f = new NuocSXAddform();
+                f.BackToPreviousForm += loadCBBNuocSX;
+                f.ShowDialog();
+                cbbNuocSX1.SelectedIndex = -1;
+                cbbNuocSX1.Text = "";
             }
         }
     }

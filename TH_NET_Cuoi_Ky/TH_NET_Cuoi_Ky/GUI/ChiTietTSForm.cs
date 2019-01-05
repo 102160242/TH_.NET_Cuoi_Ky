@@ -136,5 +136,12 @@ namespace TH_NET_Cuoi_Ky
                 btnChuyenPhong.Enabled = false;
             }
         }
+
+        private void btnNhap_Click(object sender, EventArgs e)
+        {
+            NhapForm f = new NhapForm();
+            f.BackToPreviousForm += ShowTSDetail;
+            f.ShowDialog();
+        }
     }
 }

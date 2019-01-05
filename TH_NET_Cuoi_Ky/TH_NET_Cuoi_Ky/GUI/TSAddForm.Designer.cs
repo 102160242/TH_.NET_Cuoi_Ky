@@ -45,8 +45,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.loadCBBNuocSX = new System.ComponentModel.BackgroundWorker();
-            this.loadCBBLoaiTS = new System.ComponentModel.BackgroundWorker();
+            this.loadCBBNSX = new System.ComponentModel.BackgroundWorker();
+            this.loadCBBLTS = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // label7
@@ -135,6 +135,7 @@
             this.cbbLoaiTS.Name = "cbbLoaiTS";
             this.cbbLoaiTS.Size = new System.Drawing.Size(220, 26);
             this.cbbLoaiTS.TabIndex = 5;
+            this.cbbLoaiTS.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiTS_SelectedIndexChanged);
             // 
             // txtGhiChu
             // 
@@ -154,6 +155,7 @@
             this.cbbNuocSX.Name = "cbbNuocSX";
             this.cbbNuocSX.Size = new System.Drawing.Size(220, 26);
             this.cbbNuocSX.TabIndex = 4;
+            this.cbbNuocSX.SelectedIndexChanged += new System.EventHandler(this.cbbNuocSX_SelectedIndexChanged);
             // 
             // butAdd
             // 
@@ -228,13 +230,13 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Năm sản xuất";
             // 
-            // loadCBBNuocSX
+            // loadCBBNSX
             // 
-            this.loadCBBNuocSX.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBNuocSX_DoWork);
+            this.loadCBBNSX.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBNSX_DoWork);
             // 
-            // loadCBBLoaiTS
+            // loadCBBLTS
             // 
-            this.loadCBBLoaiTS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBLoaiTS_DoWork);
+            this.loadCBBLTS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBLTS_DoWork);
             // 
             // AddFormTS
             // 
@@ -290,7 +292,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label11;
-        private System.ComponentModel.BackgroundWorker loadCBBNuocSX;
-        private System.ComponentModel.BackgroundWorker loadCBBLoaiTS;
+        private System.ComponentModel.BackgroundWorker loadCBBNSX;
+        private System.ComponentModel.BackgroundWorker loadCBBLTS;
     }
 }
