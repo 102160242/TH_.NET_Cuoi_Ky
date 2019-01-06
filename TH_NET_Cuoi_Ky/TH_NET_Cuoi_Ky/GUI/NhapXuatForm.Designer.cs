@@ -41,7 +41,6 @@
             this.btnHienThiNhap = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.numericUpDown_SLNhap = new System.Windows.Forms.NumericUpDown();
-            this.btnNhap = new System.Windows.Forms.Button();
             this.cbb_TenTSNhap = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -63,7 +62,6 @@
             this.cbb_TenTSXuat = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.numericUpDown_SLXuat = new System.Windows.Forms.NumericUpDown();
-            this.btnXuat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -72,6 +70,7 @@
             this.cbb_NhaCCXuat = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnNhap = new System.Windows.Forms.Button();
             this.btn_ThanhLy = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -105,7 +104,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage1.Controls.Add(this.txt_Phieu_Nhap);
             this.tabPage1.Controls.Add(this.label15);
@@ -116,7 +114,6 @@
             this.tabPage1.Controls.Add(this.btnHienThiNhap);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.numericUpDown_SLNhap);
-            this.tabPage1.Controls.Add(this.btnNhap);
             this.tabPage1.Controls.Add(this.cbb_TenTSNhap);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
@@ -236,20 +233,6 @@
             this.numericUpDown_SLNhap.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_SLNhap.TabIndex = 42;
             // 
-            // btnNhap
-            // 
-            this.btnNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnNhap.Image")));
-            this.btnNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhap.Location = new System.Drawing.Point(740, 118);
-            this.btnNhap.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(90, 32);
-            this.btnNhap.TabIndex = 40;
-            this.btnNhap.Text = "Nhập ";
-            this.btnNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNhap.UseVisualStyleBackColor = true;
-            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
-            // 
             // cbb_TenTSNhap
             // 
             this.cbb_TenTSNhap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -345,7 +328,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage2.Controls.Add(this.txt_phieu_xuat);
             this.tabPage2.Controls.Add(this.label16);
@@ -357,7 +339,6 @@
             this.tabPage2.Controls.Add(this.cbb_TenTSXuat);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.numericUpDown_SLXuat);
-            this.tabPage2.Controls.Add(this.btnXuat);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.dateTimePicker2);
             this.tabPage2.Controls.Add(this.label6);
@@ -487,20 +468,6 @@
             this.numericUpDown_SLXuat.Size = new System.Drawing.Size(168, 24);
             this.numericUpDown_SLXuat.TabIndex = 51;
             // 
-            // btnXuat
-            // 
-            this.btnXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnXuat.Image")));
-            this.btnXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuat.Location = new System.Drawing.Point(758, 118);
-            this.btnXuat.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(72, 32);
-            this.btnXuat.TabIndex = 49;
-            this.btnXuat.Text = "Xuất";
-            this.btnXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXuat.UseVisualStyleBackColor = true;
-            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -586,15 +553,30 @@
             this.label10.TabIndex = 40;
             this.label10.Text = "Tên tài sản";
             // 
+            // btnNhap
+            // 
+            this.btnNhap.BackColor = System.Drawing.Color.Transparent;
+            this.btnNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnNhap.Image")));
+            this.btnNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhap.Location = new System.Drawing.Point(170, 479);
+            this.btnNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.Size = new System.Drawing.Size(96, 32);
+            this.btnNhap.TabIndex = 40;
+            this.btnNhap.Text = "Nhập ";
+            this.btnNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNhap.UseVisualStyleBackColor = false;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
+            // 
             // btn_ThanhLy
             // 
             this.btn_ThanhLy.Enabled = false;
             this.btn_ThanhLy.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThanhLy.Image")));
             this.btn_ThanhLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ThanhLy.Location = new System.Drawing.Point(584, 479);
+            this.btn_ThanhLy.Location = new System.Drawing.Point(680, 479);
             this.btn_ThanhLy.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ThanhLy.Name = "btn_ThanhLy";
-            this.btn_ThanhLy.Size = new System.Drawing.Size(93, 32);
+            this.btn_ThanhLy.Size = new System.Drawing.Size(96, 32);
             this.btn_ThanhLy.TabIndex = 53;
             this.btn_ThanhLy.Text = "Thanh Lý";
             this.btn_ThanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -605,10 +587,10 @@
             // 
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(733, 477);
+            this.btnExit.Location = new System.Drawing.Point(848, 479);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(77, 32);
+            this.btnExit.Size = new System.Drawing.Size(96, 32);
             this.btnExit.TabIndex = 41;
             this.btnExit.Text = "Thoát";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -620,9 +602,9 @@
             this.btnUpdate.Enabled = false;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(225, 478);
+            this.btnUpdate.Location = new System.Drawing.Point(340, 479);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(94, 32);
+            this.btnUpdate.Size = new System.Drawing.Size(96, 32);
             this.btnUpdate.TabIndex = 42;
             this.btnUpdate.Text = "Cập Nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -634,9 +616,9 @@
             this.btnDelete.Enabled = false;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(430, 478);
+            this.btnDelete.Location = new System.Drawing.Point(510, 479);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(74, 32);
+            this.btnDelete.Size = new System.Drawing.Size(96, 32);
             this.btnDelete.TabIndex = 43;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -657,13 +639,18 @@
             // 
             // btnLuanchuyen
             // 
+            this.btnLuanchuyen.BackColor = System.Drawing.Color.Transparent;
+            this.btnLuanchuyen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLuanchuyen.Enabled = false;
-            this.btnLuanchuyen.Location = new System.Drawing.Point(27, 478);
+            this.btnLuanchuyen.Image = ((System.Drawing.Image)(resources.GetObject("btnLuanchuyen.Image")));
+            this.btnLuanchuyen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuanchuyen.Location = new System.Drawing.Point(6, 479);
             this.btnLuanchuyen.Name = "btnLuanchuyen";
-            this.btnLuanchuyen.Size = new System.Drawing.Size(102, 32);
+            this.btnLuanchuyen.Size = new System.Drawing.Size(96, 32);
             this.btnLuanchuyen.TabIndex = 44;
-            this.btnLuanchuyen.Text = "Luân Chuyển";
-            this.btnLuanchuyen.UseVisualStyleBackColor = true;
+            this.btnLuanchuyen.Text = "Chuyển";
+            this.btnLuanchuyen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuanchuyen.UseVisualStyleBackColor = false;
             this.btnLuanchuyen.Click += new System.EventHandler(this.btnLuanchuyen_Click);
             // 
             // NhapXuatForm
@@ -679,6 +666,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btn_ThanhLy);
+            this.Controls.Add(this.btnNhap);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -725,7 +713,6 @@
         private System.Windows.Forms.Button btn_ThanhLy;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numericUpDown_SLXuat;
-        private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label6;

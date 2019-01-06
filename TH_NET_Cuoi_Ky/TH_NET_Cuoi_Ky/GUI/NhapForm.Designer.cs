@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhapForm));
             this.LoadCBBTS = new System.ComponentModel.BackgroundWorker();
             this.label11 = new System.Windows.Forms.Label();
             this.numericUpDown_SL = new System.Windows.Forms.NumericUpDown();
@@ -57,6 +58,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Location = new System.Drawing.Point(19, 171);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
@@ -87,6 +89,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Location = new System.Drawing.Point(16, 139);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
@@ -96,22 +99,32 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(228, 285);
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(207, 285);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 28);
+            this.button2.Size = new System.Drawing.Size(96, 32);
             this.button2.TabIndex = 100;
             this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // bnt_OK
             // 
+            this.bnt_OK.BackColor = System.Drawing.Color.Transparent;
+            this.bnt_OK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bnt_OK.Image = ((System.Drawing.Image)(resources.GetObject("bnt_OK.Image")));
+            this.bnt_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bnt_OK.Location = new System.Drawing.Point(19, 285);
             this.bnt_OK.Name = "bnt_OK";
-            this.bnt_OK.Size = new System.Drawing.Size(75, 29);
+            this.bnt_OK.Size = new System.Drawing.Size(96, 32);
             this.bnt_OK.TabIndex = 99;
             this.bnt_OK.Text = "OK";
-            this.bnt_OK.UseVisualStyleBackColor = true;
+            this.bnt_OK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bnt_OK.UseVisualStyleBackColor = false;
             this.bnt_OK.Click += new System.EventHandler(this.bnt_OK_Click);
             // 
             // txt_TinhTrang
@@ -124,6 +137,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Location = new System.Drawing.Point(16, 243);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 18);
@@ -153,6 +167,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(16, 203);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -174,6 +189,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(16, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -195,6 +211,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(16, 99);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -205,6 +222,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(16, 19);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -225,7 +243,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 329);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(315, 329);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.numericUpDown_SL);
             this.Controls.Add(this.txt_NguyenGia);
@@ -244,7 +263,7 @@
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NhapForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

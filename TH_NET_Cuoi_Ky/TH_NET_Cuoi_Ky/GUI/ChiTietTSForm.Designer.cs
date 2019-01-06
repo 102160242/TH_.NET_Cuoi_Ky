@@ -212,33 +212,48 @@
             // 
             // btnNhap
             // 
-            this.btnNhap.Location = new System.Drawing.Point(84, 456);
+            this.btnNhap.BackColor = System.Drawing.Color.Transparent;
+            this.btnNhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnNhap.Image")));
+            this.btnNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhap.Location = new System.Drawing.Point(76, 453);
             this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(75, 23);
+            this.btnNhap.Size = new System.Drawing.Size(96, 32);
             this.btnNhap.TabIndex = 10;
             this.btnNhap.Text = "Nhập";
-            this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNhap.UseVisualStyleBackColor = false;
             // 
             // btnThanhLy
             // 
+            this.btnThanhLy.BackColor = System.Drawing.Color.Transparent;
+            this.btnThanhLy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnThanhLy.Enabled = false;
-            this.btnThanhLy.Location = new System.Drawing.Point(288, 456);
+            this.btnThanhLy.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhLy.Image")));
+            this.btnThanhLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThanhLy.Location = new System.Drawing.Point(291, 453);
             this.btnThanhLy.Name = "btnThanhLy";
-            this.btnThanhLy.Size = new System.Drawing.Size(75, 23);
+            this.btnThanhLy.Size = new System.Drawing.Size(96, 32);
             this.btnThanhLy.TabIndex = 11;
             this.btnThanhLy.Text = "Thanh lý";
-            this.btnThanhLy.UseVisualStyleBackColor = true;
+            this.btnThanhLy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhLy.UseVisualStyleBackColor = false;
             this.btnThanhLy.Click += new System.EventHandler(this.btnThanhLy_Click);
             // 
             // btnChuyenPhong
             // 
+            this.btnChuyenPhong.BackColor = System.Drawing.Color.Transparent;
+            this.btnChuyenPhong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnChuyenPhong.Enabled = false;
-            this.btnChuyenPhong.Location = new System.Drawing.Point(479, 456);
+            this.btnChuyenPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenPhong.Image")));
+            this.btnChuyenPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChuyenPhong.Location = new System.Drawing.Point(490, 453);
             this.btnChuyenPhong.Name = "btnChuyenPhong";
-            this.btnChuyenPhong.Size = new System.Drawing.Size(75, 23);
+            this.btnChuyenPhong.Size = new System.Drawing.Size(96, 32);
             this.btnChuyenPhong.TabIndex = 12;
             this.btnChuyenPhong.Text = "Chuyển Phòng";
-            this.btnChuyenPhong.UseVisualStyleBackColor = true;
+            this.btnChuyenPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChuyenPhong.UseVisualStyleBackColor = false;
             this.btnChuyenPhong.Click += new System.EventHandler(this.btnChuyenPhong_Click);
             // 
             // ChiTietTSForm
@@ -247,7 +262,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(738, 488);
+            this.ClientSize = new System.Drawing.Size(738, 493);
             this.Controls.Add(this.btnChuyenPhong);
             this.Controls.Add(this.btnThanhLy);
             this.Controls.Add(this.btnNhap);

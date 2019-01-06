@@ -248,11 +248,11 @@
             // 
             this.but_Search.BackColor = System.Drawing.Color.Transparent;
             this.but_Search.Image = ((System.Drawing.Image)(resources.GetObject("but_Search.Image")));
-            this.but_Search.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.but_Search.Location = new System.Drawing.Point(387, 101);
+            this.but_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.but_Search.Location = new System.Drawing.Point(387, 100);
             this.but_Search.Margin = new System.Windows.Forms.Padding(4);
             this.but_Search.Name = "but_Search";
-            this.but_Search.Size = new System.Drawing.Size(90, 36);
+            this.but_Search.Size = new System.Drawing.Size(96, 36);
             this.but_Search.TabIndex = 7;
             this.but_Search.Text = "Tìm kiếm";
             this.but_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

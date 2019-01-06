@@ -62,7 +62,7 @@
             this.but_Delete.Enabled = false;
             this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
             this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Delete.Location = new System.Drawing.Point(443, 464);
+            this.but_Delete.Location = new System.Drawing.Point(460, 464);
             this.but_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.but_Delete.Name = "but_Delete";
             this.but_Delete.Size = new System.Drawing.Size(93, 32);
@@ -77,7 +77,7 @@
             this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(574, 464);
+            this.but_Cancel.Location = new System.Drawing.Point(613, 464);
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
             this.but_Cancel.Size = new System.Drawing.Size(93, 32);
@@ -101,7 +101,7 @@
             this.but_Update.Enabled = false;
             this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
             this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Update.Location = new System.Drawing.Point(312, 464);
+            this.but_Update.Location = new System.Drawing.Point(310, 464);
             this.but_Update.Margin = new System.Windows.Forms.Padding(4);
             this.but_Update.Name = "but_Update";
             this.but_Update.Size = new System.Drawing.Size(93, 32);
@@ -187,7 +187,7 @@
             this.but_Add.BackColor = System.Drawing.Color.Transparent;
             this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
             this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Add.Location = new System.Drawing.Point(181, 464);
+            this.but_Add.Location = new System.Drawing.Point(170, 464);
             this.but_Add.Margin = new System.Windows.Forms.Padding(4);
             this.but_Add.Name = "but_Add";
             this.but_Add.Size = new System.Drawing.Size(93, 32);
@@ -212,7 +212,7 @@
             this.but_Show.BackColor = System.Drawing.Color.Transparent;
             this.but_Show.Image = ((System.Drawing.Image)(resources.GetObject("but_Show.Image")));
             this.but_Show.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Show.Location = new System.Drawing.Point(50, 464);
+            this.but_Show.Location = new System.Drawing.Point(11, 464);
             this.but_Show.Margin = new System.Windows.Forms.Padding(4);
             this.but_Show.Name = "but_Show";
             this.but_Show.Size = new System.Drawing.Size(93, 32);

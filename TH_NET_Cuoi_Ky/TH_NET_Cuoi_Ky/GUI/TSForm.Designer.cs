@@ -203,7 +203,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.Controls.Add(this.cbbLoaiTS);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.cbbNuocSX);
@@ -375,7 +374,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage2.BackgroundImage")));
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.btnSearch);
             this.tabPage2.Controls.Add(this.txtTuKhoa);
@@ -457,10 +455,10 @@
             this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butAdd.Location = new System.Drawing.Point(322, 435);
+            this.butAdd.Location = new System.Drawing.Point(112, 435);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
-            this.butAdd.Size = new System.Drawing.Size(81, 32);
+            this.butAdd.Size = new System.Drawing.Size(92, 32);
             this.butAdd.TabIndex = 11;
             this.butAdd.Text = "Thêm";
             this.butAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -473,10 +471,10 @@
             this.btnUpdate.Enabled = false;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(478, 435);
+            this.btnUpdate.Location = new System.Drawing.Point(474, 435);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(96, 32);
+            this.btnUpdate.Size = new System.Drawing.Size(92, 32);
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -489,10 +487,10 @@
             this.btnDel.Enabled = false;
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(649, 435);
+            this.btnDel.Location = new System.Drawing.Point(833, 435);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(64, 32);
+            this.btnDel.Size = new System.Drawing.Size(92, 32);
             this.btnDel.TabIndex = 13;
             this.btnDel.Text = "Xóa";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

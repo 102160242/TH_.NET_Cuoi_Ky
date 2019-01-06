@@ -43,10 +43,10 @@
             this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(229, 135);
+            this.but_Cancel.Location = new System.Drawing.Point(280, 135);
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(85, 32);
+            this.but_Cancel.Size = new System.Drawing.Size(96, 32);
             this.but_Cancel.TabIndex = 4;
             this.but_Cancel.Text = "Cancel";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -58,10 +58,10 @@
             this.but_OK.BackColor = System.Drawing.Color.Transparent;
             this.but_OK.Image = ((System.Drawing.Image)(resources.GetObject("but_OK.Image")));
             this.but_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_OK.Location = new System.Drawing.Point(87, 135);
+            this.but_OK.Location = new System.Drawing.Point(27, 135);
             this.but_OK.Margin = new System.Windows.Forms.Padding(4);
             this.but_OK.Name = "but_OK";
-            this.but_OK.Size = new System.Drawing.Size(85, 32);
+            this.but_OK.Size = new System.Drawing.Size(96, 32);
             this.but_OK.TabIndex = 35;
             this.but_OK.Text = "OK";
             this.but_OK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,7 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(401, 188);
+            this.ClientSize = new System.Drawing.Size(396, 176);
             this.Controls.Add(this.cbbNguoiQL);
             this.Controls.Add(this.txtTenPhong);
             this.Controls.Add(this.label2);
