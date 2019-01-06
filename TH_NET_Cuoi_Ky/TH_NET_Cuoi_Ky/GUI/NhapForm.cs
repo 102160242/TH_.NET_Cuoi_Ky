@@ -29,50 +29,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             NX_BLL = new NhapXuat_BLL();
         }
 
-        private void bnt_OK_Click(object sender, EventArgs e)
-        {
-            if (cbb_TenTS.SelectedIndex == -1 || cbb_Phong.SelectedIndex == -1 || cbb_NhaCC.SelectedIndex == -1 || Convert.ToDouble(txt_NguyenGia.Text) < 0 || numericUpDown_SL.Value <= 0 || txt_TinhTrang.Text == "")
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
-                return;
-            }
-            int mataisan = TS_BLL.getIDByName(cbb_TenTS.SelectedItem.ToString());
-            int manhacungcap = NCC_BLL.getIDByName(cbb_NhaCC.SelectedItem.ToString());
-            int maphong = P_BLL.getIDByName(cbb_Phong.SelectedItem.ToString());
-            if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
-            {
-                MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
-                return;
-            }
-            List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
-            l.Add(new DTO.NhapXuat
-            {
-                MaTS = mataisan,
-                MaNhaCC = manhacungcap,
-                MaPhong = maphong,
-                NgayNhap = dateTimePicker1.Value.Date,
-                SLNhap = Convert.ToInt32(numericUpDown_SL.Value),
-                NguyenGia = Convert.ToDouble(txt_NguyenGia.Text),
-                TinhTrang = txt_TinhTrang.Text
-            });
-            (Boolean result, string msg) = NX_BLL.AddNhapXuat(l);
-
-            if (result)
-            {
-                //MessageBox.Show("Thành công");
-                BackToPreviousForm();
-                Dispose();
-            }
-            else
-            {
-                MessageBox.Show(msg, "Lỗi");
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Dispose();
-        }
         public void setCBBTenTS(String tenTS)
         {
             this.loadCBBTenTS = false;
@@ -216,6 +172,63 @@ namespace TH_NET_Cuoi_Ky.GUI
                 f.returnTenNCC += addNewNCC;
                 f.ShowDialog();
             }
+        }
+
+        private void NhapForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Enter de add
+            {
+                this.btnOK_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Escape) // Thoat neu nhan Esc
+            {
+                this.btnCancel_Click(sender, e);
+            }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            if (cbb_TenTS.SelectedIndex == -1 || cbb_Phong.SelectedIndex == -1 || cbb_NhaCC.SelectedIndex == -1 || Convert.ToDouble(txt_NguyenGia.Text) < 0 || numericUpDown_SL.Value <= 0 || txt_TinhTrang.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                return;
+            }
+            int mataisan = TS_BLL.getIDByName(cbb_TenTS.SelectedItem.ToString());
+            int manhacungcap = NCC_BLL.getIDByName(cbb_NhaCC.SelectedItem.ToString());
+            int maphong = P_BLL.getIDByName(cbb_Phong.SelectedItem.ToString());
+            if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
+            {
+                MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
+                return;
+            }
+            List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
+            l.Add(new DTO.NhapXuat
+            {
+                MaTS = mataisan,
+                MaNhaCC = manhacungcap,
+                MaPhong = maphong,
+                NgayNhap = dateTimePicker1.Value.Date,
+                SLNhap = Convert.ToInt32(numericUpDown_SL.Value),
+                NguyenGia = Convert.ToDouble(txt_NguyenGia.Text),
+                TinhTrang = txt_TinhTrang.Text
+            });
+            (Boolean result, string msg) = NX_BLL.AddNhapXuat(l);
+
+            if (result)
+            {
+                //MessageBox.Show("Thành công");
+                BackToPreviousForm();
+                Dispose();
+            }
+            else
+            {
+                MessageBox.Show(msg, "Lỗi");
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }
