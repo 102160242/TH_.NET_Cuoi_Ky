@@ -36,11 +36,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             Dispose();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //BackToPreviousForm();
-            Dispose();
-        }
         // Set CBB, khong cho thay doi
         public void setCBBTenTS(String tenTS)
         {
@@ -124,16 +119,43 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
         }
 
-        private void bnt_OK_Click(object sender, EventArgs e)
+        private void txt_NguyenGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ThanhLy_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Enter de add
+            {
+                this.btnOK_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Escape) // Thoat neu nhan Esc
+            {
+                this.btnCancel_Click(sender, e);
+            }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
         {
             if (cbb_NhaCC.SelectedIndex == -1 || cbb_Phong.SelectedIndex == -1 || cbb_TenTS.SelectedIndex == -1 || Convert.ToDouble(txt_NguyenGia.Text) < 0 || numericUpDown_SL.Value <= 0 || txt_TinhTrang.Text == "")
             {
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                 return;
             }
-            int maTS = TS_BLL.GetIDbyTS(cbb_TenTS.SelectedItem.ToString());
-            int maNCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCC.SelectedItem.ToString());
-            int maPhong = P_BLL.GetIdByPhong(cbb_Phong.SelectedItem.ToString());
+            int maTS = TS_BLL.getIDByName(cbb_TenTS.SelectedItem.ToString());
+            int maNCC = NCC_BLL.getIDByName(cbb_NhaCC.SelectedItem.ToString());
+            int maPhong = P_BLL.getIDByName(cbb_Phong.SelectedItem.ToString());
             if (maTS == -1 || maNCC == -1 || maPhong == -1)
             {
                 MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
@@ -173,19 +195,10 @@ namespace TH_NET_Cuoi_Ky.GUI
             }
         }
 
-        private void txt_NguyenGia_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            // Verify that the pressed key isn't CTRL or any non-numeric digit
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // If you want, you can allow decimal (float) numbers
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            //BackToPreviousForm();
+            Dispose();
         }
     }
 }

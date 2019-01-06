@@ -36,9 +36,9 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                 return;
             }
-            int mataisan = TS_BLL.GetIDbyTS(cbb_TenTS.SelectedItem.ToString());
-            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCC.SelectedItem.ToString());
-            int maphong = P_BLL.GetIdByPhong(cbb_Phong.SelectedItem.ToString());
+            int mataisan = TS_BLL.getIDByName(cbb_TenTS.SelectedItem.ToString());
+            int manhacungcap = NCC_BLL.getIDByName(cbb_NhaCC.SelectedItem.ToString());
+            int maphong = P_BLL.getIDByName(cbb_Phong.SelectedItem.ToString());
             if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
             {
                 MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");

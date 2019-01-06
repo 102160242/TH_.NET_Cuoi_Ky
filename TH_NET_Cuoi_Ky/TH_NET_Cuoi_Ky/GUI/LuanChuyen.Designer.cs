@@ -42,8 +42,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbbPhongNhap = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.bnt_OK = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.loadCBBTS = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLNhap)).BeginInit();
             this.SuspendLayout();
@@ -192,25 +192,25 @@
             this.label5.TabIndex = 66;
             this.label5.Text = "Phòng nhập";
             // 
-            // bnt_OK
+            // btnOK
             // 
-            this.bnt_OK.Location = new System.Drawing.Point(18, 291);
-            this.bnt_OK.Name = "bnt_OK";
-            this.bnt_OK.Size = new System.Drawing.Size(75, 29);
-            this.bnt_OK.TabIndex = 8;
-            this.bnt_OK.Text = "OK";
-            this.bnt_OK.UseVisualStyleBackColor = true;
-            this.bnt_OK.Click += new System.EventHandler(this.bnt_OK_Click);
+            this.btnOK.Location = new System.Drawing.Point(18, 291);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 29);
+            this.btnOK.TabIndex = 8;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.Location = new System.Drawing.Point(227, 291);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 29);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancel.Location = new System.Drawing.Point(227, 291);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 29);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // loadCBBTS
             // 
@@ -221,8 +221,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 325);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.bnt_OK);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbbPhongNhap);
             this.Controls.Add(this.txt_TinhTrangNhap);
@@ -240,6 +240,7 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "LuanChuyen";
@@ -247,6 +248,7 @@
             this.Text = "Luân Chuyển";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LuanChuyen_FormClosed);
             this.Shown += new System.EventHandler(this.LuanChuyen_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LuanChuyen_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SLNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,8 +271,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbbPhongNhap;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button bnt_OK;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCancel;
         private System.ComponentModel.BackgroundWorker loadCBBTS;
     }
 }

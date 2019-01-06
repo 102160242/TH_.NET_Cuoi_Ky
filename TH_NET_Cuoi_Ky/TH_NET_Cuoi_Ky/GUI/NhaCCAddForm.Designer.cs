@@ -128,6 +128,7 @@
             this.Controls.Add(this.label2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NhaCCAddForm";
@@ -135,6 +136,7 @@
             this.Text = "Thêm Nhà Cung Cấp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NhaCCAddForm_FormClosed);
             this.Shown += new System.EventHandler(this.NhaCCAddForm_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NhaCCAddForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

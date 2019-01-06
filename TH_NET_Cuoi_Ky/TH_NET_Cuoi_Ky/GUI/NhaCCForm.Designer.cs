@@ -210,6 +210,7 @@
             this.dgv.TabIndex = 6;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -303,6 +304,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(191, 24);
             this.txtSearch.TabIndex = 4;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // groupBox3
             // 
@@ -335,6 +337,7 @@
             this.Controls.Add(this.butDelete);
             this.Controls.Add(this.but_Cancel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NhaCCForm";
@@ -342,6 +345,7 @@
             this.Text = "Quản lý nhà cung cấp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NhaCCForm_FormClosed);
             this.Shown += new System.EventHandler(this.NhaCCForm_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NhaCCForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.menuDGV.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

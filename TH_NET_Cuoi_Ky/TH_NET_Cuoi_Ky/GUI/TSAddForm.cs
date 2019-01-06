@@ -215,5 +215,17 @@ namespace TH_NET_Cuoi_Ky.GUI
 
             }
         }
+
+        private void TSAddForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter) // Enter de add
+            {
+                this.butAdd_Click(sender, e);
+            }
+            else if(e.KeyCode == Keys.Escape) // Thoat neu nhan Esc
+            {
+                this.butCancel_Click(sender, e);
+            }
+        }
     }
 }

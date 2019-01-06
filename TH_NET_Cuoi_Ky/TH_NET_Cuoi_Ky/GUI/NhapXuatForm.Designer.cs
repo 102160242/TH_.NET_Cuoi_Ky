@@ -183,6 +183,7 @@
             this.dgvNhap.TabIndex = 1;
             this.dgvNhap.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dgvNhap.SelectionChanged += new System.EventHandler(this.dgvNhap_SelectionChanged);
+            this.dgvNhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvNhap_KeyDown);
             // 
             // txt_TinhTrangNhap
             // 
@@ -422,6 +423,7 @@
             this.dgvXuat.TabIndex = 56;
             this.dgvXuat.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseClick);
             this.dgvXuat.SelectionChanged += new System.EventHandler(this.dgvXuat_SelectionChanged);
+            this.dgvXuat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvXuat_KeyDown);
             // 
             // txt_TinhTrangXuat
             // 

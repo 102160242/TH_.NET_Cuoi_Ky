@@ -204,6 +204,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1029, 180);
             this.tabControl1.TabIndex = 16;
+            this.tabControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tabControl1_KeyDown);
             // 
             // tabPage1
             // 
@@ -211,8 +212,8 @@
             this.tabPage1.Controls.Add(this.cbbLoaiTS);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.cbbNuocSX);
+            this.tabPage1.Controls.Add(this.btnUpdate);
             this.tabPage1.Controls.Add(this.txtGhiChu);
-            this.tabPage1.Controls.Add(this.butShow);
             this.tabPage1.Controls.Add(this.txtTskt);
             this.tabPage1.Controls.Add(this.txtDvTinh);
             this.tabPage1.Controls.Add(this.txtTenTS);
@@ -283,11 +284,11 @@
             this.butShow.BackColor = System.Drawing.Color.Transparent;
             this.butShow.Image = ((System.Drawing.Image)(resources.GetObject("butShow.Image")));
             this.butShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butShow.Location = new System.Drawing.Point(865, 100);
+            this.butShow.Location = new System.Drawing.Point(275, 435);
             this.butShow.Margin = new System.Windows.Forms.Padding(4);
             this.butShow.Name = "butShow";
             this.butShow.Size = new System.Drawing.Size(87, 32);
-            this.butShow.TabIndex = 9;
+            this.butShow.TabIndex = 11;
             this.butShow.Text = "Hiển thị";
             this.butShow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butShow.UseVisualStyleBackColor = false;
@@ -427,6 +428,7 @@
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -465,11 +467,11 @@
             this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butAdd.Location = new System.Drawing.Point(322, 435);
+            this.butAdd.Location = new System.Drawing.Point(464, 435);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(81, 32);
-            this.butAdd.TabIndex = 11;
+            this.butAdd.TabIndex = 12;
             this.butAdd.Text = "Thêm";
             this.butAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butAdd.UseVisualStyleBackColor = false;
@@ -481,11 +483,11 @@
             this.btnUpdate.Enabled = false;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(478, 435);
+            this.btnUpdate.Location = new System.Drawing.Point(869, 109);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(96, 32);
-            this.btnUpdate.TabIndex = 12;
+            this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -535,11 +537,12 @@
             this.ClientSize = new System.Drawing.Size(1034, 472);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.butShow);
             this.Controls.Add(this.butAdd);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "TSForm";
@@ -547,6 +550,7 @@
             this.Text = "Quản lý cơ sở vật chất khoa CNTT";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Shown += new System.EventHandler(this.Form1_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TSForm_KeyDown);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

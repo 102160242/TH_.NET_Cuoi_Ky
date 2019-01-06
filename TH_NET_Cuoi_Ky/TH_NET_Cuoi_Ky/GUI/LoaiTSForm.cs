@@ -172,5 +172,39 @@ namespace TH_NET_Cuoi_Ky.GUI
                 butDelete.Enabled = false;
             }
         }
+
+        private void LoaiTSForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            // To hop Ctrl + N => Tao moi
+            if (e.KeyCode == Keys.N && e.Modifiers == Keys.Control)
+            {
+                this.butAdd_Click(sender, e);
+            }
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Nhan Enter trong o tim kiem
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.butSearch_Click(sender, e);
+            }
+        }
+
+        private void txtTenLoaiTS_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.butUpdate_Click(sender, e);
+            }
+        }
+
+        private void dgv_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) // Neu bam nut Delete khi dang o tren dgv
+            {
+                this.deleteToolStripMenuItem_Click(sender, e);
+            }
+        }
     }
 }

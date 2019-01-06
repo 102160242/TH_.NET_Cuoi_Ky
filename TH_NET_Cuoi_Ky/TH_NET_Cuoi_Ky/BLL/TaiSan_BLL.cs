@@ -192,11 +192,11 @@ namespace TH_NET_Cuoi_Ky.BLL
             var data = db.TaiSans.Select(p => p.TenTS).Distinct();
             return data.ToList();
         }
-        public int GetIDbyTS(string ts)
+        public int getIDByName(string ts)
         {
             try
             {
-                return db.TaiSans.Where(p => p.TenTS == ts).Select(p => p.MaTS).Single();
+                return db.TaiSans.Where(p => p.TenTS == ts).Select(p => p.MaTS).First();
             }
             catch (System.Data.SqlClient.SqlException e)
             {

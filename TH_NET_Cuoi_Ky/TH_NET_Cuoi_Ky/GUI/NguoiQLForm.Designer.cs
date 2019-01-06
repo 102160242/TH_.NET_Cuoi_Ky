@@ -219,6 +219,7 @@
             this.dgv.TabIndex = 9;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -282,6 +283,7 @@
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(217, 24);
             this.txt_Search.TabIndex = 8;
+            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
             // 
             // but_Cancel
             // 
@@ -353,12 +355,14 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NguoiQLForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Người Quản Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NguoiQLForm_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NguoiQLForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.menuDGV.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

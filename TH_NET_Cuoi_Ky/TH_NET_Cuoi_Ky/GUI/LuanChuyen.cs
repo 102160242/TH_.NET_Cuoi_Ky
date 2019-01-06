@@ -35,11 +35,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             Dispose();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            BackToPreviousForm();
-            Dispose();
-        }
         // Set CBB, khong cho thay doi
         public void setCBBTenTS(String tenTS)
         {
@@ -68,66 +63,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             if(allowCBBToBeLoaded)
             {
                 loadCBBTS.RunWorkerAsync();
-            }
-        }
-
-        private void bnt_OK_Click(object sender, EventArgs e)
-        {
-            if (cbb_NhaCC.SelectedIndex == -1 || cbb_PhongXuat.SelectedIndex == -1 || cbbPhongNhap.SelectedIndex == -1 || cbb_TenTS.SelectedIndex == -1  || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
-            {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
-                return;
-            }
-            int maTS = TS_BLL.GetIDbyTS(cbb_TenTS.SelectedItem.ToString());
-            int maNCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCC.SelectedItem.ToString());
-            int maPhongXuat = P_BLL.GetIdByPhong(cbb_PhongXuat.SelectedItem.ToString());
-            int maPhongNhap = P_BLL.GetIdByPhong(cbbPhongNhap.SelectedItem.ToString());
-            if (maTS == -1 || maNCC == -1 || maPhongXuat == -1 || maPhongNhap == -1)
-            {
-                MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
-                return;
-            }
-            List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
-            l.Add(new DTO.NhapXuat
-            {
-                MaTS = maTS,
-                MaNhaCC = maNCC,
-                MaPhong = maPhongXuat,
-                NgayXuat = dateTimePicker1.Value.Date,
-                SLXuat = Convert.ToInt32(numericUpDown_SLNhap.Value),
-                NguyenGia = 0,
-                TinhTrang = txt_TinhTrangNhap.Text + ", chuyển qua phòng " + cbbPhongNhap.SelectedItem.ToString()
-            });
-            l.Add(new DTO.NhapXuat
-            {
-                MaTS = maTS,
-                MaNhaCC = maNCC,
-                MaPhong = maPhongNhap,
-                NgayNhap = dateTimePicker1.Value.Date,
-                SLNhap = Convert.ToInt32(numericUpDown_SLNhap.Value),
-                NguyenGia = 0,
-                TinhTrang = txt_TinhTrangNhap.Text + ", chuyển từ phòng " + cbb_PhongXuat.SelectedItem.ToString()
-            });
-            //kiem tra so luong xuat ra co vuot qua sl nhap hay k
-            foreach (DTO.NhapXuat i in l)
-            {
-                if (NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC) < i.SLXuat)
-                {
-                    MessageBox.Show("Số lượng không hợp lệ, giá trị cao nhất có thể là " + NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC));
-                    return;
-                }
-            }
-            (Boolean result, string msg) = NX_BLL.AddNhapXuat(l);
-
-            if (result)
-            {
-                //MessageBox.Show("Thành công");
-                BackToPreviousForm();
-                Dispose();
-            }
-            else
-            {
-                MessageBox.Show(msg, "Lỗi");
             }
         }
 
@@ -196,6 +131,84 @@ namespace TH_NET_Cuoi_Ky.GUI
             LoadCBBPhongNhap();
             cbbPhongNhap.Items.Remove(cbb_PhongXuat.SelectedItem.ToString());
             cbbPhongNhap.Enabled = true;
+        }
+
+        private void LuanChuyen_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Enter de add
+            {
+                this.btnOK_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Escape) // Thoat neu nhan Esc
+            {
+                this.btnCancel_Click(sender, e);
+            }
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            if (cbb_NhaCC.SelectedIndex == -1 || cbb_PhongXuat.SelectedIndex == -1 || cbbPhongNhap.SelectedIndex == -1 || cbb_TenTS.SelectedIndex == -1 || numericUpDown_SLNhap.Value <= 0 || txt_TinhTrangNhap.Text == "")
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin");
+                return;
+            }
+            int maTS = TS_BLL.getIDByName(cbb_TenTS.SelectedItem.ToString());
+            int maNCC = NCC_BLL.getIDByName(cbb_NhaCC.SelectedItem.ToString());
+            int maPhongXuat = P_BLL.getIDByName(cbb_PhongXuat.SelectedItem.ToString());
+            int maPhongNhap = P_BLL.getIDByName(cbbPhongNhap.SelectedItem.ToString());
+            if (maTS == -1 || maNCC == -1 || maPhongXuat == -1 || maPhongNhap == -1)
+            {
+                MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
+                return;
+            }
+            List<DTO.NhapXuat> l = new List<DTO.NhapXuat>();
+            l.Add(new DTO.NhapXuat
+            {
+                MaTS = maTS,
+                MaNhaCC = maNCC,
+                MaPhong = maPhongXuat,
+                NgayXuat = dateTimePicker1.Value.Date,
+                SLXuat = Convert.ToInt32(numericUpDown_SLNhap.Value),
+                NguyenGia = 0,
+                TinhTrang = txt_TinhTrangNhap.Text + ", chuyển qua phòng " + cbbPhongNhap.SelectedItem.ToString()
+            });
+            l.Add(new DTO.NhapXuat
+            {
+                MaTS = maTS,
+                MaNhaCC = maNCC,
+                MaPhong = maPhongNhap,
+                NgayNhap = dateTimePicker1.Value.Date,
+                SLNhap = Convert.ToInt32(numericUpDown_SLNhap.Value),
+                NguyenGia = 0,
+                TinhTrang = txt_TinhTrangNhap.Text + ", chuyển từ phòng " + cbb_PhongXuat.SelectedItem.ToString()
+            });
+            //kiem tra so luong xuat ra co vuot qua sl nhap hay k
+            foreach (DTO.NhapXuat i in l)
+            {
+                if (NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC) < i.SLXuat)
+                {
+                    MessageBox.Show("Số lượng không hợp lệ, giá trị cao nhất có thể là " + NX_BLL.getSLNhap(i.MaTS, i.MaPhong, i.MaNhaCC));
+                    return;
+                }
+            }
+            (Boolean result, string msg) = NX_BLL.AddNhapXuat(l);
+
+            if (result)
+            {
+                //MessageBox.Show("Thành công");
+                BackToPreviousForm();
+                Dispose();
+            }
+            else
+            {
+                MessageBox.Show(msg, "Lỗi");
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            //BackToPreviousForm();
+            Dispose();
         }
     }
 }
