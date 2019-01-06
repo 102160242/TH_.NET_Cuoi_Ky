@@ -200,5 +200,29 @@ namespace TH_NET_Cuoi_Ky.GUI
                 butUpdate.Enabled = false;
             }
         }
+
+        private void NhaCCForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.N && e.Modifiers == Keys.Control)
+            {
+                this.butAdd_Click(sender, e);
+            }
+        }
+
+        private void dgv_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) // Neu bam nut Delete khi dang o tren dgv
+            {
+                this.deleteToolStripMenuItem_Click(sender, e);
+            }
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.but_Search_Click(sender, e);
+            }
+        }
     }
 }

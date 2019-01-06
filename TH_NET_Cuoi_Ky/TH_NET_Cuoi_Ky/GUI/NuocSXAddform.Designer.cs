@@ -97,12 +97,14 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NuocSXAddform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Nước mới";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NuocSXAddform_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NuocSXAddform_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -121,11 +121,11 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return (true, "Xóa thành công");
         }
-        public int GetIdByNhaCC (string NCC)
+        public int getIDByName(string NCC)
         {
             try
             {
-                return db.NhaCCs.Where(p => p.TenNhaCC == NCC).Select(p => p.MaNhaCC).Single();
+                return db.NhaCCs.Where(p => p.TenNhaCC == NCC).Select(p => p.MaNhaCC).First();
             }
             catch (System.Data.SqlClient.SqlException e)
             {

@@ -94,6 +94,7 @@
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(208, 24);
             this.txt_Search.TabIndex = 3;
+            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
             // 
             // but_Update
             // 
@@ -140,6 +141,7 @@
             this.dgv.TabIndex = 5;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -172,6 +174,7 @@
             this.txtTenNSX.Name = "txtTenNSX";
             this.txtTenNSX.Size = new System.Drawing.Size(208, 24);
             this.txtTenNSX.TabIndex = 2;
+            this.txtTenNSX.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenNSX_KeyDown);
             // 
             // txtMaNSX
             // 
@@ -300,12 +303,14 @@
             this.Controls.Add(this.but_Add);
             this.Controls.Add(this.but_Show);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NuocSXForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Nước Sản Xuất";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NuocSXForm_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NuocSXForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.menuDGV.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

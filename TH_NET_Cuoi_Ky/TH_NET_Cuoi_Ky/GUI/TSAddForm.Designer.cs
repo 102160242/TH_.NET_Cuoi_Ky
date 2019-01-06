@@ -265,6 +265,7 @@
             this.Controls.Add(this.label7);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "TSAddForm";
@@ -272,6 +273,7 @@
             this.Text = "Thêm Tài Sản mới";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddFormTS_FormClosed);
             this.Shown += new System.EventHandler(this.AddFormTS_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TSAddForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -35,26 +35,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             //cbbSort.Items.Add("Sắp xếp A-Z");
             //cbbSort.Items.Add("Sắp xếp Z-A");
         }
-
-        private void butShow_Click(object sender, EventArgs e)
-        {
-            ShowTS();
-        }
-        private void ShowTS()
-        {
-            // Hien thi tat ca, khong kem filter hoac dieu kien tim kiem
-            dgv.DataSource = TS_BLL.ShowTS_BLL();
-        }
-        private void Reload()
-        {
-            ShowTS(); // Load lai du lieu cho DataGridView
-            this.Visible = true; // Hien thi lai form
-        }
-        private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            this.updateToolStripMenuItem_Click(sender, e);   
-        }
-
         //private void loadCBBPhong()
         //{
         //    foreach (string i in P_BLL.loadCBB_BLL())
@@ -126,6 +106,12 @@ namespace TH_NET_Cuoi_Ky.GUI
             cbbLoaiTS1.Items.Add(tenLoaiTS);
             cbbLoaiTS1.SelectedItem = tenLoaiTS;
         }
+
+        /* ---------------- Xu ly su kien click cac button ---------------- */
+        private void butShow_Click(object sender, EventArgs e)
+        {
+            ShowTS();
+        }
         private void butAdd_Click(object sender, EventArgs e)
         {
             TSAddForm f = new TSAddForm();
@@ -133,7 +119,6 @@ namespace TH_NET_Cuoi_Ky.GUI
             f.ShowDialog();
             //this.Visible = false; // Tam an form
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtMaTS.Text == "")
@@ -192,31 +177,50 @@ namespace TH_NET_Cuoi_Ky.GUI
             else data["TuKhoa"] = "";
             dgv.DataSource = TS_BLL.SearchTS(data);
         }
+        /* ---------------- Xu ly su kien click cac button ---------------- */
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        /* ---------------- Xu ly su kien menu ---------------- */
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowMainForm();
-            Dispose();
+            tabControl1.SelectedIndex = 0; // Chuyen ve tab Hien thi & Cap nhat neu dang o tab khac
+            List<DTO.TaiSan> l = TS_BLL.getTSById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString()));
+            txtMaTS.Text = l[0].MaTS.ToString();
+            txtTenTS.Text = l[0].TenTS;
+            txtDvTinh.Text = l[0].DVTinh;
+            txtTskt.Text = l[0].TSKT;
+
+            txtGhiChu.Text = l[0].GhiChu;
+            cbbNuocSX.SelectedItem = l[0].NuocSX.TenNuocSX;
+            cbbLoaiTS.SelectedItem = l[0].LoaiTS.TenLoaiTS;
+            dateTimePicker1.Value = new DateTime(l[0].NamSX, 1, 1);
         }
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //dgv2.DataSource = TS_BLL.ShowTSDetail(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString()));
-        }
-
-        private void dgv_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
+            if (dgv.SelectedRows.Count == 0)
             {
-                var hti = dgv.HitTest(e.X, e.Y);
-                dgv.ClearSelection();
-                if (hti.RowIndex != -1)
+                MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
+            }
+            else
+            {
+                var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
+                         "Xác nhận xóa dữ liệu!",
+                         MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
                 {
-                    dgv.Rows[hti.RowIndex].Selected = true;
+                    // Add MaTS cua cac hang duoc chon vao list
+                    List<int> l = new List<int>();
+                    foreach (DataGridViewRow r in dgv.SelectedRows)
+                    {
+                        l.Add(Convert.ToInt32(r.Cells["MaTS"].Value.ToString()));
+                    }
+                    (bool result, string msg) = TS_BLL.deleteTS(l);
+
+                    MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
+
+                    ShowTS(); // Refresh lai du lieu tren DataGridView
                 }
             }
         }
-
         private void showDetailToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int maTS = Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString());
@@ -257,50 +261,153 @@ namespace TH_NET_Cuoi_Ky.GUI
                 }
             }
         }
+        /* ---------------- Xu ly su kien menu ---------------- */
 
-        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        /* ---------------- Xu ly su kien cho Datagridview ---------------- */
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            tabControl1.SelectedIndex = 0; // Chuyen ve tab Hien thi & Cap nhat neu dang o tab khac
-            List<DTO.TaiSan> l = TS_BLL.getTSById(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString()));
-            txtMaTS.Text = l[0].MaTS.ToString();
-            txtTenTS.Text = l[0].TenTS;
-            txtDvTinh.Text = l[0].DVTinh;
-            txtTskt.Text = l[0].TSKT;
-
-            txtGhiChu.Text = l[0].GhiChu;
-            cbbNuocSX.SelectedItem = l[0].NuocSX.TenNuocSX;
-            cbbLoaiTS.SelectedItem = l[0].LoaiTS.TenLoaiTS;
-            dateTimePicker1.Value = new DateTime(l[0].NamSX, 1, 1);
+            //dgv2.DataSource = TS_BLL.ShowTSDetail(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaTS"].Value.ToString()));
         }
-
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dgv_MouseDown(object sender, MouseEventArgs e)
         {
-            if (dgv.SelectedRows.Count == 0)
+            if (e.Button == MouseButtons.Right)
             {
-                MessageBox.Show("Vui lòng chọn ít nhất một hàng cần xóa!");
+                var hti = dgv.HitTest(e.X, e.Y);
+                dgv.ClearSelection();
+                if (hti.RowIndex != -1)
+                {
+                    dgv.Rows[hti.RowIndex].Selected = true;
+                }
+            }
+        }
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                btnDel.Enabled = true;
+                btnUpdate.Enabled = true;
             }
             else
             {
-                var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa (các) hàng đã chọn?",
-                         "Xác nhận xóa dữ liệu!",
-                         MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
+                btnDel.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
+        }
+        private void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            this.updateToolStripMenuItem_Click(sender, e);
+        }
+        /* ---------------- Xu ly su kien cho Datagridview ---------------- */
+    
+        /* ---------------- Xu ly su kien combobox  ---------------- */
+
+        private void cbbLoaiTS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbLoaiTS.SelectedIndex == 0)
+            {
+                cbbLoaiTS.SelectedIndex = -1;
+                cbbLoaiTS.Text = "";
+                LoaiTSAddForm f = new LoaiTSAddForm();
+                f.BackToPreviousForm += () => { };
+                f.allowtoReturnTenLoaiTS(true);
+                f.returnTenLoaiTS += addNewLoaiTS;
+                f.ShowDialog();
+            }
+        }
+        private void cbbLoaiTS1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbLoaiTS1.SelectedIndex == 0)
+            {
+                cbbLoaiTS1.SelectedIndex = -1;
+                cbbLoaiTS1.Text = "";
+                LoaiTSAddForm f = new LoaiTSAddForm();
+                f.BackToPreviousForm += () => { };
+                f.allowtoReturnTenLoaiTS(true);
+                f.returnTenLoaiTS += addNewLoaiTS;
+                f.ShowDialog();
+            }
+        }
+        private void cbbNuocSX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbNuocSX.SelectedIndex == 0)
+            {
+                cbbNuocSX.SelectedIndex = -1;
+                cbbNuocSX.Text = "";
+                NuocSXAddform f = new NuocSXAddform();
+                f.BackToPreviousForm += () => { };
+                f.allowReturnNuocSX(true);
+                f.returnNuocSX += addNewNuocSX;
+                f.ShowDialog();
+            }
+        }
+        private void cbbNuocSX1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbNuocSX1.SelectedIndex == 0)
+            {
+                cbbNuocSX1.SelectedIndex = -1;
+                cbbNuocSX1.Text = "";
+                NuocSXAddform f = new NuocSXAddform();
+                f.BackToPreviousForm += () => { };
+                f.allowReturnNuocSX(true);
+                f.returnNuocSX += addNewNuocSX;
+                f.ShowDialog();
+            }
+        }
+        /* ---------------- Xu ly su kien combobox  ---------------- */
+
+        /* ---------------- Xu ly cac to hop phim  ---------------- */
+        private void TSForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            // To hop Ctrl + N => Tao Tai San moi
+            if (e.KeyCode == Keys.N && e.Modifiers == Keys.Control)
+            {
+                this.butAdd_Click(sender, e);
+            }
+        }
+
+        private void tabControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0) // Neu dang o tren tab Hien thi va cap nhat
+            {
+                if (e.KeyCode == Keys.Enter)
                 {
-                    // Add MaTS cua cac hang duoc chon vao list
-                    List<int> l = new List<int>();
-                    foreach (DataGridViewRow r in dgv.SelectedRows)
-                    {
-                        l.Add(Convert.ToInt32(r.Cells["MaTS"].Value.ToString()));
-                    }
-                    (bool result, string msg) = TS_BLL.deleteTS(l);
-
-                    MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
-
-                    ShowTS(); // Refresh lai du lieu tren DataGridView
+                    this.btnUpdate_Click(sender, e);
+                }
+            }
+            else
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    this.btnSearch_Click(sender, e);
                 }
             }
         }
 
+        private void dgv_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) // Neu bam nut Delete khi dang o tren dgv
+            {
+                this.deleteToolStripMenuItem_Click(sender, e);
+            }
+        }
+        /* ---------------- Xu ly cac to hop phim  ---------------- */
+
+        /* ---------------- Xu ly cac su kien khac cua form  ---------------- */
+        private void ShowTS()
+        {
+            // Hien thi tat ca, khong kem filter hoac dieu kien tim kiem
+            dgv.DataSource = TS_BLL.ShowTS_BLL();
+        }
+        private void Reload()
+        {
+            ShowTS(); // Load lai du lieu cho DataGridView
+            this.Visible = true; // Hien thi lai form
+        }
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ShowMainForm();
+            Dispose();
+        }
         private void loadCBBNSX_DoWork(object sender, DoWorkEventArgs e)
         {
             // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
@@ -338,117 +445,50 @@ namespace TH_NET_Cuoi_Ky.GUI
         //    loadCBBNuocSX();
         //}));
         //}
-    private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
-    {
-        // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
-        cbbLoaiTS1.Invoke(new Action(() =>
+        private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
         {
-            cbbLoaiTS1.Items.Clear();
-            cbbLoaiTS1.Items.Add(" ** Thêm mới ** ");
-        }));
-        cbbLoaiTS.Invoke(new Action(() =>
-        {
-            cbbLoaiTS.Items.Clear();
-            cbbLoaiTS.Items.Add(" ** Thêm mới ** ");
-        }));
-        foreach (string i in LTS_BLL.loadCBB_BLL())
-        {
+            // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
             cbbLoaiTS1.Invoke(new Action(() =>
             {
-                if (cbbLoaiTS1.FindStringExact(i) < 0)
-                {
-                    cbbLoaiTS1.Items.Add(i);
-
-                }
-            }));  
-            if (cbbLoaiTS.FindStringExact(i) < 0)
+                cbbLoaiTS1.Items.Clear();
+                cbbLoaiTS1.Items.Add(" ** Thêm mới ** ");
+            }));
+            cbbLoaiTS.Invoke(new Action(() =>
             {
-                cbbLoaiTS.Invoke(new Action(() =>
+                cbbLoaiTS.Items.Clear();
+                cbbLoaiTS.Items.Add(" ** Thêm mới ** ");
+            }));
+            foreach (string i in LTS_BLL.loadCBB_BLL())
+            {
+                cbbLoaiTS1.Invoke(new Action(() =>
                 {
-                    cbbLoaiTS.Items.Add(i);
+                    if (cbbLoaiTS1.FindStringExact(i) < 0)
+                    {
+                        cbbLoaiTS1.Items.Add(i);
+
+                    }
                 }));
+                if (cbbLoaiTS.FindStringExact(i) < 0)
+                {
+                    cbbLoaiTS.Invoke(new Action(() =>
+                    {
+                        cbbLoaiTS.Items.Add(i);
+                    }));
+                }
             }
         }
-    }
-    //private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
-    //{
-    //    cbbLoaiTS1.Invoke(new Action(() => {
-    //        loadCBBLoaiTS();
-    //    }));
-    //}
+        //private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
+        //{
+        //    cbbLoaiTS1.Invoke(new Action(() => {
+        //        loadCBBLoaiTS();
+        //    }));
+        //}
 
-    private void Form1_Shown(object sender, EventArgs e)
+        private void Form1_Shown(object sender, EventArgs e)
         {
             loadCBBLTS.RunWorkerAsync();
             loadCBBNSX.RunWorkerAsync();
         }
-
-        private void dgv_SelectionChanged(object sender, EventArgs e)
-        {
-            if(dgv.SelectedRows.Count > 0)
-            {
-                btnDel.Enabled = true;
-                btnUpdate.Enabled = true;
-            }
-            else
-            {
-                btnDel.Enabled = false;
-                btnUpdate.Enabled = false;
-            }
-        }
-
-        private void cbbLoaiTS_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(cbbLoaiTS.SelectedIndex == 0)
-            {
-                cbbLoaiTS.SelectedIndex = -1;
-                cbbLoaiTS.Text = "";
-                LoaiTSAddForm f = new LoaiTSAddForm();
-                f.BackToPreviousForm += () => { };
-                f.allowtoReturnTenLoaiTS(true);
-                f.returnTenLoaiTS += addNewLoaiTS;
-                f.ShowDialog();
-            }
-        }
-        private void cbbLoaiTS1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbLoaiTS1.SelectedIndex == 0)
-            {
-                cbbLoaiTS1.SelectedIndex = -1;
-                cbbLoaiTS1.Text = "";
-                LoaiTSAddForm f = new LoaiTSAddForm();
-                f.BackToPreviousForm += () => { };
-                f.allowtoReturnTenLoaiTS(true);
-                f.returnTenLoaiTS += addNewLoaiTS;
-                f.ShowDialog();
-            }
-        }
-        private void cbbNuocSX_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbNuocSX.SelectedIndex == 0)
-            {
-                cbbNuocSX.SelectedIndex = -1;
-                cbbNuocSX.Text = "";
-                NuocSXAddform f = new NuocSXAddform();
-                f.BackToPreviousForm += () => { };
-                f.allowReturnNuocSX(true);
-                f.returnNuocSX += addNewNuocSX;
-                f.ShowDialog();
-            }
-        }
-
-        private void cbbNuocSX1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbNuocSX1.SelectedIndex == 0)
-            {
-                cbbNuocSX1.SelectedIndex = -1;
-                cbbNuocSX1.Text = "";
-                NuocSXAddform f = new NuocSXAddform();
-                f.BackToPreviousForm += () => { };
-                f.allowReturnNuocSX(true);
-                f.returnNuocSX += addNewNuocSX;
-                f.ShowDialog();           
-            }
-        }
+        /* ---------------- Xu ly cac su kien khac cua form  ---------------- */
     }
 }

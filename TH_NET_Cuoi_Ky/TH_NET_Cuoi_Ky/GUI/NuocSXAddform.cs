@@ -68,5 +68,17 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             this.allow = v;
         }
+
+        private void NuocSXAddform_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Enter de add
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Escape) // Thoat neu nhan Esc
+            {
+                this.btnCancel_Click(sender, e);
+            }
+        }
     }
 }

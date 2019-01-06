@@ -188,5 +188,30 @@ namespace TH_NET_Cuoi_Ky.GUI
                 but_Update.Enabled = false;
             }
         }
+
+        private void NguoiQLForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            // To hop Ctrl + N => Tao moi
+            if (e.KeyCode == Keys.N && e.Modifiers == Keys.Control)
+            {
+                this.but_Add_Click(sender, e);
+            }
+        }
+
+        private void dgv_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) // Neu bam nut Delete khi dang o tren dgv
+            {
+                this.deleteToolStripMenuItem_Click(sender, e);
+            }
+        }
+
+        private void txt_Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.but_Search_Click(sender, e);
+            }
+        }
     }
 }

@@ -93,5 +93,17 @@ namespace TH_NET_Cuoi_Ky.GUI
                 }
             }
         }
+
+        private void PhongAddForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Enter de add
+            {
+                this.but_OK_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Escape) // Thoat neu nhan Esc
+            {
+                this.but_Cancel_Click(sender, e);
+            }
+        }
     }
 }
