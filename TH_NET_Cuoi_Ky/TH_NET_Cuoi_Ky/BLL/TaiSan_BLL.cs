@@ -92,9 +92,10 @@ namespace TH_NET_Cuoi_Ky.BLL
             {
                 string tuKhoa;
                 s.TryGetValue("TuKhoa", out tuKhoa);
-                data = from p in data
-                        where p.TenTS.Contains(tuKhoa)
-                        select p;
+                //data = from p in data
+                //        where p.TenTS.Contains(tuKhoa)
+                //        select p;
+                data = data.Where(p => p.TenTS.Contains(tuKhoa) || p.TSKT.Contains(tuKhoa)); // Tim theo Ten hoac TSKT
             }
             
             return data.ToList();
