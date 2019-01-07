@@ -452,7 +452,14 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog.ShowDialog();
+            Import_ExportTSForm f = new Import_ExportTSForm();
+            f.getDGV += () =>
+            {
+                return dgv;
+            };
+            f.Text = "Xuất dữ liệu ra file";
+            f.startExportingData();
+            f.ShowDialog();
         }
         private void importToolStripMenuItem_Click(object sender, EventArgs e)
         {
