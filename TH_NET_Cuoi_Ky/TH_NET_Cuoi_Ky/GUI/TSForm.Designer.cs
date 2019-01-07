@@ -70,6 +70,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.loadCBBLTS = new System.ComponentModel.BackgroundWorker();
             this.loadCBBNSX = new System.ComponentModel.BackgroundWorker();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -538,6 +539,16 @@
             // 
             this.loadCBBNSX.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBNSX_DoWork);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(52, 435);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 32);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Export";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // TSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -545,6 +556,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1034, 472);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.butShow);
@@ -617,6 +629,7 @@
         private System.ComponentModel.BackgroundWorker loadCBBLTS;
         private System.ComponentModel.BackgroundWorker loadCBBNSX;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
     }
 }
 
