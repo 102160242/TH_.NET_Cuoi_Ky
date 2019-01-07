@@ -75,6 +75,7 @@
             this.newTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýCácMụcKhácToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,7 +86,8 @@
             this.nhapXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giúpĐỡToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhómTácGiảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -591,12 +593,19 @@
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
             this.importToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.importToolStripMenuItem.Text = "Nhập từ file (Ctrl + I)";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.exportToolStripMenuItem.Text = "Xuất ra file (Ctrl + E)";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
             // 
             // exitToolStripMenuItem
             // 
@@ -621,42 +630,42 @@
             // phongToolStripMenuItem
             // 
             this.phongToolStripMenuItem.Name = "phongToolStripMenuItem";
-            this.phongToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.phongToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.phongToolStripMenuItem.Text = "Phòng";
             this.phongToolStripMenuItem.Click += new System.EventHandler(this.phongToolStripMenuItem_Click);
             // 
             // nguoiQLToolStripMenuItem
             // 
             this.nguoiQLToolStripMenuItem.Name = "nguoiQLToolStripMenuItem";
-            this.nguoiQLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nguoiQLToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.nguoiQLToolStripMenuItem.Text = "Người Quản Lý";
             this.nguoiQLToolStripMenuItem.Click += new System.EventHandler(this.nguoiQLToolStripMenuItem_Click);
             // 
             // loaiTSToolStripMenuItem
             // 
             this.loaiTSToolStripMenuItem.Name = "loaiTSToolStripMenuItem";
-            this.loaiTSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loaiTSToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.loaiTSToolStripMenuItem.Text = "Loại Tài Sản";
             this.loaiTSToolStripMenuItem.Click += new System.EventHandler(this.loaiTSToolStripMenuItem_Click);
             // 
             // nhaCCToolStripMenuItem
             // 
             this.nhaCCToolStripMenuItem.Name = "nhaCCToolStripMenuItem";
-            this.nhaCCToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nhaCCToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.nhaCCToolStripMenuItem.Text = "Nhà Cung Cấp";
             this.nhaCCToolStripMenuItem.Click += new System.EventHandler(this.nhaCCToolStripMenuItem_Click);
             // 
             // nuocSXToolStripMenuItem
             // 
             this.nuocSXToolStripMenuItem.Name = "nuocSXToolStripMenuItem";
-            this.nuocSXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuocSXToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.nuocSXToolStripMenuItem.Text = "Nước Sản Xuất";
             this.nuocSXToolStripMenuItem.Click += new System.EventHandler(this.nuocSXToolStripMenuItem_Click);
             // 
             // nhapXuatToolStripMenuItem
             // 
             this.nhapXuatToolStripMenuItem.Name = "nhapXuatToolStripMenuItem";
-            this.nhapXuatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nhapXuatToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.nhapXuatToolStripMenuItem.Text = "Lịch Sử Nhập/Xuất";
             this.nhapXuatToolStripMenuItem.Click += new System.EventHandler(this.nhapXuatToolStripMenuItem_Click);
             // 
@@ -671,13 +680,18 @@
             // nhómTácGiảToolStripMenuItem
             // 
             this.nhómTácGiảToolStripMenuItem.Name = "nhómTácGiảToolStripMenuItem";
-            this.nhómTácGiảToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nhómTácGiảToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.nhómTácGiảToolStripMenuItem.Text = "Nhóm Tác Giả";
             // 
-            // toolStripSeparator1
+            // saveFileDialog
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
+            this.saveFileDialog.DefaultExt = "xlsx";
+            this.saveFileDialog.Filter = "Tất cả các tệp|*.*|MS Excel (2007-2019)|*.xlsx|MS Excel (2003)|*.xls";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.DefaultExt = "xlsx";
+            this.openFileDialog.Filter = "MS Excel (2007-2019)|*.xlsx|MS Excel (2003)|*.xls";
             // 
             // TSForm
             // 
@@ -779,6 +793,8 @@
         private System.Windows.Forms.ToolStripMenuItem giúpĐỡToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhómTácGiảToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

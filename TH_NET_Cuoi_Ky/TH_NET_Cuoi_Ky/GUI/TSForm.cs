@@ -450,6 +450,14 @@ namespace TH_NET_Cuoi_Ky.GUI
             this.Visible = false;
             f.Show();
         }
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.ShowDialog();
+        }
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog.ShowDialog();
+        }
         /* ---------------- Xu ly cac su kien menu cua form  ---------------- */
 
         /* ---------------- Xu ly cac su kien khac cua form  ---------------- */
