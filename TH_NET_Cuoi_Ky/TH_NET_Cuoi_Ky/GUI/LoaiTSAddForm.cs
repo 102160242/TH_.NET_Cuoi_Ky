@@ -15,8 +15,12 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class LoaiTSAddForm : Form
     {
         public delegate void dd();
-        public dd BackToPreviousForm;
+        public delegate void dd2(string s);
+        public dd2 returnTenLoaiTS;
+        public dd BackToPreviousForm;   
         LoaiTS_BLL LoaiTS_BLL;
+        private bool allow = false;
+
         public LoaiTSAddForm()
         {
             InitializeComponent();
@@ -40,6 +44,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 // Neu add thanh cong thi hien lai Form Loai Tai San
                 BackToPreviousForm();
+                if (this.allow) returnTenLoaiTS(txtTenLoaiTS.Text);
                 Dispose();
             }
             else
@@ -50,14 +55,31 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butCancel_Click(object sender, EventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
 
         private void LoaiTSAddForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
+        }
+
+        internal void allowtoReturnTenLoaiTS(bool v)
+        {
+            this.allow = v;
+        }
+
+        private void LoaiTSAddForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Enter de add
+            {
+                this.butOK_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Escape) // Thoat neu nhan Esc
+            {
+                this.butCancel_Click(sender, e);
+            }
         }
     }
 }

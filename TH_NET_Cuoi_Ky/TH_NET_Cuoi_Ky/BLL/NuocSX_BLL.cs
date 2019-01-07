@@ -63,7 +63,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             try
             {
-                return db.NuocSXs.Where(p => p.TenNuocSX == TenNuocSX).Select(p => p.MaNuocSX).Single();
+                return db.NuocSXs.Where(p => p.TenNuocSX == TenNuocSX).Select(p => p.MaNuocSX).First();
             }
             //catch()
             catch(System.Data.SqlClient.SqlException e)

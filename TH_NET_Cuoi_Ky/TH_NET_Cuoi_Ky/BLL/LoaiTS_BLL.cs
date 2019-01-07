@@ -29,7 +29,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             try
             {
-                return db.LoaiTSs.Where(p => p.TenLoaiTS == TenLoaiTS).Select(p => p.MaLoaiTS).Single();
+                return db.LoaiTSs.Where(p => p.TenLoaiTS == TenLoaiTS).Select(p => p.MaLoaiTS).First();
             }
             catch (System.Data.SqlClient.SqlException e)
             {

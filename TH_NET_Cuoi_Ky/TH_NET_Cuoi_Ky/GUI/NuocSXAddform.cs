@@ -13,8 +13,12 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NuocSXAddform : Form
     {
         public delegate void dd();
+        public delegate void dd2(string s);
         public dd BackToPreviousForm;
+        public dd2 returnNuocSX;
         BLL.NuocSX_BLL NSX_BLL;
+        private bool allow = false;
+
         public NuocSXAddform()
         {
             InitializeComponent();
@@ -39,6 +43,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 // Neu add thanh cong thi hien lai Form Nuoc SX
                 BackToPreviousForm();
+                if (this.allow) returnNuocSX(txtTenNSX.Text);
                 Dispose();
             }
             else
@@ -49,14 +54,31 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
         }
 
         private void NuocSXAddform_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BackToPreviousForm();
+            //BackToPreviousForm();
             Dispose();
+        }
+
+        internal void allowReturnNuocSX(bool v)
+        {
+            this.allow = v;
+        }
+
+        private void NuocSXAddform_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Enter de add
+            {
+                this.btnAdd_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Escape) // Thoat neu nhan Esc
+            {
+                this.btnCancel_Click(sender, e);
+            }
         }
     }
 }

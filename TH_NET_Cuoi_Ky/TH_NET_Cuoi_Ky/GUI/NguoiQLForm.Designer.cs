@@ -74,10 +74,10 @@
             this.but_Show.BackColor = System.Drawing.Color.Transparent;
             this.but_Show.Image = ((System.Drawing.Image)(resources.GetObject("but_Show.Image")));
             this.but_Show.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Show.Location = new System.Drawing.Point(40, 443);
+            this.but_Show.Location = new System.Drawing.Point(7, 443);
             this.but_Show.Margin = new System.Windows.Forms.Padding(4);
             this.but_Show.Name = "but_Show";
-            this.but_Show.Size = new System.Drawing.Size(90, 36);
+            this.but_Show.Size = new System.Drawing.Size(92, 32);
             this.but_Show.TabIndex = 10;
             this.but_Show.Text = "Hiển thị";
             this.but_Show.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -133,10 +133,10 @@
             this.but_Add.BackColor = System.Drawing.Color.Transparent;
             this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
             this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Add.Location = new System.Drawing.Point(179, 443);
+            this.but_Add.Location = new System.Drawing.Point(162, 443);
             this.but_Add.Margin = new System.Windows.Forms.Padding(4);
             this.but_Add.Name = "but_Add";
-            this.but_Add.Size = new System.Drawing.Size(90, 36);
+            this.but_Add.Size = new System.Drawing.Size(92, 32);
             this.but_Add.TabIndex = 11;
             this.but_Add.Text = "Thêm";
             this.but_Add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -219,6 +219,7 @@
             this.dgv.TabIndex = 9;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -252,7 +253,7 @@
             this.but_Search.Location = new System.Drawing.Point(387, 100);
             this.but_Search.Margin = new System.Windows.Forms.Padding(4);
             this.but_Search.Name = "but_Search";
-            this.but_Search.Size = new System.Drawing.Size(96, 36);
+            this.but_Search.Size = new System.Drawing.Size(92, 32);
             this.but_Search.TabIndex = 7;
             this.but_Search.Text = "Tìm kiếm";
             this.but_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -265,10 +266,10 @@
             this.but_Update.Enabled = false;
             this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
             this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Update.Location = new System.Drawing.Point(318, 443);
+            this.but_Update.Location = new System.Drawing.Point(317, 443);
             this.but_Update.Margin = new System.Windows.Forms.Padding(4);
             this.but_Update.Name = "but_Update";
-            this.but_Update.Size = new System.Drawing.Size(90, 36);
+            this.but_Update.Size = new System.Drawing.Size(92, 32);
             this.but_Update.TabIndex = 12;
             this.but_Update.Text = "Cập nhật";
             this.but_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -282,16 +283,17 @@
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(217, 24);
             this.txt_Search.TabIndex = 8;
+            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
             // 
             // but_Cancel
             // 
             this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(596, 444);
+            this.but_Cancel.Location = new System.Drawing.Point(627, 444);
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(90, 36);
+            this.but_Cancel.Size = new System.Drawing.Size(92, 32);
             this.but_Cancel.TabIndex = 14;
             this.but_Cancel.Text = "Thoát";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -304,10 +306,10 @@
             this.but_Delete.Enabled = false;
             this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
             this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Delete.Location = new System.Drawing.Point(457, 444);
+            this.but_Delete.Location = new System.Drawing.Point(472, 444);
             this.but_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.but_Delete.Name = "but_Delete";
-            this.but_Delete.Size = new System.Drawing.Size(90, 36);
+            this.but_Delete.Size = new System.Drawing.Size(92, 32);
             this.but_Delete.TabIndex = 13;
             this.but_Delete.Text = "Xóa";
             this.but_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -353,12 +355,14 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NguoiQLForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Người Quản Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NguoiQLForm_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NguoiQLForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.menuDGV.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

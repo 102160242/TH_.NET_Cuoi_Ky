@@ -43,7 +43,7 @@
             this.cbbAddress.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbAddress.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbAddress.FormattingEnabled = true;
-            this.cbbAddress.Location = new System.Drawing.Point(169, 58);
+            this.cbbAddress.Location = new System.Drawing.Point(171, 58);
             this.cbbAddress.Margin = new System.Windows.Forms.Padding(4);
             this.cbbAddress.Name = "cbbAddress";
             this.cbbAddress.Size = new System.Drawing.Size(235, 26);
@@ -51,7 +51,7 @@
             // 
             // txtTenNhaCC
             // 
-            this.txtTenNhaCC.Location = new System.Drawing.Point(169, 16);
+            this.txtTenNhaCC.Location = new System.Drawing.Point(171, 16);
             this.txtTenNhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNhaCC.Name = "txtTenNhaCC";
             this.txtTenNhaCC.Size = new System.Drawing.Size(235, 24);
@@ -61,7 +61,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(13, 61);
+            this.label3.Location = new System.Drawing.Point(15, 61);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 18);
@@ -72,7 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(13, 17);
+            this.label2.Location = new System.Drawing.Point(15, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 18);
@@ -84,10 +84,10 @@
             this.butOK.BackColor = System.Drawing.Color.Transparent;
             this.butOK.Image = ((System.Drawing.Image)(resources.GetObject("butOK.Image")));
             this.butOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butOK.Location = new System.Drawing.Point(16, 103);
+            this.butOK.Location = new System.Drawing.Point(171, 102);
             this.butOK.Margin = new System.Windows.Forms.Padding(4);
             this.butOK.Name = "butOK";
-            this.butOK.Size = new System.Drawing.Size(88, 32);
+            this.butOK.Size = new System.Drawing.Size(92, 32);
             this.butOK.TabIndex = 3;
             this.butOK.Text = "OK";
             this.butOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -99,10 +99,10 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(316, 103);
+            this.butCancel.Location = new System.Drawing.Point(314, 102);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
-            this.butCancel.Size = new System.Drawing.Size(88, 32);
+            this.butCancel.Size = new System.Drawing.Size(92, 32);
             this.butCancel.TabIndex = 4;
             this.butCancel.Text = "Cancel";
             this.butCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -128,6 +128,7 @@
             this.Controls.Add(this.label2);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NhaCCAddForm";
@@ -135,6 +136,7 @@
             this.Text = "Thêm Nhà Cung Cấp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NhaCCAddForm_FormClosed);
             this.Shown += new System.EventHandler(this.NhaCCAddForm_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NhaCCAddForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

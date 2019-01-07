@@ -1,4 +1,4 @@
-﻿namespace TH_NET_Cuoi_Ky
+﻿namespace TH_NET_Cuoi_Ky.GUI
 {
     partial class TSForm
     {
@@ -45,8 +45,8 @@
             this.cbbLoaiTS = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbbNuocSX = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
-            this.butShow = new System.Windows.Forms.Button();
             this.txtTskt = new System.Windows.Forms.TextBox();
             this.txtDvTinh = new System.Windows.Forms.TextBox();
             this.txtTenTS = new System.Windows.Forms.TextBox();
@@ -57,14 +57,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.butShow = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.menuDGV = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.butAdd = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.loadCBBLTS = new System.ComponentModel.BackgroundWorker();
@@ -72,6 +73,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.menuDGV.SuspendLayout();
@@ -82,7 +84,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(528, 57);
+            this.label6.Location = new System.Drawing.Point(81, 28);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 18);
@@ -91,7 +93,7 @@
             // 
             // txtTuKhoa
             // 
-            this.txtTuKhoa.Location = new System.Drawing.Point(633, 54);
+            this.txtTuKhoa.Location = new System.Drawing.Point(171, 25);
             this.txtTuKhoa.Margin = new System.Windows.Forms.Padding(4);
             this.txtTuKhoa.Name = "txtTuKhoa";
             this.txtTuKhoa.Size = new System.Drawing.Size(250, 24);
@@ -103,10 +105,10 @@
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(713, 104);
+            this.btnSearch.Location = new System.Drawing.Point(248, 74);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(101, 32);
+            this.btnSearch.Size = new System.Drawing.Size(92, 32);
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -118,28 +120,32 @@
             this.cbbLoaiTS1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbLoaiTS1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbLoaiTS1.FormattingEnabled = true;
-            this.cbbLoaiTS1.Location = new System.Drawing.Point(120, 78);
+            this.cbbLoaiTS1.Location = new System.Drawing.Point(182, 78);
             this.cbbLoaiTS1.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS1.Name = "cbbLoaiTS1";
             this.cbbLoaiTS1.Size = new System.Drawing.Size(250, 26);
+            this.cbbLoaiTS1.Sorted = true;
             this.cbbLoaiTS1.TabIndex = 2;
+            this.cbbLoaiTS1.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiTS1_SelectedIndexChanged);
             // 
             // cbbNuocSX1
             // 
             this.cbbNuocSX1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbNuocSX1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbNuocSX1.FormattingEnabled = true;
-            this.cbbNuocSX1.Location = new System.Drawing.Point(120, 28);
+            this.cbbNuocSX1.Location = new System.Drawing.Point(182, 28);
             this.cbbNuocSX1.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNuocSX1.Name = "cbbNuocSX1";
             this.cbbNuocSX1.Size = new System.Drawing.Size(250, 26);
+            this.cbbNuocSX1.Sorted = true;
             this.cbbNuocSX1.TabIndex = 1;
+            this.cbbNuocSX1.SelectedIndexChanged += new System.EventHandler(this.cbbNuocSX1_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 81);
+            this.label4.Location = new System.Drawing.Point(71, 81);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 18);
@@ -150,7 +156,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 33);
+            this.label3.Location = new System.Drawing.Point(71, 33);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 18);
@@ -200,14 +206,15 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1029, 180);
             this.tabControl1.TabIndex = 16;
+            this.tabControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tabControl1_KeyDown);
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.cbbLoaiTS);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.cbbNuocSX);
+            this.tabPage1.Controls.Add(this.btnUpdate);
             this.tabPage1.Controls.Add(this.txtGhiChu);
-            this.tabPage1.Controls.Add(this.butShow);
             this.tabPage1.Controls.Add(this.txtTskt);
             this.tabPage1.Controls.Add(this.txtDvTinh);
             this.tabPage1.Controls.Add(this.txtTenTS);
@@ -239,7 +246,9 @@
             this.cbbLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS.Name = "cbbLoaiTS";
             this.cbbLoaiTS.Size = new System.Drawing.Size(181, 24);
+            this.cbbLoaiTS.Sorted = true;
             this.cbbLoaiTS.TabIndex = 7;
+            this.cbbLoaiTS.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiTS_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -259,7 +268,25 @@
             this.cbbNuocSX.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNuocSX.Name = "cbbNuocSX";
             this.cbbNuocSX.Size = new System.Drawing.Size(181, 24);
+            this.cbbNuocSX.Sorted = true;
             this.cbbNuocSX.TabIndex = 5;
+            this.cbbNuocSX.SelectedIndexChanged += new System.EventHandler(this.cbbNuocSX_SelectedIndexChanged);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(874, 101);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(92, 32);
+            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtGhiChu
             // 
@@ -268,21 +295,6 @@
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(181, 22);
             this.txtGhiChu.TabIndex = 8;
-            // 
-            // butShow
-            // 
-            this.butShow.BackColor = System.Drawing.Color.Transparent;
-            this.butShow.Image = ((System.Drawing.Image)(resources.GetObject("butShow.Image")));
-            this.butShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butShow.Location = new System.Drawing.Point(865, 100);
-            this.butShow.Margin = new System.Windows.Forms.Padding(4);
-            this.butShow.Name = "butShow";
-            this.butShow.Size = new System.Drawing.Size(87, 32);
-            this.butShow.TabIndex = 9;
-            this.butShow.Text = "Hiển thị";
-            this.butShow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butShow.UseVisualStyleBackColor = false;
-            this.butShow.Click += new System.EventHandler(this.butShow_Click);
             // 
             // txtTskt
             // 
@@ -374,10 +386,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.btnSearch);
-            this.tabPage2.Controls.Add(this.txtTuKhoa);
-            this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
@@ -387,20 +397,47 @@
             this.tabPage2.Text = "Tìm kiếm";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnSearch);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.txtTuKhoa);
+            this.groupBox3.Location = new System.Drawing.Point(515, 8);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(502, 133);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tìm kiếm";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbbNuocSX1);
             this.groupBox1.Controls.Add(this.cbbLoaiTS1);
-            this.groupBox1.Location = new System.Drawing.Point(103, 7);
+            this.groupBox1.Location = new System.Drawing.Point(4, 8);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(399, 133);
+            this.groupBox1.Size = new System.Drawing.Size(502, 133);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter tìm kiếm";
+            // 
+            // butShow
+            // 
+            this.butShow.BackColor = System.Drawing.Color.Transparent;
+            this.butShow.Image = ((System.Drawing.Image)(resources.GetObject("butShow.Image")));
+            this.butShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butShow.Location = new System.Drawing.Point(187, 435);
+            this.butShow.Margin = new System.Windows.Forms.Padding(4);
+            this.butShow.Name = "butShow";
+            this.butShow.Size = new System.Drawing.Size(92, 32);
+            this.butShow.TabIndex = 11;
+            this.butShow.Text = "Hiển thị";
+            this.butShow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butShow.UseVisualStyleBackColor = false;
+            this.butShow.Click += new System.EventHandler(this.butShow_Click);
             // 
             // dgv
             // 
@@ -417,6 +454,7 @@
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -455,31 +493,15 @@
             this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butAdd.Location = new System.Drawing.Point(112, 435);
+            this.butAdd.Location = new System.Drawing.Point(471, 435);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(92, 32);
-            this.butAdd.TabIndex = 11;
+            this.butAdd.TabIndex = 12;
             this.butAdd.Text = "Thêm";
             this.butAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butAdd.UseVisualStyleBackColor = false;
             this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.Enabled = false;
-            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(474, 435);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(92, 32);
-            this.btnUpdate.TabIndex = 12;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDel
             // 
@@ -487,7 +509,7 @@
             this.btnDel.Enabled = false;
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(833, 435);
+            this.btnDel.Location = new System.Drawing.Point(755, 435);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(92, 32);
@@ -525,11 +547,12 @@
             this.ClientSize = new System.Drawing.Size(1034, 472);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.butShow);
             this.Controls.Add(this.butAdd);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "TSForm";
@@ -537,11 +560,13 @@
             this.Text = "Quản lý cơ sở vật chất khoa CNTT";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Shown += new System.EventHandler(this.Form1_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TSForm_KeyDown);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
@@ -591,6 +616,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.ComponentModel.BackgroundWorker loadCBBLTS;
         private System.ComponentModel.BackgroundWorker loadCBBNSX;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

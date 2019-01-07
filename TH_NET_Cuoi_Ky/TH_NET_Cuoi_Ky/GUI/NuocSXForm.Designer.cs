@@ -62,10 +62,10 @@
             this.but_Delete.Enabled = false;
             this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
             this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Delete.Location = new System.Drawing.Point(460, 464);
+            this.but_Delete.Location = new System.Drawing.Point(462, 461);
             this.but_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.but_Delete.Name = "but_Delete";
-            this.but_Delete.Size = new System.Drawing.Size(93, 32);
+            this.but_Delete.Size = new System.Drawing.Size(92, 32);
             this.but_Delete.TabIndex = 9;
             this.but_Delete.Text = "Xóa";
             this.but_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -77,10 +77,10 @@
             this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(613, 464);
+            this.but_Cancel.Location = new System.Drawing.Point(612, 461);
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(93, 32);
+            this.but_Cancel.Size = new System.Drawing.Size(92, 32);
             this.but_Cancel.TabIndex = 10;
             this.but_Cancel.Text = "Thoát";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -94,6 +94,7 @@
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(208, 24);
             this.txt_Search.TabIndex = 3;
+            this.txt_Search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Search_KeyDown);
             // 
             // but_Update
             // 
@@ -101,10 +102,10 @@
             this.but_Update.Enabled = false;
             this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
             this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Update.Location = new System.Drawing.Point(310, 464);
+            this.but_Update.Location = new System.Drawing.Point(312, 461);
             this.but_Update.Margin = new System.Windows.Forms.Padding(4);
             this.but_Update.Name = "but_Update";
-            this.but_Update.Size = new System.Drawing.Size(93, 32);
+            this.but_Update.Size = new System.Drawing.Size(92, 32);
             this.but_Update.TabIndex = 8;
             this.but_Update.Text = "Cập nhật";
             this.but_Update.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,7 +120,7 @@
             this.but_Search.Location = new System.Drawing.Point(125, 76);
             this.but_Search.Margin = new System.Windows.Forms.Padding(4);
             this.but_Search.Name = "but_Search";
-            this.but_Search.Size = new System.Drawing.Size(105, 32);
+            this.but_Search.Size = new System.Drawing.Size(92, 32);
             this.but_Search.TabIndex = 4;
             this.but_Search.Text = "Tìm kiếm";
             this.but_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -140,6 +141,7 @@
             this.dgv.TabIndex = 5;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -172,6 +174,7 @@
             this.txtTenNSX.Name = "txtTenNSX";
             this.txtTenNSX.Size = new System.Drawing.Size(208, 24);
             this.txtTenNSX.TabIndex = 2;
+            this.txtTenNSX.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenNSX_KeyDown);
             // 
             // txtMaNSX
             // 
@@ -187,10 +190,10 @@
             this.but_Add.BackColor = System.Drawing.Color.Transparent;
             this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
             this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Add.Location = new System.Drawing.Point(170, 464);
+            this.but_Add.Location = new System.Drawing.Point(162, 461);
             this.but_Add.Margin = new System.Windows.Forms.Padding(4);
             this.but_Add.Name = "but_Add";
-            this.but_Add.Size = new System.Drawing.Size(93, 32);
+            this.but_Add.Size = new System.Drawing.Size(92, 32);
             this.but_Add.TabIndex = 7;
             this.but_Add.Text = "Thêm";
             this.but_Add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -212,10 +215,10 @@
             this.but_Show.BackColor = System.Drawing.Color.Transparent;
             this.but_Show.Image = ((System.Drawing.Image)(resources.GetObject("but_Show.Image")));
             this.but_Show.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Show.Location = new System.Drawing.Point(11, 464);
+            this.but_Show.Location = new System.Drawing.Point(12, 461);
             this.but_Show.Margin = new System.Windows.Forms.Padding(4);
             this.but_Show.Name = "but_Show";
-            this.but_Show.Size = new System.Drawing.Size(93, 32);
+            this.but_Show.Size = new System.Drawing.Size(92, 32);
             this.but_Show.TabIndex = 6;
             this.but_Show.Text = "Hiển thị";
             this.but_Show.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -300,12 +303,14 @@
             this.Controls.Add(this.but_Add);
             this.Controls.Add(this.but_Show);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NuocSXForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Nước Sản Xuất";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NuocSXForm_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NuocSXForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.menuDGV.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

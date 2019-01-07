@@ -11,7 +11,6 @@ using TH_NET_Cuoi_Ky.BLL;
 
 namespace TH_NET_Cuoi_Ky.GUI
 {
-
     public partial class NhapXuatForm : Form
     {
         TaiSan_BLL Ts_BLL;
@@ -295,7 +294,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btn_ThanhLy_Click(object sender, EventArgs e)
         {
             ThanhLy f = new ThanhLy();
-            // f.BackToPreviousForm += Reload;
+            f.BackToPreviousForm += () => { };
             f.ShowDialog();
             //this.Visible = false; 
         }
@@ -398,9 +397,9 @@ namespace TH_NET_Cuoi_Ky.GUI
                 (bool result, string msg) = NX_BLL.Update_Nhap(new DTO.NhapXuat
                 {
                     SoPhieu = Convert.ToInt32(txt_Phieu_Nhap.Text),
-                    MaTS = Ts_BLL.GetIDbyTS(cbb_TenTSNhap.SelectedItem.ToString()),
-                    MaNhaCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCCNhap.SelectedItem.ToString()),
-                    MaPhong = p_BLL.GetIdByPhong(cbb_PhongNhap.SelectedItem.ToString()),
+                    MaTS = Ts_BLL.getIDByName(cbb_TenTSNhap.SelectedItem.ToString()),
+                    MaNhaCC = NCC_BLL.getIDByName(cbb_NhaCCNhap.SelectedItem.ToString()),
+                    MaPhong = p_BLL.getIDByName(cbb_PhongNhap.SelectedItem.ToString()),
                     NgayNhap = dateTimePicker1.Value,
                     SLNhap = Convert.ToInt32(numericUpDown_SLNhap.Value),
                     NguyenGia = Convert.ToInt32(txt_GiaNhap.Text),
@@ -431,9 +430,9 @@ namespace TH_NET_Cuoi_Ky.GUI
                 (bool result, string msg) = NX_BLL.Update_Xuat(new DTO.NhapXuat
                 {
                     SoPhieu = Convert.ToInt32(txt_phieu_xuat.Text),
-                    MaTS = Ts_BLL.GetIDbyTS(cbb_TenTSXuat.SelectedItem.ToString()),
-                    MaNhaCC = NCC_BLL.GetIdByNhaCC(cbb_NhaCCXuat.SelectedItem.ToString()),
-                    MaPhong = p_BLL.GetIdByPhong(cbb_PhongXuat.SelectedItem.ToString()),
+                    MaTS = Ts_BLL.getIDByName(cbb_TenTSXuat.SelectedItem.ToString()),
+                    MaNhaCC = NCC_BLL.getIDByName(cbb_NhaCCXuat.SelectedItem.ToString()),
+                    MaPhong = p_BLL.getIDByName(cbb_PhongXuat.SelectedItem.ToString()),
                     NgayXuat = dateTimePicker2.Value,
                     SLXuat = Convert.ToInt32(numericUpDown_SLXuat.Value),
                     NguyenGia = Convert.ToInt32(txt_GiaXuat.Text),
@@ -451,9 +450,9 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin");
                 return;
             }
-            int mataisan = Ts_BLL.GetIDbyTS(cbb_TenTSXuat.SelectedItem.ToString());
-            int manhacungcap = NCC_BLL.GetIdByNhaCC(cbb_NhaCCXuat.SelectedItem.ToString());
-            int maphong = p_BLL.GetIdByPhong(cbb_PhongXuat.SelectedItem.ToString());
+            int mataisan = Ts_BLL.getIDByName(cbb_TenTSXuat.SelectedItem.ToString());
+            int manhacungcap = NCC_BLL.getIDByName(cbb_NhaCCXuat.SelectedItem.ToString());
+            int maphong = p_BLL.getIDByName(cbb_PhongXuat.SelectedItem.ToString());
             if (mataisan == -1 || manhacungcap == -1 || maphong == -1)
             {
                 MessageBox.Show("Không tồn tại tài sản (nhà cung cấp hoặc phòng) đã chọn");
@@ -535,12 +534,29 @@ namespace TH_NET_Cuoi_Ky.GUI
                 MessageBox.Show(msg, "Lỗi");
             }*/
             NhapForm f = new NhapForm();
+            f.BackToPreviousForm += () => { };
             f.ShowDialog();
         }
 
         private void btnHienThiNhap_Click(object sender, EventArgs e)
         {
             Show_Nhap();
+        }
+
+        private void dgvNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) // Neu bam nut Delete khi dang o tren dgv
+            {
+                this.btnDelete_Click(sender, e);
+            }
+        }
+
+        private void dgvXuat_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) // Neu bam nut Delete khi dang o tren dgv
+            {
+                this.btnDelete_Click(sender, e);
+            }
         }
     }
 }

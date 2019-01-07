@@ -133,7 +133,7 @@
             this.butSearch.Location = new System.Drawing.Point(114, 65);
             this.butSearch.Margin = new System.Windows.Forms.Padding(4);
             this.butSearch.Name = "butSearch";
-            this.butSearch.Size = new System.Drawing.Size(99, 32);
+            this.butSearch.Size = new System.Drawing.Size(96, 32);
             this.butSearch.TabIndex = 4;
             this.butSearch.Text = "Tìm kiếm";
             this.butSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

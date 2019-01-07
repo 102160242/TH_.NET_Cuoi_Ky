@@ -43,10 +43,10 @@
             this.but_Cancel.BackColor = System.Drawing.Color.Transparent;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(280, 135);
+            this.but_Cancel.Location = new System.Drawing.Point(280, 107);
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(96, 32);
+            this.but_Cancel.Size = new System.Drawing.Size(92, 32);
             this.but_Cancel.TabIndex = 4;
             this.but_Cancel.Text = "Cancel";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -56,13 +56,13 @@
             // but_OK
             // 
             this.but_OK.BackColor = System.Drawing.Color.Transparent;
-            this.but_OK.Image = ((System.Drawing.Image)(resources.GetObject("but_OK.Image")));
+            this.but_OK.Image = global::TH_NET_Cuoi_Ky.Properties.Resources.butOK_Image;
             this.but_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_OK.Location = new System.Drawing.Point(27, 135);
+            this.but_OK.Location = new System.Drawing.Point(146, 107);
             this.but_OK.Margin = new System.Windows.Forms.Padding(4);
             this.but_OK.Name = "but_OK";
-            this.but_OK.Size = new System.Drawing.Size(96, 32);
-            this.but_OK.TabIndex = 35;
+            this.but_OK.Size = new System.Drawing.Size(92, 32);
+            this.but_OK.TabIndex = 3;
             this.but_OK.Text = "OK";
             this.but_OK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.but_OK.UseVisualStyleBackColor = false;
@@ -72,7 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(24, 84);
+            this.label1.Location = new System.Drawing.Point(18, 68);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 18);
@@ -81,7 +81,7 @@
             // 
             // txtTenPhong
             // 
-            this.txtTenPhong.Location = new System.Drawing.Point(150, 21);
+            this.txtTenPhong.Location = new System.Drawing.Point(146, 21);
             this.txtTenPhong.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(226, 24);
@@ -91,7 +91,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(24, 24);
+            this.label2.Location = new System.Drawing.Point(18, 24);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 18);
@@ -103,7 +103,7 @@
             this.cbbNguoiQL.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbbNguoiQL.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbbNguoiQL.FormattingEnabled = true;
-            this.cbbNguoiQL.Location = new System.Drawing.Point(150, 81);
+            this.cbbNguoiQL.Location = new System.Drawing.Point(146, 63);
             this.cbbNguoiQL.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNguoiQL.Name = "cbbNguoiQL";
             this.cbbNguoiQL.Size = new System.Drawing.Size(226, 26);
@@ -119,7 +119,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(396, 176);
+            this.ClientSize = new System.Drawing.Size(390, 149);
             this.Controls.Add(this.cbbNguoiQL);
             this.Controls.Add(this.txtTenPhong);
             this.Controls.Add(this.label2);
@@ -128,6 +128,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "PhongAddForm";
@@ -135,6 +136,7 @@
             this.Text = "Thêm Phòng";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PhongAddForm_FormClosed);
             this.Shown += new System.EventHandler(this.PhongAddForm_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PhongAddForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,6 +1,6 @@
-﻿namespace TH_NET_Cuoi_Ky
+﻿namespace TH_NET_Cuoi_Ky.GUI
 {
-    partial class AddFormTS
+    partial class TSAddForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFormTS));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TSAddForm));
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -45,8 +45,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.loadCBBNuocSX = new System.ComponentModel.BackgroundWorker();
-            this.loadCBBLoaiTS = new System.ComponentModel.BackgroundWorker();
+            this.loadCBBNSX = new System.ComponentModel.BackgroundWorker();
+            this.loadCBBLTS = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // label7
@@ -134,7 +134,9 @@
             this.cbbLoaiTS.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoaiTS.Name = "cbbLoaiTS";
             this.cbbLoaiTS.Size = new System.Drawing.Size(220, 26);
+            this.cbbLoaiTS.Sorted = true;
             this.cbbLoaiTS.TabIndex = 5;
+            this.cbbLoaiTS.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiTS_SelectedIndexChanged);
             // 
             // txtGhiChu
             // 
@@ -153,14 +155,16 @@
             this.cbbNuocSX.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNuocSX.Name = "cbbNuocSX";
             this.cbbNuocSX.Size = new System.Drawing.Size(220, 26);
+            this.cbbNuocSX.Sorted = true;
             this.cbbNuocSX.TabIndex = 4;
+            this.cbbNuocSX.SelectedIndexChanged += new System.EventHandler(this.cbbNuocSX_SelectedIndexChanged);
             // 
             // butAdd
             // 
             this.butAdd.BackColor = System.Drawing.Color.Transparent;
-            this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
+            this.butAdd.Image = global::TH_NET_Cuoi_Ky.Properties.Resources.butOK_Image;
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butAdd.Location = new System.Drawing.Point(13, 300);
+            this.butAdd.Location = new System.Drawing.Point(143, 296);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(92, 32);
@@ -175,7 +179,7 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(271, 300);
+            this.butCancel.Location = new System.Drawing.Point(271, 296);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(92, 32);
@@ -228,15 +232,15 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Năm sản xuất";
             // 
-            // loadCBBNuocSX
+            // loadCBBNSX
             // 
-            this.loadCBBNuocSX.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBNuocSX_DoWork);
+            this.loadCBBNSX.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBNSX_DoWork);
             // 
-            // loadCBBLoaiTS
+            // loadCBBLTS
             // 
-            this.loadCBBLoaiTS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBLoaiTS_DoWork);
+            this.loadCBBLTS.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBBLTS_DoWork);
             // 
-            // AddFormTS
+            // TSAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -261,13 +265,15 @@
             this.Controls.Add(this.label7);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "AddFormTS";
+            this.Name = "TSAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Tài Sản mới";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddFormTS_FormClosed);
             this.Shown += new System.EventHandler(this.AddFormTS_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TSAddForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,7 +296,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label11;
-        private System.ComponentModel.BackgroundWorker loadCBBNuocSX;
-        private System.ComponentModel.BackgroundWorker loadCBBLoaiTS;
+        private System.ComponentModel.BackgroundWorker loadCBBNSX;
+        private System.ComponentModel.BackgroundWorker loadCBBLTS;
     }
 }

@@ -34,7 +34,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return phong.ToList();
         }
-        public (bool, string) addPhong (List<DTO.Phong> l)
+        public (bool, string) addPhong(List<DTO.Phong> l)
         {
             try
             {
@@ -56,11 +56,11 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return (true, "Thêm Phòng mới thành công!");
         } 
-        public int getIdByName (string s)
+        public int getIdByName(string s)
         {
             try
             {
-                return db.NguoiQLs.Where(p => p.TenNguoiQL == s).Select(p => p.MaNguoiQL).Single();
+                return db.NguoiQLs.Where(p => p.TenNguoiQL == s).Select(p => p.MaNguoiQL).First();
             }
             catch (System.Data.SqlClient.SqlException e)
             {
@@ -130,7 +130,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                        select p;
             return data.ToList<DTO.Phong>();
         }
-        public int GetIdByPhong(string Ph)
+        public int getIDByName(string Ph)
         {
             try
             {

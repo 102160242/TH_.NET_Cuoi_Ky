@@ -46,7 +46,7 @@
             // 
             this.rb_Female.AutoSize = true;
             this.rb_Female.BackColor = System.Drawing.Color.Transparent;
-            this.rb_Female.Location = new System.Drawing.Point(267, 147);
+            this.rb_Female.Location = new System.Drawing.Point(236, 146);
             this.rb_Female.Margin = new System.Windows.Forms.Padding(4);
             this.rb_Female.Name = "rb_Female";
             this.rb_Female.Size = new System.Drawing.Size(45, 22);
@@ -60,7 +60,7 @@
             this.rb_Male.AutoSize = true;
             this.rb_Male.BackColor = System.Drawing.Color.Transparent;
             this.rb_Male.Checked = true;
-            this.rb_Male.Location = new System.Drawing.Point(119, 147);
+            this.rb_Male.Location = new System.Drawing.Point(144, 146);
             this.rb_Male.Margin = new System.Windows.Forms.Padding(4);
             this.rb_Male.Name = "rb_Male";
             this.rb_Male.Size = new System.Drawing.Size(58, 22);
@@ -71,10 +71,10 @@
             // 
             // txt_SDT
             // 
-            this.txt_SDT.Location = new System.Drawing.Point(119, 98);
+            this.txt_SDT.Location = new System.Drawing.Point(119, 102);
             this.txt_SDT.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SDT.Name = "txt_SDT";
-            this.txt_SDT.Size = new System.Drawing.Size(188, 24);
+            this.txt_SDT.Size = new System.Drawing.Size(199, 24);
             this.txt_SDT.TabIndex = 3;
             this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
@@ -83,14 +83,14 @@
             this.txt_TenQL.Location = new System.Drawing.Point(119, 14);
             this.txt_TenQL.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TenQL.Name = "txt_TenQL";
-            this.txt_TenQL.Size = new System.Drawing.Size(188, 24);
+            this.txt_TenQL.Size = new System.Drawing.Size(199, 24);
             this.txt_TenQL.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(11, 147);
+            this.label5.Location = new System.Drawing.Point(11, 146);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 18);
@@ -101,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(11, 103);
+            this.label4.Location = new System.Drawing.Point(11, 105);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 18);
@@ -122,17 +122,17 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(119, 59);
+            this.dateTimePicker1.Location = new System.Drawing.Point(119, 58);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 24);
+            this.dateTimePicker1.Size = new System.Drawing.Size(199, 24);
             this.dateTimePicker1.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(11, 59);
+            this.label3.Location = new System.Drawing.Point(14, 63);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 18);
@@ -142,12 +142,12 @@
             // but_OK
             // 
             this.but_OK.BackColor = System.Drawing.Color.Transparent;
-            this.but_OK.Image = ((System.Drawing.Image)(resources.GetObject("but_OK.Image")));
+            this.but_OK.Image = global::TH_NET_Cuoi_Ky.Properties.Resources.butOK_Image;
             this.but_OK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_OK.Location = new System.Drawing.Point(14, 189);
+            this.but_OK.Location = new System.Drawing.Point(119, 188);
             this.but_OK.Margin = new System.Windows.Forms.Padding(4);
             this.but_OK.Name = "but_OK";
-            this.but_OK.Size = new System.Drawing.Size(85, 32);
+            this.but_OK.Size = new System.Drawing.Size(96, 32);
             this.but_OK.TabIndex = 6;
             this.but_OK.Text = "OK";
             this.but_OK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -160,10 +160,10 @@
             this.but_Cancel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.but_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("but_Cancel.Image")));
             this.but_Cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Cancel.Location = new System.Drawing.Point(222, 189);
+            this.but_Cancel.Location = new System.Drawing.Point(222, 188);
             this.but_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.but_Cancel.Name = "but_Cancel";
-            this.but_Cancel.Size = new System.Drawing.Size(85, 32);
+            this.but_Cancel.Size = new System.Drawing.Size(96, 32);
             this.but_Cancel.TabIndex = 7;
             this.but_Cancel.Text = "Cancel";
             this.but_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -176,7 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(316, 235);
+            this.ClientSize = new System.Drawing.Size(334, 235);
             this.Controls.Add(this.but_Cancel);
             this.Controls.Add(this.but_OK);
             this.Controls.Add(this.dateTimePicker1);
@@ -190,12 +190,14 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NguoiQLAddForrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Người Quản Lý";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NguoiQLAddForrm_FormClosed);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NguoiQLAddForrm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
