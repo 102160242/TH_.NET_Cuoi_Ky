@@ -276,7 +276,7 @@
             this.MaximizeBox = false;
             this.Name = "NhapForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập";
+            this.Text = "_";
             this.Shown += new System.EventHandler(this.NhapForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NhapForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SL)).EndInit();

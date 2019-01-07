@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class LoaiTSForm : Form
     {
         public delegate void dd();
-        public dd ShowMainForm;
+        public dd BackToPreviousForm;
         LoaiTS_BLL LoaiTS_BLL;
         public LoaiTSForm()
         {
@@ -83,13 +83,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void butCancel_Click(object sender, EventArgs e)
         {
-            ShowMainForm();
+            BackToPreviousForm();
             Dispose();
         }
 
         private void LoaiTSForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowMainForm();
+            BackToPreviousForm();
             Dispose();
         }
 

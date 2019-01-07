@@ -392,6 +392,66 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         /* ---------------- Xu ly cac to hop phim  ---------------- */
 
+        /* ---------------- Xu ly cac su kien menu cua form  ---------------- */
+        private void newTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.butAdd_Click(sender, e);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void phongToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhongForm f = new PhongForm();
+            f.BackToPreviousForm += Reload;
+            this.Visible = false;
+            f.Show();
+        }
+
+        private void nguoiQLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NguoiQLForm f = new NguoiQLForm();
+            f.BackToPreviousForm += Reload;
+            this.Visible = false;
+            f.Show();
+        }
+
+        private void loaiTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoaiTSForm f = new LoaiTSForm();
+            f.BackToPreviousForm += Reload;
+            this.Visible = false;
+            f.Show();
+        }
+
+        private void nuocSXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuocSXForm f = new NuocSXForm();
+            f.BackToPreviousForm += Reload;
+            this.Visible = false;
+            f.Show();
+        }
+
+        private void nhapXuatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NhapXuatForm f = new NhapXuatForm();
+            f.BackToPreviousForm += Reload;
+            this.Visible = false;
+            f.Show();
+        }
+
+        private void nhaCCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NhaCCForm f = new NhaCCForm();
+            f.BackToPreviousForm += Reload;
+            this.Visible = false;
+            f.Show();
+        }
+        /* ---------------- Xu ly cac su kien menu cua form  ---------------- */
+
         /* ---------------- Xu ly cac su kien khac cua form  ---------------- */
         private void ShowTS()
         {
@@ -489,6 +549,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             loadCBBLTS.RunWorkerAsync();
             loadCBBNSX.RunWorkerAsync();
         }
+
         /* ---------------- Xu ly cac su kien khac cua form  ---------------- */
     }
 }
