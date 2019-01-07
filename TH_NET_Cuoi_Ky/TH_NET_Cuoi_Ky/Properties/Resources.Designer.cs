@@ -63,6 +63,36 @@ namespace TH_NET_Cuoi_Ky.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap but_Cancel_Image {
+            get {
+                object obj = ResourceManager.GetObject("but_Cancel.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap but_OK_Image {
+            get {
+                object obj = ResourceManager.GetObject("but_OK.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap butOK_Image {
+            get {
+                object obj = ResourceManager.GetObject("butOK.Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_search_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-search-64", resourceCulture);

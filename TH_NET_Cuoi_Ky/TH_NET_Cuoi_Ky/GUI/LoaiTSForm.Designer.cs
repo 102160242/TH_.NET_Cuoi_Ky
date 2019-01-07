@@ -133,7 +133,7 @@
             this.butSearch.Location = new System.Drawing.Point(114, 65);
             this.butSearch.Margin = new System.Windows.Forms.Padding(4);
             this.butSearch.Name = "butSearch";
-            this.butSearch.Size = new System.Drawing.Size(99, 32);
+            this.butSearch.Size = new System.Drawing.Size(96, 32);
             this.butSearch.TabIndex = 4;
             this.butSearch.Text = "Tìm kiếm";
             this.butSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -302,6 +302,7 @@
             this.Controls.Add(this.groupBoxSearch);
             this.Controls.Add(this.groupBoxInfo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LuanChuyen));
             this.txt_TinhTrangNhap = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -50,15 +51,16 @@
             // 
             // txt_TinhTrangNhap
             // 
-            this.txt_TinhTrangNhap.Location = new System.Drawing.Point(134, 245);
+            this.txt_TinhTrangNhap.Location = new System.Drawing.Point(130, 245);
             this.txt_TinhTrangNhap.Name = "txt_TinhTrangNhap";
-            this.txt_TinhTrangNhap.Size = new System.Drawing.Size(168, 24);
+            this.txt_TinhTrangNhap.Size = new System.Drawing.Size(191, 24);
             this.txt_TinhTrangNhap.TabIndex = 7;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(15, 249);
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Location = new System.Drawing.Point(11, 248);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(78, 18);
             this.label13.TabIndex = 62;
@@ -67,7 +69,8 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 169);
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Location = new System.Drawing.Point(11, 171);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(72, 18);
@@ -76,7 +79,7 @@
             // 
             // numericUpDown_SLNhap
             // 
-            this.numericUpDown_SLNhap.Location = new System.Drawing.Point(134, 165);
+            this.numericUpDown_SLNhap.Location = new System.Drawing.Point(130, 169);
             this.numericUpDown_SLNhap.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown_SLNhap.Maximum = new decimal(new int[] {
             10000,
@@ -84,7 +87,7 @@
             0,
             0});
             this.numericUpDown_SLNhap.Name = "numericUpDown_SLNhap";
-            this.numericUpDown_SLNhap.Size = new System.Drawing.Size(168, 24);
+            this.numericUpDown_SLNhap.Size = new System.Drawing.Size(191, 24);
             this.numericUpDown_SLNhap.TabIndex = 5;
             // 
             // cbb_TenTS
@@ -92,26 +95,27 @@
             this.cbb_TenTS.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbb_TenTS.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbb_TenTS.FormattingEnabled = true;
-            this.cbb_TenTS.Location = new System.Drawing.Point(134, 5);
+            this.cbb_TenTS.Location = new System.Drawing.Point(130, 9);
             this.cbb_TenTS.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_TenTS.Name = "cbb_TenTS";
-            this.cbb_TenTS.Size = new System.Drawing.Size(168, 26);
+            this.cbb_TenTS.Size = new System.Drawing.Size(191, 26);
             this.cbb_TenTS.TabIndex = 1;
             this.cbb_TenTS.SelectedIndexChanged += new System.EventHandler(this.cbb_TenTS_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(134, 205);
+            this.dateTimePicker1.Location = new System.Drawing.Point(130, 207);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(168, 24);
+            this.dateTimePicker1.Size = new System.Drawing.Size(191, 24);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 209);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(11, 212);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 18);
@@ -124,17 +128,18 @@
             this.cbb_PhongXuat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbb_PhongXuat.Enabled = false;
             this.cbb_PhongXuat.FormattingEnabled = true;
-            this.cbb_PhongXuat.Location = new System.Drawing.Point(134, 45);
+            this.cbb_PhongXuat.Location = new System.Drawing.Point(130, 49);
             this.cbb_PhongXuat.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_PhongXuat.Name = "cbb_PhongXuat";
-            this.cbb_PhongXuat.Size = new System.Drawing.Size(168, 26);
+            this.cbb_PhongXuat.Size = new System.Drawing.Size(191, 26);
             this.cbb_PhongXuat.TabIndex = 2;
             this.cbb_PhongXuat.SelectedIndexChanged += new System.EventHandler(this.cbb_PhongXuat_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 49);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(11, 52);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 18);
@@ -147,16 +152,17 @@
             this.cbb_NhaCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbb_NhaCC.Enabled = false;
             this.cbb_NhaCC.FormattingEnabled = true;
-            this.cbb_NhaCC.Location = new System.Drawing.Point(134, 85);
+            this.cbb_NhaCC.Location = new System.Drawing.Point(130, 89);
             this.cbb_NhaCC.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_NhaCC.Name = "cbb_NhaCC";
-            this.cbb_NhaCC.Size = new System.Drawing.Size(168, 26);
+            this.cbb_NhaCC.Size = new System.Drawing.Size(191, 26);
             this.cbb_NhaCC.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 89);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(11, 92);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 18);
@@ -166,8 +172,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 9);
+            this.label7.Location = new System.Drawing.Point(11, 12);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 18);
@@ -178,15 +185,16 @@
             // 
             this.cbbPhongNhap.Enabled = false;
             this.cbbPhongNhap.FormattingEnabled = true;
-            this.cbbPhongNhap.Location = new System.Drawing.Point(134, 125);
+            this.cbbPhongNhap.Location = new System.Drawing.Point(130, 129);
             this.cbbPhongNhap.Name = "cbbPhongNhap";
-            this.cbbPhongNhap.Size = new System.Drawing.Size(168, 26);
+            this.cbbPhongNhap.Size = new System.Drawing.Size(191, 26);
             this.cbbPhongNhap.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 129);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(11, 132);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 18);
             this.label5.TabIndex = 66;
@@ -194,21 +202,28 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(18, 291);
+            this.btnOK.Image = global::TH_NET_Cuoi_Ky.Properties.Resources.but_OK_Image;
+            this.btnOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOK.Location = new System.Drawing.Point(130, 283);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 29);
-            this.btnOK.TabIndex = 8;
+            this.btnOK.Size = new System.Drawing.Size(92, 32);
+            this.btnOK.TabIndex = 67;
             this.btnOK.Text = "OK";
+            this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(227, 291);
+            this.btnCancel.Image = global::TH_NET_Cuoi_Ky.Properties.Resources.but_Cancel_Image;
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(229, 283);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 29);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Size = new System.Drawing.Size(92, 32);
+            this.btnCancel.TabIndex = 68;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -220,7 +235,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 325);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(333, 325);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label5);
