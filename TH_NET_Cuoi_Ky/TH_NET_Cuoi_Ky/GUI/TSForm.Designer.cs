@@ -86,8 +86,6 @@
             this.nhapXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giúpĐỡToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhómTácGiảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -683,16 +681,6 @@
             this.nhómTácGiảToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.nhómTácGiảToolStripMenuItem.Text = "Nhóm Tác Giả";
             // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.DefaultExt = "xlsx";
-            this.saveFileDialog.Filter = "Tất cả các tệp|*.*|MS Excel (2007-2019)|*.xlsx|MS Excel (2003)|*.xls";
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.DefaultExt = "xlsx";
-            this.openFileDialog.Filter = "MS Excel (2007-2019)|*.xlsx|MS Excel (2003)|*.xls";
-            // 
             // TSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -793,8 +781,6 @@
         private System.Windows.Forms.ToolStripMenuItem giúpĐỡToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhómTácGiảToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

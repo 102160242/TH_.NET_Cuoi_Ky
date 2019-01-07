@@ -115,13 +115,21 @@ namespace TH_NET_Cuoi_Ky.GUI
             if (this.isImportProgress)
             {
                 openFileDialog.ShowDialog();
+                if (openFileDialog.FileName != "")
+                {
+                    importWorker.RunWorkerAsync();
+                }
+                else
+                {
+                    Dispose();
+                }
             }
             else
             {
                 saveFileDialog.ShowDialog();
                 if (saveFileDialog.FileName != "")
                 {
-                    exportWorker.RunWorkerAsync(argument: saveFileDialog.FileName);
+                    exportWorker.RunWorkerAsync();
                 }
                 else
                 {
@@ -163,6 +171,60 @@ namespace TH_NET_Cuoi_Ky.GUI
                 label.Invoke(new Action(() =>
                 {
                     label.Text = "Xuất dữ liệu hoàn thành!";
+                }));
+                progressBar1.Invoke(new Action(() =>
+                {
+                    progressBar1.Value = 100;
+                }));
+            }
+            btn.Invoke(new Action(() =>
+            {
+                btn.Text = "Thoát";
+                this.isFinished = true;
+            }));
+        }
+
+        private void importWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            label.Invoke(new Action(() =>
+            {
+                label.Text = "Chuẩn bị nhập dữ liệu...";
+            }));
+        }
+
+        private void importWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            label.Invoke(new Action(() =>
+            {
+                label.Text = "Đang nhập dữ liệu (" + e.ProgressPercentage + "%)";
+            }));
+            progressBar1.Invoke(new Action(() =>
+            {
+                progressBar1.Value = e.ProgressPercentage;
+            }));
+        }
+
+        private void importWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                label.Invoke(new Action(() =>
+                {
+                    label.Text = "Có lỗi xảy ra trong quá trình nhập dữ liệu!";
+                }));
+            }
+            else if (e.Cancelled)
+            {
+                label.Invoke(new Action(() =>
+                {
+                    label.Text = "Quá trình bị hủy!";
+                }));
+            }
+            else
+            {
+                label.Invoke(new Action(() =>
+                {
+                    label.Text = "Nhập dữ liệu hoàn thành!";
                 }));
                 progressBar1.Invoke(new Action(() =>
                 {

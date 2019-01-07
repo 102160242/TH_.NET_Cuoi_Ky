@@ -363,6 +363,16 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 this.butAdd_Click(sender, e);
             }
+            // To hop Ctrl + N => Nhap du lieu tu file
+            if (e.KeyCode == Keys.I && e.Modifiers == Keys.Control)
+            {
+                this.importToolStripMenuItem_Click(sender, e);
+            }
+            // To hop Ctrl + E => Xuat du lieu ra file
+            if (e.KeyCode == Keys.E && e.Modifiers == Keys.Control)
+            {
+                this.exportToolStripMenuItem_Click(sender, e);
+            }
         }
 
         private void tabControl1_KeyDown(object sender, KeyEventArgs e)
@@ -463,7 +473,11 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void importToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog.ShowDialog();
+            Import_ExportTSForm f = new Import_ExportTSForm();
+            f.getDGV += () => { return null; };
+            f.Text = "Nhập dữ liệu từ file";
+            f.startImportingData();
+            f.ShowDialog();
         }
         /* ---------------- Xu ly cac su kien menu cua form  ---------------- */
 
