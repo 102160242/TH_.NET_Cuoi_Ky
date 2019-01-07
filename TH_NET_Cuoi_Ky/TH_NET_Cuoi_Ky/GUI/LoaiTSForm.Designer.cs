@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiTSForm));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.txtTenLoaiTS = new System.Windows.Forms.TextBox();
             this.txtMaLoaiTS = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxSearch = new System.Windows.Forms.GroupBox();
             this.butSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,28 +49,28 @@
             this.butDelete = new System.Windows.Forms.Button();
             this.butCancel = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxInfo.SuspendLayout();
+            this.groupBoxSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.menuDGV.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxInfo
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txtTenLoaiTS);
-            this.groupBox1.Controls.Add(this.txtMaLoaiTS);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(329, 119);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin";
+            this.groupBoxInfo.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxInfo.Controls.Add(this.txtTenLoaiTS);
+            this.groupBoxInfo.Controls.Add(this.txtMaLoaiTS);
+            this.groupBoxInfo.Controls.Add(this.label2);
+            this.groupBoxInfo.Controls.Add(this.label1);
+            this.groupBoxInfo.Location = new System.Drawing.Point(4, 13);
+            this.groupBoxInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxInfo.Size = new System.Drawing.Size(329, 119);
+            this.groupBoxInfo.TabIndex = 0;
+            this.groupBoxInfo.TabStop = false;
+            this.groupBoxInfo.Text = "Thông tin";
             // 
             // txtTenLoaiTS
             // 
@@ -79,6 +79,7 @@
             this.txtTenLoaiTS.Name = "txtTenLoaiTS";
             this.txtTenLoaiTS.Size = new System.Drawing.Size(191, 24);
             this.txtTenLoaiTS.TabIndex = 2;
+            this.txtTenLoaiTS.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTenLoaiTS_KeyDown);
             // 
             // txtMaLoaiTS
             // 
@@ -109,20 +110,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã loại tài sản";
             // 
-            // groupBox2
+            // groupBoxSearch
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.butSearch);
-            this.groupBox2.Controls.Add(this.txtSearch);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(341, 13);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(329, 119);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tìm kiếm";
+            this.groupBoxSearch.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxSearch.Controls.Add(this.butSearch);
+            this.groupBoxSearch.Controls.Add(this.txtSearch);
+            this.groupBoxSearch.Controls.Add(this.label3);
+            this.groupBoxSearch.Location = new System.Drawing.Point(341, 13);
+            this.groupBoxSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxSearch.Name = "groupBoxSearch";
+            this.groupBoxSearch.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxSearch.Size = new System.Drawing.Size(329, 119);
+            this.groupBoxSearch.TabIndex = 1;
+            this.groupBoxSearch.TabStop = false;
+            this.groupBoxSearch.Text = "Tìm kiếm";
             // 
             // butSearch
             // 
@@ -146,6 +147,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(191, 24);
             this.txtSearch.TabIndex = 3;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
             // 
             // label3
             // 
@@ -171,6 +173,7 @@
             this.dgv.TabIndex = 5;
             this.dgv.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_RowHeaderMouseClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            this.dgv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_KeyDown);
             this.dgv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgv_MouseDown);
             // 
             // menuDGV
@@ -296,19 +299,22 @@
             this.Controls.Add(this.butUpdate);
             this.Controls.Add(this.butDelete);
             this.Controls.Add(this.butShow);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxSearch);
+            this.Controls.Add(this.groupBoxInfo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "LoaiTSForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý loại tài sản";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoaiTSForm_FormClosed);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoaiTSForm_KeyDown);
+            this.groupBoxInfo.ResumeLayout(false);
+            this.groupBoxInfo.PerformLayout();
+            this.groupBoxSearch.ResumeLayout(false);
+            this.groupBoxSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.menuDGV.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -318,12 +324,12 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxInfo;
         private System.Windows.Forms.TextBox txtTenLoaiTS;
         private System.Windows.Forms.TextBox txtMaLoaiTS;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxSearch;
         private System.Windows.Forms.Button butSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label3;

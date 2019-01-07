@@ -84,7 +84,7 @@
             this.butOK.BackColor = System.Drawing.Color.Transparent;
             this.butOK.Image = ((System.Drawing.Image)(resources.GetObject("butOK.Image")));
             this.butOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butOK.Location = new System.Drawing.Point(108, 103);
+            this.butOK.Location = new System.Drawing.Point(16, 103);
             this.butOK.Margin = new System.Windows.Forms.Padding(4);
             this.butOK.Name = "butOK";
             this.butOK.Size = new System.Drawing.Size(88, 32);
@@ -99,7 +99,7 @@
             this.butCancel.BackColor = System.Drawing.Color.Transparent;
             this.butCancel.Image = ((System.Drawing.Image)(resources.GetObject("butCancel.Image")));
             this.butCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCancel.Location = new System.Drawing.Point(248, 103);
+            this.butCancel.Location = new System.Drawing.Point(316, 103);
             this.butCancel.Margin = new System.Windows.Forms.Padding(4);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(88, 32);
