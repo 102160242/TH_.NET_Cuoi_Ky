@@ -405,7 +405,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowMainForm();
+            //ShowMainForm();
             Dispose();
         }
         private void loadCBBNSX_DoWork(object sender, DoWorkEventArgs e)
