@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NhaCCForm : Form
     {
         public delegate void dd();
-        public dd ShowMainForm;
+        public dd BackToPreviousForm;
         NhaCC_BLL nhaCC_BLL;
         public NhaCCForm()
         {
@@ -47,7 +47,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ShowMainForm();
+            BackToPreviousForm();
             Dispose();
         }
 
@@ -106,7 +106,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void NhaCCForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowMainForm();
+            BackToPreviousForm();
         }
 
         private void dgv_MouseDown(object sender, MouseEventArgs e)

@@ -31,7 +31,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btnLoaiTS_Click(object sender, EventArgs e)
         {
             LoaiTSForm f = new LoaiTSForm();
-            f.ShowMainForm += ShowForm;
+            f.BackToPreviousForm += ShowForm;
             f.Show();
             this.Visible = false;
         }
@@ -39,7 +39,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btnNguoiQL_Click(object sender, EventArgs e)
         {
             NguoiQLForm f = new NguoiQLForm();
-            f.ShowMainForm += ShowForm;
+            f.BackToPreviousForm += ShowForm;
             f.Show();
             this.Visible = false;
         }
@@ -47,7 +47,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btnPhong_Click(object sender, EventArgs e)
         {
             PhongForm f = new PhongForm();
-            f.ShowMainForm += ShowForm;
+            f.BackToPreviousForm += ShowForm;
             f.Show();
             this.Visible = false;
         }
@@ -55,7 +55,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btnNhapXuat_Click(object sender, EventArgs e)
         {
             NhapXuatForm f = new NhapXuatForm();
-            f.ShowMainForm += ShowForm;
+            f.BackToPreviousForm += ShowForm;
             f.Show();
             this.Visible = false;
         }
@@ -63,7 +63,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btnNhaCC_Click(object sender, EventArgs e)
         {
             NhaCCForm f = new NhaCCForm();
-            f.ShowMainForm += ShowForm;
+            f.BackToPreviousForm += ShowForm;
             f.Show();
             this.Visible = false;
         }
@@ -71,7 +71,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btnNuocSX_Click(object sender, EventArgs e)
         {
             NuocSXForm f = new NuocSXForm();
-            f.ShowMainForm += ShowForm;
+            f.BackToPreviousForm += ShowForm;
             f.Show();
             this.Visible = false;
         }

@@ -18,7 +18,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         Phong_BLL p_BLL;
         NhapXuat_BLL NX_BLL;
         public delegate void dd();
-        public dd ShowMainForm;
+        public dd BackToPreviousForm;
         public NhapXuatForm()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void NhapXuatForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ShowMainForm();
+            BackToPreviousForm();
         }
         //private void LoadCbbTenTS()
         //{
@@ -103,7 +103,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             Dispose();
-            ShowMainForm();
+            BackToPreviousForm();
         }
 
         private void cbb_PhongXuat_SelectedIndexChanged(object sender, EventArgs e)

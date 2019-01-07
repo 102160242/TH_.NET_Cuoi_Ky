@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class PhongForm : Form
     {
         public delegate void dd();
-        public dd ShowMainForm;
+        public dd BackToPreviousForm;
         NguoiQL_BLL NQL_BLL;
         Phong_BLL Phong_BLL;
         public PhongForm()
@@ -98,13 +98,13 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ShowMainForm();
+            BackToPreviousForm();
             Dispose();
         }
 
         private void PhongForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowMainForm();
+            BackToPreviousForm();
             Dispose();
         }
 

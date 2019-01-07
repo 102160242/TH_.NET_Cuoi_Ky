@@ -14,7 +14,7 @@ namespace TH_NET_Cuoi_Ky.GUI
     public partial class NguoiQLForm : Form
     {
         public delegate void dd();
-        public dd ShowMainForm;
+        public dd BackToPreviousForm;
 
         NguoiQL_BLL Nguoi_BLL;
         public NguoiQLForm()
@@ -24,7 +24,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            ShowMainForm();
+            BackToPreviousForm();
             Dispose();
         }
 
@@ -57,7 +57,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void NguoiQLForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ShowMainForm();
+            BackToPreviousForm();
             Dispose();
         }
 
