@@ -63,6 +63,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            excel.DisplayAlerts = false;
             try
             {
 
@@ -74,6 +75,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                 if (exportWorker.CancellationPending)
                 {
                     e.Cancel = true; // Dung xuat du lieu neu bam nut Cancel
+                    excel.Quit();
                     return;
                 }
                 DataGridView dgv = getDGV();
@@ -83,6 +85,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                     if (exportWorker.CancellationPending)
                     {
                         e.Cancel = true; // Dung xuat du lieu neu bam nut Cancel
+                        excel.Quit();
                         return;
                     }
                     if (i != -1)
@@ -114,7 +117,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
                 // if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 // {
-                workbook.SaveAs(saveFileDialog.FileName);
+                workbook.SaveAs(saveFileDialog.FileName, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, false, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Microsoft.Office.Interop.Excel.XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
                 // }
             }
             catch (System.Exception ex)
@@ -256,6 +259,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                     if (importWorker.CancellationPending)
                     {
                         e.Cancel = true; // Dung xuat du lieu neu bam nut Cancel
+                        app.Quit();
                         return;
                     }
                     label.Invoke(new Action(() =>
@@ -275,6 +279,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                     if (importWorker.CancellationPending)
                     {
                         e.Cancel = true; // Dung xuat du lieu neu bam nut Cancel
+                        app.Quit();
                         return;
                     }
                     int percent = (int)((float)(i + 1) / rows * 100);
@@ -324,6 +329,10 @@ namespace TH_NET_Cuoi_Ky.GUI
                     label.Text = ex.Message;
                 }));
                 importWorker.CancelAsync();
+            }
+            finally
+            {
+                app.Quit();
             }
             /* }
              else

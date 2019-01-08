@@ -38,6 +38,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                        on p.MaTS equals T.MaTS
                        into ps
                        from T in ps.DefaultIfEmpty()
+                       //orderby T.MaTS ascending
                        select new
                        {
                            p.MaTS,
@@ -50,7 +51,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                            p.LoaiTS.TenLoaiTS,
                            p.GhiChu,
                        };
-            return data.ToList();
+            return data.OrderBy(p => p.MaTS).ToList();
         }
         public dynamic SearchTS(Dictionary<String, String> s)
         {
