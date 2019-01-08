@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Import_ExportTSForm));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btn = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
@@ -46,11 +47,14 @@
             // 
             // btn
             // 
-            this.btn.Location = new System.Drawing.Point(130, 84);
+            this.btn.Image = global::TH_NET_Cuoi_Ky.Properties.Resources.but_Cancel_Image;
+            this.btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn.Location = new System.Drawing.Point(136, 84);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(92, 32);
+            this.btn.Size = new System.Drawing.Size(80, 32);
             this.btn.TabIndex = 1;
             this.btn.Text = "Hủy";
+            this.btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn.UseVisualStyleBackColor = true;
             this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
@@ -98,6 +102,8 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.btn);
             this.Controls.Add(this.progressBar1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Import_ExportTSForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ExportTSForm";
