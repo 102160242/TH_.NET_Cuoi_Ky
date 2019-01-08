@@ -86,6 +86,8 @@
             this.nhapXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giúpĐỡToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhómTácGiảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.loadDGVWorker = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -217,7 +219,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(4, 37);
+            this.tabControl1.Location = new System.Drawing.Point(4, 24);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -446,7 +448,7 @@
             this.butShow.BackColor = System.Drawing.Color.Transparent;
             this.butShow.Image = ((System.Drawing.Image)(resources.GetObject("butShow.Image")));
             this.butShow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butShow.Location = new System.Drawing.Point(187, 471);
+            this.butShow.Location = new System.Drawing.Point(187, 458);
             this.butShow.Margin = new System.Windows.Forms.Padding(4);
             this.butShow.Name = "butShow";
             this.butShow.Size = new System.Drawing.Size(92, 32);
@@ -510,7 +512,7 @@
             this.butAdd.BackColor = System.Drawing.Color.Transparent;
             this.butAdd.Image = ((System.Drawing.Image)(resources.GetObject("butAdd.Image")));
             this.butAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butAdd.Location = new System.Drawing.Point(471, 471);
+            this.butAdd.Location = new System.Drawing.Point(471, 458);
             this.butAdd.Margin = new System.Windows.Forms.Padding(4);
             this.butAdd.Name = "butAdd";
             this.butAdd.Size = new System.Drawing.Size(92, 32);
@@ -526,7 +528,7 @@
             this.btnDel.Enabled = false;
             this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(755, 471);
+            this.btnDel.Location = new System.Drawing.Point(755, 458);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(92, 32);
@@ -540,7 +542,7 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.dgv);
-            this.groupBox2.Location = new System.Drawing.Point(5, 225);
+            this.groupBox2.Location = new System.Drawing.Point(5, 212);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1025, 239);
             this.groupBox2.TabIndex = 17;
@@ -681,13 +683,30 @@
             this.nhómTácGiảToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.nhómTácGiảToolStripMenuItem.Text = "Nhóm Tác Giả";
             // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.BackColor = System.Drawing.Color.Transparent;
+            this.statusLabel.Location = new System.Drawing.Point(879, 465);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(73, 18);
+            this.statusLabel.TabIndex = 20;
+            this.statusLabel.Text = "Trạng thái";
+            this.statusLabel.Visible = false;
+            // 
+            // loadDGVWorker
+            // 
+            this.loadDGVWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadDGVWorker_DoWork);
+            this.loadDGVWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.loadDGVWorker_RunWorkerCompleted);
+            // 
             // TSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1034, 510);
+            this.ClientSize = new System.Drawing.Size(1034, 495);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.formMenu);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnDel);
@@ -782,6 +801,8 @@
         private System.Windows.Forms.ToolStripMenuItem giúpĐỡToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhómTácGiảToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Label statusLabel;
+        private System.ComponentModel.BackgroundWorker loadDGVWorker;
     }
 }
 

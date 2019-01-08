@@ -110,7 +110,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         /* ---------------- Xu ly su kien click cac button ---------------- */
         private void butShow_Click(object sender, EventArgs e)
         {
-            ShowTS();
+            loadDGVWorker.RunWorkerAsync();
         }
         private void butAdd_Click(object sender, EventArgs e)
         {
@@ -154,7 +154,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
                 MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
             }
-            ShowTS(); // Refresh lai du lieu tren DataGridView
+            loadDGVWorker.RunWorkerAsync(); // Refresh lai du lieu tren DataGridView
         }
         private void btnDel_Click(object sender, EventArgs e)
         {
@@ -217,7 +217,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
                     MessageBox.Show(msg, result ? "Thành công" : "Lỗi");
 
-                    ShowTS(); // Refresh lai du lieu tren DataGridView
+                    loadDGVWorker.RunWorkerAsync(); // Refresh lai du lieu tren DataGridView
                 }
             }
         }
@@ -316,7 +316,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void cbbLoaiTS1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbbLoaiTS1.SelectedIndex == 0)
+            /*if (cbbLoaiTS1.SelectedIndex == 0)
             {
                 cbbLoaiTS1.SelectedIndex = -1;
                 cbbLoaiTS1.Text = "";
@@ -325,7 +325,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                 f.allowtoReturnTenLoaiTS(true);
                 f.returnTenLoaiTS += addNewLoaiTS;
                 f.ShowDialog();
-            }
+            }*/
         }
         private void cbbNuocSX_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -342,7 +342,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void cbbNuocSX1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbbNuocSX1.SelectedIndex == 0)
+            /*if (cbbNuocSX1.SelectedIndex == 0)
             {
                 cbbNuocSX1.SelectedIndex = -1;
                 cbbNuocSX1.Text = "";
@@ -351,7 +351,7 @@ namespace TH_NET_Cuoi_Ky.GUI
                 f.allowReturnNuocSX(true);
                 f.returnNuocSX += addNewNuocSX;
                 f.ShowDialog();
-            }
+            }*/
         }
         /* ---------------- Xu ly su kien combobox  ---------------- */
 
@@ -489,7 +489,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         private void Reload()
         {
-            ShowTS(); // Load lai du lieu cho DataGridView
+            loadDGVWorker.RunWorkerAsync(); // Load lai du lieu cho DataGridView
             this.Visible = true; // Hien thi lai form
         }
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -500,11 +500,11 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void loadCBBNSX_DoWork(object sender, DoWorkEventArgs e)
         {
             // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
-            cbbNuocSX1.Invoke(new Action(() =>
+            /*cbbNuocSX1.Invoke(new Action(() =>
             {
                 cbbNuocSX1.Items.Clear();
                 cbbNuocSX1.Items.Add(" ** Thêm mới ** ");
-            }));
+            }));*/
             cbbNuocSX.Invoke(new Action(() =>
             {
                 cbbNuocSX.Items.Clear();
@@ -537,11 +537,11 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void loadCBBLTS_DoWork(object sender, DoWorkEventArgs e)
         {
             // Xoa moi danh sach co trong CBB truoc khi load (phong truong hop load lai)
-            cbbLoaiTS1.Invoke(new Action(() =>
+            /*cbbLoaiTS1.Invoke(new Action(() =>
             {
                 cbbLoaiTS1.Items.Clear();
                 cbbLoaiTS1.Items.Add(" ** Thêm mới ** ");
-            }));
+            }));*/
             cbbLoaiTS.Invoke(new Action(() =>
             {
                 cbbLoaiTS.Items.Clear();
@@ -577,6 +577,30 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             loadCBBLTS.RunWorkerAsync();
             loadCBBNSX.RunWorkerAsync();
+        }
+
+        private void loadDGVWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            statusLabel.Invoke(new Action(() =>
+            {
+                statusLabel.Visible = true;
+                statusLabel.Text = "Đang load dữ liệu...";
+            }));
+            butShow.Invoke(new Action(() => {
+                butShow.Enabled = false;
+            }));
+            dgv.Invoke(new Action(ShowTS));       
+        }
+
+        private void loadDGVWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            statusLabel.Invoke(new Action(() =>
+            {
+                statusLabel.Visible = false;
+            }));
+            butShow.Invoke(new Action(() => {
+                butShow.Enabled = true;
+            }));
         }
 
         /* ---------------- Xu ly cac su kien khac cua form  ---------------- */
