@@ -271,12 +271,13 @@
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NhapForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "_";
+            this.Text = "Nhập Tài Sản";
             this.Shown += new System.EventHandler(this.NhapForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NhapForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SL)).EndInit();
