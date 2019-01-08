@@ -276,5 +276,11 @@ namespace TH_NET_Cuoi_Ky.BLL
                        };
             return data.ToList();
         }
+        public List<DTO.TaiSan> GetTaiSan()
+        {
+            var data = from p in db.TaiSans
+                       select p;
+            return data.ToList<DTO.TaiSan>();
+        }
     }
 }
