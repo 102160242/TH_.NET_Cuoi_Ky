@@ -18,11 +18,13 @@ namespace TH_NET_Cuoi_Ky.BLL
         public dynamic ShowNguoiQL_BLL(string tuKhoa = "")
         {
             var person = db.NguoiQLs.Select(p => new { p.MaNguoiQL, p.TenNguoiQL, p.NgaySinh, p.SoDT, GioiTinh = (p.GioiTinh) ? "Nam" : "Nữ" });
-            if(tuKhoa != "")
+            if (tuKhoa != "")
             {
                 person = person.Where(p => p.TenNguoiQL.Contains(tuKhoa));
             }
-            return person.ToList();
+            return person.AsEnumerable().Select(
+                                            (p, index) => new { STT = index + 1, p.MaNguoiQL, p.TenNguoiQL, p.NgaySinh, p.SoDT, p.GioiTinh }
+                                        ).ToList();
         }
         public List<DTO.NguoiQL> GetNguoiQLById(int id)
         {

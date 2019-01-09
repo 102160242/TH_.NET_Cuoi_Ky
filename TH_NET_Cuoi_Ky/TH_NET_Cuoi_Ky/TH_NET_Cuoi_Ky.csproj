@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>card_file_iuQ_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -66,6 +69,12 @@
     </Compile>
     <Compile Include="GUI\ChiTietTSForm.Designer.cs">
       <DependentUpon>ChiTietTSForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CreditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CreditForm.Designer.cs">
+      <DependentUpon>CreditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Import_ExportTSForm.cs">
       <SubType>Form</SubType>
@@ -200,6 +209,9 @@
     <EmbeddedResource Include="GUI\ChiTietTSForm.resx">
       <DependentUpon>ChiTietTSForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CreditForm.resx">
+      <DependentUpon>CreditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Import_ExportTSForm.resx">
       <DependentUpon>Import_ExportTSForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +304,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\butOK.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="card_file_iuQ_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

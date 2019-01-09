@@ -41,7 +41,9 @@ namespace TH_NET_Cuoi_Ky.BLL
             {
                nha = nha.Where(p => p.TenNhaCC.Contains(tuKhoa));
             }
-            return nha.ToList();
+            return nha.AsEnumerable().Select(
+                                        (p, index) => new { STT = index + 1, p.MaNhaCC, p.TenNhaCC, p.DiaChi }
+                                    ).ToList();
         }
         public List<DTO.NhaCC> GetNhaCCById(int id)
         {

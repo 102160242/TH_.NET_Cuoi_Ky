@@ -18,7 +18,9 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             var data = db.NhapXuats.Where(p => p.NgayNhap != null)
                                    .OrderBy(p => new { p.SoPhieu, p.TaiSan.TenTS, p.NgayNhap, p.Phong.TenPhong })
-                                   .Select(p => new {
+                                   .AsEnumerable()                                       
+                                   .Select((p, index) => new {
+                                                         STT = index + 1,
                                                          p.SoPhieu,
                                                          p.TaiSan.TenTS,
                                                          p.NhaCC.TenNhaCC,
@@ -34,7 +36,9 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             var data = db.NhapXuats.Where(p => p.NgayXuat != null)
                                    .OrderBy(p => new { p.SoPhieu, p.TaiSan.TenTS, p.NgayNhap, p.Phong.TenPhong })
-                                   .Select(p => new {
+                                   .AsEnumerable()
+                                   .Select((p, index) => new {
+                                                       STT = index + 1,
                                                        p.SoPhieu,
                                                        p.TaiSan.TenTS,
                                                        p.NhaCC.TenNhaCC,
