@@ -32,7 +32,9 @@ namespace TH_NET_Cuoi_Ky.BLL
             {
                 phong = phong.Where(p => p.TenPhong.Contains(tukhoa));
             }
-            return phong.ToList();
+            return phong.AsEnumerable().Select(
+                                            (p, index) => new { STT = index + 1, p.MaPhong, p.TenPhong, p.TenNguoiQL }
+                                        ).ToList();
         }
         public (bool, string) addPhong(List<DTO.Phong> l)
         {

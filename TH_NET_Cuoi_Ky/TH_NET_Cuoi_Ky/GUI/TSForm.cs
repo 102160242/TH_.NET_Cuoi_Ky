@@ -179,7 +179,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         }
         /* ---------------- Xu ly su kien click cac button ---------------- */
 
-        /* ---------------- Xu ly su kien menu ---------------- */
+        /* ---------------- Xu ly su kien context menu ---------------- */
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedIndex = 0; // Chuyen ve tab Hien thi & Cap nhat neu dang o tab khac
@@ -477,6 +477,11 @@ namespace TH_NET_Cuoi_Ky.GUI
             f.getDGV += () => { return null; };
             f.Text = "Nhập dữ liệu từ file";
             f.startImportingData();
+            f.ShowDialog();
+        }
+        private void nhomTacGiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreditForm f = new CreditForm();
             f.ShowDialog();
         }
         /* ---------------- Xu ly cac su kien menu cua form  ---------------- */

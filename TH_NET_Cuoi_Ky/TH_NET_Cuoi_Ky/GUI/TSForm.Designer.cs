@@ -85,7 +85,7 @@
             this.nuocSXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhapXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giúpĐỡToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhómTácGiảToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhomTacGiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusLabel = new System.Windows.Forms.Label();
             this.loadDGVWorker = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
@@ -672,16 +672,17 @@
             // giúpĐỡToolStripMenuItem
             // 
             this.giúpĐỡToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nhómTácGiảToolStripMenuItem});
+            this.nhomTacGiaToolStripMenuItem});
             this.giúpĐỡToolStripMenuItem.Name = "giúpĐỡToolStripMenuItem";
             this.giúpĐỡToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.giúpĐỡToolStripMenuItem.Text = "Giúp đỡ";
             // 
-            // nhómTácGiảToolStripMenuItem
+            // nhomTacGiaToolStripMenuItem
             // 
-            this.nhómTácGiảToolStripMenuItem.Name = "nhómTácGiảToolStripMenuItem";
-            this.nhómTácGiảToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.nhómTácGiảToolStripMenuItem.Text = "Nhóm Tác Giả";
+            this.nhomTacGiaToolStripMenuItem.Name = "nhomTacGiaToolStripMenuItem";
+            this.nhomTacGiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nhomTacGiaToolStripMenuItem.Text = "Nhóm Tác Giả";
+            this.nhomTacGiaToolStripMenuItem.Click += new System.EventHandler(this.nhomTacGiaToolStripMenuItem_Click);
             // 
             // statusLabel
             // 
@@ -799,7 +800,7 @@
         private System.Windows.Forms.ToolStripMenuItem nuocSXToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhapXuatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giúpĐỡToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nhómTácGiảToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nhomTacGiaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label statusLabel;
         private System.ComponentModel.BackgroundWorker loadDGVWorker;

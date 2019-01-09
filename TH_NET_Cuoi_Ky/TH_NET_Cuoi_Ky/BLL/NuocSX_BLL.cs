@@ -33,7 +33,9 @@ namespace TH_NET_Cuoi_Ky.BLL
             {
                 data = data.Where(p => p.TenNuocSX.Contains(s));
             }
-            return data.ToList();
+            return data.AsEnumerable().Select(
+                                            (p, index) => new { STT = index + 1, p.MaNuocSX, p.TenNuocSX }
+                                        ).ToList();
         }
 
         public (bool, string) addNSX(List<DTO.NuocSX> l)

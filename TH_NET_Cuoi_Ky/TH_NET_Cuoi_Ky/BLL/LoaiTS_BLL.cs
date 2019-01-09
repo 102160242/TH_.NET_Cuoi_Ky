@@ -50,7 +50,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             {
                 data = data.Where(p => p.TenLoaiTS.Contains(s));
             }
-            return data.ToList();
+            return data.AsEnumerable().Select((p, index) => new { STT = index + 1, p.MaLoaiTS, p.TenLoaiTS }).ToList();
         }
 
         public (bool, string) addLoaiTS(List<DTO.LoaiTS> l)

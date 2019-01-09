@@ -38,7 +38,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                        on p.MaTS equals T.MaTS
                        into ps
                        from T in ps.DefaultIfEmpty()
-                       //orderby T.MaTS ascending
+                       orderby p.MaTS                       
                        select new
                        {
                            p.MaTS,
@@ -51,7 +51,21 @@ namespace TH_NET_Cuoi_Ky.BLL
                            p.LoaiTS.TenLoaiTS,
                            p.GhiChu,
                        };
-            return data.OrderBy(p => p.MaTS).ToList();
+            // Them cot STT va tra ve du lieu
+            return data.AsEnumerable().Select(
+                                        (p, index) => new
+                                        {
+                                            STT = index + 1,
+                                            p.MaTS,
+                                            p.TenTS,
+                                            p.TSKT,
+                                            p.DVTinh,
+                                            p.SLHienCo,
+                                            p.NamSX,
+                                            p.TenNuocSX,
+                                            p.TenLoaiTS,
+                                            p.GhiChu
+                                        }).ToList();
         }
         public dynamic SearchTS(Dictionary<String, String> s)
         {
@@ -98,8 +112,20 @@ namespace TH_NET_Cuoi_Ky.BLL
                 //        select p;
                 data = data.Where(p => p.TenTS.Contains(tuKhoa) || p.TSKT.Contains(tuKhoa)); // Tim theo Ten hoac TSKT
             }
-            
-            return data.ToList();
+
+            return data.OrderBy(p => p.MaTS).AsEnumerable().Select(
+                                        (p, index) => new
+                                        {
+                                            STT = index + 1,
+                                            p.MaTS,
+                                            p.TenTS,
+                                            p.TSKT,
+                                            p.DVTinh,
+                                            p.NamSX,
+                                            p.TenNuocSX,
+                                            p.TenLoaiTS,
+                                            p.GhiChu
+                                        }).ToList();
         }
         public List<DTO.TaiSan> getTSById(int id)
         {
