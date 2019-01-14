@@ -52,6 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.loadCBB = new System.ComponentModel.BackgroundWorker();
+            this.chiTietPhongStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.menuDGV.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -150,23 +151,24 @@
             // menuDGV
             // 
             this.menuDGV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chiTietPhongStripMenuItem,
             this.updateToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.menuDGV.Name = "menuDGV";
-            this.menuDGV.Size = new System.Drawing.Size(95, 48);
+            this.menuDGV.Size = new System.Drawing.Size(227, 92);
             this.menuDGV.Opening += new System.ComponentModel.CancelEventHandler(this.menuDGV_Opening);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.updateToolStripMenuItem.Text = "Sửa";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.deleteToolStripMenuItem.Text = "Xóa";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -314,6 +316,13 @@
             // 
             this.loadCBB.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBB_DoWork);
             // 
+            // chiTietPhongStripMenuItem
+            // 
+            this.chiTietPhongStripMenuItem.Name = "chiTietPhongStripMenuItem";
+            this.chiTietPhongStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.chiTietPhongStripMenuItem.Text = "Xem các tài sản trong phòng";
+            this.chiTietPhongStripMenuItem.Click += new System.EventHandler(this.chiTietPhongStripMenuItem_Click);
+            // 
             // PhongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -375,5 +384,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.ComponentModel.BackgroundWorker loadCBB;
+        private System.Windows.Forms.ToolStripMenuItem chiTietPhongStripMenuItem;
     }
 }

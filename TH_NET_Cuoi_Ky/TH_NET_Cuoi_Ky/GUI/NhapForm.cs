@@ -20,6 +20,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         NhaCC_BLL NCC_BLL;
         NhapXuat_BLL NX_BLL;
         private bool loadCBBTenTS = true;
+        private bool loadCBBTenPhong = true;
         public NhapForm()
         {
             InitializeComponent();
@@ -37,6 +38,15 @@ namespace TH_NET_Cuoi_Ky.GUI
             cbb_TenTS.Items.Add(tenTS);
             cbb_TenTS.SelectedIndex = 1;
             cbb_TenTS.Enabled = false;
+        }
+        public void setCBBTenPhong(String tenPhong)
+        {
+            this.loadCBBTenPhong = false;
+            cbb_Phong.Items.Clear();
+            cbb_Phong.Items.Add(" ** Thêm mới ** ");
+            cbb_Phong.Items.Add(tenPhong);
+            cbb_Phong.SelectedIndex = 1;
+            cbb_Phong.Enabled = false;
         }
         private void LoadCBBTS_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -98,7 +108,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void NhapForm_Shown(object sender, EventArgs e)
         {
             if(this.loadCBBTenTS) LoadCBBTS.RunWorkerAsync();
-            LoadCBBPhong.RunWorkerAsync();
+            if(this.loadCBBTenPhong) LoadCBBPhong.RunWorkerAsync();
             LoadCBBNCC.RunWorkerAsync();
         }
 
