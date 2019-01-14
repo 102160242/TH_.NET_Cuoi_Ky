@@ -25,13 +25,113 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return l;
         }
-        public dynamic ShowPhong_BLL(string tukhoa = "")
+
+        public dynamic ShowPhongDetail(int maPhong)
         {
-            var phong = db.Phongs.Select(p => new { p.MaPhong, p.TenPhong, p.NguoiQL.TenNguoiQL });
-            if(tukhoa != "")
-            {
-                phong = phong.Where(p => p.TenPhong.Contains(tukhoa));
-            }
+            // Lay List Danh sach nhap va so luong
+            var nhap = from p in db.NhapXuats
+                       where p.NgayXuat == null
+                       where p.MaPhong == maPhong
+                       group p by new { p.MaTS, p.MaNhaCC, p.MaPhong } into g
+                       select new
+                       {
+                           MaTS = g.Key.MaTS,
+                           MaNhaCC = g.Key.MaNhaCC,
+                           MaPhong = g.Key.MaPhong,
+                           SL = g.Sum(p => p.SLNhap) == null ? 0 : g.Sum(p => p.SLNhap)
+                       };
+            // Lay List Danh sach xuat va so luong
+            var xuat = from p in db.NhapXuats
+                       where p.NgayNhap == null
+                       where p.MaPhong == maPhong
+                       group p by new { p.MaTS, p.MaNhaCC, p.MaPhong } into g
+                       select new
+                       {
+                           MaTS = g.Key.MaTS,
+                           MaNhaCC = g.Key.MaNhaCC,
+                           MaPhong = g.Key.MaPhong,
+                           SL = g.Sum(p => p.SLXuat) == null ? 0 : g.Sum(p => p.SLXuat)
+                       };
+            // Join list nhap va xuat lai
+            var list = from p in nhap
+                       join p2 in xuat
+                       on new { p.MaTS, p.MaNhaCC, p.MaPhong } equals new { p2.MaTS, p2.MaNhaCC, p2.MaPhong }
+                       into ps
+                       from T in ps.DefaultIfEmpty()
+                       select new
+                       {
+                           p.MaTS,
+                           p.MaNhaCC,
+                           p.MaPhong,
+                           SL = p.SL - (T.SL == null ? 0 : T.SL),
+                       };
+            // Join voi cac bang khac de lay ten Tai San, ten Phong, ten Nha Cung Cap
+            var data = from nx in list
+                       join ts in
+                       (
+                            from p in db.TaiSans select new { p.MaTS, p.TenTS }
+                       )
+                       on nx.MaTS equals ts.MaTS
+                       join ncc in
+                       (
+                            from p in db.NhaCCs select new { p.MaNhaCC, p.TenNhaCC }
+                       )
+                       on nx.MaNhaCC equals ncc.MaNhaCC
+                       join p in
+                       (
+                            from p in db.Phongs select new { p.MaPhong, p.TenPhong }
+                       )
+                       on nx.MaPhong equals p.MaPhong
+                       where nx.SL != 0
+                       select new
+                       {
+                           nx.MaTS,
+                           ts.TenTS,
+                           ncc.TenNhaCC,
+                           p.TenPhong,
+                           nx.SL,
+                       };
+            return data.ToList();
+        }
+
+        public dynamic ShowPhong_BLL()
+        {
+            // Lay danh sach nhap TS
+            var nhap = from p in db.NhapXuats
+                       group p by p.MaPhong into g
+                       select new { MaPhong = g.Key, SL = g.Sum(p => p.SLNhap) == null ? 0 : g.Sum(p => p.SLNhap) };
+            // Lay danh sach xuat TS
+            var xuat = from p in db.NhapXuats
+                       group p by p.MaPhong into g
+                       select new { MaPhong = g.Key, SL = g.Sum(p => p.SLXuat) == null ? 0 : g.Sum(p => p.SLXuat) };
+
+            var data = from p in db.Phongs
+                       join T in
+                       (
+                            // Join danh sach nhap va xuat de tinh so luong hien co
+                            from p1 in nhap
+                            join p2 in xuat
+                            on p1.MaPhong equals p2.MaPhong
+                            select new { p1.MaPhong, SLHienCo = (p1.SL - p2.SL) }
+                       )
+                       on p.MaPhong equals T.MaPhong
+                       into ps
+                       from T in ps.DefaultIfEmpty()
+                       orderby p.MaPhong
+                       select new
+                       {
+                           p.MaPhong,
+                           p.TenPhong,
+                           p.NguoiQL.TenNguoiQL,
+                           SLHienCo = T.SLHienCo == null ? 0 : T.SLHienCo,
+                       };
+            return data.AsEnumerable().Select(
+                                            (p, index) => new { STT = index + 1, p.MaPhong, p.TenPhong, p.TenNguoiQL, p.SLHienCo }
+                                        ).ToList();
+        }
+        public dynamic SearhPhong_BLL(string tukhoa = "")
+        {
+            var phong = db.Phongs.Where(p => p.TenPhong.Contains(tukhoa)).Select(p => new { p.MaPhong, p.TenPhong, p.NguoiQL.TenNguoiQL });
             return phong.AsEnumerable().Select(
                                             (p, index) => new { STT = index + 1, p.MaPhong, p.TenPhong, p.TenNguoiQL }
                                         ).ToList();

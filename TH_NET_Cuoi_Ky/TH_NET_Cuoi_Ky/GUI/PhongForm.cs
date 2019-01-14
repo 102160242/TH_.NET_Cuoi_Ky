@@ -44,7 +44,7 @@ namespace TH_NET_Cuoi_Ky.GUI
         private void Reload()
         {
             ShowPhong();
-            //this.Visible = true;
+            this.Visible = true;
         }
 
         private void but_Add_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace TH_NET_Cuoi_Ky.GUI
 
         private void but_Search_Click(object sender, EventArgs e)
         {
-            dgv.DataSource = Phong_BLL.ShowPhong_BLL(txt_Search.Text);
+            dgv.DataSource = Phong_BLL.SearhPhong_BLL(txt_Search.Text);
         }
 
         private void but_Cancel_Click(object sender, EventArgs e)
@@ -227,6 +227,17 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 this.but_Search_Click(sender, e);
             }
+        }
+
+        private void chiTietPhongStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChiTietPhongForm f = new ChiTietPhongForm();
+            f.ShowPhongForm += Reload;
+            f.setLabel(dgv.SelectedRows[0].Cells["TenPhong"].Value.ToString(), dgv.SelectedRows[0].Cells["TenNguoiQL"].Value.ToString());
+            f.setMaPhong(Convert.ToInt32(dgv.SelectedRows[0].Cells["MaPhong"].Value.ToString()));
+            f.ShowPhongDetail();
+            f.Show();
+            this.Visible = false;
         }
     }
 }
