@@ -43,6 +43,8 @@
             this.btnChuyenPhong = new System.Windows.Forms.Button();
             this.btnNhap = new System.Windows.Forms.Button();
             this.btnThanhLy = new System.Windows.Forms.Button();
+            this.bntSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -164,7 +166,7 @@
             this.btnChuyenPhong.Enabled = false;
             this.btnChuyenPhong.Image = ((System.Drawing.Image)(resources.GetObject("btnChuyenPhong.Image")));
             this.btnChuyenPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChuyenPhong.Location = new System.Drawing.Point(529, 457);
+            this.btnChuyenPhong.Location = new System.Drawing.Point(329, 457);
             this.btnChuyenPhong.Name = "btnChuyenPhong";
             this.btnChuyenPhong.Size = new System.Drawing.Size(96, 32);
             this.btnChuyenPhong.TabIndex = 17;
@@ -179,7 +181,7 @@
             this.btnNhap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnNhap.Image")));
             this.btnNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhap.Location = new System.Drawing.Point(115, 457);
+            this.btnNhap.Location = new System.Drawing.Point(39, 457);
             this.btnNhap.Name = "btnNhap";
             this.btnNhap.Size = new System.Drawing.Size(96, 32);
             this.btnNhap.TabIndex = 15;
@@ -195,7 +197,7 @@
             this.btnThanhLy.Enabled = false;
             this.btnThanhLy.Image = ((System.Drawing.Image)(resources.GetObject("btnThanhLy.Image")));
             this.btnThanhLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThanhLy.Location = new System.Drawing.Point(330, 457);
+            this.btnThanhLy.Location = new System.Drawing.Point(184, 457);
             this.btnThanhLy.Name = "btnThanhLy";
             this.btnThanhLy.Size = new System.Drawing.Size(96, 32);
             this.btnThanhLy.TabIndex = 16;
@@ -204,11 +206,33 @@
             this.btnThanhLy.UseVisualStyleBackColor = false;
             this.btnThanhLy.Click += new System.EventHandler(this.btnThanhLy_Click);
             // 
+            // bntSearch
+            // 
+            this.bntSearch.Image = ((System.Drawing.Image)(resources.GetObject("bntSearch.Image")));
+            this.bntSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntSearch.Location = new System.Drawing.Point(474, 457);
+            this.bntSearch.Name = "bntSearch";
+            this.bntSearch.Size = new System.Drawing.Size(96, 32);
+            this.bntSearch.TabIndex = 18;
+            this.bntSearch.Text = "Tìm Kiếm";
+            this.bntSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bntSearch.UseVisualStyleBackColor = true;
+            this.bntSearch.Click += new System.EventHandler(this.bntSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(619, 462);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(100, 20);
+            this.txtSearch.TabIndex = 19;
+            // 
             // ChiTietPhongForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 494);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.bntSearch);
             this.Controls.Add(this.btnChuyenPhong);
             this.Controls.Add(this.btnNhap);
             this.Controls.Add(this.groupBox2);
@@ -225,6 +249,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -243,5 +268,7 @@
         private System.Windows.Forms.ToolStripMenuItem thanhLyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chuyenPhongToolStripMenuItem;
         private System.Windows.Forms.Button btnThanhLy;
+        private System.Windows.Forms.Button bntSearch;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

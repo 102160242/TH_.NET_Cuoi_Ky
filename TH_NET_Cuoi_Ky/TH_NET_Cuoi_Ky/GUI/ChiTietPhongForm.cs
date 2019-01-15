@@ -117,5 +117,10 @@ namespace TH_NET_Cuoi_Ky.GUI
         {
             chuyenPhongToolStripMenuItem_Click(sender, e);
         }
+
+        private void bntSearch_Click(object sender, EventArgs e)
+        {
+            dgv.DataSource = phong_BLL.Search_TaiSanInPhong(this.maPhong , txtSearch.Text);
+        }
     }
 }
