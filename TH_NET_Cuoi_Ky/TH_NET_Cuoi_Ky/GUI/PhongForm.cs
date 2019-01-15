@@ -72,7 +72,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             {
                 MaPhong = Convert.ToInt32(txt_MaPhong.Text),
                 TenPhong = txt_TenPhong.Text,
-                MaNguoiQL = Phong_BLL.getIdByName(cbbNguoiQL.SelectedItem.ToString())
+                MaNguoiQL = Phong_BLL.getIDNguoiQLByName(cbbNguoiQL.SelectedItem.ToString())
                     
             });
 
@@ -238,6 +238,44 @@ namespace TH_NET_Cuoi_Ky.GUI
             f.ShowPhongDetail();
             f.Show();
             this.Visible = false;
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            if(dgv.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần xuất dữ liệu!");
+            }
+            else
+            {
+                Import_ExportTSForm f = new Import_ExportTSForm();
+                f.getDGV += () =>
+                {
+                    DataGridView dgv_ = new DataGridView();
+                    foreach (DataGridViewColumn c in dgv.Columns)
+                    {
+                        dgv_.Columns.Add(c.Name, c.Name);
+                    }
+                    foreach (DataGridViewRow row in dgv.SelectedRows)
+                    {
+                        int index = dgv_.Rows.Add();
+                        for (int i = 0; i < dgv_.Rows[index].Cells.Count; i++)
+                        {
+                            dgv_.Rows[index].Cells[i].Value = dgv.SelectedRows[index].Cells[i].Value.ToString();
+                        }
+                        //DataGridViewRow r = (DataGridViewRow)dgv_.Rows[0].Clone();
+                        //for (int i = 0; i < r.Cells.Count; i++)
+                        //{
+                        //    r.Cells[i].Value = row.Cells[i].Value;
+                        //}
+                        //dgv_.Rows.Add(r);
+                    }
+                    return dgv_;
+                };
+                f.Text = "Xuất dữ liệu ra file";
+                f.startExportingData();
+                f.ShowDialog();
+            }
         }
     }
 }

@@ -40,7 +40,7 @@ namespace TH_NET_Cuoi_Ky.GUI
             List<DTO.Phong> l = new List<DTO.Phong>();
             l.Add(new DTO.Phong {
                 TenPhong = txtTenPhong.Text,
-                MaNguoiQL = Phong_BLL.getIdByName(cbbNguoiQL.SelectedItem.ToString())
+                MaNguoiQL = Phong_BLL.getIDNguoiQLByName(cbbNguoiQL.SelectedItem.ToString())
             });
             (bool result, string msg) = Phong_BLL.addPhong(l);
             if (result)

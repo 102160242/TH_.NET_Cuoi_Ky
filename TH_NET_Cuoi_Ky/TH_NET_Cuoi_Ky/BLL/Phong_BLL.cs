@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TH_NET_Cuoi_Ky.DAL;
 using TH_NET_Cuoi_Ky.DTO;
-
+using System.Data;
 namespace TH_NET_Cuoi_Ky.BLL
 {
     class Phong_BLL
@@ -158,7 +158,7 @@ namespace TH_NET_Cuoi_Ky.BLL
             }
             return (true, "Thêm Phòng mới thành công!");
         } 
-        public int getIdByName(string s)
+        public int getIDNguoiQLByName(string s)
         {
             try
             {
@@ -236,7 +236,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             try
             {
-                return db.Phongs.Where(p => p.TenPhong == Ph).Select(p => p.MaPhong).Single();
+                return db.Phongs.Where(p => p.TenPhong == Ph).Select(p => p.MaPhong).First();
             }
             catch (System.Data.SqlClient.SqlException e)
             {
@@ -254,6 +254,70 @@ namespace TH_NET_Cuoi_Ky.BLL
             //var data = db.NhapXuats.Where(p => p.MaTS == mats).Select(p => p.Phong.TenPhong);
             var data = db.NhapXuats.Where(p => p.TaiSan.TenTS == ts).Select(p => p.Phong.TenPhong);
             return data.ToList();
+        }
+        public DataTable export(int maPhong)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("STT");
+            dt.Columns.Add("Tên Tài Sản");
+            dt.Columns.Add("Thông số kỹ thuật");
+            dt.Columns.Add("Loại tài sản");
+            dt.Columns.Add("Đơn vị tính");
+            dt.Columns.Add("Năm sản xuất");
+            dt.Columns.Add("Nhà cung cấp");
+            dt.Columns.Add("Nước sản xuất");
+            dt.Columns.Add("Ngày Nhập");
+            dt.Columns.Add("SL Nhập");
+            dt.Columns.Add("Thành tiền");
+            dt.Columns.Add("Ngày Xuất");
+            dt.Columns.Add("SL Xuất");
+            dt.Columns.Add("Tình trạng");
+            dt.Columns.Add("Thành tiền (xuất)");
+
+            //var phong = db.Phongs.Where(p => p.MaPhong == maPhong).SingleOrDefault();
+            //var data = phong.NhapXuat.OrderBy(p => p.MaTS).Select(p => p);
+            var data = db.NhapXuats.Where(p => p.MaPhong == maPhong).Select(p => p).OrderBy(p => new { p.MaTS, p.SoPhieu, p.MaNhaCC }).ToList();
+            int i = 1;
+            for(int k = 0; k < data.Count(); k++)
+            {
+                DataRow row = dt.NewRow();
+                row[0] = i++;
+                row[1] = data[k].TaiSan.TenTS;
+                row[2] = data[k].TaiSan.TSKT;
+                row[3] = data[k].TaiSan.LoaiTS.TenLoaiTS;
+                row[4] = data[k].TaiSan.DVTinh;
+                row[5] = data[k].TaiSan.NamSX;
+                row[6] = data[k].NhaCC.TenNhaCC;
+                row[7] = data[k].TaiSan.NuocSX.TenNuocSX;
+                row[8] = data[k].NgayNhap;
+                row[9] = data[k].SLNhap;
+                row[10] = data[k].NguyenGia;
+                if (k != data.Count() - 1 && data[k].MaTS == data[k + 1].MaTS)
+                {
+                    if(data[k + 1].NgayXuat != null)
+                    {
+                        row[11] = data[k + 1].NgayXuat;
+                        row[12] = data[k + 1].SLXuat;
+                        row[13] = data[k + 1].TinhTrang;
+                        row[14] = data[k + 1].NguyenGia;
+                    }
+                    int l = 2;
+                    while(k != data.Count() - 1 && data[k + l].MaTS == data[k].MaTS)
+                    {
+                        l++;
+                    }
+                    k += l;
+                }
+                else
+                {
+                    row[11] = "";
+                    row[12] = "";
+                    row[13] = "";
+                    row[14] = "";
+                }
+                dt.Rows.Add(row);
+            }
+            return dt;
         }
     }
 }

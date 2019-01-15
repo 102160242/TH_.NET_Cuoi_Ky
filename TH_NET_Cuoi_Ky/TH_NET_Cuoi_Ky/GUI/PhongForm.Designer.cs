@@ -37,6 +37,7 @@
             this.but_Search = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.menuDGV = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.chiTietPhongStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_TenPhong = new System.Windows.Forms.TextBox();
@@ -52,7 +53,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.loadCBB = new System.ComponentModel.BackgroundWorker();
-            this.chiTietPhongStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.menuDGV.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -66,7 +67,7 @@
             this.but_Delete.Enabled = false;
             this.but_Delete.Image = ((System.Drawing.Image)(resources.GetObject("but_Delete.Image")));
             this.but_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Delete.Location = new System.Drawing.Point(462, 457);
+            this.but_Delete.Location = new System.Drawing.Point(372, 457);
             this.but_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.but_Delete.Name = "but_Delete";
             this.but_Delete.Size = new System.Drawing.Size(93, 32);
@@ -106,7 +107,7 @@
             this.but_Update.Enabled = false;
             this.but_Update.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.Image")));
             this.but_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Update.Location = new System.Drawing.Point(312, 457);
+            this.but_Update.Location = new System.Drawing.Point(252, 457);
             this.but_Update.Margin = new System.Windows.Forms.Padding(4);
             this.but_Update.Name = "but_Update";
             this.but_Update.Size = new System.Drawing.Size(93, 32);
@@ -155,8 +156,15 @@
             this.updateToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.menuDGV.Name = "menuDGV";
-            this.menuDGV.Size = new System.Drawing.Size(227, 92);
+            this.menuDGV.Size = new System.Drawing.Size(227, 70);
             this.menuDGV.Opening += new System.ComponentModel.CancelEventHandler(this.menuDGV_Opening);
+            // 
+            // chiTietPhongStripMenuItem
+            // 
+            this.chiTietPhongStripMenuItem.Name = "chiTietPhongStripMenuItem";
+            this.chiTietPhongStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.chiTietPhongStripMenuItem.Text = "Xem các tài sản trong phòng";
+            this.chiTietPhongStripMenuItem.Click += new System.EventHandler(this.chiTietPhongStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
@@ -194,7 +202,7 @@
             this.but_Add.BackColor = System.Drawing.Color.Transparent;
             this.but_Add.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.Image")));
             this.but_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.but_Add.Location = new System.Drawing.Point(162, 457);
+            this.but_Add.Location = new System.Drawing.Point(132, 457);
             this.but_Add.Margin = new System.Windows.Forms.Padding(4);
             this.but_Add.Name = "but_Add";
             this.but_Add.Size = new System.Drawing.Size(93, 32);
@@ -316,12 +324,20 @@
             // 
             this.loadCBB.DoWork += new System.ComponentModel.DoWorkEventHandler(this.loadCBB_DoWork);
             // 
-            // chiTietPhongStripMenuItem
+            // btnExport
             // 
-            this.chiTietPhongStripMenuItem.Name = "chiTietPhongStripMenuItem";
-            this.chiTietPhongStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.chiTietPhongStripMenuItem.Text = "Xem các tài sản trong phòng";
-            this.chiTietPhongStripMenuItem.Click += new System.EventHandler(this.chiTietPhongStripMenuItem_Click);
+            this.btnExport.BackColor = System.Drawing.Color.Transparent;
+            this.btnExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExport.Image")));
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExport.Location = new System.Drawing.Point(492, 457);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(93, 32);
+            this.btnExport.TabIndex = 49;
+            this.btnExport.Text = "Xuất";
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // PhongForm
             // 
@@ -330,6 +346,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(717, 499);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -385,5 +402,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.ComponentModel.BackgroundWorker loadCBB;
         private System.Windows.Forms.ToolStripMenuItem chiTietPhongStripMenuItem;
+        private System.Windows.Forms.Button btnExport;
     }
 }

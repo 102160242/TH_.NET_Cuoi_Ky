@@ -27,7 +27,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                        select new { MaTS = g.Key, SL = g.Sum(p => p.SLXuat) == null ? 0 : g.Sum(p => p.SLXuat) };
 
             var data = from p in db.TaiSans
-                       join T in 
+                       join T in
                        (
                             // Join danh sach nhap va xuat de tinh so luong hien co
                             from p1 in nhap
@@ -38,7 +38,7 @@ namespace TH_NET_Cuoi_Ky.BLL
                        on p.MaTS equals T.MaTS
                        into ps
                        from T in ps.DefaultIfEmpty()
-                       orderby p.MaTS                       
+                       orderby p.MaTS
                        select new
                        {
                            p.MaTS,
@@ -69,7 +69,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         }
         public dynamic SearchTS(Dictionary<String, String> s)
         {
-            var data = from p in db.TaiSans                  
+            var data = from p in db.TaiSans
                        select new
                        {
                            p.MaTS,
@@ -89,8 +89,8 @@ namespace TH_NET_Cuoi_Ky.BLL
                 s.TryGetValue("NuocSX", out t);
 
                 data = from p in data
-                        where p.TenNuocSX.Contains(t)
-                        select p;
+                       where p.TenNuocSX.Contains(t)
+                       select p;
             }
             // Kiem tra filter Loai Tai San
             if (s.ContainsKey("LoaiTS") && s["LoaiTS"] != "")
@@ -99,8 +99,8 @@ namespace TH_NET_Cuoi_Ky.BLL
                 s.TryGetValue("LoaiTS", out t);
 
                 data = from p in data
-                        where p.TenLoaiTS.Contains(t)
-                        select p;
+                       where p.TenLoaiTS.Contains(t)
+                       select p;
             }
             // Kiem tra tu khoa tim kiem
             if (s.ContainsKey("TuKhoa") && s["TuKhoa"] != "")
@@ -151,12 +151,12 @@ namespace TH_NET_Cuoi_Ky.BLL
 
                 db.SaveChanges(); // Cap nhat thay doi vao DB
             }
-            catch(System.Data.SqlClient.SqlException e)
+            catch (System.Data.SqlClient.SqlException e)
             {
                 Console.Write("Loi SQL: " + e.Message); // Ghi loi ra Console
                 return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.Write(e.Message);
                 return (false, "Đã có lỗi xảy ra, vui lòng thử lại sau!");
@@ -167,7 +167,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             try
             {
-                foreach(DTO.TaiSan i in l)
+                foreach (DTO.TaiSan i in l)
                 {
                     db.TaiSans.Add(i);
                 }
@@ -189,7 +189,7 @@ namespace TH_NET_Cuoi_Ky.BLL
         {
             try
             {
-                foreach(int maTS in l)
+                foreach (int maTS in l)
                 {
                     //DTO.TaiSan t = new DTO.TaiSan { MaTS = maTS };
                     //db.TaiSans.Attach(t);
@@ -309,5 +309,28 @@ namespace TH_NET_Cuoi_Ky.BLL
                        select p;
             return data.ToList<DTO.TaiSan>();
         }
+        public int getIDByVariousFactors(string tenTS, string tskt, string tenNSX, string tenLTS, string tenNCC, string dvtinh, int namsx)
+        {
+            try
+            {
+                return db.TaiSans.Where(p => 
+                                        p.TenTS == tenTS &&
+                                        p.TSKT == tskt &&
+                                        p.NuocSX.TenNuocSX == tenNSX &&
+                                        p.LoaiTS.TenLoaiTS == tenLTS &&
+                                        p.DVTinh == dvtinh &&
+                                        p.NamSX == namsx)
+                                        .Select(p => p.MaTS).First();
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                Console.Write("Loi SQL: " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+            }
+            return -1;
+        } 
     }
 }
